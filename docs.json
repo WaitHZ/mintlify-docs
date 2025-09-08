@@ -16,6 +16,12 @@
           "get-started/intro",
           "get-started/installation"
         ]
+      },
+      {
+        "group": "Leaderboard",
+        "pages": [
+          "leaderboard/models"
+        ]
       }
     ]
     },
