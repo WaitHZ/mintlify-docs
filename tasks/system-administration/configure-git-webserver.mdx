@@ -1,0 +1,222 @@
+---
+title: 'Configure Git Web Server'
+description: 'Set up a complete git server with web interface integration and automated deployment'
+---
+
+<CardGroup>
+  <Card title="Difficulty" icon="x-circle">
+    <Badge variant="destructive">Hard</Badge>
+  </Card>
+  <Card title="Category" icon="server">
+    System Administration
+  </Card>
+  <Card title="Estimated Time" icon="clock">
+    90-120 minutes
+  </Card>
+</CardGroup>
+
+## Task Description
+
+Configure a git server that allows cloning repositories and automatically deploys changes to a web server. The setup should enable:
+
+1. Git repository hosting with SSH access
+2. Automatic web deployment when changes are pushed
+3. Web server serving the deployed content
+4. Complete workflow from clone to web access
+
+## Prerequisites
+
+- Linux server with root access
+- SSH server configured
+- Web server (Apache/Nginx) installed
+- Git installed
+- Basic understanding of git hooks
+
+## Instructions
+
+### Step 1: Set Up Git Repository
+
+```bash
+# Create git user
+sudo useradd -m -s /bin/bash git
+sudo passwd git
+
+# Create repository directory
+sudo mkdir -p /git/server
+sudo chown git:git /git/server
+cd /git/server
+
+# Initialize bare repository
+sudo -u git git init --bare server.git
+```
+
+### Step 2: Configure SSH Access
+
+```bash
+# Create SSH directory for git user
+sudo -u git mkdir -p /home/git/.ssh
+sudo -u git chmod 700 /home/git/.ssh
+
+# Add your public key (replace with actual key)
+sudo -u git tee /home/git/.ssh/authorized_keys << 'EOF'
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC... your-key-here
+EOF
+
+sudo -u git chmod 600 /home/git/.ssh/authorized_keys
+```
+
+### Step 3: Set Up Web Server
+
+```bash
+# Install and configure web server (using Apache as example)
+sudo apt-get install apache2
+sudo systemctl enable apache2
+sudo systemctl start apache2
+
+# Create web directory
+sudo mkdir -p /var/www/html/git-deploy
+sudo chown git:git /var/www/html/git-deploy
+```
+
+### Step 4: Create Deployment Hook
+
+```bash
+# Create post-receive hook
+sudo -u git tee /git/server/server.git/hooks/post-receive << 'EOF'
+#!/bin/bash
+WEB_DIR="/var/www/html/git-deploy"
+GIT_DIR="/git/server/server.git"
+
+# Create temporary directory
+TEMP_DIR=$(mktemp -d)
+cd $TEMP_DIR
+
+# Clone the repository
+git clone $GIT_DIR .
+
+# Copy files to web directory
+cp -r * $WEB_DIR/
+
+# Clean up
+cd /
+rm -rf $TEMP_DIR
+
+echo "Deployment completed successfully"
+EOF
+
+# Make hook executable
+sudo -u git chmod +x /git/server/server.git/hooks/post-receive
+```
+
+### Step 5: Configure Web Server
+
+```bash
+# Configure Apache virtual host
+sudo tee /etc/apache2/sites-available/git-deploy.conf << 'EOF'
+<VirtualHost *:8080>
+    ServerName localhost
+    DocumentRoot /var/www/html/git-deploy
+    
+    <Directory /var/www/html/git-deploy>
+        Options Indexes FollowSymLinks
+        AllowOverride None
+        Require all granted
+    </Directory>
+    
+    ErrorLog ${APACHE_LOG_DIR}/git-deploy_error.log
+    CustomLog ${APACHE_LOG_DIR}/git-deploy_access.log combined
+</VirtualHost>
+EOF
+
+# Enable the site and port
+sudo a2ensite git-deploy.conf
+sudo sed -i 's/Listen 80/Listen 80\nListen 8080/' /etc/apache2/ports.conf
+sudo systemctl reload apache2
+```
+
+### Step 6: Test the Setup
+
+```bash
+# Clone the repository
+git clone git@server:/git/server/server.git
+cd server
+
+# Create test file
+echo "hello world" > hello.html
+
+# Add, commit, and push
+git add hello.html
+git commit -m "add hello.html"
+git push origin main
+```
+
+### Step 7: Verify Web Access
+
+```bash
+# Test web access
+curl http://server:8080/hello.html
+# Should output: hello world
+```
+
+## Expected Workflow
+
+1. **Clone**: `git clone user@server:/git/server`
+2. **Edit**: Create or modify files
+3. **Commit**: `git add . && git commit -m "message"`
+4. **Push**: `git push origin main`
+5. **Access**: `curl http://server:8080/filename`
+
+## Success Criteria
+
+- [ ] Git repository is accessible via SSH
+- [ ] Files can be cloned, modified, and pushed
+- [ ] Post-receive hook executes successfully
+- [ ] Web server serves deployed content
+- [ ] Complete workflow functions end-to-end
+
+## Security Considerations
+
+<Warning>
+  This setup is for demonstration purposes. In production, consider:
+  - Using SSH key authentication only
+  - Implementing proper access controls
+  - Adding SSL/TLS encryption
+  - Setting up proper file permissions
+  - Using git-shell for restricted access
+</Warning>
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="SSH Connection Issues">
+    - Verify SSH keys are properly configured
+    - Check SSH service status: `sudo systemctl status ssh`
+    - Test SSH connection: `ssh git@server`
+  </Accordion>
+  <Accordion title="Git Push Failures">
+    - Check repository permissions
+    - Verify hook script permissions
+    - Review git logs for errors
+  </Accordion>
+  <Accordion title="Web Server Issues">
+    - Check Apache configuration: `sudo apache2ctl configtest`
+    - Verify port 8080 is listening: `sudo netstat -tlnp | grep 8080`
+    - Check web directory permissions
+  </Accordion>
+</AccordionGroup>
+
+## Evaluation
+
+This task evaluates:
+
+- **System Administration**: User management, service configuration
+- **Git Operations**: Repository setup, hooks, workflow
+- **Web Server Management**: Apache configuration, virtual hosts
+- **Automation**: Scripting, deployment pipelines
+- **Integration**: Connecting multiple services
+
+<Info>
+  **Created by**: Nicholas Carlini  
+  **Last Updated**: December 2024  
+  **Tags**: `system`, `git`, `web`, `deployment`, `automation`
+</Info>

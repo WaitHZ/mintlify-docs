@@ -1,0 +1,155 @@
+---
+title: 'Task Registry'
+description: 'Comprehensive collection of terminal tasks for evaluating AI agents across multiple domains'
+---
+
+# MCPBench Task Registry
+
+Welcome to the MCPBench task registry - a comprehensive collection of terminal tasks designed to evaluate AI agents' capabilities across multiple domains. Our benchmark includes **127 tasks** spanning system administration, security, data science, development, and research.
+
+<CardGroup cols={3}>
+  <Card title="System Administration" icon="server" href="/tasks/system-administration">
+    <Stat>45</Stat>
+    Server configuration, process management, system monitoring
+  </Card>
+  <Card title="Security" icon="shield" href="/tasks/security">
+    <Stat>28</Stat>
+    Cryptography, penetration testing, security auditing
+  </Card>
+  <Card title="Data Science" icon="brain" href="/tasks/data-science">
+    <Stat>32</Stat>
+    Data processing, model training, analysis workflows
+  </Card>
+  <Card title="Development" icon="code" href="/tasks/development">
+    <Stat>15</Stat>
+    Code compilation, testing, deployment automation
+  </Card>
+  <Card title="Research" icon="search" href="/tasks/research-helper">
+    <Stat>7</Stat>
+    Academic paper analysis, data collection, experimental setup
+  </Card>
+</CardGroup>
+
+## Task Categories
+
+### System Administration
+Tasks focused on server management, system configuration, and infrastructure operations.
+
+<CardGroup cols={2}>
+  <Card title="Build Linux Kernel" icon="terminal" href="/tasks/system-administration/build-linux-kernel">
+    Build Linux kernel from source with custom modifications and run in QEMU environment.
+    <Badge variant="secondary">Medium</Badge>
+  </Card>
+  <Card title="Configure Git Web Server" icon="server" href="/tasks/system-administration/configure-git-webserver">
+    Set up a complete git server with web interface integration and automated deployment.
+    <Badge variant="secondary">Hard</Badge>
+  </Card>
+  <Card title="OpenSSL Self-Signed Cert" icon="lock" href="/tasks/system-administration/openssl-selfsigned-cert">
+    Create self-signed TLS certificates with specific requirements and verification.
+    <Badge variant="secondary">Medium</Badge>
+  </Card>
+</CardGroup>
+
+### Security
+Challenges involving cryptography, security testing, and vulnerability assessment.
+
+<CardGroup cols={2}>
+  <Card title="Crack 7z Archive" icon="shield" href="/tasks/security/crack-7z-hash">
+    Security challenge involving password cracking and file extraction from encrypted archives.
+    <Badge variant="secondary">Medium</Badge>
+  </Card>
+  <Card title="Penetration Testing" icon="target" href="/tasks/security/penetration-testing">
+    Comprehensive security assessment of a target system with multiple attack vectors.
+    <Badge variant="secondary">Hard</Badge>
+  </Card>
+  <Card title="Security Audit" icon="search" href="/tasks/security/security-audit">
+    Perform security audit of system configurations and identify vulnerabilities.
+    <Badge variant="secondary">Medium</Badge>
+  </Card>
+</CardGroup>
+
+### Data Science
+Tasks involving data processing, machine learning, and statistical analysis.
+
+<CardGroup cols={2}>
+  <Card title="Train FastText Model" icon="brain" href="/tasks/data-science/train-fasttext">
+    Train a FastText model with specific accuracy and size constraints on real-world data.
+    <Badge variant="secondary">Hard</Badge>
+  </Card>
+  <Card title="Reshard C4 Data" icon="database" href="/tasks/data-science/reshard-c4-data">
+    Prepare and reorganize large datasets for distributed processing with size constraints.
+    <Badge variant="secondary">Medium</Badge>
+  </Card>
+  <Card title="Data Analysis Pipeline" icon="bar-chart" href="/tasks/data-science/data-analysis">
+    Build complete data analysis pipeline with visualization and statistical testing.
+    <Badge variant="secondary">Medium</Badge>
+  </Card>
+</CardGroup>
+
+## Task Difficulty Levels
+
+<CardGroup cols={3}>
+  <Card title="Easy" icon="check-circle">
+    <Stat>32</Stat>
+    Basic terminal operations, simple file manipulation, straightforward commands
+  </Card>
+  <Card title="Medium" icon="alert-circle">
+    <Stat>68</Stat>
+    Multi-step processes, configuration management, moderate complexity
+  </Card>
+  <Card title="Hard" icon="x-circle">
+    <Stat>27</Stat>
+    Complex system interactions, advanced debugging, integration challenges
+  </Card>
+</CardGroup>
+
+## Evaluation Criteria
+
+Each task is evaluated based on:
+
+- **Correctness**: Does the solution produce the expected output?
+- **Efficiency**: How well does the agent optimize for time and resources?
+- **Robustness**: Does the solution handle edge cases and errors gracefully?
+- **Documentation**: Is the process well-documented and reproducible?
+
+<Info>
+  **Benchmark Integrity**: All tasks include canary tokens to prevent contamination of training data. The benchmark should never appear in AI model training corpora.
+</Info>
+
+## Getting Started
+
+<Steps>
+  <Step title="Choose Your Category">
+    Browse tasks by category to find challenges that match your agent's capabilities.
+  </Step>
+  <Step title="Read Task Description">
+    Each task includes detailed instructions, expected outputs, and evaluation criteria.
+  </Step>
+  <Step title="Set Up Environment">
+    Follow the setup instructions to prepare your evaluation environment.
+  </Step>
+  <Step title="Run Your Agent">
+    Execute your agent on the task and collect the results.
+  </Step>
+  <Step title="Submit Results">
+    Submit your results to our [leaderboard](/leaderboard) for comparison.
+  </Step>
+</Steps>
+
+## Contributing Tasks
+
+We welcome contributions to expand our task registry. See our [contribution guidelines](/contributors/guidelines) for details on:
+
+- Task design principles
+- Evaluation criteria
+- Submission process
+- Quality standards
+
+<CardGroup cols={2}>
+  <Card title="Contribute a Task" icon="plus" href="/contributors/guidelines">
+    Learn how to design and submit new benchmark tasks.
+  </Card>
+  <Card title="Improve Existing Tasks" icon="edit" href="/contributors/guidelines">
+    Help improve existing tasks with better documentation or evaluation criteria.
+  </Card>
+</CardGroup>

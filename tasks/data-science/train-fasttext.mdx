@@ -1,0 +1,325 @@
+---
+title: 'Train FastText Model'
+description: 'Train a FastText model with specific accuracy and size constraints on real-world data'
+---
+
+<CardGroup>
+  <Card title="Difficulty" icon="x-circle">
+    <Badge variant="destructive">Hard</Badge>
+  </Card>
+  <Card title="Category" icon="brain">
+    Data Science
+  </Card>
+  <Card title="Estimated Time" icon="clock">
+    60-90 minutes
+  </Card>
+</CardGroup>
+
+## Task Description
+
+Train a FastText model on the Yelp dataset with the following constraints:
+
+- **Model size**: Less than 150MB
+- **Accuracy**: At least 0.62 on a private test set
+- **Output**: Save model as `model.bin` in the current directory
+
+## Prerequisites
+
+- Python environment with FastText
+- Yelp dataset in the `data/` folder
+- Understanding of text classification
+- Basic machine learning knowledge
+
+## Instructions
+
+### Step 1: Examine the Dataset
+
+```bash
+# Check the data directory structure
+ls -la data/
+
+# Examine the dataset format
+head -10 data/yelp_train.txt
+head -10 data/yelp_test.txt
+```
+
+### Step 2: Install Required Dependencies
+
+```bash
+# Install FastText
+pip install fasttext
+
+# Install additional dependencies
+pip install numpy pandas scikit-learn
+```
+
+### Step 3: Data Preprocessing
+
+```python
+# Create preprocessing script
+cat > preprocess_data.py << 'EOF'
+import fasttext
+import os
+
+# Check if data files exist
+if not os.path.exists('data/yelp_train.txt'):
+    print("Error: yelp_train.txt not found in data/ directory")
+    exit(1)
+
+# Preprocess training data
+with open('data/yelp_train.txt', 'r') as f:
+    lines = f.readlines()
+
+# Clean and format data
+processed_lines = []
+for line in lines:
+    # Remove extra whitespace and ensure proper format
+    line = line.strip()
+    if line:
+        processed_lines.append(line)
+
+# Save processed data
+with open('data/yelp_train_processed.txt', 'w') as f:
+    f.write('\n'.join(processed_lines))
+
+print(f"Processed {len(processed_lines)} training examples")
+EOF
+
+python preprocess_data.py
+```
+
+### Step 4: Train the Model
+
+```python
+# Create training script
+cat > train_model.py << 'EOF'
+import fasttext
+import os
+
+# Training parameters
+model = fasttext.train_supervised(
+    input='data/yelp_train_processed.txt',
+    epoch=25,
+    lr=0.1,
+    wordNgrams=2,
+    dim=100,
+    ws=5,
+    neg=5,
+    loss='softmax',
+    bucket=2000000,
+    minn=3,
+    maxn=6,
+    thread=4,
+    lrUpdateRate=100,
+    t=1e-4,
+    label='__label__',
+    verbose=2
+)
+
+# Save the model
+model.save_model('model.bin')
+
+# Check model size
+model_size = os.path.getsize('model.bin') / (1024 * 1024)  # MB
+print(f"Model size: {model_size:.2f} MB")
+
+# Test on validation data if available
+if os.path.exists('data/yelp_test.txt'):
+    result = model.test('data/yelp_test.txt')
+    print(f"Test accuracy: {result[1]:.4f}")
+    print(f"Test precision: {result[2]:.4f}")
+    print(f"Test recall: {result[3]:.4f}")
+EOF
+
+python train_model.py
+```
+
+### Step 5: Optimize Model Size
+
+If the model is too large, try these optimizations:
+
+```python
+# Create optimized training script
+cat > train_optimized.py << 'EOF'
+import fasttext
+import os
+
+# Try different parameters to reduce model size
+configs = [
+    {'dim': 50, 'wordNgrams': 1, 'bucket': 1000000},
+    {'dim': 75, 'wordNgrams': 2, 'bucket': 1500000},
+    {'dim': 100, 'wordNgrams': 1, 'bucket': 2000000},
+]
+
+best_model = None
+best_size = float('inf')
+best_accuracy = 0
+
+for config in configs:
+    print(f"Trying config: {config}")
+    
+    model = fasttext.train_supervised(
+        input='data/yelp_train_processed.txt',
+        epoch=20,
+        lr=0.1,
+        **config,
+        ws=5,
+        neg=5,
+        loss='softmax',
+        minn=3,
+        maxn=6,
+        thread=4,
+        lrUpdateRate=100,
+        t=1e-4,
+        label='__label__',
+        verbose=1
+    )
+    
+    # Test accuracy
+    if os.path.exists('data/yelp_test.txt'):
+        result = model.test('data/yelp_test.txt')
+        accuracy = result[1]
+    else:
+        # Use training accuracy as proxy
+        result = model.test('data/yelp_train_processed.txt')
+        accuracy = result[1] * 0.8  # Estimate test accuracy
+    
+    # Save model temporarily to check size
+    model.save_model('temp_model.bin')
+    model_size = os.path.getsize('temp_model.bin') / (1024 * 1024)
+    
+    print(f"Size: {model_size:.2f} MB, Accuracy: {accuracy:.4f}")
+    
+    if model_size < 150 and accuracy > best_accuracy:
+        best_model = model
+        best_size = model_size
+        best_accuracy = accuracy
+        os.rename('temp_model.bin', 'model.bin')
+    else:
+        os.remove('temp_model.bin')
+
+print(f"Best model: {best_size:.2f} MB, Accuracy: {best_accuracy:.4f}")
+EOF
+
+python train_optimized.py
+```
+
+### Step 6: Final Validation
+
+```python
+# Create validation script
+cat > validate_model.py << 'EOF'
+import fasttext
+import os
+
+# Load the trained model
+model = fasttext.load_model('model.bin')
+
+# Check model size
+model_size = os.path.getsize('model.bin') / (1024 * 1024)
+print(f"Final model size: {model_size:.2f} MB")
+
+# Test on available data
+if os.path.exists('data/yelp_test.txt'):
+    result = model.test('data/yelp_test.txt')
+    print(f"Test accuracy: {result[1]:.4f}")
+    
+    if result[1] >= 0.62:
+        print("✅ Accuracy requirement met!")
+    else:
+        print("❌ Accuracy requirement not met")
+else:
+    print("No test data available for validation")
+
+# Test some predictions
+test_texts = [
+    "This restaurant has amazing food and great service!",
+    "Terrible experience, would not recommend.",
+    "Average food, nothing special."
+]
+
+print("\nSample predictions:")
+for text in test_texts:
+    prediction = model.predict(text)
+    print(f"'{text}' -> {prediction[0][0]} (confidence: {prediction[1][0]:.3f})")
+EOF
+
+python validate_model.py
+```
+
+## Expected Output
+
+- `model.bin`: Trained FastText model file
+- Model size < 150MB
+- Accuracy ≥ 0.62 on test set
+- Successful predictions on sample text
+
+## Success Criteria
+
+- [ ] Model trains without errors
+- [ ] Model size is under 150MB
+- [ ] Accuracy meets or exceeds 0.62
+- [ ] Model file is saved as `model.bin`
+- [ ] Model can make predictions on new text
+
+## Hyperparameter Tuning Tips
+
+<AccordionGroup>
+  <Accordion title="Reduce Model Size">
+    - Decrease `dim` (embedding dimension)
+    - Reduce `bucket` (hash table size)
+    - Use `wordNgrams=1` instead of 2
+    - Decrease `epoch` count
+  </Accordion>
+  <Accordion title="Improve Accuracy">
+    - Increase `dim` (up to size limit)
+    - Use `wordNgrams=2` for better context
+    - Increase `epoch` for better convergence
+    - Adjust learning rate (`lr`)
+  </Accordion>
+  <Accordion title="Balance Size vs Accuracy">
+    - Start with moderate parameters
+    - Iteratively adjust based on results
+    - Use validation set for parameter selection
+    - Consider ensemble methods if allowed
+  </Accordion>
+</AccordionGroup>
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="Memory Issues">
+    - Reduce `bucket` size
+    - Decrease `dim` parameter
+    - Use fewer threads
+    - Process data in smaller batches
+  </Accordion>
+  <Accordion title="Low Accuracy">
+    - Increase training epochs
+    - Adjust learning rate
+    - Use word n-grams
+    - Check data quality and format
+  </Accordion>
+  <Accordion title="Model Too Large">
+    - Reduce embedding dimension
+    - Decrease hash table size
+    - Use simpler model architecture
+    - Consider model compression techniques
+  </Accordion>
+</AccordionGroup>
+
+## Evaluation
+
+This task evaluates:
+
+- **Machine Learning**: Model training and optimization
+- **Resource Management**: Balancing accuracy vs. model size
+- **Hyperparameter Tuning**: Finding optimal configurations
+- **Data Processing**: Text preprocessing and formatting
+- **Problem Solving**: Iterative optimization approach
+
+<Info>
+  **Created by**: jeffreywpli  
+  **Last Updated**: December 2024  
+  **Tags**: `data-science`, `machine-learning`, `nlp`, `fasttext`, `optimization`
+</Info>

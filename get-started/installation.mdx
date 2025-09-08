@@ -1,99 +1,286 @@
 ---
-title: "Installation"
-description: "Install and set up MCPBench for evaluation"
+title: 'Installation Guide'
+description: 'Detailed installation instructions for MCPBench'
 ---
 
-## Installation
+# Installation Guide
 
-Get MCPBench up and running on your system.
+This guide provides detailed instructions for installing MCPBench and setting up your evaluation environment.
 
-### Prerequisites
+## System Requirements
 
-Before installing MCPBench, make sure you have the following installed:
+### Minimum Requirements
 
-- Python 3.8 or higher
-- pip (Python package installer)
-- Git
+- **OS**: Linux (Ubuntu 20.04+ recommended)
+- **RAM**: 8GB minimum, 16GB recommended
+- **Storage**: 20GB free space
+- **CPU**: 4 cores minimum, 8 cores recommended
+- **Network**: Internet connection for downloading tasks and dependencies
 
-### Install MCPBench
+### Recommended Environment
+
+- **OS**: Ubuntu 22.04 LTS
+- **RAM**: 32GB
+- **Storage**: 100GB SSD
+- **CPU**: 16 cores
+- **GPU**: Optional, for certain evaluation tasks
+
+## Installation Methods
+
+### Method 1: Quick Install (Recommended)
+
+```bash
+# Download and run the installation script
+curl -fsSL https://install.mcpbench.ai | bash
+
+# Verify installation
+mcpbench --version
+```
+
+### Method 2: Manual Installation
 
 <Steps>
-  <Step title="Clone the repository">
+  <Step title="Clone Repository">
     ```bash
     git clone https://github.com/mcpbench/mcpbench.git
     cd mcpbench
     ```
   </Step>
-  <Step title="Install dependencies">
+  <Step title="Install System Dependencies">
     ```bash
-    pip install -r requirements.txt
+    # Ubuntu/Debian
+    sudo apt-get update
+    sudo apt-get install -y build-essential curl wget git python3 python3-pip
+    
+    # CentOS/RHEL
+    sudo yum update
+    sudo yum install -y gcc gcc-c++ curl wget git python3 python3-pip
     ```
   </Step>
-  <Step title="Verify installation">
+  <Step title="Install Python Dependencies">
     ```bash
-    python -m mcpbench --version
+    pip3 install -r requirements.txt
+    ```
+  </Step>
+  <Step title="Install MCPBench">
+    ```bash
+    pip3 install -e .
+    ```
+  </Step>
+  <Step title="Verify Installation">
+    ```bash
+    mcpbench test-installation
     ```
   </Step>
 </Steps>
 
-### Quick Start
-
-Once installed, you can start evaluating models:
+### Method 3: Docker Installation
 
 ```bash
-# Run evaluation on a specific model
-python -m mcpbench evaluate --model claude-3-5-sonnet
+# Pull the official Docker image
+docker pull mcpbench/mcpbench:latest
 
-# Run evaluation on all tasks
-python -m mcpbench evaluate --model gpt-4o --tasks all
+# Run MCPBench in a container
+docker run -it --rm mcpbench/mcpbench:latest
 ```
 
-### Configuration
+## Environment Setup
+
+### Python Environment
 
 <AccordionGroup>
-  <Accordion title="Environment Variables">
-    Set up your API keys and configuration:
-    
+  <Accordion title="Using Virtual Environment (Recommended)">
     ```bash
-    export OPENAI_API_KEY="your-openai-key"
-    export ANTHROPIC_API_KEY="your-anthropic-key"
-    export GOOGLE_API_KEY="your-google-key"
+    # Create virtual environment
+    python3 -m venv mcpbench-env
+    source mcpbench-env/bin/activate
+    
+    # Install MCPBench
+    pip install mcpbench
     ```
   </Accordion>
-  
-  <Accordion title="Configuration File">
-    Create a `config.yaml` file in your project root:
+  <Accordion title="Using Conda">
+    ```bash
+    # Create conda environment
+    conda create -n mcpbench python=3.9
+    conda activate mcpbench
     
-    ```yaml
-    models:
-      - name: "claude-3-5-sonnet"
-        provider: "anthropic"
-        api_key: "${ANTHROPIC_API_KEY}"
-      
-    tasks:
-      - category: "research"
-      - category: "course"
-      - category: "academic"
-      - category: "tech"
+    # Install MCPBench
+    pip install mcpbench
+    ```
+  </Accordion>
+  <Accordion title="System-wide Installation">
+    ```bash
+    # Install system-wide (requires sudo)
+    sudo pip3 install mcpbench
     ```
   </Accordion>
 </AccordionGroup>
 
-### Next Steps
+### Configuration
+
+Create a configuration file:
+
+```bash
+# Create config directory
+mkdir -p ~/.config/mcpbench
+
+# Create configuration file
+cat > ~/.config/mcpbench/config.yaml << 'EOF'
+evaluation:
+  timeout: 3600  # 1 hour timeout per task
+  max_retries: 3
+  parallel_tasks: 4
+
+storage:
+  results_dir: ~/mcpbench-results
+  cache_dir: ~/.cache/mcpbench
+  temp_dir: /tmp/mcpbench
+
+logging:
+  level: INFO
+  file: ~/mcpbench.log
+EOF
+```
+
+## Verification
+
+### Test Installation
+
+```bash
+# Run comprehensive installation test
+mcpbench test-installation
+
+# Test specific components
+mcpbench test-evaluation
+mcpbench test-tasks
+```
+
+### Verify Dependencies
+
+```bash
+# Check system dependencies
+mcpbench check-dependencies
+
+# Check Python packages
+mcpbench check-packages
+```
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="Permission Issues">
+    ```bash
+    # Fix permission issues
+    sudo chown -R $USER:$USER ~/.config/mcpbench
+    sudo chown -R $USER:$USER ~/.cache/mcpbench
+    ```
+  </Accordion>
+  <Accordion title="Python Version Issues">
+    ```bash
+    # Check Python version
+    python3 --version
+    
+    # Install specific Python version if needed
+    sudo apt-get install python3.9 python3.9-pip
+    ```
+  </Accordion>
+  <Accordion title="Network Issues">
+    ```bash
+    # Test connectivity
+    curl -I https://github.com/mcpbench/mcpbench
+    
+    # Configure proxy if needed
+    export http_proxy=http://proxy.company.com:8080
+    export https_proxy=http://proxy.company.com:8080
+    ```
+  </Accordion>
+  <Accordion title="Storage Issues">
+    ```bash
+    # Check available space
+    df -h
+    
+    # Clean up if needed
+    mcpbench cleanup-cache
+    ```
+  </Accordion>
+</AccordionGroup>
+
+## Advanced Configuration
+
+### Custom Task Directories
+
+```bash
+# Set custom task directory
+export MCPBENCH_TASK_DIR=/path/to/custom/tasks
+
+# Or in config file
+echo "tasks:
+  custom_dir: /path/to/custom/tasks" >> ~/.config/mcpbench/config.yaml
+```
+
+### Performance Tuning
+
+```yaml
+# ~/.config/mcpbench/config.yaml
+performance:
+  max_workers: 8  # Number of parallel workers
+  memory_limit: 16GB  # Memory limit per task
+  cpu_limit: 4  # CPU cores per task
+```
+
+### Logging Configuration
+
+```yaml
+# ~/.config/mcpbench/config.yaml
+logging:
+  level: DEBUG
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  file: ~/mcpbench.log
+  max_size: 100MB
+  backup_count: 5
+```
+
+## Uninstallation
+
+### Remove MCPBench
+
+```bash
+# Uninstall Python package
+pip uninstall mcpbench
+
+# Remove configuration files
+rm -rf ~/.config/mcpbench
+rm -rf ~/.cache/mcpbench
+
+# Remove results (optional)
+rm -rf ~/mcpbench-results
+```
+
+### Clean System Dependencies
+
+```bash
+# Remove system packages (if not needed elsewhere)
+sudo apt-get remove build-essential curl wget git
+```
+
+## Getting Help
 
 <CardGroup cols={2}>
-  <Card
-    title="Run Your First Evaluation"
-    icon="play"
-    href="/docs/evaluation-guide"
-  >
-    Learn how to evaluate models on MCPBench tasks
+  <Card title="Documentation" icon="book" href="/get-started/intro">
+    Comprehensive documentation and guides
   </Card>
-  <Card
-    title="Submit Results"
-    icon="upload"
-    href="/docs/submitting-results"
-  >
-    Submit your model's performance to the leaderboard
+  <Card title="Discord Community" icon="message-circle" href="https://discord.gg/mcpbench">
+    Get help from the community
+  </Card>
+  <Card title="GitHub Issues" icon="github" href="https://github.com/mcpbench/issues">
+    Report installation problems
+  </Card>
+  <Card title="Email Support" icon="mail" href="mailto:support@mcpbench.ai">
+    Contact us directly for help
   </Card>
 </CardGroup>
+
+<Info>
+  **Installation Complete?** Check out our [Quick Start Guide](/get-started/quick-start) to begin evaluating your AI agent.
+</Info>

@@ -1,0 +1,241 @@
+---
+title: 'Submit Results'
+description: 'Learn how to submit your evaluation results to the MCPBench leaderboard'
+---
+
+# Submit Your Results
+
+Share your agent's performance with the community by submitting results to our leaderboard. This guide will walk you through the submission process and requirements.
+
+## Submission Requirements
+
+### Prerequisites
+
+Before submitting, ensure you have:
+
+- [ ] Completed evaluation on at least 10 benchmark tasks
+- [ ] Validated your results using our verification tools
+- [ ] Prepared detailed documentation about your agent
+- [ ] Read and agreed to our submission guidelines
+
+### Required Information
+
+<CardGroup cols={2}>
+  <Card title="Agent Details" icon="robot">
+    - Agent name and version
+    - Organization/affiliation
+    - Technical specifications
+    - Capabilities and limitations
+  </Card>
+  <Card title="Evaluation Results" icon="bar-chart">
+    - Task completion rates
+    - Execution times
+    - Error analysis
+    - Performance metrics
+  </Card>
+  <Card title="Documentation" icon="book">
+    - Agent architecture description
+    - Training methodology
+    - Evaluation methodology
+    - Reproducibility information
+  </Card>
+  <Card title="Verification" icon="check-circle">
+    - Independent verification results
+    - Code availability
+    - Reproducibility confirmation
+    - Ethical compliance
+  </Card>
+</CardGroup>
+
+## Submission Process
+
+<Steps>
+  <Step title="Prepare Your Results">
+    Run evaluations on our benchmark tasks and collect comprehensive results.
+  </Step>
+  <Step title="Validate Results">
+    Use our verification tools to ensure your results are accurate and reproducible.
+  </Step>
+  <Step title="Complete Submission Form">
+    Fill out the submission form with all required information.
+  </Step>
+  <Step title="Review Process">
+    Our team will review your submission for completeness and accuracy.
+  </Step>
+  <Step title="Verification">
+    Independent verification of your results may be conducted.
+  </Step>
+  <Step title="Publication">
+    Upon approval, your results will be added to the leaderboard.
+  </Step>
+</Steps>
+
+## Submission Form
+
+### Agent Information
+
+```yaml
+agent_name: "Your Agent Name"
+version: "1.0.0"
+organization: "Your Organization"
+contact_email: "your.email@example.com"
+publication_date: "2024-12-15"
+```
+
+### Technical Specifications
+
+```yaml
+model_type: "transformer"  # or "other"
+model_size: "7B"  # parameters
+training_data: "description of training data"
+hardware: "GPU specifications used"
+framework: "PyTorch"  # or other
+```
+
+### Evaluation Results
+
+```json
+{
+  "overall_success_rate": 0.852,
+  "category_results": {
+    "system_administration": 0.889,
+    "security": 0.821,
+    "data_science": 0.856,
+    "research": 0.845
+  },
+  "task_results": [
+    {
+      "task_id": "build-linux-kernel",
+      "success": true,
+      "execution_time": 1847.3,
+      "error_message": null
+    }
+  ]
+}
+```
+
+## Verification Process
+
+### Automated Verification
+
+Our system will automatically verify:
+
+- [ ] Result format compliance
+- [ ] Statistical validity
+- [ ] Completeness of submission
+- [ ] Basic reproducibility checks
+
+### Manual Review
+
+Our team will manually review:
+
+- [ ] Technical accuracy
+- [ ] Methodological soundness
+- [ ] Documentation quality
+- [ ] Ethical compliance
+
+### Independent Verification
+
+For top-performing submissions, we may conduct:
+
+- [ ] Independent re-evaluation
+- [ ] Code review
+- [ ] Methodology validation
+- [ ] Performance benchmarking
+
+## Submission Guidelines
+
+### Code Availability
+
+<Warning>
+  **Code Sharing**: We strongly encourage sharing your agent code to promote reproducibility and scientific advancement. While not strictly required, code availability significantly strengthens your submission.
+</Warning>
+
+### Documentation Standards
+
+Your submission should include:
+
+- **Agent Architecture**: Detailed description of your agent's design and capabilities
+- **Training Process**: Information about how your agent was trained or developed
+- **Evaluation Methodology**: How you conducted the evaluation
+- **Limitations**: Honest assessment of your agent's limitations and failure modes
+- **Reproducibility**: Steps needed to reproduce your results
+
+### Ethical Considerations
+
+All submissions must comply with:
+
+- [ ] Responsible AI principles
+- [ ] Data privacy requirements
+- [ ] Security best practices
+- [ ] Academic integrity standards
+
+## Review Timeline
+
+<CardGroup cols={3}>
+  <Card title="Initial Review" icon="clock">
+    **1-3 days**  
+    Automated checks and initial manual review
+  </Card>
+  <Card title="Detailed Review" icon="search">
+    **1-2 weeks**  
+    Comprehensive technical and methodological review
+  </Card>
+  <Card title="Verification" icon="check-circle">
+    **2-4 weeks**  
+    Independent verification (if required)
+  </Card>
+</CardGroup>
+
+## After Submission
+
+### Status Updates
+
+You'll receive updates on your submission status:
+
+- **Received**: Submission received and under initial review
+- **Under Review**: Detailed review in progress
+- **Verification**: Independent verification being conducted
+- **Approved**: Results accepted and published
+- **Revisions Needed**: Additional information or corrections required
+
+### Publication
+
+Upon approval, your results will be:
+
+- Added to the public leaderboard
+- Included in our research publications
+- Featured in community announcements
+- Made available for academic citation
+
+## Best Practices
+
+<CardGroup cols={2}>
+  <Card title="Thorough Testing" icon="check-circle">
+    Test your agent extensively before submission to ensure reliable results.
+  </Card>
+  <Card title="Clear Documentation" icon="book">
+    Provide comprehensive documentation to help reviewers understand your work.
+  </Card>
+  <Card title="Honest Reporting" icon="heart">
+    Report both successes and failures honestly to maintain scientific integrity.
+  </Card>
+  <Card title="Community Engagement" icon="users">
+    Engage with the community to get feedback and improve your submission.
+  </Card>
+</CardGroup>
+
+## Submit Now
+
+<CardGroup cols={2}>
+  <Card title="Online Submission Form" icon="edit" href="https://forms.mcpbench.ai/submit">
+    Submit your results through our online form.
+  </Card>
+  <Card title="Email Submission" icon="mail" href="mailto:submissions@mcpbench.ai">
+    Submit via email for complex or large submissions.
+  </Card>
+</CardGroup>
+
+<Info>
+  **Questions?** Contact us at submissions@mcpbench.ai or join our Discord community for help with the submission process.
+</Info>

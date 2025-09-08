@@ -1,0 +1,183 @@
+---
+title: 'Crack 7z Archive'
+description: 'Security challenge involving password cracking and file extraction from encrypted archives'
+---
+
+<CardGroup>
+  <Card title="Difficulty" icon="alert-circle">
+    <Badge variant="secondary">Medium</Badge>
+  </Card>
+  <Card title="Category" icon="shield">
+    Security
+  </Card>
+  <Card title="Estimated Time" icon="clock">
+    30-45 minutes
+  </Card>
+</CardGroup>
+
+## Task Description
+
+You need to extract a file called "secret_file.txt" from a password-protected 7z archive named "secrets.7z". The final solution should be saved as "solution.txt" containing the word found in "secret_file.txt".
+
+## Prerequisites
+
+- Linux environment
+- 7zip utilities installed
+- Hashcat or John the Ripper for password cracking
+- Basic understanding of password attacks
+
+## Instructions
+
+### Step 1: Examine the Archive
+
+```bash
+# List contents of the archive (without extracting)
+7z l secrets.7z
+
+# Try to extract with a test password
+7z x secrets.7z -p"test"
+```
+
+### Step 2: Extract Hash for Cracking
+
+```bash
+# Extract the hash from the 7z archive
+7z2john secrets.7z > secrets.hash
+
+# View the extracted hash
+cat secrets.hash
+```
+
+### Step 3: Prepare Wordlist
+
+Create a custom wordlist for the attack:
+
+```bash
+# Create a wordlist file
+cat > wordlist.txt << 'EOF'
+password
+123456
+admin
+secret
+test
+hello
+world
+linux
+ubuntu
+debian
+EOF
+```
+
+### Step 4: Crack the Password
+
+Using John the Ripper:
+
+```bash
+# Run John the Ripper
+john --wordlist=wordlist.txt secrets.hash
+
+# Show cracked password
+john --show secrets.hash
+```
+
+Alternative using Hashcat:
+
+```bash
+# Convert hash format for hashcat
+john --format=7z --wordlist=wordlist.txt secrets.hash
+
+# Or use hashcat directly
+hashcat -m 11600 secrets.hash wordlist.txt
+```
+
+### Step 5: Extract the Archive
+
+```bash
+# Extract using the cracked password
+7z x secrets.7z -p"[CRACKED_PASSWORD]"
+
+# Verify extraction
+ls -la
+cat secret_file.txt
+```
+
+### Step 6: Create Solution File
+
+```bash
+# Create the solution file with the content from secret_file.txt
+cp secret_file.txt solution.txt
+
+# Verify the solution
+cat solution.txt
+```
+
+## Expected Output
+
+The `solution.txt` file should contain the secret word that was hidden in the encrypted archive.
+
+## Success Criteria
+
+- [ ] Hash is successfully extracted from the 7z archive
+- [ ] Password is cracked using available tools
+- [ ] Archive is successfully extracted
+- [ ] `secret_file.txt` is found and read
+- [ ] `solution.txt` is created with the correct content
+
+## Common Password Patterns
+
+When creating wordlists, consider these common patterns:
+
+- Dictionary words
+- Common passwords (123456, password, admin)
+- System-related terms (linux, ubuntu, server)
+- Simple variations (password1, admin123)
+- Keyboard patterns (qwerty, asdf)
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="Hash Extraction Issues">
+    - Ensure 7zip is properly installed
+    - Check if john is configured for 7z format
+    - Verify archive is not corrupted
+  </Accordion>
+  <Accordion title="Password Cracking Failures">
+    - Expand the wordlist with more variations
+    - Try different attack modes (brute force, mask attack)
+    - Check if the password uses special characters
+  </Accordion>
+  <Accordion title="Extraction Problems">
+    - Verify the cracked password is correct
+    - Check file permissions
+    - Ensure sufficient disk space
+  </Accordion>
+</AccordionGroup>
+
+## Security Learning Points
+
+This task demonstrates:
+
+- **Password Security**: Weak passwords are easily cracked
+- **Hash Extraction**: How to extract hashes from encrypted files
+- **Attack Methods**: Dictionary attacks, brute force techniques
+- **Tool Usage**: John the Ripper, Hashcat, 7zip utilities
+- **Forensic Analysis**: Systematic approach to password recovery
+
+<Warning>
+  This task is for educational purposes only. Always ensure you have proper authorization before attempting to crack passwords or access encrypted files.
+</Warning>
+
+## Evaluation
+
+This task evaluates:
+
+- **Security Tools**: Proficiency with password cracking tools
+- **Problem Solving**: Systematic approach to security challenges
+- **Technical Knowledge**: Understanding of encryption and hashing
+- **Tool Integration**: Combining multiple security tools effectively
+
+<Info>
+  **Created by**: Jan-Lucas Uslu  
+  **Last Updated**: December 2024  
+  **Tags**: `security`, `cryptography`, `password-cracking`, `forensics`
+</Info>

@@ -1,0 +1,118 @@
+---
+title: 'MCPBench: A Benchmark for AI Agents in Terminal Environments'
+description: 'A comprehensive collection of tasks and evaluation harness to help agent makers quantify their agents\' terminal mastery.'
+---
+
+<Hero
+  title="MCPBench: A Benchmark for AI Agents in Terminal Environments"
+  subtitle="A comprehensive collection of tasks and evaluation harness to help agent makers quantify their agents' terminal mastery."
+  image="/hero-image.svg"
+  buttons={[
+    { title: 'View Tasks', href: '/tasks', variant: 'primary' },
+    { title: 'View Leaderboard', href: '/leaderboard', variant: 'secondary' }
+  ]}
+/>
+
+<CardGroup cols={2}>
+  <Card title="Task Registry" icon="list" href="/tasks">
+    Explore our comprehensive collection of terminal tasks across multiple categories including system administration, security, data science, and more.
+  </Card>
+  <Card title="Leaderboard" icon="trophy" href="/leaderboard">
+    See how different AI models and agents perform on our standardized benchmark tasks.
+  </Card>
+  <Card title="Contribute" icon="plus" href="/contributors">
+    Help us expand the benchmark by contributing new tasks or improving existing ones.
+  </Card>
+  <Card title="Documentation" icon="book" href="/get-started/intro">
+    Learn how to evaluate your agent on MCPBench and understand our evaluation methodology.
+  </Card>
+</CardGroup>
+
+## Introducing MCPBench
+
+MCPBench is a collaborative effort to create standardized benchmarks for evaluating AI agents' capabilities in terminal environments. Our benchmark includes tasks across multiple domains:
+
+- **System Administration**: Server configuration, process management, system monitoring
+- **Security**: Cryptography, penetration testing, security auditing
+- **Data Science**: Data processing, model training, analysis workflows
+- **Development**: Code compilation, testing, deployment automation
+- **Research**: Academic paper analysis, data collection, experimental setup
+
+<CardGroup cols={3}>
+  <Card title="127 Tasks" icon="check-circle">
+    <Stat>127</Stat>
+    Comprehensive task coverage across multiple domains
+  </Card>
+  <Card title="10+ Models" icon="cpu">
+    <Stat>10+</Stat>
+    Leading AI models evaluated and ranked
+  </Card>
+  <Card title="Open Source" icon="github">
+    <Stat>100%</Stat>
+    Fully open source and community-driven
+  </Card>
+</CardGroup>
+
+## Quick Start
+
+<Steps>
+  <Step title="Choose Your Task">
+    Browse our [task registry](/tasks) to find tasks that match your agent's capabilities and your evaluation needs.
+  </Step>
+  <Step title="Set Up Environment">
+    Follow our [setup guide](/get-started/intro) to configure the evaluation environment and install required dependencies.
+  </Step>
+  <Step title="Run Evaluation">
+    Execute your agent on the selected tasks and collect performance metrics.
+  </Step>
+  <Step title="Submit Results">
+    Submit your results to our [leaderboard](/leaderboard) to compare with other agents and models.
+  </Step>
+</Steps>
+
+## Featured Tasks
+
+<CardGroup cols={2}>
+  <Card title="Build Linux Kernel" icon="terminal" href="/tasks/system-administration/build-linux-kernel">
+    Build Linux kernel from source with custom modifications and run in QEMU environment.
+    <Badge variant="secondary">System Administration</Badge>
+    <Badge variant="outline">Medium</Badge>
+  </Card>
+  <Card title="Configure Git Web Server" icon="server" href="/tasks/system-administration/configure-git-webserver">
+    Set up a complete git server with web interface integration and automated deployment.
+    <Badge variant="secondary">System Administration</Badge>
+    <Badge variant="outline">Hard</Badge>
+  </Card>
+  <Card title="Crack 7z Archive" icon="shield" href="/tasks/security/crack-7z-hash">
+    Security challenge involving password cracking and file extraction from encrypted archives.
+    <Badge variant="secondary">Security</Badge>
+    <Badge variant="outline">Medium</Badge>
+  </Card>
+  <Card title="Train FastText Model" icon="brain" href="/tasks/data-science/train-fasttext">
+    Train a FastText model with specific accuracy and size constraints on real-world data.
+    <Badge variant="secondary">Data Science</Badge>
+    <Badge variant="outline">Hard</Badge>
+  </Card>
+</CardGroup>
+
+## Community
+
+MCPBench is a collaborative project involving researchers, developers, and AI practitioners from around the world. Join our community to:
+
+- Contribute new tasks and improvements
+- Share evaluation results and insights
+- Collaborate on benchmark development
+- Stay updated with the latest developments
+
+<CardGroup cols={2}>
+  <Card title="GitHub Repository" icon="github" href="https://github.com/mcpbench">
+    View source code, submit issues, and contribute to the project.
+  </Card>
+  <Card title="Discord Community" icon="message-circle" href="https://discord.gg/mcpbench">
+    Join our Discord server for discussions and community support.
+  </Card>
+</CardGroup>
+
+<Info>
+  **Stanford x Laude Collaboration**: MCPBench is developed as a collaboration between Stanford University and Laude, bringing together academic rigor and practical AI development expertise.
+</Info>

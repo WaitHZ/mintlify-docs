@@ -1,0 +1,191 @@
+---
+title: 'Quick Start Guide'
+description: 'Get up and running with MCPBench in minutes'
+---
+
+# Quick Start Guide
+
+Get started with MCPBench in just a few minutes. This guide will walk you through setting up your environment and running your first evaluation.
+
+## Prerequisites
+
+Before you begin, ensure you have:
+
+- Linux environment (Ubuntu 20.04+ recommended)
+- Python 3.8 or higher
+- Git installed
+- Basic familiarity with terminal operations
+
+## Installation
+
+### Step 1: Clone the Repository
+
+```bash
+git clone https://github.com/mcpbench/mcpbench.git
+cd mcpbench
+```
+
+### Step 2: Install Dependencies
+
+```bash
+# Install Python dependencies
+pip install -r requirements.txt
+
+# Install system dependencies (Ubuntu/Debian)
+sudo apt-get update
+sudo apt-get install -y build-essential curl wget git
+```
+
+### Step 3: Verify Installation
+
+```bash
+# Run the installation test
+python -m mcpbench.test_installation
+```
+
+## Your First Evaluation
+
+### Step 1: Choose a Task
+
+Let's start with a simple task. Browse our [task registry](/tasks/overview) or use the command line:
+
+```bash
+# List available tasks
+mcpbench list-tasks
+
+# Get details about a specific task
+mcpbench describe-task build-linux-kernel
+```
+
+### Step 2: Set Up Your Agent
+
+Create a simple agent script:
+
+```python
+# my_agent.py
+import subprocess
+import sys
+
+def run_task(task_description):
+    """Simple agent that executes commands based on task description"""
+    # This is a basic example - replace with your actual agent logic
+    if "build linux kernel" in task_description.lower():
+        # Execute the build commands
+        commands = [
+            "wget https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.9.tar.xz",
+            "tar -xf linux-6.9.tar.xz",
+            "cd linux-6.9",
+            # ... more commands
+        ]
+        
+        for cmd in commands:
+            result = subprocess.run(cmd, shell=True, capture_output=True, text=True)
+            if result.returncode != 0:
+                return False, result.stderr
+    
+    return True, "Task completed successfully"
+
+if __name__ == "__main__":
+    task_desc = sys.argv[1] if len(sys.argv) > 1 else ""
+    success, output = run_task(task_desc)
+    print("SUCCESS" if success else "FAILURE")
+    print(output)
+```
+
+### Step 3: Run the Evaluation
+
+```bash
+# Run your agent on a specific task
+mcpbench evaluate --agent my_agent.py --task build-linux-kernel
+
+# Run on multiple tasks
+mcpbench evaluate --agent my_agent.py --tasks system-administration
+
+# Run with verbose output
+mcpbench evaluate --agent my_agent.py --task build-linux-kernel --verbose
+```
+
+### Step 4: View Results
+
+```bash
+# View evaluation results
+mcpbench results --latest
+
+# Export results to JSON
+mcpbench results --latest --format json > results.json
+```
+
+## Understanding Results
+
+<CardGroup cols={2}>
+  <Card title="Success Rate" icon="check-circle">
+    Percentage of tasks completed successfully
+  </Card>
+  <Card title="Execution Time" icon="clock">
+    Time taken to complete each task
+  </Card>
+  <Card title="Error Analysis" icon="alert-triangle">
+    Detailed breakdown of failures and errors
+  </Card>
+  <Card title="Performance Metrics" icon="trending-up">
+    Additional metrics like resource usage
+  </Card>
+</CardGroup>
+
+## Next Steps
+
+<Steps>
+  <Step title="Explore More Tasks">
+    Try different task categories to test various capabilities of your agent.
+  </Step>
+  <Step title="Improve Your Agent">
+    Use the evaluation results to identify areas for improvement.
+  </Step>
+  <Step title="Submit Results">
+    Submit your results to our [leaderboard](/leaderboard) to compare with other agents.
+  </Step>
+  <Step title="Contribute Tasks">
+    Create your own benchmark tasks to help expand our evaluation suite.
+  </Step>
+</Steps>
+
+## Common Issues
+
+<AccordionGroup>
+  <Accordion title="Installation Problems">
+    - Ensure you have Python 3.8+ installed
+    - Check that all system dependencies are installed
+    - Verify your internet connection for downloading tasks
+  </Accordion>
+  <Accordion title="Task Execution Failures">
+    - Check that your agent handles errors gracefully
+    - Verify that all required tools are available
+    - Review task requirements and prerequisites
+  </Accordion>
+  <Accordion title="Performance Issues">
+    - Monitor system resources during evaluation
+    - Consider running tasks in parallel for better performance
+    - Check for memory leaks in your agent code
+  </Accordion>
+</AccordionGroup>
+
+## Getting Help
+
+<CardGroup cols={2}>
+  <Card title="Documentation" icon="book" href="/get-started/intro">
+    Comprehensive documentation and guides
+  </Card>
+  <Card title="Discord Community" icon="message-circle" href="https://discord.gg/mcpbench">
+    Get help from the community
+  </Card>
+  <Card title="GitHub Issues" icon="github" href="https://github.com/mcpbench/issues">
+    Report bugs and request features
+  </Card>
+  <Card title="Office Hours" icon="calendar" href="https://discord.gg/mcpbench">
+    Join our weekly office hours
+  </Card>
+</CardGroup>
+
+<Info>
+  **Need More Help?** Join our Discord server for real-time assistance and community support.
+</Info>

@@ -1,47 +1,122 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "willow",
-  "name": "MCP Benchmark",
+  "name": "MCPBench",
   "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
-    "dark": "#15803D"
+    "primary": "#2563EB",
+    "light": "#3B82F6",
+    "dark": "#1D4ED8"
   },
   "favicon": "/favicon.svg",
-  "navigation": {
-    "groups": [
-      {
-        "group": "Getting started",
-        "pages": [
-          "get-started/intro"
-        ]
-      },
-      {
-        "group": "Tasks",
-        "pages": [
-          {
-            "group": "Research Helper",
-            "pages": [
-              "tasks/research-helper/10"
-            ]
-          }
-        ]
-      }
-    ],
-    "pages": [
-      "leaderboard/models"
-    ]
+  "logo": {
+    "light": "/logo-light.svg",
+    "dark": "/logo-dark.svg"
   },
+  "navigation": [
+    {
+      "group": "Getting Started",
+      "pages": [
+        "get-started/intro",
+        "get-started/quick-start",
+        "get-started/installation"
+      ]
+    },
+    {
+      "group": "Tasks",
+      "pages": [
+        "tasks/overview",
+        {
+          "group": "System Administration",
+          "pages": [
+            "tasks/system-administration/build-linux-kernel",
+            "tasks/system-administration/configure-git-webserver",
+            "tasks/system-administration/openssl-selfsigned-cert"
+          ]
+        },
+        {
+          "group": "Security",
+          "pages": [
+            "tasks/security/crack-7z-hash",
+            "tasks/security/penetration-testing",
+            "tasks/security/security-audit"
+          ]
+        },
+        {
+          "group": "Data Science",
+          "pages": [
+            "tasks/data-science/train-fasttext",
+            "tasks/data-science/reshard-c4-data",
+            "tasks/data-science/data-analysis"
+          ]
+        },
+        {
+          "group": "Research Helper",
+          "pages": [
+            "tasks/research-helper/10"
+          ]
+        }
+      ]
+    },
+    {
+      "group": "Leaderboard",
+      "pages": [
+        "leaderboard/models",
+        "leaderboard/performance-metrics",
+        "leaderboard/submit-results"
+      ]
+    },
+    {
+      "group": "Community",
+      "pages": [
+        "contributors/overview",
+        "contributors/guidelines",
+        "contributors/recognition"
+      ]
+    },
+    {
+      "group": "News",
+      "pages": [
+        "news/announcements",
+        "news/updates",
+        "news/releases"
+      ]
+    }
+  ],
   "topbarLinks": [
     {
       "name": "GitHub",
       "url": "https://github.com/mcpbench"
+    },
+    {
+      "name": "Discord",
+      "url": "https://discord.gg/mcpbench"
     }
   ],
   "footer": {
     "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify"
+      "x": "https://x.com/mcpbench",
+      "github": "https://github.com/mcpbench",
+      "discord": "https://discord.gg/mcpbench"
+    }
+  },
+  "anchors": [
+    {
+      "name": "Documentation",
+      "icon": "book-open",
+      "url": "https://docs.mcpbench.ai"
+    },
+    {
+      "name": "Community",
+      "icon": "users",
+      "url": "https://discord.gg/mcpbench"
+    }
+  ],
+  "css": "/styles/custom.css",
+  "openapi": "/api/openapi.json",
+  "api": {
+    "baseUrl": "https://api.mcpbench.ai",
+    "auth": {
+      "method": "bearer"
     }
   }
 }

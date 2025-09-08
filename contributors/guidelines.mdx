@@ -1,0 +1,277 @@
+---
+title: 'Contribution Guidelines'
+description: 'Learn how to contribute to MCPBench with our comprehensive guidelines and standards'
+---
+
+# Contribution Guidelines
+
+Thank you for your interest in contributing to MCPBench! This guide will help you understand our contribution process, quality standards, and how to get your work accepted.
+
+## Types of Contributions
+
+<CardGroup cols={2}>
+  <Card title="Benchmark Tasks" icon="list">
+    Create new tasks for evaluating AI agents across different domains and difficulty levels.
+  </Card>
+  <Card title="Documentation" icon="book">
+    Improve guides, tutorials, API documentation, and help content.
+  </Card>
+  <Card title="Infrastructure" icon="server">
+    Help maintain and improve the evaluation infrastructure, tooling, and automation.
+  </Card>
+  <Card title="Research" icon="search">
+    Collaborate on research papers, analysis, and academic publications.
+  </Card>
+</CardGroup>
+
+## Task Creation Guidelines
+
+### Task Design Principles
+
+<Steps>
+  <Step title="Real-World Relevance">
+    Tasks should represent real-world terminal operations that AI agents might encounter in practice.
+  </Step>
+  <Step title="Clear Objectives">
+    Each task must have well-defined success criteria and expected outputs.
+  </Step>
+  <Step title="Appropriate Difficulty">
+    Tasks should be challenging but achievable, with clear difficulty progression.
+  </Step>
+  <Step title="Reproducible">
+    Tasks must be reproducible across different environments and systems.
+  </Step>
+  <Step title="Automated Evaluation">
+    Tasks should include automated verification methods where possible.
+  </Step>
+</Steps>
+
+### Task Categories
+
+<CardGroup cols={2}>
+  <Card title="System Administration" icon="server">
+    - Server configuration and management
+    - Process monitoring and optimization
+    - System troubleshooting and maintenance
+    - Infrastructure automation
+  </Card>
+  <Card title="Security" icon="shield">
+    - Penetration testing and vulnerability assessment
+    - Cryptography and encryption
+    - Security auditing and compliance
+    - Incident response and forensics
+  </Card>
+  <Card title="Data Science" icon="brain">
+    - Data processing and analysis
+    - Machine learning model training
+    - Statistical analysis and visualization
+    - Data pipeline development
+  </Card>
+  <Card title="Development" icon="code">
+    - Code compilation and testing
+    - Build system configuration
+    - Deployment automation
+    - Version control and collaboration
+  </Card>
+</CardGroup>
+
+### Task Template
+
+When creating a new task, use this template:
+
+```markdown
+---
+title: 'Task Name'
+description: 'Brief description of what the task involves'
+---
+
+<CardGroup>
+  <Card title="Difficulty" icon="alert-circle">
+    <Badge variant="secondary">Medium</Badge>
+  </Card>
+  <Card title="Category" icon="server">
+    System Administration
+  </Card>
+  <Card title="Estimated Time" icon="clock">
+    30-45 minutes
+  </Card>
+</CardGroup>
+
+## Task Description
+[Detailed description of the task]
+
+## Prerequisites
+[Required tools, knowledge, or setup]
+
+## Instructions
+[Step-by-step instructions]
+
+## Expected Output
+[What the successful completion should produce]
+
+## Success Criteria
+[Checklist of requirements]
+
+## Troubleshooting
+[Common issues and solutions]
+
+## Evaluation
+[How the task is evaluated]
+```
+
+## Quality Standards
+
+### Task Quality Checklist
+
+- [ ] **Clear Instructions**: Step-by-step instructions that are easy to follow
+- [ ] **Prerequisites Listed**: All required tools and knowledge clearly stated
+- [ ] **Success Criteria**: Well-defined criteria for task completion
+- [ ] **Expected Output**: Clear description of what success looks like
+- [ ] **Troubleshooting**: Common issues and solutions provided
+- [ ] **Testing**: Task has been tested and verified to work
+- [ ] **Documentation**: Proper formatting and comprehensive documentation
+
+### Code Quality Standards
+
+- [ ] **Clean Code**: Well-structured, readable, and maintainable code
+- [ ] **Comments**: Adequate comments explaining complex logic
+- [ ] **Error Handling**: Proper error handling and validation
+- [ ] **Testing**: Unit tests where appropriate
+- [ ] **Documentation**: Inline documentation and README files
+
+## Submission Process
+
+<Steps>
+  <Step title="Fork and Clone">
+    Fork the MCPBench repository and clone it to your local machine.
+  </Step>
+  <Step title="Create Branch">
+    Create a new branch for your contribution: `git checkout -b feature/your-contribution`.
+  </Step>
+  <Step title="Make Changes">
+    Implement your changes following our guidelines and quality standards.
+  </Step>
+  <Step title="Test Thoroughly">
+    Test your changes to ensure they work correctly and don't break existing functionality.
+  </Step>
+  <Step title="Submit Pull Request">
+    Create a pull request with a clear description of your changes.
+  </Step>
+  <Step title="Address Feedback">
+    Respond to code reviews and make requested changes.
+  </Step>
+</Steps>
+
+## Pull Request Guidelines
+
+### PR Description Template
+
+```markdown
+## Description
+Brief description of the changes made.
+
+## Type of Change
+- [ ] New task
+- [ ] Bug fix
+- [ ] Documentation update
+- [ ] Infrastructure improvement
+- [ ] Other (please describe)
+
+## Testing
+- [ ] Task has been tested locally
+- [ ] All existing tests pass
+- [ ] New tests added if applicable
+
+## Checklist
+- [ ] Code follows project style guidelines
+- [ ] Self-review completed
+- [ ] Documentation updated
+- [ ] No breaking changes (or clearly documented)
+```
+
+### Review Process
+
+1. **Automated Checks**: All PRs must pass automated tests and linting
+2. **Code Review**: At least one maintainer must approve the changes
+3. **Testing**: Changes must be tested in the evaluation environment
+4. **Documentation**: All changes must be properly documented
+
+## Community Guidelines
+
+### Code of Conduct
+
+- **Be Respectful**: Treat all community members with respect and kindness
+- **Be Constructive**: Provide helpful feedback and suggestions
+- **Be Collaborative**: Work together to improve the project
+- **Be Professional**: Maintain a professional tone in all interactions
+
+### Communication
+
+- **Discord**: Use Discord for real-time discussions and quick questions
+- **GitHub Issues**: Use GitHub issues for bug reports and feature requests
+- **GitHub Discussions**: Use GitHub discussions for general questions and ideas
+- **Email**: Use email for sensitive or private matters
+
+## Recognition and Rewards
+
+### Contributor Recognition
+
+<CardGroup cols={2}>
+  <Card title="GitHub Profile" icon="github">
+    Contributors are recognized on their GitHub profiles and in project documentation.
+  </Card>
+  <Card title="Research Credits" icon="book">
+    Contributors are credited in research papers and academic publications.
+  </Card>
+  <Card title="Community Badges" icon="award">
+    Special badges for different types of contributions and achievements.
+  </Card>
+  <Card title="Conference Presentations" icon="presentation">
+    Opportunities to present work at conferences and workshops.
+  </Card>
+</CardGroup>
+
+### Contribution Levels
+
+- **Bronze**: 1-5 accepted contributions
+- **Silver**: 6-15 accepted contributions  
+- **Gold**: 16-30 accepted contributions
+- **Platinum**: 30+ accepted contributions
+
+## Getting Help
+
+<CardGroup cols={2}>
+  <Card title="Discord Community" icon="message-circle" href="https://discord.gg/mcpbench">
+    Join our Discord server for real-time help and discussions.
+  </Card>
+  <Card title="Office Hours" icon="calendar" href="https://discord.gg/mcpbench">
+    Attend weekly office hours for direct help with contributions.
+  </Card>
+  <Card title="GitHub Issues" icon="github" href="https://github.com/mcpbench/issues">
+    Create an issue for bug reports or feature requests.
+  </Card>
+  <Card title="Email Support" icon="mail" href="mailto:support@mcpbench.ai">
+    Contact us directly for sensitive or complex issues.
+  </Card>
+</CardGroup>
+
+## Resources
+
+<CardGroup cols={2}>
+  <Card title="Task Examples" icon="list" href="/tasks/overview">
+    Browse existing tasks to understand our standards and patterns.
+  </Card>
+  <Card title="Development Setup" icon="terminal" href="/get-started/installation">
+    Learn how to set up your development environment.
+  </Card>
+  <Card title="API Documentation" icon="code" href="/api">
+    Reference documentation for our APIs and tools.
+  </Card>
+  <Card title="Research Papers" icon="book" href="/research">
+    Read about the research behind MCPBench.
+  </Card>
+</CardGroup>
+
+<Info>
+  **Questions?** Don't hesitate to reach out! We're here to help you contribute successfully to MCPBench.
+</Info>
