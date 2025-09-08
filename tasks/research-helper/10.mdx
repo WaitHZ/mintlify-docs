@@ -12,8 +12,6 @@ description: 'Looking for a paper on agentic reasoning whose title contains the 
   </Card>
 </CardGroup>
 
-
-
 ## Instruction
 
 I'm looking for a paper on arxiv related to agentic reasoning. I only remember that its title contains "Alita" and it was published in June 2025 or earlier. Please help me find the latest version of this paper on arxiv, download it locally (named as `alita_{arxiv_id}.pdf`), and finally return its title, arxiv abs url, and code repository link in the following format, without using markdown format and without unnecessary line breaks.
@@ -62,11 +60,13 @@ code_url: {code_url}
         <strong>Agent Response:</strong>
         <br />
         "I'll help you find the paper related to "Alita" and agentic reasoning on arXiv. Let me search for it first."
-        <br /><br />
+        <br />
+        <br />
         <strong>Tool Call:</strong> <code>arxiv_local-search_papers</code>
         <br />
         <strong>Parameters:</strong> <code>{"date_to":"2025-06-30","max_results":10,"query":"Alita agentic reasoning"}</code>
-        <br /><br />
+        <br />
+        <br />
         <strong>Result:</strong> <Badge variant="destructive">0 papers found</Badge>
       </Step>
       
@@ -74,11 +74,13 @@ code_url: {code_url}
         <strong>Agent Response:</strong>
         <br />
         "Let me try a broader search with just "Alita" to find the paper:"
-        <br /><br />
+        <br />
+        <br />
         <strong>Tool Call:</strong> <code>arxiv_local-search_papers</code>
         <br />
         <strong>Parameters:</strong> <code>{"date_to":"2025-06-30","max_results":20,"query":"Alita"}</code>
-        <br /><br />
+        <br />
+        <br />
         <strong>Result:</strong> <Badge variant="success">4 papers found</Badge>
         <br />
         <small>Including target paper: "Alita: Generalist Agent Enabling Scalable Agentic Reasoning..."</small>
@@ -88,7 +90,8 @@ code_url: {code_url}
         <strong>Agent Response:</strong>
         <br />
         "Perfect! I found the paper you're looking for. The first result is the one that matches your description - it's about agentic reasoning and contains "Alita" in the title. It was published on May 26, 2025, which is within your time range. Let me download it now:"
-        <br /><br />
+        <br />
+        <br />
         <strong>Target Paper:</strong>
         <ul>
           <li><strong>Title:</strong> Alita: Generalist Agent Enabling Scalable Agentic Reasoning with Minimal Predefinition and Maximal Self-Evolution</li>
@@ -101,7 +104,8 @@ code_url: {code_url}
         <strong>Tool Call:</strong> <code>arxiv_local-download_paper</code>
         <br />
         <strong>Parameters:</strong> <code>{"paper_id":"2505.20286v1"}</code>
-        <br /><br />
+        <br />
+        <br />
         <strong>Response:</strong> <Badge variant="warning">Converting</Badge>
         <br />
         <code>{"status": "converting", "message": "Paper downloaded, conversion started"}</code>
@@ -109,7 +113,8 @@ code_url: {code_url}
       
       <Step title="23:57:02 - Conversion Status Check" icon="clock">
         <strong>Tool Call:</strong> <code>arxiv_local-download_paper</code> (check_status: true)
-        <br /><br />
+        <br />
+        <br />
         <strong>Response:</strong> <Badge variant="warning">Still converting</Badge>
         <br />
         <code>{"status": "converting", "message": "Conversion in progress..."}</code>
@@ -117,7 +122,8 @@ code_url: {code_url}
       
       <Step title="23:57:15 - Conversion Complete" icon="check-circle">
         <strong>Tool Call:</strong> <code>arxiv_local-download_paper</code> (check_status: true)
-        <br /><br />
+        <br />
+        <br />
         <strong>Response:</strong> <Badge variant="success">Success</Badge>
         <br />
         <code>{"status": "success", "message": "Paper conversion success"}</code>
@@ -127,15 +133,17 @@ code_url: {code_url}
         <strong>Agent Response:</strong>
         <br />
         "Excellent! I have successfully found, downloaded, and renamed the paper. Based on the search results, here is the information you requested:"
-        <br /><br />
+        <br />
+        <br />
         <strong>Final Output:</strong>
         <br />
         <code>
-        title: Alita: Generalist Agent Enabling Scalable Agentic Reasoning with Minimal Predefinition and Maximal Self-Evolution<br />
-        arxiv_abs_url: https://arxiv.org/abs/2505.20286<br />
+        title: Alita: Generalist Agent Enabling Scalable Agentic Reasoning with Minimal Predefinition and Maximal Self-Evolution
+        arxiv_abs_url: https://arxiv.org/abs/2505.20286
         code_url: https://github.com/CharlesQ9/Alita
         </code>
-        <br /><br />
+        <br />
+        <br />
         <strong>File Operations:</strong>
         <ul>
           <li>✅ Downloaded: <code>2505.20286v1.pdf</code></li>
