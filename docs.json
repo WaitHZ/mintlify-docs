@@ -1,89 +1,78 @@
 {
-  "$schema": "https://mintlify.com/schema.json",
+  "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "MCPBench",
-  "logo": {
-    "dark": "/logo/dark.svg",
-    "light": "/logo/light.svg"
+  "name": "MCP Benchmark",
+  "colors": {
+    "primary": "#16A34A",
+    "light": "#07C983",
+    "dark": "#15803D"
   },
   "favicon": "/favicon.svg",
-  "colors": {
-    "primary": "#2563eb",
-    "light": "#3b82f6",
-    "dark": "#1d4ed8",
-    "anchors": {
-      "from": "#2563eb",
-      "to": "#7c3aed"
+  "navigation": {
+    "groups": [
+      {
+        "group": "Getting started",
+        "pages": [
+          "index",
+          "quickstart",
+          "development"
+        ]
+      }
+    ]
+    },
+    "global": {
+      "anchors": [
+        {
+          "anchor": "Documentation",
+          "href": "https://mintlify.com/docs",
+          "icon": "book-open-cover"
+        },
+        {
+          "anchor": "Community",
+          "href": "https://mintlify.com/community",
+          "icon": "slack"
+        },
+        {
+          "anchor": "Blog",
+          "href": "https://mintlify.com/blog",
+          "icon": "newspaper"
+        }
+      ]
+    },
+  "logo": {
+    "light": "/logo/light.svg",
+    "dark": "/logo/dark.svg"
+  },
+  "navbar": {
+    "links": [
+      {
+        "label": "Support",
+        "href": "mailto:hi@mintlify.com"
+      }
+    ],
+    "primary": {
+      "type": "button",
+      "label": "Dashboard",
+      "href": "https://dashboard.mintlify.com"
     }
   },
-  "topbarLinks": [
-    {
-      "name": "GitHub",
-      "url": "https://github.com/mcpbench"
-    }
-  ],
-  "topbarCtaButton": {
-    "name": "View Tasks",
-    "url": "/tasks"
+  "contextual": {
+    "options": [
+     "copy",
+     "view",
+     "chatgpt",
+     "claude",
+     "perplexity",
+     "mcp",
+     "cursor",
+     "vscode"
+   ]
   },
-  "tabs": [
-    {
-      "name": "API Reference",
-      "url": "api-reference"
+  "footer": {
+    "socials": {
+      "x": "https://x.com/mintlify",
+      "github": "https://github.com/mintlify",
+      "linkedin": "https://linkedin.com/company/mintlify"
     }
-  ],
-  "anchors": [
-    {
-      "name": "Community",
-      "icon": "discord",
-      "url": "https://discord.gg/mcpbench"
-    },
-    {
-      "name": "GitHub",
-      "icon": "github",
-      "url": "https://github.com/mcpbench"
-    }
-  ],
-  "navigation": [
-    {
-      "group": "Get Started",
-      "pages": [
-        "get-started/introduction",
-        "get-started/quickstart",
-        "get-started/installation"
-      ]
-    },
-    {
-      "group": "Tasks",
-      "pages": [
-        "tasks/overview"
-      ]
-    },
-    {
-      "group": "Leaderboard",
-      "pages": [
-        "leaderboard/overview",
-        "leaderboard/models"
-      ]
-    },
-    {
-      "group": "Documentation",
-      "pages": [
-        "docs/mcp",
-        "docs/datasets",
-        "docs/contributing"
-      ]
-    },
-    {
-      "group": "Community",
-      "pages": [
-        "community/contributors",
-        "community/about"
-      ]
-    }
-  ],
-  "footerSocials": {
-    "github": "https://github.com/mcpbench",
-    "discord": "https://discord.gg/mcpbench"
   }
 }
