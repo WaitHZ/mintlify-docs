@@ -1,5 +1,5 @@
 ---
-title: 'Model Rankings'
+title: 'Model Performance'
 description: 'Complete MCPBench model performance leaderboard'
 ---
 
@@ -22,9 +22,7 @@ Average task resolution success rate for top and select models on MCPBench's dat
   </Card>
 </CardGroup>
 
-## Top Performing Models
-
-### Top 10 Models
+## Model Performance
 
 | Rank | Model | Organization | Release Date | Success Rate |
 |------|-------|--------------|--------------|--------------|
@@ -38,11 +36,6 @@ Average task resolution success rate for top and select models on MCPBench's dat
 | 8 | GPT-4 | OpenAI | Mar 2023 | 83.1% |
 | 9 | Claude 3 Sonnet | Anthropic | Mar 2024 | 81.7% |
 | 10 | Gemini Pro Vision | Google | Dec 2023 | 79.4% |
-
-### Additional Models
-
-| Rank | Model | Organization | Release Date | Success Rate |
-|------|-------|--------------|--------------|--------------|
 | 11 | Claude 3 Haiku | Anthropic | Mar 2024 | 77.8% |
 | 12 | GPT-3.5 Turbo | OpenAI | Mar 2023 | 75.3% |
 | 13 | PaLM 2 | Google | May 2023 | 73.1% |
@@ -57,180 +50,3 @@ Average task resolution success rate for top and select models on MCPBench's dat
 | 22 | Mistral Small | Mistral AI | Dec 2023 | 57.1% |
 | 23 | LLaMA 1 65B | Meta | Feb 2023 | 54.7% |
 | 24 | GPT-3 | OpenAI | Jun 2020 | 52.3% |
-
-## Performance Analysis
-
-### Success Rate Distribution
-
-<CardGroup cols={3}>
-  <Card title="90%+ Success Rate" icon="trophy">
-    <Stat>3</Stat>
-    Models
-  </Card>
-  <Card title="80-89% Success Rate" icon="medal">
-    <Stat>7</Stat>
-    Models
-  </Card>
-  <Card title="70-79% Success Rate" icon="award">
-    <Stat>6</Stat>
-    Models
-  </Card>
-  <Card title="60-69% Success Rate" icon="star">
-    <Stat>5</Stat>
-    Models
-  </Card>
-  <Card title="50-59% Success Rate" icon="circle">
-    <Stat>3</Stat>
-    Models
-  </Card>
-</CardGroup>
-
-### By Organization
-
-<AccordionGroup>
-  <Accordion title="Anthropic (5 models)">
-    Average success rate: 83.4%  
-    Best performer: Claude 4 Sonnet (95.2%)
-  </Accordion>
-  
-  <Accordion title="OpenAI (4 models)">
-    Average success rate: 77.2%  
-    Best performer: GPT-4o (92.8%)
-  </Accordion>
-  
-  <Accordion title="Google (4 models)">
-    Average success rate: 75.1%  
-    Best performer: Gemini Pro (89.4%)
-  </Accordion>
-  
-  <Accordion title="Meta (4 models)">
-    Average success rate: 62.6%  
-    Best performer: LLaMA 2 70B (71.2%)
-  </Accordion>
-  
-  <Accordion title="Mistral AI (3 models)">
-    Average success rate: 63.4%  
-    Best performer: Mistral Large (69.8%)
-  </Accordion>
-</AccordionGroup>
-
-## Task-Specific Performance
-
-### Research Helper Tasks
-
-| Model | Success Rate | Tasks Completed |
-|-------|--------------|-----------------|
-| Claude 4 Sonnet | 96.8% | 31 |
-| GPT-4o | 94.2% | 31 |
-| Gemini Pro | 91.1% | 31 |
-| Claude 3.5 Sonnet | 89.7% | 31 |
-| GPT-4 Turbo | 88.4% | 31 |
-
-### Course & Study Tasks
-
-| Model | Success Rate | Tasks Completed |
-|-------|--------------|-----------------|
-| Claude 4 Sonnet | 94.1% | 34 |
-| GPT-4o | 91.8% | 34 |
-| Gemini Pro | 88.2% | 34 |
-| Claude 3.5 Sonnet | 87.6% | 34 |
-| GPT-4 Turbo | 86.9% | 34 |
-
-### Academic Life Tasks
-
-| Model | Success Rate | Tasks Completed |
-|-------|--------------|-----------------|
-| Claude 4 Sonnet | 95.5% | 22 |
-| GPT-4o | 92.7% | 22 |
-| Gemini Pro | 89.1% | 22 |
-| Claude 3.5 Sonnet | 88.2% | 22 |
-| GPT-4 Turbo | 87.3% | 22 |
-
-### Tech & Dev Tasks
-
-| Model | Success Rate | Tasks Completed |
-|-------|--------------|-----------------|
-| Claude 4 Sonnet | 94.7% | 19 |
-| GPT-4o | 92.1% | 19 |
-| Gemini Pro | 89.5% | 19 |
-| Claude 3.5 Sonnet | 88.9% | 19 |
-| GPT-4 Turbo | 87.4% | 19 |
-
-## Recent Updates
-
-### Latest Submissions
-
-<AccordionGroup>
-  <Accordion title="Claude 4 Sonnet - May 2024">
-    New top performer with 95.2% success rate across all task categories
-  </Accordion>
-  
-  <Accordion title="GPT-4o - May 2024">
-    Strong performance with 92.8% success rate, particularly strong on research tasks
-  </Accordion>
-  
-  <Accordion title="Claude 3.5 Sonnet - June 2024">
-    Significant improvement over Claude 3 Opus with 88.7% success rate
-  </Accordion>
-</AccordionGroup>
-
-## Methodology
-
-### Evaluation Process
-
-<Steps>
-  <Step title="Task Selection">
-    Models are evaluated on the complete MCPBench task set
-  </Step>
-  <Step title="Execution">
-    Each model attempts all tasks using standard MCP server configurations
-  </Step>
-  <Step title="Verification">
-    Automated systems verify task completion according to success criteria
-  </Step>
-  <Step title="Scoring">
-    Success rates are calculated and models are ranked accordingly
-  </Step>
-</Steps>
-
-### Fair Comparison
-
-<CardGroup cols={2}>
-  <Card title="Identical Conditions" icon="equal">
-    All models evaluated under the same conditions
-  </Card>
-  <Card title="Standardized Setup" icon="settings">
-    Consistent MCP server configurations
-  </Card>
-  <Card title="Automated Verification" icon="check-circle">
-    Objective, automated success verification
-  </Card>
-  <Card title="Statistical Significance" icon="bar-chart">
-    Results based on complete task set
-  </Card>
-</CardGroup>
-
-## Submit Your Results
-
-Want to see your model on the leaderboard?
-
-<CardGroup cols={2}>
-  <Card
-    title="Evaluation Guide"
-    icon="book"
-    href="/docs/evaluation-guide"
-  >
-    Learn how to run evaluations
-  </Card>
-  <Card
-    title="Submit Results"
-    icon="upload"
-    href="/docs/submitting-results"
-  >
-    Submit your model's performance
-  </Card>
-</CardGroup>
-
-<Info>
-  Results are updated regularly as new submissions are received and verified. Check back frequently for the latest rankings.
-</Info>

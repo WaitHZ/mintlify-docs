@@ -1,0 +1,99 @@
+---
+title: "Installation"
+description: "Install and set up MCPBench for evaluation"
+---
+
+## Installation
+
+Get MCPBench up and running on your system.
+
+### Prerequisites
+
+Before installing MCPBench, make sure you have the following installed:
+
+- Python 3.8 or higher
+- pip (Python package installer)
+- Git
+
+### Install MCPBench
+
+<Steps>
+  <Step title="Clone the repository">
+    ```bash
+    git clone https://github.com/mcpbench/mcpbench.git
+    cd mcpbench
+    ```
+  </Step>
+  <Step title="Install dependencies">
+    ```bash
+    pip install -r requirements.txt
+    ```
+  </Step>
+  <Step title="Verify installation">
+    ```bash
+    python -m mcpbench --version
+    ```
+  </Step>
+</Steps>
+
+### Quick Start
+
+Once installed, you can start evaluating models:
+
+```bash
+# Run evaluation on a specific model
+python -m mcpbench evaluate --model claude-3-5-sonnet
+
+# Run evaluation on all tasks
+python -m mcpbench evaluate --model gpt-4o --tasks all
+```
+
+### Configuration
+
+<AccordionGroup>
+  <Accordion title="Environment Variables">
+    Set up your API keys and configuration:
+    
+    ```bash
+    export OPENAI_API_KEY="your-openai-key"
+    export ANTHROPIC_API_KEY="your-anthropic-key"
+    export GOOGLE_API_KEY="your-google-key"
+    ```
+  </Accordion>
+  
+  <Accordion title="Configuration File">
+    Create a `config.yaml` file in your project root:
+    
+    ```yaml
+    models:
+      - name: "claude-3-5-sonnet"
+        provider: "anthropic"
+        api_key: "${ANTHROPIC_API_KEY}"
+      
+    tasks:
+      - category: "research"
+      - category: "course"
+      - category: "academic"
+      - category: "tech"
+    ```
+  </Accordion>
+</AccordionGroup>
+
+### Next Steps
+
+<CardGroup cols={2}>
+  <Card
+    title="Run Your First Evaluation"
+    icon="play"
+    href="/docs/evaluation-guide"
+  >
+    Learn how to evaluate models on MCPBench tasks
+  </Card>
+  <Card
+    title="Submit Results"
+    icon="upload"
+    href="/docs/submitting-results"
+  >
+    Submit your model's performance to the leaderboard
+  </Card>
+</CardGroup>
