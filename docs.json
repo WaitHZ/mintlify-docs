@@ -8,47 +8,16 @@
     "dark": "#15803D"
   },
   "favicon": "/favicon.svg",
-  "navigation": {
-    "groups": [
-      {
-        "group": "Getting started",
-        "pages": [
-          "get-started/intro",
-          "get-started/installation"
-        ]
-      },
-      "leaderboard/models",
-      {
-        "group": "Tasks",
-        "pages": [
-          {
-            "group": "Task Category 1",
-            "pages": [
-              {
-                "group": "Subcategory A",
-                "pages": [
-                  "tasks/category1/subA/task1",
-                  "tasks/category1/subA/task2"
-                ]
-              },
-              {
-                "group": "Subcategory B",
-                "pages": [
-                  "tasks/category1/subB/task3"
-                ]
-              }
-            ]
-          },
-          {
-            "group": "Task Category 2",
-            "pages": [
-              "tasks/category2/task4"
-            ]
-          }
-        ]
-      }
-    ]
+  "navigation": [
+    {
+      "group": "Getting started",
+      "pages": [
+        "get-started/intro",
+        "get-started/installation"
+      ]
     },
+    "leaderboard/models"
+  ],
   "topbarLinks": [
     {
       "name": "GitHub",
