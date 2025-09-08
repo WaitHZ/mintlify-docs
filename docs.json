@@ -17,7 +17,36 @@
           "get-started/installation"
         ]
       },
-      "leaderboard/models"
+      "leaderboard/models",
+      {
+        "group": "Tasks",
+        "pages": [
+          {
+            "group": "Task Category 1",
+            "pages": [
+              {
+                "group": "Subcategory A",
+                "pages": [
+                  "tasks/category1/subA/task1",
+                  "tasks/category1/subA/task2"
+                ]
+              },
+              {
+                "group": "Subcategory B",
+                "pages": [
+                  "tasks/category1/subB/task3"
+                ]
+              }
+            ]
+          },
+          {
+            "group": "Task Category 2",
+            "pages": [
+              "tasks/category2/task4"
+            ]
+          }
+        ]
+      }
     ]
     },
   "topbarLinks": [
