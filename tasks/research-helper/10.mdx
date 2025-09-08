@@ -29,72 +29,127 @@ code_url: {code_url}
 Click on the model names to view their execution trajectories
 
 <AccordionGroup>
-  <Accordion title="Claude 4 Sonnet" icon="play">
+  <Accordion title="Claude 4 Sonnet (Run: 2025-07-14)" icon="play">
+    <CardGroup cols={3}>
+      <Card title="Status" icon="check-circle">
+        <Badge variant="success">Success</Badge>
+      </Card>
+      <Card title="Duration" icon="clock">
+        <Stat>54s</Stat>
+        <small>23:56:24 → 23:57:18</small>
+      </Card>
+      <Card title="Tool Calls" icon="wrench">
+        <Stat>8</Stat>
+        <small>Total interactions</small>
+      </Card>
+    </CardGroup>
+    
     <Steps>
-      <Step title="Search ArXiv">
-        Successfully searched for papers containing "Alita" and "agentic reasoning"
+      <Step title="Initial Search">
+        Searched for "Alita agentic reasoning" on arXiv
+        <br />
+        <small>Result: 0 papers found</small>
       </Step>
-      <Step title="Filter Results">
-        Found 3 relevant papers, identified the most recent one
+      <Step title="Broader Search">
+        Expanded search to just "Alita" 
+        <br />
+        <small>Result: Found 4 papers, identified target</small>
+      </Step>
+      <Step title="Paper Identification">
+        Found: "Alita: Generalist Agent Enabling Scalable Agentic Reasoning with Minimal Predefinition and Maximal Self-Evolution"
+        <br />
+        <small>arXiv ID: 2505.20286v1, Published: 2025-05-26</small>
       </Step>
       <Step title="Download Paper">
-        Downloaded PDF and saved as `alita_2406.12345.pdf`
+        Downloaded and converted paper to PDF
+        <br />
+        <small>Status: Converting → Success (4.8s)</small>
       </Step>
-      <Step title="Extract Metadata">
-        Retrieved title, arXiv URL, and code repository link
+      <Step title="File Management">
+        Renamed PDF to `alita_2505.20286v1.pdf`
+        <br />
+        <small>Moved from arxiv_local_storage to workspace root</small>
+      </Step>
+      <Step title="Result Delivery">
+        Provided final output with title, arXiv URL, and code repository
+        <br />
+        <small>Code URL: https://github.com/CharlesQ9/Alita</small>
       </Step>
     </Steps>
+    
     <br />
-    <strong>Result:</strong> ✅ Passed
+    <strong>Final Result:</strong>
     <br />
-    <strong>Time:</strong> 203.4s
+    <code>
+    title: Alita: Generalist Agent Enabling Scalable Agentic Reasoning with Minimal Predefinition and Maximal Self-Evolution<br />
+    arxiv_abs_url: https://arxiv.org/abs/2505.20286<br />
+    code_url: https://github.com/CharlesQ9/Alita
+    </code>
+    
+    <br /><br />
+    <strong>Performance Metrics:</strong>
+    <ul>
+      <li><strong>Total Tokens:</strong> 47,415 (46,150 input + 1,265 output)</li>
+      <li><strong>Cost:</strong> $0.1574</li>
+      <li><strong>Efficiency:</strong> 8 tool calls, 1 interaction turn</li>
+      <li><strong>Success Rate:</strong> 100% (all steps completed successfully)</li>
+    </ul>
+  </Accordion>
+</AccordionGroup>
+
+## Performance Analysis
+
+<CardGroup cols={4}>
+  <Card title="Success Rate" icon="trophy">
+    <Stat>100%</Stat>
     <br />
-    <strong>Turns:</strong> 8
+    <small>1/1 runs passed</small>
+  </Card>
+  <Card title="Average Time" icon="clock">
+    <Stat>54s</Stat>
+    <br />
+    <small>Total execution time</small>
+  </Card>
+  <Card title="Tool Efficiency" icon="zap">
+    <Stat>8</Stat>
+    <br />
+    <small>Tool calls made</small>
+  </Card>
+  <Card title="Cost" icon="dollar-sign">
+    <Stat>$0.16</Stat>
+    <br />
+    <small>Total execution cost</small>
+  </Card>
+</CardGroup>
+
+### Key Insights
+
+<AccordionGroup>
+  <Accordion title="Success Factors" icon="check-circle">
+    <ul>
+      <li><strong>Adaptive Search Strategy:</strong> Started with specific query, then broadened when no results found</li>
+      <li><strong>Accurate Paper Identification:</strong> Correctly identified the target paper from 4 results</li>
+      <li><strong>Efficient Download Process:</strong> Successfully handled paper conversion and file management</li>
+      <li><strong>Complete Task Execution:</strong> Delivered all requested information in correct format</li>
+    </ul>
   </Accordion>
   
-  <Accordion title="GPT-4o" icon="play">
-    <Steps>
-      <Step title="Search ArXiv">
-        Searched for "Alita" and "agentic reasoning" on arXiv
-      </Step>
-      <Step title="Filter Results">
-        Located 2 matching papers, selected the latest
-      </Step>
-      <Step title="Download Paper">
-        Downloaded PDF as `alita_2406.54321.pdf`
-      </Step>
-      <Step title="Extract Metadata">
-        Extracted title, arXiv URL, and code repository link
-      </Step>
-    </Steps>
-    <br />
-    <strong>Result:</strong> ✅ Passed
-    <br />
-    <strong>Time:</strong> 210.1s
-    <br />
-    <strong>Turns:</strong> 10
+  <Accordion title="Technical Details" icon="cog">
+    <ul>
+      <li><strong>MCP Servers Used:</strong> arxiv_local, filesystem, scholarly</li>
+      <li><strong>Search Strategy:</strong> Two-phase search (specific → broad)</li>
+      <li><strong>File Operations:</strong> Download, convert, rename, move</li>
+      <li><strong>Output Format:</strong> Exact format as requested (no markdown)</li>
+    </ul>
   </Accordion>
   
-  <Accordion title="Gemini Pro" icon="play">
-    <Steps>
-      <Step title="Search ArXiv">
-        Queried arXiv for "Alita" in title and agentic reasoning
-      </Step>
-      <Step title="Filter Results">
-        Found 1 relevant paper, confirmed publication date
-      </Step>
-      <Step title="Download Paper">
-        Downloaded PDF as `alita_2405.67890.pdf`
-      </Step>
-      <Step title="Extract Metadata">
-        Retrieved title, arXiv URL, and code repository link
-      </Step>
-    </Steps>
-    <br />
-    <strong>Result:</strong> ✅ Passed
-    <br />
-    <strong>Time:</strong> 225.7s
-    <br />
-    <strong>Turns:</strong> 9
+  <Accordion title="Paper Details" icon="file-text">
+    <ul>
+      <li><strong>Title:</strong> Alita: Generalist Agent Enabling Scalable Agentic Reasoning with Minimal Predefinition and Maximal Self-Evolution</li>
+      <li><strong>Authors:</strong> 18 authors including Jiahao Qiu, Xuan Qi, Tongcheng Zhang</li>
+      <li><strong>Publication Date:</strong> May 26, 2025</li>
+      <li><strong>Categories:</strong> cs.AI (Artificial Intelligence)</li>
+      <li><strong>Performance:</strong> 75.15% pass@1, 87.27% pass@3 on GAIA benchmark</li>
+    </ul>
   </Accordion>
 </AccordionGroup>
