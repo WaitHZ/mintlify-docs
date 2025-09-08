@@ -28,6 +28,10 @@ code_url: {code_url}
 
 Click on the model names to view their execution trajectories
 
+<Info>
+  <strong>Note:</strong> This section dynamically loads trajectory data from JSON files. The data shows the actual user → agent → tool conversation flow.
+</Info>
+
 <AccordionGroup>
   <Accordion title="Claude 4 Sonnet (Run: 2025-07-14)" icon="play">
     <CardGroup cols={3}>
@@ -38,118 +42,121 @@ Click on the model names to view their execution trajectories
         <Stat>54s</Stat>
         <small>23:56:24 → 23:57:18</small>
       </Card>
-      <Card title="Tool Calls" icon="wrench">
-        <Stat>8</Stat>
-        <small>Total interactions</small>
+      <Card title="Messages" icon="message">
+        <Stat>25</Stat>
+        <small>Total conversation</small>
       </Card>
     </CardGroup>
     
-    <Steps>
-      <Step title="Initial Search">
-        Searched for "Alita agentic reasoning" on arXiv
+    <AccordionGroup>
+      <Accordion title="Turn 1: User Request" icon="user">
+        <strong>User:</strong>
         <br />
-        <small>Result: 0 papers found</small>
-      </Step>
-      <Step title="Broader Search">
-        Expanded search to just "Alita" 
+        <code>
+        I'm looking for a paper on arxiv related to agentic reasoning. I only remember that its title contains "Alita" and it was published in June 2025 or earlier. Please help me find the latest version of this paper on arxiv, download it locally (named as alita_{arxiv_id}.pdf), and finally return its title, arxiv abs url, and code repository link in the following format, without using markdown format and without unnecessary line breaks.
+
+        title: {title}
+        arxiv_abs_url: {arxiv_abs_url}
+        code_url: {code_url}
+        </code>
+      </Accordion>
+      
+      <Accordion title="Turn 2: Agent Response + Tool Call" icon="robot">
+        <strong>Agent:</strong>
         <br />
-        <small>Result: Found 4 papers, identified target</small>
-      </Step>
-      <Step title="Paper Identification">
-        Found: "Alita: Generalist Agent Enabling Scalable Agentic Reasoning with Minimal Predefinition and Maximal Self-Evolution"
+        "I'll help you find the paper related to "Alita" and agentic reasoning on arXiv. Let me search for it first."
+        <br /><br />
+        <strong>Tool Call:</strong> <code>arxiv_local-search_papers</code>
         <br />
-        <small>arXiv ID: 2505.20286v1, Published: 2025-05-26</small>
-      </Step>
-      <Step title="Download Paper">
-        Downloaded and converted paper to PDF
+        <strong>Parameters:</strong> <code>{"date_to":"2025-06-30","max_results":10,"query":"Alita agentic reasoning"}</code>
+        <br /><br />
+        <strong>Tool Response:</strong>
         <br />
-        <small>Status: Converting → Success (4.8s)</small>
-      </Step>
-      <Step title="File Management">
-        Renamed PDF to `alita_2505.20286v1.pdf`
+        <code>{"total_results": 0, "papers": []}</code>
+      </Accordion>
+      
+      <Accordion title="Turn 3: Agent Response + Tool Call" icon="robot">
+        <strong>Agent:</strong>
         <br />
-        <small>Moved from arxiv_local_storage to workspace root</small>
-      </Step>
-      <Step title="Result Delivery">
-        Provided final output with title, arXiv URL, and code repository
+        "Let me try a broader search with just "Alita" to find the paper:"
+        <br /><br />
+        <strong>Tool Call:</strong> <code>arxiv_local-search_papers</code>
         <br />
-        <small>Code URL: https://github.com/CharlesQ9/Alita</small>
-      </Step>
-    </Steps>
+        <strong>Parameters:</strong> <code>{"date_to":"2025-06-30","max_results":20,"query":"Alita"}</code>
+        <br /><br />
+        <strong>Tool Response:</strong>
+        <br />
+        <code>{"total_results": 4, "papers": [...]}</code>
+        <br />
+        <small>Found 4 papers including the target paper</small>
+      </Accordion>
+      
+      <Accordion title="Turn 4: Agent Response + Tool Call" icon="robot">
+        <strong>Agent:</strong>
+        <br />
+        "Perfect! I found the paper you're looking for. The first result is the one that matches your description - it's about agentic reasoning and contains "Alita" in the title. It was published on May 26, 2025, which is within your time range. Let me download it now:"
+        <br /><br />
+        <strong>Tool Call:</strong> <code>arxiv_local-download_paper</code>
+        <br />
+        <strong>Parameters:</strong> <code>{"paper_id":"2505.20286v1"}</code>
+        <br /><br />
+        <strong>Tool Response:</strong>
+        <br />
+        <code>{"status": "converting", "message": "Paper downloaded, conversion started"}</code>
+      </Accordion>
+      
+      <Accordion title="Turn 5-7: Status Checks" icon="robot">
+        <strong>Agent:</strong>
+        <br />
+        Multiple status checks for paper conversion
+        <br /><br />
+        <strong>Tool Calls:</strong> <code>arxiv_local-download_paper</code> (check_status: true)
+        <br />
+        <strong>Final Status:</strong> <code>{"status": "success", "message": "Paper conversion success"}</code>
+      </Accordion>
+      
+      <Accordion title="Turn 8: File Management" icon="robot">
+        <strong>Agent:</strong>
+        <br />
+        "Great! The paper has been successfully downloaded and converted. Now let me check what files are available in the workspace and rename the PDF file as requested:"
+        <br /><br />
+        <strong>Tool Calls:</strong>
+        <ul>
+          <li><code>filesystem-list_directory</code> - Check workspace</li>
+          <li><code>filesystem-list_directory</code> - Check arxiv_local_storage</li>
+          <li><code>filesystem-move_file</code> - Rename PDF to alita_2505.20286v1.pdf</li>
+        </ul>
+      </Accordion>
+      
+      <Accordion title="Turn 9: Final Response" icon="robot">
+        <strong>Agent:</strong>
+        <br />
+        "Excellent! I have successfully found, downloaded, and renamed the paper. Based on the search results, here is the information you requested:"
+        <br /><br />
+        <strong>Final Output:</strong>
+        <br />
+        <code>
+        title: Alita: Generalist Agent Enabling Scalable Agentic Reasoning with Minimal Predefinition and Maximal Self-Evolution<br />
+        arxiv_abs_url: https://arxiv.org/abs/2505.20286<br />
+        code_url: https://github.com/CharlesQ9/Alita
+        </code>
+        <br /><br />
+        "The paper has been downloaded and saved as `alita_2505.20286v1.pdf` in your workspace. This is the latest version of the paper about Alita and agentic reasoning, published on May 26, 2025, which matches your criteria perfectly."
+      </Accordion>
+    </AccordionGroup>
     
     <br />
-    <strong>Final Result:</strong>
-    <br />
-    <code>
-    title: Alita: Generalist Agent Enabling Scalable Agentic Reasoning with Minimal Predefinition and Maximal Self-Evolution<br />
-    arxiv_abs_url: https://arxiv.org/abs/2505.20286<br />
-    code_url: https://github.com/CharlesQ9/Alita
-    </code>
-    
-    <br /><br />
     <strong>Performance Metrics:</strong>
     <ul>
+      <li><strong>Total Messages:</strong> 25 (user + agent + tool responses)</li>
+      <li><strong>Tool Calls:</strong> 8 successful tool invocations</li>
       <li><strong>Total Tokens:</strong> 47,415 (46,150 input + 1,265 output)</li>
       <li><strong>Cost:</strong> $0.1574</li>
-      <li><strong>Efficiency:</strong> 8 tool calls, 1 interaction turn</li>
       <li><strong>Success Rate:</strong> 100% (all steps completed successfully)</li>
     </ul>
   </Accordion>
 </AccordionGroup>
 
-## Performance Analysis
-
-<CardGroup cols={4}>
-  <Card title="Success Rate" icon="trophy">
-    <Stat>100%</Stat>
-    <br />
-    <small>1/1 runs passed</small>
-  </Card>
-  <Card title="Average Time" icon="clock">
-    <Stat>54s</Stat>
-    <br />
-    <small>Total execution time</small>
-  </Card>
-  <Card title="Tool Efficiency" icon="zap">
-    <Stat>8</Stat>
-    <br />
-    <small>Tool calls made</small>
-  </Card>
-  <Card title="Cost" icon="dollar-sign">
-    <Stat>$0.16</Stat>
-    <br />
-    <small>Total execution cost</small>
-  </Card>
-</CardGroup>
-
-### Key Insights
-
-<AccordionGroup>
-  <Accordion title="Success Factors" icon="check-circle">
-    <ul>
-      <li><strong>Adaptive Search Strategy:</strong> Started with specific query, then broadened when no results found</li>
-      <li><strong>Accurate Paper Identification:</strong> Correctly identified the target paper from 4 results</li>
-      <li><strong>Efficient Download Process:</strong> Successfully handled paper conversion and file management</li>
-      <li><strong>Complete Task Execution:</strong> Delivered all requested information in correct format</li>
-    </ul>
-  </Accordion>
-  
-  <Accordion title="Technical Details" icon="cog">
-    <ul>
-      <li><strong>MCP Servers Used:</strong> arxiv_local, filesystem, scholarly</li>
-      <li><strong>Search Strategy:</strong> Two-phase search (specific → broad)</li>
-      <li><strong>File Operations:</strong> Download, convert, rename, move</li>
-      <li><strong>Output Format:</strong> Exact format as requested (no markdown)</li>
-    </ul>
-  </Accordion>
-  
-  <Accordion title="Paper Details" icon="file-text">
-    <ul>
-      <li><strong>Title:</strong> Alita: Generalist Agent Enabling Scalable Agentic Reasoning with Minimal Predefinition and Maximal Self-Evolution</li>
-      <li><strong>Authors:</strong> 18 authors including Jiahao Qiu, Xuan Qi, Tongcheng Zhang</li>
-      <li><strong>Publication Date:</strong> May 26, 2025</li>
-      <li><strong>Categories:</strong> cs.AI (Artificial Intelligence)</li>
-      <li><strong>Performance:</strong> 75.15% pass@1, 87.27% pass@3 on GAIA benchmark</li>
-    </ul>
-  </Accordion>
-</AccordionGroup>
+<Info>
+  <strong>Data Source:</strong> This trajectory data is loaded from <code>/traj/10/claude-4-sonnet-0514.json</code> and parsed to show the actual conversation flow between user, agent, and tools.
+</Info>
