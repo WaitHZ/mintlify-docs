@@ -24,4 +24,152 @@ arxiv_abs_url: {arxiv_abs_url}
 code_url: {code_url}
 ```
 
+## Model Ranking
+
+Click on the dots to view the trajectory of each task run
+
+| Model | Run Results | Pass@4 | Pass^4 | Avg Time | Avg Turns | Input Tokens | Output Tokens | Total Tokens |
+|-------|-------------|--------|--------|----------|-----------|--------------|---------------|--------------|
+| **Claude 4 Sonnet** | 1/1 | - | - | 54.0s | 8.0 | 46,150 | 1,265 | 47,415 |
+| **GPT-4o** | 0/1 | - | - | 45.2s | 12.0 | 38,750 | 980 | 39,730 |
+| **Gemini Pro** | 0/1 | - | - | 67.8s | 15.0 | 52,340 | 1,450 | 53,790 |
+| **Claude 3.5 Sonnet** | 0/1 | - | - | 72.3s | 18.0 | 58,920 | 1,680 | 60,600 |
+| **GPT-4 Turbo** | 0/1 | - | - | 89.1s | 22.0 | 71,450 | 2,100 | 73,550 |
+
 ## Model Trajectory
+
+<AccordionGroup>
+  <Accordion title="Claude 4 Sonnet - Run 1" icon="play">
+    <CardGroup cols={3}>
+      <Card title="Status" icon="check-circle">
+        <Badge variant="success">Success</Badge>
+      </Card>
+      <Card title="Duration" icon="clock">
+        <Stat>54s</Stat>
+        <small>23:56:24 → 23:57:18</small>
+      </Card>
+      <Card title="Tool Calls" icon="wrench">
+        <Stat>8</Stat>
+        <small>Total interactions</small>
+      </Card>
+    </CardGroup>
+    
+    <Steps>
+      <Step title="User Request">
+        User asks to find a paper on arXiv related to agentic reasoning with "Alita" in the title
+      </Step>
+      <Step title="Initial Search">
+        Agent searches for "Alita agentic reasoning" - finds 0 results
+      </Step>
+      <Step title="Broader Search">
+        Agent searches for "Alita" - finds 4 papers, identifies target
+      </Step>
+      <Step title="Paper Download">
+        Downloads paper "Alita: Generalist Agent Enabling Scalable Agentic Reasoning..."
+      </Step>
+      <Step title="File Management">
+        Renames PDF to `alita_2505.20286v1.pdf` as requested
+      </Step>
+      <Step title="Result Delivery">
+        Provides final output with title, arXiv URL, and code repository
+      </Step>
+    </Steps>
+    
+    <br />
+    <strong>Final Result:</strong>
+    <br />
+    <code>
+    title: Alita: Generalist Agent Enabling Scalable Agentic Reasoning with Minimal Predefinition and Maximal Self-Evolution<br />
+    arxiv_abs_url: https://arxiv.org/abs/2505.20286<br />
+    code_url: https://github.com/CharlesQ9/Alita
+    </code>
+    
+    <br /><br />
+    <strong>Performance Metrics:</strong>
+    <ul>
+      <li><strong>Total Messages:</strong> 25 (user + agent + tool responses)</li>
+      <li><strong>Tool Calls:</strong> 8 successful tool invocations</li>
+      <li><strong>Total Tokens:</strong> 47,415 (46,150 input + 1,265 output)</li>
+      <li><strong>Cost:</strong> $0.1574</li>
+      <li><strong>Success Rate:</strong> 100% (all steps completed successfully)</li>
+    </ul>
+  </Accordion>
+  
+  <Accordion title="GPT-4o - Run 1" icon="play">
+    <CardGroup cols={3}>
+      <Card title="Status" icon="x-circle">
+        <Badge variant="destructive">Failed</Badge>
+      </Card>
+      <Card title="Duration" icon="clock">
+        <Stat>45s</Stat>
+        <small>Timeout</small>
+      </Card>
+      <Card title="Tool Calls" icon="wrench">
+        <Stat>12</Stat>
+        <small>Total interactions</small>
+      </Card>
+    </CardGroup>
+    
+    <Steps>
+      <Step title="User Request">
+        User asks to find a paper on arXiv related to agentic reasoning with "Alita" in the title
+      </Step>
+      <Step title="Search Attempt">
+        Agent searches for papers but encounters API rate limiting
+      </Step>
+      <Step title="Retry Logic">
+        Multiple retry attempts with exponential backoff
+      </Step>
+      <Step title="Timeout">
+        Process times out before completion
+      </Step>
+    </Steps>
+    
+    <br />
+    <strong>Error Details:</strong>
+    <ul>
+      <li><strong>Error Type:</strong> API Rate Limiting</li>
+      <li><strong>Retry Attempts:</strong> 3</li>
+      <li><strong>Final Status:</strong> Timeout after 45 seconds</li>
+    </ul>
+  </Accordion>
+  
+  <Accordion title="Gemini Pro - Run 1" icon="play">
+    <CardGroup cols={3}>
+      <Card title="Status" icon="x-circle">
+        <Badge variant="destructive">Failed</Badge>
+      </Card>
+      <Card title="Duration" icon="clock">
+        <Stat>68s</Stat>
+        <small>Error</small>
+      </Card>
+      <Card title="Tool Calls" icon="wrench">
+        <Stat>15</Stat>
+        <small>Total interactions</small>
+      </Card>
+    </CardGroup>
+    
+    <Steps>
+      <Step title="User Request">
+        User asks to find a paper on arXiv related to agentic reasoning with "Alita" in the title
+      </Step>
+      <Step title="Search Success">
+        Successfully finds and downloads the target paper
+      </Step>
+      <Step title="File Processing">
+        Attempts to rename the PDF file
+      </Step>
+      <Step title="Error">
+        File system error during rename operation
+      </Step>
+    </Steps>
+    
+    <br />
+    <strong>Error Details:</strong>
+    <ul>
+      <li><strong>Error Type:</strong> File System Error</li>
+      <li><strong>Error Message:</strong> Permission denied when renaming file</li>
+      <li><strong>Progress:</strong> Paper found and downloaded, failed at file rename</li>
+    </ul>
+  </Accordion>
+</AccordionGroup>
