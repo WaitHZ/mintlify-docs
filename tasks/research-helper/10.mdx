@@ -26,73 +26,75 @@ code_url: {code_url}
 
 ## Model Trajectory
 
-<ModelSelector>
-  <AccordionGroup>
-    <Accordion title="Claude 4 Sonnet" icon="play">
-      <Steps>
-        <Step title="Search ArXiv">
-          Successfully searched for papers containing "Alita" and "agentic reasoning"
-        </Step>
-        <Step title="Filter Results">
-          Found 3 relevant papers, identified the most recent one
-        </Step>
-        <Step title="Download Paper">
-          Downloaded PDF and saved as `alita_2406.12345.pdf`
-        </Step>
-        <Step title="Extract Metadata">
-          Retrieved title, arXiv URL, and code repository link
-        </Step>
-      </Steps>
-      <br />
-      <strong>Result:</strong> ✅ Passed
-      <br />
-      <strong>Time:</strong> 203.4s
-      <br />
-      <strong>Turns:</strong> 8
-    </Accordion>
-    <Accordion title="GPT-4o" icon="play">
-      <Steps>
-        <Step title="Search ArXiv">
-          Searched for "Alita" and "agentic reasoning" on arXiv
-        </Step>
-        <Step title="Filter Results">
-          Located 2 matching papers, selected the latest
-        </Step>
-        <Step title="Download Paper">
-          Downloaded PDF as `alita_2406.54321.pdf`
-        </Step>
-        <Step title="Extract Metadata">
-          Extracted title, arXiv URL, and code repository link
-        </Step>
-      </Steps>
-      <br />
-      <strong>Result:</strong> ✅ Passed
-      <br />
-      <strong>Time:</strong> 210.1s
-      <br />
-      <strong>Turns:</strong> 10
-    </Accordion>
-    <Accordion title="Gemini Pro" icon="play">
-      <Steps>
-        <Step title="Search ArXiv">
-          Queried arXiv for "Alita" in title and agentic reasoning
-        </Step>
-        <Step title="Filter Results">
-          Found 1 relevant paper, confirmed publication date
-        </Step>
-        <Step title="Download Paper">
-          Downloaded PDF as `alita_2405.67890.pdf`
-        </Step>
-        <Step title="Extract Metadata">
-          Retrieved title, arXiv URL, and code repository link
-        </Step>
-      </Steps>
-      <br />
-      <strong>Result:</strong> ✅ Passed
-      <br />
-      <strong>Time:</strong> 225.7s
-      <br />
-      <strong>Turns:</strong> 9
-    </Accordion>
-  </AccordionGroup>
-</ModelSelector>
+Click on the model names to view their execution trajectories
+
+<AccordionGroup>
+  <Accordion title="Claude 4 Sonnet" icon="play">
+    <Steps>
+      <Step title="Search ArXiv">
+        Successfully searched for papers containing "Alita" and "agentic reasoning"
+      </Step>
+      <Step title="Filter Results">
+        Found 3 relevant papers, identified the most recent one
+      </Step>
+      <Step title="Download Paper">
+        Downloaded PDF and saved as `alita_2406.12345.pdf`
+      </Step>
+      <Step title="Extract Metadata">
+        Retrieved title, arXiv URL, and code repository link
+      </Step>
+    </Steps>
+    <br />
+    <strong>Result:</strong> ✅ Passed
+    <br />
+    <strong>Time:</strong> 203.4s
+    <br />
+    <strong>Turns:</strong> 8
+  </Accordion>
+  
+  <Accordion title="GPT-4o" icon="play">
+    <Steps>
+      <Step title="Search ArXiv">
+        Searched for "Alita" and "agentic reasoning" on arXiv
+      </Step>
+      <Step title="Filter Results">
+        Located 2 matching papers, selected the latest
+      </Step>
+      <Step title="Download Paper">
+        Downloaded PDF as `alita_2406.54321.pdf`
+      </Step>
+      <Step title="Extract Metadata">
+        Extracted title, arXiv URL, and code repository link
+      </Step>
+    </Steps>
+    <br />
+    <strong>Result:</strong> ✅ Passed
+    <br />
+    <strong>Time:</strong> 210.1s
+    <br />
+    <strong>Turns:</strong> 10
+  </Accordion>
+  
+  <Accordion title="Gemini Pro" icon="play">
+    <Steps>
+      <Step title="Search ArXiv">
+        Queried arXiv for "Alita" in title and agentic reasoning
+      </Step>
+      <Step title="Filter Results">
+        Found 1 relevant paper, confirmed publication date
+      </Step>
+      <Step title="Download Paper">
+        Downloaded PDF as `alita_2405.67890.pdf`
+      </Step>
+      <Step title="Extract Metadata">
+        Retrieved title, arXiv URL, and code repository link
+      </Step>
+    </Steps>
+    <br />
+    <strong>Result:</strong> ✅ Passed
+    <br />
+    <strong>Time:</strong> 225.7s
+    <br />
+    <strong>Turns:</strong> 9
+  </Accordion>
+</AccordionGroup>
