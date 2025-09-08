@@ -1,68 +1,88 @@
 {
-  "$schema": "https://mintlify.com/docs.json",
-  "theme": "mint",
-  "name": "MCP Benchmark",
-  "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
-    "dark": "#15803D"
+  "$schema": "https://mintlify.com/schema.json",
+  "name": "MCPBench",
+  "logo": {
+    "dark": "/logo/dark.svg",
+    "light": "/logo/light.svg"
   },
   "favicon": "/favicon.svg",
-  "guides": [
+  "colors": {
+    "primary": "#2563eb",
+    "light": "#3b82f6",
+    "dark": "#1d4ed8",
+    "anchors": {
+      "from": "#2563eb",
+      "to": "#7c3aed"
+    }
+  },
+  "topbarLinks": [
     {
-      "group": "Getting started",
+      "name": "GitHub",
+      "url": "https://github.com/mcpbench"
+    }
+  ],
+  "topbarCtaButton": {
+    "name": "View Tasks",
+    "url": "/tasks"
+  },
+  "tabs": [
+    {
+      "name": "API Reference",
+      "url": "api-reference"
+    }
+  ],
+  "anchors": [
+    {
+      "name": "Community",
+      "icon": "discord",
+      "url": "https://discord.gg/mcpbench"
+    },
+    {
+      "name": "GitHub",
+      "icon": "github",
+      "url": "https://github.com/mcpbench"
+    }
+  ],
+  "navigation": [
+    {
+      "group": "Get Started",
       "pages": [
-        "index",
-        "quickstart",
-        "development"
+        "get-started/introduction",
+        "get-started/quickstart",
+        "get-started/installation"
       ]
     },
     {
-      "group": "Customization",
+      "group": "Tasks",
       "pages": [
-        "essentials/settings",
-        "essentials/navigation"
+        "tasks/overview"
       ]
     },
     {
-      "group": "Writing content",
+      "group": "Leaderboard",
       "pages": [
-        "essentials/markdown",
-        "essentials/code",
-        "essentials/images",
-        "essentials/reusable-snippets"
+        "leaderboard/overview",
+        "leaderboard/models"
       ]
     },
     {
-      "group": "AI tools",
+      "group": "Documentation",
       "pages": [
-        "ai-tools/cursor",
-        "ai-tools/claude-code",
-        "ai-tools/windsurf"
+        "docs/mcp",
+        "docs/datasets",
+        "docs/contributing"
+      ]
+    },
+    {
+      "group": "Community",
+      "pages": [
+        "community/contributors",
+        "community/about"
       ]
     }
   ],
-  "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
-  },
-  "contextual": {
-    "options": [
-     "copy",
-     "view",
-     "chatgpt",
-     "claude",
-     "perplexity",
-     "mcp",
-     "cursor",
-     "vscode"
-   ]
-  },
-  "footer": {
-    "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
-    }
+  "footerSocials": {
+    "github": "https://github.com/mcpbench",
+    "discord": "https://discord.gg/mcpbench"
   }
 }
