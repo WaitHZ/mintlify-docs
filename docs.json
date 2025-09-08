@@ -1,6 +1,6 @@
 {
   "$schema": "https://mintlify.com/docs.json",
-  "theme": "palm",
+  "theme": "mint",
   "name": "MCP Benchmark",
   "colors": {
     "primary": "#16A34A",
@@ -13,8 +13,7 @@
       {
         "group": "Getting started",
         "pages": [
-          "get-started/intro",
-          "get-started/quickstart"
+          "get-started/intro"
         ]
       },
       {
