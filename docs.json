@@ -17,12 +17,7 @@
           "get-started/installation"
         ]
       },
-      {
-        "group": "Leaderboard",
-        "pages": [
-          "leaderboard/models"
-        ]
-      }
+      "leaderboard/models"
     ]
     },
   "topbarLinks": [
