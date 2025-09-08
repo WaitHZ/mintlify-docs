@@ -8,16 +8,31 @@
     "dark": "#15803D"
   },
   "favicon": "/favicon.svg",
-  "navigation": [
-    {
-      "group": "Getting started",
-      "pages": [
-        "get-started/intro",
-        "get-started/installation"
-      ]
-    },
-    "leaderboard/models"
-  ],
+  "navigation": {
+    "groups": [
+      {
+        "group": "Getting started",
+        "pages": [
+          "get-started/intro",
+          "get-started/installation"
+        ]
+      },
+      {
+        "group": "Tasks",
+        "pages": [
+          {
+            "group": "Research Helper",
+            "pages": [
+              "tasks/research-helper/10"
+            ]
+          }
+        ]
+      }
+    ],
+    "pages": [
+      "leaderboard/models"
+    ]
+  },
   "topbarLinks": [
     {
       "name": "GitHub",
