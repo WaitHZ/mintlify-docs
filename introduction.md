@@ -1,4 +1,4 @@
 ---
-title: "About frontmatter"
+title: "MCP Benchmark"
 mode: "custom"
 ---

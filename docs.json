@@ -11,5 +11,17 @@
         "pages": [
             "introduction"
         ]
+    },
+    "navbar": {
+        "primary": {
+            "Introduction": "introduction"
+        },
+        "links": [
+            {
+                "icon": "github",
+                "label": "Github",
+                "href": "https://example.com/community"
+            }
+        ]
     }
 }
