@@ -26,9 +26,10 @@
             {
                 "tab": "Tasks",
                 "icon": "list-check",
-                "groups": [
+                "pages": [
                     {
                         "group": "Research Helper",
+                        "collapsible": true,
                         "pages": [
                             "docs/tasks/research_helper/10"
                         ]
