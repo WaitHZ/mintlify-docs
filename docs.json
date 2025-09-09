@@ -27,21 +27,15 @@
             {
                 "tab": "Tasks",
                 "icon": "list-check",
-                "collapsible": true,
-                "collapsed": true,
                 "pages": [
                     {
                         "group": "Research Helper",
-                        "collapsible": true,
-                        "collapsed": true,
                         "pages": [
                             "docs/tasks/research_helper/10"
                         ]
                     },
                     {
                         "group": "Course & Study",
-                        "collapsible": true,
-                        "collapsed": true,
                         "pages": [
                             "docs/tasks/course_and_study/49",
                             "docs/tasks/course_and_study/161",
@@ -51,21 +45,18 @@
                     },
                     {
                         "group": "Academic Life",
-                        "collapsible": true,
                         "pages": [
                             "docs/tasks/academic_life/66"
                         ]
                     },
                     {
                         "group": "Tech & Dev",
-                        "collapsible": true,
                         "pages": [
                             "docs/tasks/tech_and_dev/173"
                         ]
                     },
                     {
                         "group": "Office Work",
-                        "collapsible": true,
                         "pages": [
                             "docs/tasks/office_work/108",
                             "docs/tasks/office_work/109"
@@ -73,14 +64,12 @@
                     },
                     {
                         "group": "Life & Entertainment",
-                        "collapsible": true,
                         "pages": [
                             "docs/tasks/life_and_entertainment/182"
                         ]
                     },
                     {
                         "group": "Shopping & E-commerce",
-                        "collapsible": true,
                         "pages": [
                             "docs/tasks/shopping_and_e-commerce/116"
                         ]
