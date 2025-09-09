@@ -74,7 +74,7 @@ def main(args):
                             if msg["role"] == "user":
                                 continue
                             elif msg["role"] == "assistant":
-                                if "tool_calls" in msg and "claim_done" not in msg["tool_calls"][0]['function']['name']:
+                                if "tool_calls" in msg:
                                     if len(msg["tool_calls"]) > 1:
                                         print("!!!")
                                         break
