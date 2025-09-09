@@ -73,6 +73,13 @@
                         "pages": [
                             "docs/tasks/life_and_entertainment/182"
                         ]
+                    },
+                    {
+                        "group": "Shopping & E-commerce",
+                        "collapsible": true,
+                        "pages": [
+                            "docs/tasks/shopping_and_e-commerce/116"
+                        ]
                     }
                 ]
             }
