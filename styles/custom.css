@@ -352,6 +352,44 @@ body {
   border-bottom-color: #374151 !important;
 }
 
+/* Hide "On this page" table of contents */
+[data-testid="toc"],
+.toc,
+.table-of-contents,
+.on-this-page,
+[class*="toc"],
+[class*="on-this-page"] {
+  display: none !important;
+}
+
+/* Make content area wider */
+.mintlify-docs .main-content,
+.mintlify-docs .content,
+.mintlify-docs main,
+.mintlify-docs [class*="content"],
+.mintlify-docs [class*="main"] {
+  max-width: 100% !important;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 2rem !important;
+}
+
+/* Ensure full width for wide layout */
+.mintlify-docs .container,
+.mintlify-docs .wrapper,
+.mintlify-docs [class*="container"],
+.mintlify-docs [class*="wrapper"] {
+  max-width: 100% !important;
+  width: 100% !important;
+}
+
+/* Adjust content spacing */
+.mintlify-docs .prose,
+.mintlify-docs [class*="prose"] {
+  max-width: none !important;
+  width: 100% !important;
+}
+
 /* Full-width Leaderboard Styles */
 .leaderboard-container {
   max-width: 100%;

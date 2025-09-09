@@ -128,5 +128,9 @@
     "auth": {
       "method": "bearer"
     }
+  },
+  "layout": {
+    "toc": false,
+    "width": "wide"
   }
 }
