@@ -352,42 +352,106 @@ body {
   border-bottom-color: #374151 !important;
 }
 
-/* Hide "On this page" table of contents */
+/* Hide "On this page" table of contents completely */
 [data-testid="toc"],
 .toc,
 .table-of-contents,
 .on-this-page,
 [class*="toc"],
-[class*="on-this-page"] {
+[class*="on-this-page"],
+aside[class*="toc"],
+aside[class*="sidebar"],
+div[class*="toc"],
+div[class*="sidebar"],
+nav[class*="toc"],
+nav[class*="sidebar"] {
   display: none !important;
+  width: 0 !important;
+  min-width: 0 !important;
+  max-width: 0 !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  position: absolute !important;
+  left: -9999px !important;
 }
 
-/* Make content area wider */
+/* Force full width layout */
+.mintlify-docs,
+.mintlify-docs * {
+  box-sizing: border-box !important;
+}
+
+/* Main layout adjustments */
 .mintlify-docs .main-content,
 .mintlify-docs .content,
 .mintlify-docs main,
 .mintlify-docs [class*="content"],
-.mintlify-docs [class*="main"] {
+.mintlify-docs [class*="main"],
+.mintlify-docs .layout,
+.mintlify-docs [class*="layout"] {
   max-width: 100% !important;
   width: 100% !important;
   margin: 0 !important;
   padding: 0 2rem !important;
+  display: block !important;
 }
 
-/* Ensure full width for wide layout */
+/* Container and wrapper adjustments */
 .mintlify-docs .container,
 .mintlify-docs .wrapper,
 .mintlify-docs [class*="container"],
-.mintlify-docs [class*="wrapper"] {
+.mintlify-docs [class*="wrapper"],
+.mintlify-docs .max-w-4xl,
+.mintlify-docs .max-w-6xl,
+.mintlify-docs .max-w-7xl {
   max-width: 100% !important;
+  width: 100% !important;
+  margin: 0 auto !important;
+  padding: 0 2rem !important;
+}
+
+/* Prose content adjustments */
+.mintlify-docs .prose,
+.mintlify-docs [class*="prose"],
+.mintlify-docs .markdown,
+.mintlify-docs [class*="markdown"] {
+  max-width: none !important;
+  width: 100% !important;
+  margin: 0 !important;
+}
+
+/* Grid and flex adjustments */
+.mintlify-docs .grid,
+.mintlify-docs [class*="grid"],
+.mintlify-docs .flex,
+.mintlify-docs [class*="flex"] {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+/* Specific Mintlify layout overrides */
+.mintlify-docs .mx-auto,
+.mintlify-docs [class*="mx-auto"] {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+/* Force wide layout */
+.mintlify-docs .w-full,
+.mintlify-docs [class*="w-full"] {
   width: 100% !important;
 }
 
-/* Adjust content spacing */
-.mintlify-docs .prose,
-.mintlify-docs [class*="prose"] {
+/* Remove any max-width constraints */
+.mintlify-docs * {
   max-width: none !important;
-  width: 100% !important;
+}
+
+.mintlify-docs .max-w-4xl,
+.mintlify-docs .max-w-6xl,
+.mintlify-docs .max-w-7xl,
+.mintlify-docs [class*="max-w-"] {
+  max-width: 100% !important;
 }
 
 /* Full-width Leaderboard Styles */

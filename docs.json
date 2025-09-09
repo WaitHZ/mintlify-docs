@@ -131,6 +131,8 @@
   },
   "layout": {
     "toc": false,
-    "width": "wide"
-  }
+    "width": "wide",
+    "fullWidth": true
+  },
+  "toc": false
 }
