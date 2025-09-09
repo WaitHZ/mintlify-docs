@@ -35,7 +35,7 @@
                         ]
                     },
                     {
-                        "group": "Course & Study",
+                        "dropdown": "Course & Study",
                         "pages": [
                             "docs/tasks/course_and_study/49",
                             "docs/tasks/course_and_study/161",
