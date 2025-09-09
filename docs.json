@@ -24,7 +24,16 @@
                 ]
             },
             {
-                "tab": "Registry",
+                "tab": "Tasks",
+                "icon": "tasks",
+                "groups": [
+                    {
+                        "group": "Research Helper",
+                        "pages": [
+                            "docs/tasks/research_helper/10"
+                        ]
+                    }
+                ]
             }
         ]
     },
