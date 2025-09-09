@@ -1,0 +1,88 @@
+---
+title: "Apply PhD Email"
+description: "Process an email from a professor and organize application materials according to specific requirements."
+---
+
+<Columns cols={2}>
+  <Card title="MCP Server" icon="cloud">
+    filesystem, memory, emails, terminal, pdf-tools
+  </Card>
+  <Card title="Local Tool" icon="terminal">
+    claim_done
+  </Card>
+</Columns>
+
+## Instruction
+
+Please check my inbox for an email from 'kaiming', and then help me submit the relevant materials according to his request. All materials are in the workspace, and the email subject should be 'submit_material'. My personal information is in the memory.
+
+## Initial State
+
+### Workspace
+
+```
+workspace/
+├── memory/
+│   └── memory.json
+└── Application_Materials_flat/
+    ├── Academic_Excellence_Award_2023.pdf
+    ├── CV.pdf
+    ├── Enrollment_Certificate.pdf
+    ├── ID_Card.pdf
+    ├── Outstanding_Student_Award_2021.pdf
+    ├── Photo.jpg
+    ├── Portfolio.pdf
+    ├── Project_Report.pdf
+    ├── Recommendation_Letter_1.pdf
+    ├── Recommendation_Letter_2.pdf
+    ├── Research_Competition_First_Place_2022.pdf
+    └── Transcript.pdf
+```
+
+### Mail
+
+**Re: PhD Application - Application Materials Submission Guidelines**
+
+Dear <<<<||||name||||>>>>, Thank you for your email and your interest in our PhD program. We appreciate your enthusiasm for joining our research team.
+
+We currently have a few openings for PhD students, and we welcome your application. If you are interested, please compile your materials as follows and send them to our admissions team at myersj@mcp.com:
+
+Application Materials Submission Guidelines
+
+Folder Structure:
+
+Please organize your files in the following structure (use your name and student ID to replace the placeholder, Use a single string without spaces for your name in the folder name, for example, 'BillGates'.):
+
+```text
+   Application_Materials_[YourName]_[YourStudentID]/
+├── 01_Personal_Information/
+│   ├── ID_Card.pdf
+│   ├── Photo.jpg
+│   └── Resume.pdf
+├── 02_Academic_Materials/
+│   ├── Awards_Certificates/
+│   │   └── All_Awards_Certificates.pdf
+│   ├── Enrollment_Certificate.pdf
+│   └── Transcript.pdf
+├── 03_Recommendation_Letters/
+│   ├── Recommendation_Letter_ProfessorName-1.pdf
+│   └── Recommendation_Letter_ProfessorName-2.pdf
+└── 04_Supplementary_Materials/
+    ├── Portfolio.pdf
+    └── Project_Report.pdf  
+```
+
+Naming Convention:
+
+Use English file names (no special characters or spaces).
+
+Ensure all documents are in PDF format (except for the photo, which can be JPG). Sort all award documents by date and merge them into a single PDF file, with one award per page. Finally, compress the entire folder into a ZIP file and send it as an attachment.
+
+Once we receive your application, we will review it and notify you of the next steps. If you have any questions, feel free to reply to this email.
+
+We look forward to receiving your application!
+
+Best regards,
+kaiming
+
+## Model Trajectory
