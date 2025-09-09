@@ -24,7 +24,7 @@ title: {title} arxiv_abs_url: {arxiv_abs_url} code_url: {code_url}
 
 🤔 Thinking: I need to find a paper on agentic reasoning with "Alita" in the title. Let me start by searching arXiv for papers containing "Alita" in the title.
 
-🔧 Tool Call: arxiv_local.search
+🔧 Tool Call: `arxiv_local.search`
 ```
 query: "Alita" title: "agentic reasoning"
 ```
@@ -32,7 +32,7 @@ query: "Alita" title: "agentic reasoning"
 📄 Result: Found 1 paper: "Alita: Agentic Reasoning with Large Language Models" (arXiv:2406.12345)
 
 
-🔧 Tool Call: arxiv_local.download
+🔧 Tool Call: `arxiv_local.download`
 ```
 arxiv_id: "2406.12345", filename: "alita_2406.12345.pdf"
 ```
@@ -41,7 +41,7 @@ arxiv_id: "2406.12345", filename: "alita_2406.12345.pdf"
 
 🤔 Thinking: Now I need to extract the paper details and find the code repository link from the paper content.
 
-🔧 Tool Call: scholarly.search
+🔧 Tool Call: `scholarly.search`
 ```
 title: "Alita: Agentic Reasoning with Large Language Models"
 ```
