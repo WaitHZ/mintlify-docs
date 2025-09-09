@@ -35,12 +35,12 @@ title: {title} arxiv_abs_url: {arxiv_abs_url} code_url: {code_url}
 </Columns>
 
 
-<Quote>
-I need to find a paper on agentic reasoning with "Alita" in the title. Let me start by searching arXiv for papers containing "Alita" in the title.
-</Quote>
+<div className="thinking-box">
+**🤔 Thinking:** I need to find a paper on agentic reasoning with "Alita" in the title. Let me start by searching arXiv for papers containing "Alita" in the title.
+</div>
 
-<Quote>
-**Tool Call:** `arxiv_local.search`
+<div className="tool-call-box">
+**🔧 Tool Call:** `arxiv_local.search`
 
 ```json
 {
@@ -48,14 +48,14 @@ I need to find a paper on agentic reasoning with "Alita" in the title. Let me st
   "title": "agentic reasoning"
 }
 ```
-</Quote>
+</div>
 
-<Quote>
-Found 1 paper: "Alita: Agentic Reasoning with Large Language Models" (arXiv:2406.12345)
-</Quote>
+<div className="result-box">
+**📄 Result:** Found 1 paper: "Alita: Agentic Reasoning with Large Language Models" (arXiv:2406.12345)
+</div>
 
-<Quote>
-**Tool Call:** `arxiv_local.download`
+<div className="tool-call-box">
+**🔧 Tool Call:** `arxiv_local.download`
 
 ```json
 {
@@ -63,39 +63,39 @@ Found 1 paper: "Alita: Agentic Reasoning with Large Language Models" (arXiv:2406
   "filename": "alita_2406.12345.pdf"
 }
 ```
-</Quote>
+</div>
 
-<Quote>
-Successfully downloaded paper to local filesystem
-</Quote>
+<div className="result-box">
+**📄 Result:** Successfully downloaded paper to local filesystem
+</div>
 
-<Quote>
-Now I need to extract the paper details and find the code repository link from the paper content.
-</Quote>
+<div className="thinking-box">
+**🤔 Thinking:** Now I need to extract the paper details and find the code repository link from the paper content.
+</div>
 
-<Quote>
-**Tool Call:** `scholarly.search`
+<div className="tool-call-box">
+**🔧 Tool Call:** `scholarly.search`
 
 ```json
 {
   "title": "Alita: Agentic Reasoning with Large Language Models"
 }
 ```
-</Quote>
+</div>
 
-<Quote>
-Found code repository: https://github.com/example/alita
-</Quote>
+<div className="result-box">
+**📄 Result:** Found code repository: https://github.com/example/alita
+</div>
 
-<Quote>
-**Task Completed:**
+<div className="task-completed-box">
+**🎯 Task Completed:**
 
 ```
 title: Alita: Agentic Reasoning with Large Language Models
 arxiv_abs_url: https://arxiv.org/abs/2406.12345
 code_url: https://github.com/example/alita
 ```
-</Quote>
+</div>
 
 </Accordion>
 </AccordionGroup>

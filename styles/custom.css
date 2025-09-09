@@ -1,0 +1,32 @@
+/* 自定义色彩框样式 */
+.thinking-box {
+  background: #e3f2fd;
+  padding: 8px 12px;
+  border-radius: 4px;
+  margin: 6px 0;
+  border-left: 3px solid #2196f3;
+}
+
+.tool-call-box {
+  background: #f5f5f5;
+  padding: 8px 12px;
+  border-radius: 4px;
+  margin: 6px 0;
+  border-left: 3px solid #757575;
+}
+
+.result-box {
+  background: #e8f5e8;
+  padding: 8px 12px;
+  border-radius: 4px;
+  margin: 6px 0;
+  border-left: 3px solid #4caf50;
+}
+
+.task-completed-box {
+  background: #fff3e0;
+  padding: 8px 12px;
+  border-radius: 4px;
+  margin: 6px 0;
+  border-left: 3px solid #ff9800;
+}
