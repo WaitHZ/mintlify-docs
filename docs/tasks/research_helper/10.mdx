@@ -34,55 +34,54 @@ title: {title} arxiv_abs_url: {arxiv_abs_url} code_url: {code_url}
   </Card>
 </Columns>
 
-<Info>
-**🤔 Thinking:** I need to find a paper on agentic reasoning with "Alita" in the title. Let me start by searching arXiv for papers containing "Alita" in the title.
-</Info>
+<div style="background: #e3f2fd; padding: 12px; border-radius: 6px; margin: 8px 0;">
+I need to find a paper on agentic reasoning with "Alita" in the title. Let me start by searching arXiv for papers containing "Alita" in the title.
+</div>
 
-<Note>
-**🔧 Tool Call:** `arxiv_local.search`
+<div style="background: #f5f5f5; padding: 12px; border-radius: 6px; margin: 8px 0;">
+`arxiv_local.search`
 ```
 query: "Alita" title: "agentic reasoning"
 ```
-</Note>
+</div>
 
-<Tip>
-**📄 Result:** Found 1 paper: "Alita: Agentic Reasoning with Large Language Models" (arXiv:2406.12345)
-</Tip>
+<div style="background: #e8f5e8; padding: 12px; border-radius: 6px; margin: 8px 0;">
+Found 1 paper: "Alita: Agentic Reasoning with Large Language Models" (arXiv:2406.12345)
+</div>
 
-<Note>
-**🔧 Tool Call:** `arxiv_local.download`
+<div style="background: #f5f5f5; padding: 12px; border-radius: 6px; margin: 8px 0;">
+`arxiv_local.download`
 ```
 arxiv_id: "2406.12345", filename: "alita_2406.12345.pdf"
 ```
-</Note>
+</div>
 
-<Tip>
-**📄 Result:** Successfully downloaded paper to local filesystem
-</Tip>
+<div style="background: #e8f5e8; padding: 12px; border-radius: 6px; margin: 8px 0;">
+Successfully downloaded paper to local filesystem
+</div>
 
-<Info>
-**🤔 Thinking:** Now I need to extract the paper details and find the code repository link from the paper content.
-</Info>
+<div style="background: #e3f2fd; padding: 12px; border-radius: 6px; margin: 8px 0;">
+Now I need to extract the paper details and find the code repository link from the paper content.
+</div>
 
-<Note>
-**🔧 Tool Call:** `scholarly.search`
+<div style="background: #f5f5f5; padding: 12px; border-radius: 6px; margin: 8px 0;">
+`scholarly.search`
 ```
 title: "Alita: Agentic Reasoning with Large Language Models"
 ```
-</Note>
+</div>
 
-<Tip>
-**📄 Result:** Found code repository: https://github.com/example/alita
-</Tip>
+<div style="background: #e8f5e8; padding: 12px; border-radius: 6px; margin: 8px 0;">
+Found code repository: https://github.com/example/alita
+</div>
 
-<Tip>
-**🎯 Task Completed:**
+<div style="background: #e8f5e8; padding: 12px; border-radius: 6px; margin: 8px 0;">
 ```
 title: Alita: Agentic Reasoning with Large Language Models
 arxiv_abs_url: https://arxiv.org/abs/2406.12345
 code_url: https://github.com/example/alita
 ```
-</Tip>
+</div>
 
 </Accordion>
 </AccordionGroup>
