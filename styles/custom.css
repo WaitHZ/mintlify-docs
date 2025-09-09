@@ -13,7 +13,7 @@
   border-radius: 4px;
   margin: 6px 0;
   border-left: 3px solid #757575;
-  max-height: 192px; /* 约8行的高度 */
+  max-height: 288px; /* 约12行的高度 */
   overflow-y: auto;
 }
 
@@ -23,7 +23,7 @@
   border-radius: 4px;
   margin: 6px 0;
   border-left: 3px solid #4caf50;
-  max-height: 192px; /* 约8行的高度 */
+  max-height: 288px; /* 约12行的高度 */
   overflow-y: auto;
 }
 
@@ -57,4 +57,3 @@
   margin: 6px 0;
   border-left: 3px solid #ff9800;
 }
-
