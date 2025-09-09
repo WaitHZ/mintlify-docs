@@ -35,7 +35,7 @@ def main(args):
     for f in tqdm(mdx_files):
         f_prefix = f.replace("_.mdx", "")
         print(f_prefix)
-        target_md = f_prefix + "__.mdx"
+        target_md = f_prefix + ".mdx"
         print(target_md)
 
         with open(f, "r", encoding="utf-8") as src, open(target_md, "w", encoding="utf-8") as dst:
@@ -74,12 +74,12 @@ def main(args):
                                 continue
                             elif msg["role"] == "assistant":
                                 dst.write(f"<div className=\"thinking-box\">\n")
-                                dst.write(f"{msg['content']}\n</div>\n\n")
+                                dst.write(f"🧐{msg['content']}\n</div>\n\n")
                                 if "tool_calls" in msg:
                                     msg_tool_call = msg["tool_calls"][0]
                                     if msg_tool_call['type'] == "function":
                                         dst.write(f"<div className=\"tool-call-box\">\n")
-                                        dst.write(f"`{msg_tool_call['function']['name']}`\n\n")
+                                        dst.write(f"🛠`{msg_tool_call['function']['name']}`\n\n")
                                         dst.write(f"```json\n")
                                         dst.write("{\n")
                                         for i, arg in enumerate(msg_tool_call['function']['arguments'].strip()[1:-1].split(",")):
@@ -94,13 +94,13 @@ def main(args):
                                         raise NotImplementedError(f"Unsupported tool call type: {msg_tool_call['type']}")
                                 else:
                                     dst.write(f"<div className=\"task-completed-box\">\n")
-                                    dst.write(f"{msg['content']}\n</div>\n\n")
+                                    dst.write(f"📢{msg['content']}\n</div>\n\n")
                             elif msg["role"] == "tool":
                                 dst.write(f"<div className=\"result-box\">\n")
                                 tool_res = json.loads(msg['content'])
                                 if tool_res["type"] != "text":
                                     raise NotImplementedError(f"Unsupported tool call type: {tool_res['type']}")
-                                dst.write(f"```json\n{tool_res["text"]}\n```\n</div>\n\n")
+                                dst.write(f"🔍\n```json\n{tool_res["text"]}\n```\n</div>\n\n")
                             else:
                                 raise NotImplementedError(f"Unsupported message role: {msg['role']}")
 
