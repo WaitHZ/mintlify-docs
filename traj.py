@@ -83,11 +83,11 @@ def main(args):
                                         dst.write(f"<div className=\"tool-call-box\">\n")
                                         dst.write(f"🛠`{msg_tool_call['function']['name']}`\n\n")
                                         dst.write(f"```json\n")
-                                        dst.write("{\n")
                                         argu_s = msg_tool_call['function']['arguments'].strip()[1:-1].split(",")
                                         if len(argu_s) == 1 and argu_s[0] == "":
-                                            dst.write(f"{{}}\n")
+                                            dst.write("{}\n")
                                         else:
+                                            dst.write("{\n")
                                             for i, arg in enumerate(argu_s):
                                                 if i == 0:
                                                     dst.write(f"\t{arg}")
@@ -115,7 +115,7 @@ def main(args):
                                         dst.write(f"🔍`tool result`\n```json\n{msg['content']}\n```\n</div>\n\n")
                                 else:
                                     dst.write(f"<div className=\"result-box\">\n")
-                                    dst.write(f"🔍`tool result`\n```json\n{{}}\n```\n</div>\n\n")
+                                    dst.write("🔍`tool result`\n```json\n{}\n```\n</div>\n\n")
                             else:
                                 raise NotImplementedError(f"Unsupported message role: {msg['role']}")
 
