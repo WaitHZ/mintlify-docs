@@ -186,10 +186,18 @@ body:has([href*="/tasks"]) .sidebar,
 body:has([href*="/tasks"]) [class*="sidebar"],
 body:has([href*="/tasks"]) nav[class*="sidebar"],
 body:has([href*="/tasks"]) aside[class*="sidebar"] {
-  background: #f8fafc !important;
+  background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%) !important;
   border-right: 1px solid #e2e8f0 !important;
-  box-shadow: 2px 0 4px rgba(0, 0, 0, 0.05) !important;
+  box-shadow: 4px 0 12px rgba(0, 0, 0, 0.08) !important;
   display: block !important;
+  width: 280px !important;
+  padding: 24px 0 !important;
+  position: fixed !important;
+  left: 0 !important;
+  top: 0 !important;
+  height: 100vh !important;
+  z-index: 100 !important;
+  overflow-y: auto !important;
 }
 
 /* Hide sidebar for Introduction and Leaderboard tabs */
@@ -212,52 +220,79 @@ body:has([href*="/tasks"]) aside[class*="sidebar"] {
   display: none !important;
 }
 
-/* Sidebar Navigation Groups */
+/* Modern Sidebar Navigation Groups */
 .sidebar .group,
 [class*="sidebar"] .group,
 nav[class*="sidebar"] .group {
-  margin-bottom: 1rem !important;
+  margin-bottom: 32px !important;
+  padding: 0 20px !important;
 }
 
 .sidebar .group-title,
 [class*="sidebar"] .group-title,
 nav[class*="sidebar"] .group-title {
-  font-weight: 600 !important;
-  font-size: 0.875rem !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
   color: #64748b !important;
   text-transform: uppercase !important;
-  letter-spacing: 0.05em !important;
-  margin-bottom: 0.5rem !important;
-  padding: 0 1rem !important;
+  letter-spacing: 1px !important;
+  margin-bottom: 16px !important;
+  padding: 8px 16px !important;
+  background: rgba(59, 130, 246, 0.05) !important;
+  border-radius: 8px !important;
+  border-left: 3px solid #3b82f6 !important;
 }
 
-/* Sidebar Navigation Links */
+/* Modern Sidebar Navigation Links */
 .sidebar a,
 [class*="sidebar"] a,
 nav[class*="sidebar"] a {
-  display: block !important;
-  padding: 0.5rem 1rem !important;
+  display: flex !important;
+  align-items: center !important;
+  padding: 14px 20px !important;
   color: #475569 !important;
   text-decoration: none !important;
-  border-radius: 0.375rem !important;
-  margin: 0.125rem 0.5rem !important;
-  transition: all 0.2s ease !important;
-  font-size: 0.875rem !important;
+  border-radius: 12px !important;
+  margin: 0 8px 6px 8px !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  position: relative !important;
+  border: 1px solid transparent !important;
 }
 
 .sidebar a:hover,
 [class*="sidebar"] a:hover,
 nav[class*="sidebar"] a:hover {
-  background: #e2e8f0 !important;
+  background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%) !important;
   color: #1e293b !important;
+  transform: translateX(6px) !important;
+  border-color: #cbd5e1 !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
 }
 
 .sidebar a.active,
 [class*="sidebar"] a.active,
 nav[class*="sidebar"] a.active {
-  background: #3b82f6 !important;
+  background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%) !important;
   color: white !important;
-  font-weight: 500 !important;
+  box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4) !important;
+  transform: translateX(6px) !important;
+  border-color: #1d4ed8 !important;
+}
+
+.sidebar a.active::before,
+[class*="sidebar"] a.active::before,
+nav[class*="sidebar"] a.active::before {
+  content: '' !important;
+  position: absolute !important;
+  left: -8px !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  width: 4px !important;
+  height: 20px !important;
+  background: #1d4ed8 !important;
+  border-radius: 2px !important;
 }
 
 /* Nested Navigation */
@@ -359,5 +394,194 @@ nav[class*="sidebar"] .expandable.expanded::after {
   nav[class*="sidebar"] a.active {
     background: #3b82f6 !important;
     color: white !important;
+  }
+}
+
+/* Content Layout Adjustments */
+body:has([href*="/tasks"]) .main-content,
+body:has([href*="/tasks"]) .content,
+body:has([href*="/tasks"]) .prose,
+body:has([href*="/tasks"]) [class*="content"],
+body:has([href*="/tasks"]) [class*="main"],
+body:has([href*="/tasks"]) [class*="prose"] {
+  margin-left: 280px !important;
+  max-width: calc(100% - 280px) !important;
+  width: calc(100% - 280px) !important;
+  padding: 24px 32px !important;
+}
+
+/* Full width content for non-task pages */
+body:not(:has([href*="/tasks"])) .main-content,
+body:not(:has([href*="/tasks"])) .content,
+body:not(:has([href*="/tasks"])) .prose,
+body:not(:has([href*="/tasks"])) [class*="content"],
+body:not(:has([href*="/tasks"])) [class*="main"],
+body:not(:has([href*="/tasks"])) [class*="prose"] {
+  max-width: 100% !important;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 24px 32px !important;
+}
+
+/* Beautiful content area styling */
+.main-content,
+.content,
+.prose,
+[class*="content"],
+[class*="main"],
+[class*="prose"] {
+  background: #ffffff !important;
+  border-radius: 16px !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08) !important;
+  min-height: calc(100vh - 120px) !important;
+}
+
+/* Task Page Styling */
+.task-header {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+  align-items: center;
+}
+
+.task-badge {
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.task-badge.research {
+  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+  color: white;
+}
+
+.task-badge.system {
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: white;
+}
+
+.task-badge.security {
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+  color: white;
+}
+
+.task-badge.data {
+  background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+  color: white;
+}
+
+.task-difficulty {
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.task-difficulty.easy {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.task-difficulty.medium {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.task-difficulty.hard {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.task-footer {
+  margin-top: 32px;
+  padding: 16px;
+  background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+  border-radius: 12px;
+  border-left: 4px solid #3b82f6;
+}
+
+.task-footer p {
+  margin: 0;
+  color: #475569;
+  font-size: 14px;
+}
+
+/* Beautiful typography for task content */
+body:has([href*="/tasks"]) h1 {
+  color: #1e293b !important;
+  font-size: 2.5rem !important;
+  font-weight: 700 !important;
+  margin-bottom: 16px !important;
+  background: linear-gradient(135deg, #1e293b, #3b82f6) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+}
+
+body:has([href*="/tasks"]) h2 {
+  color: #374151 !important;
+  font-size: 1.5rem !important;
+  font-weight: 600 !important;
+  margin-top: 32px !important;
+  margin-bottom: 16px !important;
+  padding-bottom: 8px !important;
+  border-bottom: 2px solid #e5e7eb !important;
+}
+
+body:has([href*="/tasks"]) h3 {
+  color: #4b5563 !important;
+  font-size: 1.25rem !important;
+  font-weight: 600 !important;
+  margin-top: 24px !important;
+  margin-bottom: 12px !important;
+}
+
+body:has([href*="/tasks"]) p {
+  color: #6b7280 !important;
+  line-height: 1.7 !important;
+  margin-bottom: 16px !important;
+}
+
+body:has([href*="/tasks"]) ul, 
+body:has([href*="/tasks"]) ol {
+  color: #6b7280 !important;
+  line-height: 1.7 !important;
+  margin-bottom: 16px !important;
+}
+
+body:has([href*="/tasks"]) li {
+  margin-bottom: 8px !important;
+}
+
+body:has([href*="/tasks"]) strong {
+  color: #374151 !important;
+  font-weight: 600 !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  body:has([href*="/tasks"]) .sidebar,
+  body:has([href*="/tasks"]) [class*="sidebar"],
+  body:has([href*="/tasks"]) nav[class*="sidebar"],
+  body:has([href*="/tasks"]) aside[class*="sidebar"] {
+    width: 100% !important;
+    position: relative !important;
+    height: auto !important;
+  }
+  
+  body:has([href*="/tasks"]) .main-content,
+  body:has([href*="/tasks"]) .content,
+  body:has([href*="/tasks"]) .prose,
+  body:has([href*="/tasks"]) [class*="content"],
+  body:has([href*="/tasks"]) [class*="main"],
+  body:has([href*="/tasks"]) [class*="prose"] {
+    margin-left: 0 !important;
+    max-width: 100% !important;
+    width: 100% !important;
   }
 }
