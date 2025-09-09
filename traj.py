@@ -98,7 +98,7 @@ def main(args):
                                         dst.write(f"</div>\n\n")
                                     else:
                                         raise NotImplementedError(f"Unsupported tool call type: {msg_tool_call['type']}")
-                                elif "claim_done" in msg["tool_calls"][0]['function']['name']:
+                                elif "tool_calls" in msg and "claim_done" in msg["tool_calls"][0]['function']['name']:
                                     dst.write("🛠`local-claim_done`\n```json\n{}\n```\n</div>\n\n")
                                 else:
                                     dst.write(f"<div className=\"task-completed-box\">\n")
