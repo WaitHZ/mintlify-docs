@@ -82,6 +82,12 @@
                         "pages": [
                             "docs/tasks/transportation/169"
                         ]
+                    },
+                    {
+                        "group": "Health",
+                        "pages": [
+                            "docs/tasks/health/181"
+                        ]
                     }
                 ]
             }
