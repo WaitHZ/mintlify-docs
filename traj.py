@@ -74,10 +74,10 @@ def main(args):
                             if msg["role"] == "user":
                                 continue
                             elif msg["role"] == "assistant":
-                                if "tool_calls" in msg:
+                                if "tool_calls" in msg and "claim_done" not in msg_tool_call['function']['name']:
                                     if not (msg["content"] == "" or msg["content"] is None or msg["content"] == "null"):
                                         dst.write(f"<div className=\"thinking-box\">\n")
-                                        dst.write(f"🧐{msg['content']}\n</div>\n\n")
+                                        dst.write(f"🧐`Agent`\n{msg['content']}\n</div>\n\n")
                                     msg_tool_call = msg["tool_calls"][0]
                                     if msg_tool_call['type'] == "function":
                                         dst.write(f"<div className=\"tool-call-box\">\n")
@@ -100,7 +100,8 @@ def main(args):
                                         raise NotImplementedError(f"Unsupported tool call type: {msg_tool_call['type']}")
                                 else:
                                     dst.write(f"<div className=\"task-completed-box\">\n")
-                                    dst.write(f"📢{msg['content']}\n</div>\n\n")
+                                    dst.write(f"📢`Summary`\n{msg['content']}\n</div>\n\n")
+                                    break
                             elif msg["role"] == "tool":
                                 if msg['content'] is not None:
                                     try:
