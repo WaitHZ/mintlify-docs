@@ -297,13 +297,59 @@
 }
 
 /* Override Mintlify's default topbar */
-.mintlify-topbar {
+.mintlify-topbar,
+[data-testid="topbar"],
+.topbar,
+header[class*="topbar"],
+nav[class*="topbar"] {
   display: none !important;
 }
 
 /* Ensure our custom topbar is visible */
 .custom-topbar {
   display: flex !important;
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  z-index: 9999 !important;
+}
+
+/* Add padding to body to account for fixed topbar */
+body {
+  padding-top: 64px !important;
+}
+
+/* Additional overrides for Mintlify's navigation */
+.mintlify-docs .mintlify-topbar,
+.mintlify-docs [data-testid="topbar"],
+.mintlify-docs .topbar,
+.mintlify-docs header,
+.mintlify-docs nav[role="navigation"] {
+  display: none !important;
+}
+
+/* Ensure our custom topbar is always visible */
+.custom-topbar {
+  display: flex !important;
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  z-index: 9999 !important;
+  background: #ffffff !important;
+  border-bottom: 1px solid #e5e7eb !important;
+  padding: 0 2rem !important;
+  height: 64px !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Dark mode for custom topbar */
+.custom-topbar.dark {
+  background: #1f2937 !important;
+  border-bottom-color: #374151 !important;
 }
 
 /* Full-width Leaderboard Styles */
