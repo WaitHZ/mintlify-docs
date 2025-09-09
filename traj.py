@@ -74,7 +74,7 @@ def main(args):
                             if msg["role"] == "user":
                                 continue
                             elif msg["role"] == "assistant":
-                                if "tool_calls" in msg and "claim_done" not in msg_tool_call['function']['name']:
+                                if "tool_calls" in msg and "claim_done" not in msg["tool_calls"][0]['function']['name']:
                                     if not (msg["content"] == "" or msg["content"] is None or msg["content"] == "null"):
                                         dst.write(f"<div className=\"thinking-box\">\n")
                                         dst.write(f"🧐`Agent`\n{msg['content']}\n</div>\n\n")
