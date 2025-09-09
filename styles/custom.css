@@ -13,6 +13,8 @@
   border-radius: 4px;
   margin: 6px 0;
   border-left: 3px solid #757575;
+  max-height: 240px; /* 约10行的高度 */
+  overflow-y: auto;
 }
 
 .result-box {
@@ -21,6 +23,8 @@
   border-radius: 4px;
   margin: 6px 0;
   border-left: 3px solid #4caf50;
+  max-height: 240px; /* 约10行的高度 */
+  overflow-y: auto;
 }
 
 .task-completed-box {
@@ -29,4 +33,27 @@
   border-radius: 4px;
   margin: 6px 0;
   border-left: 3px solid #ff9800;
+}
+
+/* 自定义滚动条样式 */
+.tool-call-box::-webkit-scrollbar,
+.result-box::-webkit-scrollbar {
+  width: 6px;
+}
+
+.tool-call-box::-webkit-scrollbar-track,
+.result-box::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 3px;
+}
+
+.tool-call-box::-webkit-scrollbar-thumb,
+.result-box::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 3px;
+}
+
+.tool-call-box::-webkit-scrollbar-thumb:hover,
+.result-box::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.5);
 }
