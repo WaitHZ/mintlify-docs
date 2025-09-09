@@ -4,10 +4,10 @@ description: "Find a paper on agentic reasoning whose title has 'Alita' and down
 ---
 
 <Columns cols={2}>
-  <Card title="MCP Server" icon="server">
+  <Card title="MCP Server">
     arxiv_local, filesystem, scholarly
   </Card>
-  <Card title="Local Tool" icon="code">
+  <Card title="Local Tool">
     claim_done
   </Card>
 </Columns>
@@ -26,47 +26,63 @@ title: {title} arxiv_abs_url: {arxiv_abs_url} code_url: {code_url}
 <Accordion title="claude-4-sonnet-0514">
 
 <Columns cols={2}>
-  <Card title="Task Completion" icon="check">
+  <Card title="Task Completion">
     Completed
   </Card>
-  <Card title="Tool Calls" icon="wrench">
+  <Card title="Tool Calls">
     3
   </Card>
 </Columns>
 
-🤔 Thinking: I need to find a paper on agentic reasoning with "Alita" in the title. Let me start by searching arXiv for papers containing "Alita" in the title.
+<Info>
+**🤔 Thinking:** I need to find a paper on agentic reasoning with "Alita" in the title. Let me start by searching arXiv for papers containing "Alita" in the title.
+</Info>
 
-🔧 Tool Call: `arxiv_local.search`
+<Warning>
+**🔧 Tool Call:** `arxiv_local.search`
 ```
 query: "Alita" title: "agentic reasoning"
 ```
+</Warning>
 
-📄 Result: Found 1 paper: "Alita: Agentic Reasoning with Large Language Models" (arXiv:2406.12345)
+<Success>
+**📄 Result:** Found 1 paper: "Alita: Agentic Reasoning with Large Language Models" (arXiv:2406.12345)
+</Success>
 
-
-🔧 Tool Call: `arxiv_local.download`
+<Warning>
+**🔧 Tool Call:** `arxiv_local.download`
 ```
 arxiv_id: "2406.12345", filename: "alita_2406.12345.pdf"
 ```
+</Warning>
 
-📄 Result: Successfully downloaded paper to local filesystem
+<Success>
+**📄 Result:** Successfully downloaded paper to local filesystem
+</Success>
 
-🤔 Thinking: Now I need to extract the paper details and find the code repository link from the paper content.
+<Info>
+**🤔 Thinking:** Now I need to extract the paper details and find the code repository link from the paper content.
+</Info>
 
-🔧 Tool Call: `scholarly.search`
+<Warning>
+**🔧 Tool Call:** `scholarly.search`
 ```
 title: "Alita: Agentic Reasoning with Large Language Models"
 ```
+</Warning>
 
-📄 Result: Found code repository: https://github.com/example/alita
+<Success>
+**📄 Result:** Found code repository: https://github.com/example/alita
+</Success>
 
-
-🎯 Task Completed:
+<Success>
+**🎯 Task Completed:**
 ```
 title: Alita: Agentic Reasoning with Large Language Models
 arxiv_abs_url: https://arxiv.org/abs/2406.12345
 code_url: https://github.com/example/alita
 ```
+</Success>
 
 </Accordion>
 </AccordionGroup>
