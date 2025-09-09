@@ -8,15 +8,19 @@
         "dark": "#0F172A"
     },
     "navigation": {
-        "pages": [
-            "introduction"
-        ]
+        "tabs": {
+            "tab": "Introduction",
+            "icon": "book",
+            "pages": [
+                "introduction"
+            ]
+        }
     },
     "navbar": {
         "primary": {
             "type": "button",
-            "label": "Introduction",
-            "href": "https://waithz.mintlify.app/introduction"
+            "label": "Github",
+            "href": "https://github.com"
         }
     }
 }
