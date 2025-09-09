@@ -35,6 +35,71 @@ title: {title} arxiv_abs_url: {arxiv_abs_url} code_url: {code_url}
 </Columns>
 
 
+<div style="background: #e3f2fd; padding: 12px; border-radius: 6px; margin: 8px 0;">
+I need to find a paper on agentic reasoning with "Alita" in the title. Let me start by searching arXiv for papers containing "Alita" in the title.
+</div>
+
+<div style="background: #f5f5f5; padding: 12px; border-radius: 6px; margin: 8px 0;">
+
+`arxiv_local.search`
+
+```json
+{
+  "query": "Alita",
+  "title": "agentic reasoning"
+}
+```
+
+</div>
+
+<div style="background: #e8f5e8; padding: 12px; border-radius: 6px; margin: 8px 0;">
+Found 1 paper: "Alita: Agentic Reasoning with Large Language Models" (arXiv:2406.12345)
+</div>
+
+<div style="background: #f5f5f5; padding: 12px; border-radius: 6px; margin: 8px 0;">
+
+`arxiv_local.download`
+
+```json
+{
+  "arxiv_id": "2406.12345",
+  "filename": "alita_2406.12345.pdf"
+}
+```
+
+</div>
+
+<div style="background: #e8f5e8; padding: 12px; border-radius: 6px; margin: 8px 0;">
+Successfully downloaded paper to local filesystem
+</div>
+
+<div style="background: #e3f2fd; padding: 12px; border-radius: 6px; margin: 8px 0;">
+Now I need to extract the paper details and find the code repository link from the paper content.
+</div>
+
+<div style="background: #f5f5f5; padding: 12px; border-radius: 6px; margin: 8px 0;">
+
+`scholarly.search`
+
+```json
+{
+  "title": "Alita: Agentic Reasoning with Large Language Models"
+}
+```
+
+</div>
+
+<div style="background: #e8f5e8; padding: 12px; border-radius: 6px; margin: 8px 0;">
+Found code repository: https://github.com/example/alita
+</div>
+
+<div style="background: #e8f5e8; padding: 12px; border-radius: 6px; margin: 8px 0;">
+```
+title: Alita: Agentic Reasoning with Large Language Models
+arxiv_abs_url: https://arxiv.org/abs/2406.12345
+code_url: https://github.com/example/alita
+```
+</div>
 
 </Accordion>
 </AccordionGroup>
