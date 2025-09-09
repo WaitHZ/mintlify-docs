@@ -59,7 +59,7 @@ def main(args):
                             dst.write(f"<Card title=\"Task Completion\" icon=\"check\">\n")
                             dst.write(f"Completed\n")
                         else:
-                            dst.write(f"<Card title=\"Task Completion\" icon=\"cross\">\n")
+                            dst.write(f"<Card title=\"Task Completion\" icon=\"x\">\n")
                             dst.write(f"Failed\n")
                         dst.write(f"</Card>\n")
                         dst.write(f"<Card title=\"Tool Calls\" icon=\"wrench\">\n")
