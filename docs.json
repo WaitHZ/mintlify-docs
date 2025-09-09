@@ -16,7 +16,7 @@
         "primary": {
             "type": "button",
             "label": "Introduction",
-            "url": "/introduction"
+            "href": "/introduction"
         }
     }
 }
