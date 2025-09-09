@@ -31,6 +31,7 @@
                     {
                         "group": "Research Helper",
                         "collapsible": true,
+                        "collapsed": true,
                         "pages": [
                             "docs/tasks/research_helper/10"
                         ]
@@ -38,6 +39,7 @@
                     {
                         "group": "Course & Study",
                         "collapsible": true,
+                        "collapsed": true,
                         "pages": [
                             "docs/tasks/course_and_study/49",
                             "docs/tasks/course_and_study/161",
