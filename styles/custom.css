@@ -1,5 +1,46 @@
 /* Custom CSS for MCPBench */
 
+/* Completely hide Table of Contents and "On this page" sections */
+[data-testid="toc"],
+.toc,
+.table-of-contents,
+[class*="toc"],
+[class*="table-of-contents"],
+aside[class*="toc"],
+aside[class*="table-of-contents"],
+nav[class*="toc"],
+nav[class*="table-of-contents"],
+[data-testid="on-this-page"],
+.on-this-page,
+[class*="on-this-page"],
+aside[class*="on-this-page"],
+nav[class*="on-this-page"],
+[data-testid="page-toc"],
+.page-toc,
+[class*="page-toc"],
+aside[class*="page-toc"],
+nav[class*="page-toc"],
+[data-testid="sidebar-toc"],
+.sidebar-toc,
+[class*="sidebar-toc"],
+aside[class*="sidebar-toc"],
+nav[class*="sidebar-toc"],
+[data-testid="right-sidebar"],
+.right-sidebar,
+[class*="right-sidebar"],
+aside[class*="right-sidebar"],
+nav[class*="right-sidebar"] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  width: 0 !important;
+  height: 0 !important;
+  overflow: hidden !important;
+  position: absolute !important;
+  left: -9999px !important;
+  top: -9999px !important;
+}
+
 /* Force full width on all possible topbar elements */
 header,
 [data-testid="topbar"],
@@ -397,17 +438,21 @@ nav[class*="sidebar"] .expandable.expanded::after {
   }
 }
 
-/* Content Layout Adjustments */
+/* Content Layout Adjustments - Force full width and proper spacing */
 body:has([href*="/tasks"]) .main-content,
 body:has([href*="/tasks"]) .content,
 body:has([href*="/tasks"]) .prose,
 body:has([href*="/tasks"]) [class*="content"],
 body:has([href*="/tasks"]) [class*="main"],
-body:has([href*="/tasks"]) [class*="prose"] {
+body:has([href*="/tasks"]) [class*="prose"],
+body:has([href*="/tasks"]) .mintlify-docs .main-content,
+body:has([href*="/tasks"]) .mintlify-docs .content,
+body:has([href*="/tasks"]) .mintlify-docs .prose {
   margin-left: 280px !important;
   max-width: calc(100% - 280px) !important;
   width: calc(100% - 280px) !important;
   padding: 24px 32px !important;
+  box-sizing: border-box !important;
 }
 
 /* Full width content for non-task pages */
@@ -416,11 +461,26 @@ body:not(:has([href*="/tasks"])) .content,
 body:not(:has([href*="/tasks"])) .prose,
 body:not(:has([href*="/tasks"])) [class*="content"],
 body:not(:has([href*="/tasks"])) [class*="main"],
-body:not(:has([href*="/tasks"])) [class*="prose"] {
+body:not(:has([href*="/tasks"])) [class*="prose"],
+body:not(:has([href*="/tasks"])) .mintlify-docs .main-content,
+body:not(:has([href*="/tasks"])) .mintlify-docs .content,
+body:not(:has([href*="/tasks"])) .mintlify-docs .prose {
   max-width: 100% !important;
   width: 100% !important;
   margin: 0 !important;
   padding: 24px 32px !important;
+  box-sizing: border-box !important;
+}
+
+/* Force all content containers to be full width */
+.mintlify-docs .main-content,
+.mintlify-docs .content,
+.mintlify-docs .prose,
+.mintlify-docs [class*="content"],
+.mintlify-docs [class*="main"],
+.mintlify-docs [class*="prose"] {
+  max-width: none !important;
+  width: 100% !important;
 }
 
 /* Beautiful content area styling */
