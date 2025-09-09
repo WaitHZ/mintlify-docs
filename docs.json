@@ -51,6 +51,13 @@
                         "pages": [
                             "docs/tasks/academic_life/66"
                         ]
+                    },
+                    {
+                        "group": "Tech & Dev",
+                        "collapsible": true,
+                        "pages": [
+                            "docs/tasks/tech_and_dev/173"
+                        ]
                     }
                 ]
             }
