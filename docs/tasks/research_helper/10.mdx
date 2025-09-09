@@ -110,45 +110,6 @@ code_url: https://github.com/example/alita
 ```
 </div>
 
-<script>
-{`
-  document.addEventListener('DOMContentLoaded', function() {
-    const toolCallBoxes = document.querySelectorAll('.tool-call-box');
-    const resultBoxes = document.querySelectorAll('.result-box');
-    
-    function checkAndAddCollapse(boxes) {
-      boxes.forEach((box, index) => {
-        const content = box.innerHTML;
-        const lines = content.split('\\n').length;
-        
-        // 如果内容超过8行，添加折叠功能
-        if (lines > 8) {
-          box.classList.add('collapsed');
-          
-          // 创建并添加 Show More 按钮
-          const showMoreBtn = document.createElement('button');
-          showMoreBtn.className = 'show-more-btn';
-          showMoreBtn.textContent = 'Show More';
-          showMoreBtn.onclick = function() {
-            if (box.classList.contains('collapsed')) {
-              box.classList.remove('collapsed');
-              showMoreBtn.textContent = 'Show Less';
-            } else {
-              box.classList.add('collapsed');
-              showMoreBtn.textContent = 'Show More';
-            }
-          };
-          
-          box.appendChild(showMoreBtn);
-        }
-      });
-    }
-    
-    checkAndAddCollapse(toolCallBoxes);
-    checkAndAddCollapse(resultBoxes);
-  });
-`}
-</script>
 
 </Accordion>
 </AccordionGroup>
