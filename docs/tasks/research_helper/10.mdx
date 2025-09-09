@@ -4,10 +4,10 @@ description: "Find a paper on agentic reasoning whose title has 'Alita' and down
 ---
 
 <Columns cols={2}>
-  <Card title="MCP Server">
+  <Card title="MCP Server" icon="cloud">
     arxiv_local, filesystem, scholarly
   </Card>
-  <Card title="Local Tool">
+  <Card title="Local Tool" icon="terminal">
     claim_done
   </Card>
 </Columns>
@@ -38,23 +38,23 @@ title: {title} arxiv_abs_url: {arxiv_abs_url} code_url: {code_url}
 **🤔 Thinking:** I need to find a paper on agentic reasoning with "Alita" in the title. Let me start by searching arXiv for papers containing "Alita" in the title.
 </Info>
 
-<Warning>
+<Note>
 **🔧 Tool Call:** `arxiv_local.search`
 ```
 query: "Alita" title: "agentic reasoning"
 ```
-</Warning>
+</Note>
 
 <Tip>
 **📄 Result:** Found 1 paper: "Alita: Agentic Reasoning with Large Language Models" (arXiv:2406.12345)
 </Tip>
 
-<Warning>
+<Note>
 **🔧 Tool Call:** `arxiv_local.download`
 ```
 arxiv_id: "2406.12345", filename: "alita_2406.12345.pdf"
 ```
-</Warning>
+</Note>
 
 <Tip>
 **📄 Result:** Successfully downloaded paper to local filesystem
@@ -64,12 +64,12 @@ arxiv_id: "2406.12345", filename: "alita_2406.12345.pdf"
 **🤔 Thinking:** Now I need to extract the paper details and find the code repository link from the paper content.
 </Info>
 
-<Warning>
+<Note>
 **🔧 Tool Call:** `scholarly.search`
 ```
 title: "Alita: Agentic Reasoning with Large Language Models"
 ```
-</Warning>
+</Note>
 
 <Tip>
 **📄 Result:** Found code repository: https://github.com/example/alita
