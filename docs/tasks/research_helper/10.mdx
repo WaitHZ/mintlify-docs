@@ -39,7 +39,7 @@ title: {title} arxiv_abs_url: {arxiv_abs_url} code_url: {code_url}
 I need to find a paper on agentic reasoning with "Alita" in the title. Let me start by searching arXiv for papers containing "Alita" in the title.
 </div>
 
-<div className="tool-call-box collapsed">
+<div className="tool-call-box">
 `arxiv_local.search`
 
 ```json
@@ -48,15 +48,13 @@ I need to find a paper on agentic reasoning with "Alita" in the title. Let me st
   "title": "agentic reasoning"
 }
 ```
-
-<button className="show-more-btn" onclick="this.parentElement.classList.toggle('collapsed'); this.textContent = this.parentElement.classList.contains('collapsed') ? 'Show More' : 'Show Less';">Show More</button>
 </div>
 
 <div className="result-box">
 Found 1 paper: "Alita: Agentic Reasoning with Large Language Models" (arXiv:2406.12345)
 </div>
 
-<div className="tool-call-box collapsed">
+<div className="tool-call-box">
 `arxiv_local.download`
 
 ```json
@@ -65,8 +63,6 @@ Found 1 paper: "Alita: Agentic Reasoning with Large Language Models" (arXiv:2406
   "filename": "alita_2406.12345.pdf"
 }
 ```
-
-<button className="show-more-btn" onclick="this.parentElement.classList.toggle('collapsed'); this.textContent = this.parentElement.classList.contains('collapsed') ? 'Show More' : 'Show Less';">Show More</button>
 </div>
 
 <div className="result-box">
@@ -77,7 +73,7 @@ Successfully downloaded paper to local filesystem
 Now I need to extract the paper details and find the code repository link from the paper content.
 </div>
 
-<div className="tool-call-box collapsed">
+<div className="tool-call-box">
 `scholarly.search`
 
 ```json
@@ -100,7 +96,6 @@ Now I need to extract the paper details and find the code repository link from t
 }
 ```
 
-<button className="show-more-btn" onclick="this.parentElement.classList.toggle('collapsed'); this.textContent = this.parentElement.classList.contains('collapsed') ? 'Show More' : 'Show Less';">Show More</button>
 </div>
 
 <div className="result-box">
