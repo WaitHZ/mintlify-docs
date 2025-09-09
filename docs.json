@@ -25,7 +25,7 @@
             },
             {
                 "tab": "Tasks",
-                "icon": "tasks",
+                "icon": "list-check",
                 "groups": [
                     {
                         "group": "Research Helper",
