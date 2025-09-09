@@ -74,10 +74,9 @@ def main(args):
                                 continue
                             elif msg["role"] == "assistant":
                                 if "tool_calls" in msg:
-                                    if msg["content"] == "" or msg["content"] is None or msg["content"] == "null":
-                                        continue
-                                    dst.write(f"<div className=\"thinking-box\">\n")
-                                    dst.write(f"🧐{msg['content']}\n</div>\n\n")
+                                    if not (msg["content"] == "" or msg["content"] is None or msg["content"] == "null"):
+                                        dst.write(f"<div className=\"thinking-box\">\n")
+                                        dst.write(f"🧐{msg['content']}\n</div>\n\n")
                                     msg_tool_call = msg["tool_calls"][0]
                                     if msg_tool_call['type'] == "function":
                                         dst.write(f"<div className=\"tool-call-box\">\n")
