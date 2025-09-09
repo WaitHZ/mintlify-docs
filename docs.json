@@ -34,6 +34,13 @@
                         "pages": [
                             "docs/tasks/research_helper/10"
                         ]
+                    },
+                    {
+                        "group": "Course & Study",
+                        "collapsible": true,
+                        "pages": [
+                            "docs/tasks/course-study/49"
+                        ]
                     }
                 ]
             }
