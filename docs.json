@@ -12,84 +12,86 @@
     "light": "/logo-light.svg",
     "dark": "/logo-dark.svg"
   },
-  "navigation": [
-    {
-      "group": "Getting Started",
-      "pages": [
-        "get-started/intro",
-        "get-started/quick-start",
-        "get-started/installation"
-      ]
-    },
-    {
-      "group": "Tasks",
-      "pages": [
-        "tasks/overview",
-        {
-          "group": "System Administration",
-          "pages": [
-            "tasks/system-administration/build-linux-kernel",
-            "tasks/system-administration/configure-git-webserver",
-            "tasks/system-administration/openssl-selfsigned-cert"
-          ]
-        },
-        {
-          "group": "Security",
-          "pages": [
-            "tasks/security/crack-7z-hash",
-            "tasks/security/penetration-testing",
-            "tasks/security/security-audit"
-          ]
-        },
-        {
-          "group": "Data Science",
-          "pages": [
-            "tasks/data-science/train-fasttext",
-            "tasks/data-science/reshard-c4-data",
-            "tasks/data-science/data-analysis"
-          ]
-        },
-        {
-          "group": "Research Helper",
-          "pages": [
-            "tasks/research-helper/10"
-          ]
-        }
-      ]
-    },
-    {
-      "group": "Leaderboard",
-      "pages": [
-        "leaderboard/models",
-        "leaderboard/performance-metrics",
-        "leaderboard/submit-results"
-      ]
-    },
-    {
-      "group": "Registry",
-      "pages": [
-        "registry/overview",
-        "registry/task-submission",
-        "registry/guidelines"
-      ]
-    },
-    {
-      "group": "Contributors",
-      "pages": [
-        "contributors/overview",
-        "contributors/guidelines",
-        "contributors/recognition"
-      ]
-    },
-    {
-      "group": "News",
-      "pages": [
-        "news/announcements",
-        "news/updates",
-        "news/releases"
-      ]
-    }
-  ],
+  "navigation": {
+    "groups": [
+      {
+        "group": "Getting Started",
+        "pages": [
+          "get-started/intro",
+          "get-started/quick-start",
+          "get-started/installation"
+        ]
+      },
+      {
+        "group": "Tasks",
+        "pages": [
+          "tasks/overview",
+          {
+            "group": "System Administration",
+            "pages": [
+              "tasks/system-administration/build-linux-kernel",
+              "tasks/system-administration/configure-git-webserver",
+              "tasks/system-administration/openssl-selfsigned-cert"
+            ]
+          },
+          {
+            "group": "Security",
+            "pages": [
+              "tasks/security/crack-7z-hash",
+              "tasks/security/penetration-testing",
+              "tasks/security/security-audit"
+            ]
+          },
+          {
+            "group": "Data Science",
+            "pages": [
+              "tasks/data-science/train-fasttext",
+              "tasks/data-science/reshard-c4-data",
+              "tasks/data-science/data-analysis"
+            ]
+          },
+          {
+            "group": "Research Helper",
+            "pages": [
+              "tasks/research-helper/10"
+            ]
+          }
+        ]
+      },
+      {
+        "group": "Leaderboard",
+        "pages": [
+          "leaderboard/models",
+          "leaderboard/performance-metrics",
+          "leaderboard/submit-results"
+        ]
+      },
+      {
+        "group": "Registry",
+        "pages": [
+          "registry/overview",
+          "registry/task-submission",
+          "registry/guidelines"
+        ]
+      },
+      {
+        "group": "Contributors",
+        "pages": [
+          "contributors/overview",
+          "contributors/guidelines",
+          "contributors/recognition"
+        ]
+      },
+      {
+        "group": "News",
+        "pages": [
+          "news/announcements",
+          "news/updates",
+          "news/releases"
+        ]
+      }
+    ]
+  },
   "topbarLinks": [
     {
       "name": "GitHub",
