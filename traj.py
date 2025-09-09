@@ -116,7 +116,7 @@ def main(args):
                                         if isinstance(tool_res, dict):
                                             tool_res_s = [tool_res]
                                         else:
-                                            tool_res_s = tool_res
+                                            tool_res_s = [tool_res[0]]
                                         for tool_res in tool_res_s:
                                             dst.write(f"<div className=\"result-box\">\n")
                                             if tool_res["type"] != "text":
