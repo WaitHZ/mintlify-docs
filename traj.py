@@ -73,7 +73,7 @@ def main(args):
                             if msg["role"] == "user":
                                 continue
                             elif msg["role"] == "assistant":
-                                if msg["content"] == "":
+                                if msg["content"] == "" or msg["content"] is None or msg["content"] == "null":
                                     continue
                                 dst.write(f"<div className=\"thinking-box\">\n")
                                 dst.write(f"🧐{msg['content']}\n</div>\n\n")
