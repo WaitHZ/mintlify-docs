@@ -1,44 +1,136 @@
-# Mintlify Starter Kit
+# MCPBench - AI Agent Terminal Benchmark
 
-Use the starter kit to get your docs deployed and ready to customize.
+A comprehensive benchmark for evaluating AI agents' capabilities in terminal environments, built with Mintlify.
 
-Click the green **Use this template** button at the top of this repo to copy the Mintlify starter kit. The starter kit contains examples with
+## 🚀 Features
 
-- Guide pages
-- Navigation
-- Customizations
-- API reference pages
-- Use of popular components
+- **Custom Top Navigation**: Terminal Bench inspired navigation bar
+- **Full-Screen Leaderboard**: Application-style leaderboard without sidebar
+- **Task Registry**: Comprehensive task browsing with filtering
+- **Responsive Design**: Mobile-friendly interface
+- **Dark Mode Support**: Automatic theme switching
+- **Component-Based**: Reusable React components
 
-**[Follow the full quickstart guide](https://starter.mintlify.com/quickstart)**
-
-## Development
-
-Install the [Mintlify CLI](https://www.npmjs.com/package/mint) to preview your documentation changes locally. To install, use the following command:
+## 📁 Project Structure
 
 ```
-npm i -g mint
+mintlify-docs/
+├── components/           # Custom React components
+│   ├── custom-topbar.tsx # Main navigation component
+│   ├── task-card.tsx     # Task display component
+│   └── task-filter.tsx   # Task filtering component
+├── styles/
+│   └── custom.css        # Custom styles and themes
+├── leaderboard/
+│   └── models.mdx        # Full-screen leaderboard page
+├── tasks/
+│   └── overview.mdx      # Task registry page
+├── get-started/          # Documentation pages
+├── docs.json             # Mintlify configuration
+└── index.mdx             # Homepage
 ```
 
-Run the following command at the root of your documentation, where your `docs.json` is located:
+## 🎨 Key Components
 
+### Custom Topbar
+- Terminal Bench inspired navigation
+- Dropdown menus for task categories
+- Mobile responsive with hamburger menu
+- Dark mode support
+
+### Leaderboard
+- Full-screen layout (no sidebar)
+- Real-time model rankings
+- Category performance breakdown
+- Methodology explanation
+
+### Task Registry
+- Advanced filtering and search
+- Task cards with metadata
+- Category and difficulty badges
+- GitHub integration
+
+## 🛠️ Development
+
+### Prerequisites
+- Node.js 16+
+- Mintlify CLI
+
+### Setup
+```bash
+# Install Mintlify CLI
+npm install -g mintlify
+
+# Start development server
+mintlify dev
 ```
-mint dev
+
+### Customization
+
+#### Adding New Pages
+1. Create `.mdx` file in appropriate directory
+2. Update `docs.json` navigation structure
+3. Use `sidebar: false` for full-screen pages
+
+#### Styling
+- Edit `styles/custom.css` for global styles
+- Use CSS modules or styled-jsx for component-specific styles
+- Follow existing design patterns for consistency
+
+#### Components
+- Create React components in `components/` directory
+- Import and use in MDX files
+- Follow TypeScript best practices
+
+## 📱 Responsive Design
+
+The site is fully responsive with:
+- Mobile-first approach
+- Collapsible navigation on mobile
+- Adaptive grid layouts
+- Touch-friendly interactions
+
+## 🌙 Dark Mode
+
+Automatic dark mode support:
+- Detects system preference
+- Smooth theme transitions
+- Consistent color scheme
+- Accessible contrast ratios
+
+## 🚀 Deployment
+
+### Vercel (Recommended)
+```bash
+# Connect to Vercel
+vercel
+
+# Deploy
+vercel --prod
 ```
 
-View your local preview at `http://localhost:3000`.
+### Other Platforms
+- Netlify
+- GitHub Pages
+- Any static hosting service
 
-## Publishing changes
+## 📄 License
 
-Install our GitHub app from your [dashboard](https://dashboard.mintlify.com/settings/organization/github-app) to propagate changes from your repo to your deployment. Changes are deployed to production automatically after pushing to the default branch.
+MIT License - see LICENSE file for details.
 
-## Need help?
+## 🤝 Contributing
 
-### Troubleshooting
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Submit a pull request
 
-- If your dev environment isn't running: Run `mint update` to ensure you have the most recent version of the CLI.
-- If a page loads as a 404: Make sure you are running in a folder with a valid `docs.json`.
+## 📞 Support
 
-### Resources
-- [Mintlify documentation](https://mintlify.com/docs)
-- [Mintlify community](https://mintlify.com/community)
+- GitHub Issues: [Report bugs](https://github.com/mcpbench/mcpbench/issues)
+- Discord: [Join community](https://discord.gg/mcpbench)
+- Documentation: [Read docs](https://docs.mcpbench.ai)
+
+---
+
+Built with ❤️ using [Mintlify](https://mintlify.com)

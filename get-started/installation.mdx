@@ -1,286 +1,209 @@
 ---
 title: 'Installation Guide'
-description: 'Detailed installation instructions for MCPBench'
+description: 'Set up the MCPBench evaluation environment and dependencies'
 ---
 
 # Installation Guide
 
-This guide provides detailed instructions for installing MCPBench and setting up your evaluation environment.
+This guide will help you set up the MCPBench evaluation environment on your system.
 
 ## System Requirements
 
 ### Minimum Requirements
 
-- **OS**: Linux (Ubuntu 20.04+ recommended)
-- **RAM**: 8GB minimum, 16GB recommended
-- **Storage**: 20GB free space
-- **CPU**: 4 cores minimum, 8 cores recommended
-- **Network**: Internet connection for downloading tasks and dependencies
+- **Operating System**: Linux (Ubuntu 20.04+), macOS (10.15+), or Windows 10+
+- **Python**: 3.8 or higher
+- **Memory**: 4GB RAM minimum, 8GB recommended
+- **Storage**: 10GB free space
+- **Docker**: For containerized evaluation (recommended)
 
-### Recommended Environment
+### Recommended Requirements
 
-- **OS**: Ubuntu 22.04 LTS
-- **RAM**: 32GB
-- **Storage**: 100GB SSD
-- **CPU**: 16 cores
-- **GPU**: Optional, for certain evaluation tasks
+- **Operating System**: Ubuntu 22.04 LTS
+- **Python**: 3.10 or higher
+- **Memory**: 16GB RAM
+- **Storage**: 50GB free space
+- **GPU**: NVIDIA GPU with CUDA support (for ML tasks)
 
 ## Installation Methods
 
-### Method 1: Quick Install (Recommended)
+### Method 1: Docker Installation (Recommended)
 
+Docker provides the most consistent evaluation environment across different systems.
+
+#### 1. Install Docker
+
+**Ubuntu/Debian:**
 ```bash
-# Download and run the installation script
-curl -fsSL https://install.mcpbench.ai | bash
-
-# Verify installation
-mcpbench --version
+sudo apt update
+sudo apt install docker.io docker-compose
+sudo systemctl start docker
+sudo systemctl enable docker
+sudo usermod -aG docker $USER
 ```
 
-### Method 2: Manual Installation
+**macOS:**
+```bash
+# Install Docker Desktop from https://www.docker.com/products/docker-desktop
+```
 
-<Steps>
-  <Step title="Clone Repository">
-    ```bash
-    git clone https://github.com/mcpbench/mcpbench.git
-    cd mcpbench
-    ```
-  </Step>
-  <Step title="Install System Dependencies">
-    ```bash
-    # Ubuntu/Debian
-    sudo apt-get update
-    sudo apt-get install -y build-essential curl wget git python3 python3-pip
-    
-    # CentOS/RHEL
-    sudo yum update
-    sudo yum install -y gcc gcc-c++ curl wget git python3 python3-pip
-    ```
-  </Step>
-  <Step title="Install Python Dependencies">
-    ```bash
-    pip3 install -r requirements.txt
-    ```
-  </Step>
-  <Step title="Install MCPBench">
-    ```bash
-    pip3 install -e .
-    ```
-  </Step>
-  <Step title="Verify Installation">
-    ```bash
-    mcpbench test-installation
-    ```
-  </Step>
-</Steps>
+**Windows:**
+```bash
+# Install Docker Desktop from https://www.docker.com/products/docker-desktop
+```
 
-### Method 3: Docker Installation
+#### 2. Pull MCPBench Image
 
 ```bash
-# Pull the official Docker image
-docker pull mcpbench/mcpbench:latest
+docker pull mcpbench/evaluation:latest
+```
 
-# Run MCPBench in a container
-docker run -it --rm mcpbench/mcpbench:latest
+#### 3. Run Evaluation Container
+
+```bash
+docker run -it --rm \
+  -v $(pwd):/workspace \
+  -v /var/run/docker.sock:/var/run/docker.sock \
+  mcpbench/evaluation:latest
+```
+
+### Method 2: Local Installation
+
+#### 1. Clone Repository
+
+```bash
+git clone https://github.com/mcpbench/mcpbench.git
+cd mcpbench
+```
+
+#### 2. Create Virtual Environment
+
+```bash
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+```
+
+#### 3. Install Dependencies
+
+```bash
+# Install core dependencies
+pip install -r requirements.txt
+
+# Install development dependencies (optional)
+pip install -r requirements-dev.txt
+```
+
+#### 4. Install MCPBench
+
+```bash
+pip install -e .
 ```
 
 ## Environment Setup
 
-### Python Environment
+### 1. Configure Environment Variables
 
-<AccordionGroup>
-  <Accordion title="Using Virtual Environment (Recommended)">
-    ```bash
-    # Create virtual environment
-    python3 -m venv mcpbench-env
-    source mcpbench-env/bin/activate
-    
-    # Install MCPBench
-    pip install mcpbench
-    ```
-  </Accordion>
-  <Accordion title="Using Conda">
-    ```bash
-    # Create conda environment
-    conda create -n mcpbench python=3.9
-    conda activate mcpbench
-    
-    # Install MCPBench
-    pip install mcpbench
-    ```
-  </Accordion>
-  <Accordion title="System-wide Installation">
-    ```bash
-    # Install system-wide (requires sudo)
-    sudo pip3 install mcpbench
-    ```
-  </Accordion>
-</AccordionGroup>
-
-### Configuration
-
-Create a configuration file:
+Create a `.env` file in your project root:
 
 ```bash
-# Create config directory
-mkdir -p ~/.config/mcpbench
+# MCPBench Configuration
+MCPBENCH_DATA_DIR=/path/to/data
+MCPBENCH_CACHE_DIR=/path/to/cache
+MCPBENCH_LOG_LEVEL=INFO
 
-# Create configuration file
-cat > ~/.config/mcpbench/config.yaml << 'EOF'
-evaluation:
-  timeout: 3600  # 1 hour timeout per task
-  max_retries: 3
-  parallel_tasks: 4
+# Docker Configuration (if using Docker)
+DOCKER_REGISTRY=mcpbench
+DOCKER_IMAGE_TAG=latest
 
-storage:
-  results_dir: ~/mcpbench-results
-  cache_dir: ~/.cache/mcpbench
-  temp_dir: /tmp/mcpbench
+# Evaluation Configuration
+EVALUATION_TIMEOUT=3600
+MAX_CONCURRENT_EVALUATIONS=4
+```
 
-logging:
-  level: INFO
-  file: ~/mcpbench.log
-EOF
+### 2. Initialize Data Directory
+
+```bash
+mcpbench init --data-dir /path/to/data
+```
+
+### 3. Download Task Data
+
+```bash
+mcpbench download-tasks --all
 ```
 
 ## Verification
 
-### Test Installation
+### 1. Run System Check
 
 ```bash
-# Run comprehensive installation test
-mcpbench test-installation
-
-# Test specific components
-mcpbench test-evaluation
-mcpbench test-tasks
+mcpbench check-system
 ```
 
-### Verify Dependencies
+Expected output:
+```
+✓ Python version: 3.10.0
+✓ Docker: Available
+✓ Required packages: Installed
+✓ Data directory: Configured
+✓ Task data: Downloaded
+```
+
+### 2. Run Test Evaluation
 
 ```bash
-# Check system dependencies
-mcpbench check-dependencies
-
-# Check Python packages
-mcpbench check-packages
+mcpbench run --task hello-world --agent examples/simple-agent.py
 ```
 
 ## Troubleshooting
 
-<AccordionGroup>
-  <Accordion title="Permission Issues">
-    ```bash
-    # Fix permission issues
-    sudo chown -R $USER:$USER ~/.config/mcpbench
-    sudo chown -R $USER:$USER ~/.cache/mcpbench
-    ```
-  </Accordion>
-  <Accordion title="Python Version Issues">
-    ```bash
-    # Check Python version
-    python3 --version
-    
-    # Install specific Python version if needed
-    sudo apt-get install python3.9 python3.9-pip
-    ```
-  </Accordion>
-  <Accordion title="Network Issues">
-    ```bash
-    # Test connectivity
-    curl -I https://github.com/mcpbench/mcpbench
-    
-    # Configure proxy if needed
-    export http_proxy=http://proxy.company.com:8080
-    export https_proxy=http://proxy.company.com:8080
-    ```
-  </Accordion>
-  <Accordion title="Storage Issues">
-    ```bash
-    # Check available space
-    df -h
-    
-    # Clean up if needed
-    mcpbench cleanup-cache
-    ```
-  </Accordion>
-</AccordionGroup>
+### Common Issues
 
-## Advanced Configuration
-
-### Custom Task Directories
+#### Docker Permission Denied
 
 ```bash
-# Set custom task directory
-export MCPBENCH_TASK_DIR=/path/to/custom/tasks
-
-# Or in config file
-echo "tasks:
-  custom_dir: /path/to/custom/tasks" >> ~/.config/mcpbench/config.yaml
+# Add user to docker group
+sudo usermod -aG docker $USER
+# Log out and log back in
 ```
 
-### Performance Tuning
-
-```yaml
-# ~/.config/mcpbench/config.yaml
-performance:
-  max_workers: 8  # Number of parallel workers
-  memory_limit: 16GB  # Memory limit per task
-  cpu_limit: 4  # CPU cores per task
-```
-
-### Logging Configuration
-
-```yaml
-# ~/.config/mcpbench/config.yaml
-logging:
-  level: DEBUG
-  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
-  file: ~/mcpbench.log
-  max_size: 100MB
-  backup_count: 5
-```
-
-## Uninstallation
-
-### Remove MCPBench
+#### Python Version Issues
 
 ```bash
-# Uninstall Python package
-pip uninstall mcpbench
-
-# Remove configuration files
-rm -rf ~/.config/mcpbench
-rm -rf ~/.cache/mcpbench
-
-# Remove results (optional)
-rm -rf ~/mcpbench-results
+# Use pyenv to manage Python versions
+curl https://pyenv.run | bash
+pyenv install 3.10.0
+pyenv global 3.10.0
 ```
 
-### Clean System Dependencies
+#### Memory Issues
 
 ```bash
-# Remove system packages (if not needed elsewhere)
-sudo apt-get remove build-essential curl wget git
+# Increase Docker memory limit
+# In Docker Desktop: Settings > Resources > Memory
 ```
 
-## Getting Help
+### Getting Help
 
 <CardGroup cols={2}>
-  <Card title="Documentation" icon="book" href="/get-started/intro">
-    Comprehensive documentation and guides
+  <Card title="GitHub Issues" icon="github" href="https://github.com/mcpbench/mcpbench/issues">
+    Report bugs and request features
   </Card>
-  <Card title="Discord Community" icon="message-circle" href="https://discord.gg/mcpbench">
+  <Card title="Discord Support" icon="message-circle" href="https://discord.gg/mcpbench">
     Get help from the community
-  </Card>
-  <Card title="GitHub Issues" icon="github" href="https://github.com/mcpbench/issues">
-    Report installation problems
-  </Card>
-  <Card title="Email Support" icon="mail" href="mailto:support@mcpbench.ai">
-    Contact us directly for help
   </Card>
 </CardGroup>
 
-<Info>
-  **Installation Complete?** Check out our [Quick Start Guide](/get-started/quick-start) to begin evaluating your AI agent.
-</Info>
+## Next Steps
+
+<Steps>
+  <Step title="Quick Start">
+    Follow our [quick start guide](/get-started/quick-start) to run your first evaluation.
+  </Step>
+  <Step title="Explore Tasks">
+    Browse our [task registry](/tasks) to find tasks for your agent.
+  </Step>
+  <Step title="Submit Results">
+    Submit your results to our [leaderboard](/leaderboard).
+  </Step>
+</Steps>

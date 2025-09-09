@@ -61,13 +61,25 @@
       {
         "group": "Leaderboard",
         "pages": [
-          "leaderboard/models",
+          {
+            "page": "leaderboard/models",
+            "title": "Model Rankings",
+            "description": "Real-time model performance leaderboard"
+          },
           "leaderboard/performance-metrics",
           "leaderboard/submit-results"
         ]
       },
       {
-        "group": "Community",
+        "group": "Registry",
+        "pages": [
+          "registry/overview",
+          "registry/task-submission",
+          "registry/guidelines"
+        ]
+      },
+      {
+        "group": "Contributors",
         "pages": [
           "contributors/overview",
           "contributors/guidelines",
