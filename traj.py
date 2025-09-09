@@ -1,4 +1,5 @@
 import argparse
+from ast import arguments
 import os
 from tqdm import tqdm
 import json
@@ -83,12 +84,16 @@ def main(args):
                                         dst.write(f"🛠`{msg_tool_call['function']['name']}`\n\n")
                                         dst.write(f"```json\n")
                                         dst.write("{\n")
-                                        for i, arg in enumerate(msg_tool_call['function']['arguments'].strip()[1:-1].split(",")):
-                                            if i == 0:
-                                                dst.write(f"\t{arg}")
-                                            else:
-                                                dst.write(f",\n\t{arg}")
-                                        dst.write("\n}\n")
+                                        argu_s = msg_tool_call['function']['arguments'].strip()[1:-1].split(",")
+                                        if len(argu_s) > 0:
+                                            for i, arg in enumerate(argu_s):
+                                                if i == 0:
+                                                    dst.write(f"\t{arg}")
+                                                else:
+                                                    dst.write(f",\n\t{arg}")
+                                            dst.write("\n}\n")
+                                        else:
+                                            dst.write(f"{{}}\n")
                                         dst.write(f"```\n")
                                         dst.write(f"</div>\n\n")
                                     else:
@@ -105,6 +110,7 @@ def main(args):
                                             raise NotImplementedError(f"Unsupported tool call type: {tool_res['type']}")
                                         dst.write(f"🔍`tool result`\n```json\n{msg['content']}\n```\n</div>\n\n")
                                     except:
+                                        "claim done"
                                         pass
                                 else:
                                     dst.write(f"🔍`tool result`\n```json\n{{}}\n```\n</div>\n\n")
