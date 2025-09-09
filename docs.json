@@ -13,8 +13,18 @@
                 "tab": "Introduction",
                 "icon": "book",
                 "pages": [
-                    "introduction"
+                    "docs/introduction"
                 ]
+            },
+            {
+                "tab": "Leaderboard",
+                "icon": "trophy",
+                "pages": [
+                    "docs/leaderboard"
+                ]
+            },
+            {
+                "tab": "Registry",
             }
         ]
     },
