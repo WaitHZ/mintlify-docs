@@ -101,7 +101,6 @@ def main(args):
                                 else:
                                     dst.write(f"<div className=\"task-completed-box\">\n")
                                     dst.write(f"📢`Summary`\n{msg['content']}\n</div>\n\n")
-                                    break
                             elif msg["role"] == "tool":
                                 if msg['content'] is not None:
                                     try:
