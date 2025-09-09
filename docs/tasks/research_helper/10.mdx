@@ -22,300 +22,36 @@ title: {title} arxiv_abs_url: {arxiv_abs_url} code_url: {code_url}
 
 ## Model Trajectory
 
-<div className="trajectory-container">
-  <div className="trajectory-step">
-    <div className="step-header">
-      <div className="step-number">1</div>
-      <div className="step-title">Initial Analysis</div>
-    </div>
-    <div className="step-content">
-      <div className="thinking">
-        <strong>🤔 Thinking:</strong> I need to find a paper on agentic reasoning with "Alita" in the title. Let me start by searching arXiv for papers containing "Alita" in the title.
-      </div>
-    </div>
-  </div>
+🤔 Thinking: I need to find a paper on agentic reasoning with "Alita" in the title. Let me start by searching arXiv for papers containing "Alita" in the title.
 
-  <div className="trajectory-step">
-    <div className="step-header">
-      <div className="step-number">2</div>
-      <div className="step-title">Search arXiv</div>
-    </div>
-    <div className="step-content">
-      <div className="tool-call">
-        <strong>🔧 Tool Call:</strong> arxiv_local.search
-        <div className="tool-params">
-          <code>query: "Alita" title: "agentic reasoning"</code>
-        </div>
-      </div>
-      <div className="tool-result">
-        <strong>📄 Result:</strong> Found 1 paper: "Alita: Agentic Reasoning with Large Language Models" (arXiv:2406.12345)
-      </div>
-    </div>
-  </div>
+🔧 Tool Call: arxiv_local.search
+```
+query: "Alita" title: "agentic reasoning"
+```
 
-  <div className="trajectory-step">
-    <div className="step-header">
-      <div className="step-number">3</div>
-      <div className="step-title">Download Paper</div>
-    </div>
-    <div className="step-content">
-      <div className="tool-call">
-        <strong>🔧 Tool Call:</strong> arxiv_local.download
-        <div className="tool-params">
-          <code>arxiv_id: "2406.12345", filename: "alita_2406.12345.pdf"</code>
-        </div>
-      </div>
-      <div className="tool-result">
-        <strong>✅ Result:</strong> Successfully downloaded paper to local filesystem
-      </div>
-    </div>
-  </div>
-
-  <div className="trajectory-step">
-    <div className="step-header">
-      <div className="step-number">4</div>
-      <div className="step-title">Extract Information</div>
-    </div>
-    <div className="step-content">
-      <div className="thinking">
-        <strong>🤔 Thinking:</strong> Now I need to extract the paper details and find the code repository link from the paper content.
-      </div>
-      <div className="tool-call">
-        <strong>🔧 Tool Call:</strong> scholarly.search
-        <div className="tool-params">
-          <code>title: "Alita: Agentic Reasoning with Large Language Models"</code>
-        </div>
-      </div>
-      <div className="tool-result">
-        <strong>📄 Result:</strong> Found code repository: https://github.com/example/alita
-      </div>
-    </div>
-  </div>
-
-  <div className="trajectory-step final">
-    <div className="step-header">
-      <div className="step-number">✓</div>
-      <div className="step-title">Final Output</div>
-    </div>
-    <div className="step-content">
-      <div className="final-output">
-        <strong>🎯 Task Completed:</strong>
-        <div className="output-format">
-          <code>
-            title: Alita: Agentic Reasoning with Large Language Models<br/>
-            arxiv_abs_url: https://arxiv.org/abs/2406.12345<br/>
-            code_url: https://github.com/example/alita
-          </code>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<style jsx>{`
-  .trajectory-container {
-    margin: 2.5rem 0;
-    padding: 2rem;
-    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
-    border-radius: 20px;
-    border: 1px solid rgba(226, 232, 240, 0.8);
-    box-shadow: 
-      0 10px 25px rgba(0, 0, 0, 0.08),
-      0 4px 12px rgba(0, 0, 0, 0.04),
-      inset 0 1px 0 rgba(255, 255, 255, 0.8);
-    position: relative;
-    overflow: hidden;
-  }
-
-  .trajectory-container::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: linear-gradient(90deg, #3b82f6, #8b5cf6, #06b6d4, #10b981);
-    border-radius: 20px 20px 0 0;
-  }
-
-  .trajectory-step {
-    margin-bottom: 2rem;
-    padding: 1.5rem;
-    background: rgba(255, 255, 255, 0.9);
-    border-radius: 16px;
-    border-left: 5px solid #3b82f6;
-    box-shadow: 
-      0 8px 25px rgba(0, 0, 0, 0.06),
-      0 3px 10px rgba(0, 0, 0, 0.04);
-    backdrop-filter: blur(10px);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    position: relative;
-  }
-
-  .trajectory-step:hover {
-    transform: translateY(-2px);
-    box-shadow: 
-      0 12px 35px rgba(0, 0, 0, 0.1),
-      0 5px 15px rgba(0, 0, 0, 0.06);
-  }
-
-  .trajectory-step.final {
-    border-left-color: #10b981;
-    background: linear-gradient(135deg, rgba(240, 253, 244, 0.9), rgba(236, 253, 245, 0.9));
-    box-shadow: 
-      0 8px 25px rgba(16, 185, 129, 0.15),
-      0 3px 10px rgba(16, 185, 129, 0.1);
-  }
-
-  .trajectory-step.final:hover {
-    box-shadow: 
-      0 12px 35px rgba(16, 185, 129, 0.2),
-      0 5px 15px rgba(16, 185, 129, 0.15);
-  }
-
-  .step-header {
-    display: flex;
-    align-items: center;
-    margin-bottom: 1rem;
-  }
-
-  .step-number {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, #3b82f6, #1d4ed8);
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 700;
-    font-size: 16px;
-    margin-right: 16px;
-    box-shadow: 
-      0 4px 12px rgba(59, 130, 246, 0.3),
-      0 2px 6px rgba(59, 130, 246, 0.2);
-    position: relative;
-  }
-
-  .step-number::before {
-    content: '';
-    position: absolute;
-    inset: -2px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, #3b82f6, #1d4ed8);
-    z-index: -1;
-    opacity: 0.3;
-    filter: blur(8px);
-  }
-
-  .trajectory-step.final .step-number {
-    background: linear-gradient(135deg, #10b981, #059669);
-    box-shadow: 
-      0 4px 12px rgba(16, 185, 129, 0.3),
-      0 2px 6px rgba(16, 185, 129, 0.2);
-  }
-
-  .trajectory-step.final .step-number::before {
-    background: linear-gradient(135deg, #10b981, #059669);
-  }
-
-  .step-title {
-    font-weight: 700;
-    color: #1e293b;
-    font-size: 18px;
-    letter-spacing: -0.025em;
-  }
-
-  .step-content {
-    margin-left: 56px;
-  }
-
-  .thinking, .tool-call, .tool-result, .final-output {
-    margin-bottom: 1rem;
-    padding: 1rem 1.25rem;
-    border-radius: 12px;
-    backdrop-filter: blur(5px);
-    transition: all 0.2s ease;
-  }
-
-  .thinking {
-    background: linear-gradient(135deg, rgba(254, 243, 199, 0.8), rgba(252, 233, 106, 0.6));
-    border-left: 4px solid #f59e0b;
-    box-shadow: 0 4px 12px rgba(245, 158, 11, 0.15);
-  }
-
-  .tool-call {
-    background: linear-gradient(135deg, rgba(219, 234, 254, 0.8), rgba(147, 197, 253, 0.6));
-    border-left: 4px solid #3b82f6;
-    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.15);
-  }
-
-  .tool-result {
-    background: linear-gradient(135deg, rgba(240, 253, 244, 0.8), rgba(134, 239, 172, 0.6));
-    border-left: 4px solid #10b981;
-    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.15);
-  }
-
-  .final-output {
-    background: linear-gradient(135deg, rgba(240, 249, 255, 0.8), rgba(125, 211, 252, 0.6));
-    border-left: 4px solid #0ea5e9;
-    box-shadow: 0 4px 12px rgba(14, 165, 233, 0.15);
-  }
-
-  .tool-params {
-    margin-top: 0.75rem;
-    padding: 0.75rem 1rem;
-    background: rgba(59, 130, 246, 0.1);
-    border-radius: 8px;
-    font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', monospace;
-    font-size: 13px;
-    border: 1px solid rgba(59, 130, 246, 0.2);
-    backdrop-filter: blur(5px);
-  }
-
-  .output-format {
-    margin-top: 0.75rem;
-    padding: 1rem 1.25rem;
-    background: linear-gradient(135deg, #1e293b, #334155);
-    color: #e2e8f0;
-    border-radius: 12px;
-    font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', monospace;
-    font-size: 14px;
-    line-height: 1.6;
-    box-shadow: 
-      0 8px 25px rgba(30, 41, 59, 0.3),
-      inset 0 1px 0 rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(71, 85, 105, 0.3);
-  }
-
-  .output-format code {
-    background: none;
-    color: inherit;
-    padding: 0;
-  }
-
-  /* 响应式设计 */
-  @media (max-width: 768px) {
-    .trajectory-container {
-      margin: 1.5rem 0;
-      padding: 1.5rem;
-    }
-    
-    .trajectory-step {
-      padding: 1.25rem;
-    }
-    
-    .step-content {
-      margin-left: 0;
-      margin-top: 1rem;
-    }
-    
-    .step-number {
-      width: 36px;
-      height: 36px;
-      font-size: 14px;
-    }
-  }
-`}</style>
+📄 Result: Found 1 paper: "Alita: Agentic Reasoning with Large Language Models" (arXiv:2406.12345)
 
 
+🔧 Tool Call: arxiv_local.download
+```
+arxiv_id: "2406.12345", filename: "alita_2406.12345.pdf"
+```
+
+📄 Result: Successfully downloaded paper to local filesystem
+
+🤔 Thinking: Now I need to extract the paper details and find the code repository link from the paper content.
+
+🔧 Tool Call: scholarly.search
+```
+title: "Alita: Agentic Reasoning with Large Language Models"
+```
+
+📄 Result: Found code repository: https://github.com/example/alita
+
+
+🎯 Task Completed:</strong>
+```
+title: Alita: Agentic Reasoning with Large Language Models
+arxiv_abs_url: https://arxiv.org/abs/2406.12345
+code_url: https://github.com/example/alita
+```
