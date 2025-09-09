@@ -55,7 +55,7 @@ def main(args):
                         model_name = log_path.split("/")[-1].replace(".json", "")
                         dst.write(f"<Accordion title=\"{model_name}\">\n\n")
 
-                        dst.write(f"<Columns cols={2}>\n")
+                        dst.write("<Columns cols={2}>\n")
                         if log_data["pass"]:
                             dst.write(f"<Card title=\"Task Completion\" icon=\"check\">\n")
                             dst.write(f"Completed\n")
