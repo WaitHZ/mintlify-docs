@@ -85,15 +85,15 @@ def main(args):
                                         dst.write(f"```json\n")
                                         dst.write("{\n")
                                         argu_s = msg_tool_call['function']['arguments'].strip()[1:-1].split(",")
-                                        if len(argu_s) > 0:
+                                        if len(argu_s) == 1 and argu_s[0] == "":
+                                            dst.write(f"{{}}\n")
+                                        else:
                                             for i, arg in enumerate(argu_s):
                                                 if i == 0:
                                                     dst.write(f"\t{arg}")
                                                 else:
                                                     dst.write(f",\n\t{arg}")
                                             dst.write("\n}\n")
-                                        else:
-                                            dst.write(f"{{}}\n")
                                         dst.write(f"```\n")
                                         dst.write(f"</div>\n\n")
                                     else:
