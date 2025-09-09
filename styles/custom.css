@@ -173,6 +173,136 @@ html,
   overflow-x: hidden !important;
 }
 
+/* Beautiful Sidebar Styling - Only for Tasks tab */
+.tab-content[data-tab="Tasks"] .sidebar,
+.tab-content[data-tab="Tasks"] [class*="sidebar"],
+.tab-content[data-tab="Tasks"] nav[class*="sidebar"],
+.tab-content[data-tab="Tasks"] aside[class*="sidebar"],
+[data-active-tab="Tasks"] .sidebar,
+[data-active-tab="Tasks"] [class*="sidebar"],
+[data-active-tab="Tasks"] nav[class*="sidebar"],
+[data-active-tab="Tasks"] aside[class*="sidebar"],
+body:has([href*="/tasks"]) .sidebar,
+body:has([href*="/tasks"]) [class*="sidebar"],
+body:has([href*="/tasks"]) nav[class*="sidebar"],
+body:has([href*="/tasks"]) aside[class*="sidebar"] {
+  background: #f8fafc !important;
+  border-right: 1px solid #e2e8f0 !important;
+  box-shadow: 2px 0 4px rgba(0, 0, 0, 0.05) !important;
+  display: block !important;
+}
+
+/* Hide sidebar for Introduction and Leaderboard tabs */
+.tab-content[data-tab="Introduction"] .sidebar,
+.tab-content[data-tab="Introduction"] [class*="sidebar"],
+.tab-content[data-tab="Introduction"] nav[class*="sidebar"],
+.tab-content[data-tab="Introduction"] aside[class*="sidebar"],
+.tab-content[data-tab="Leaderboard"] .sidebar,
+.tab-content[data-tab="Leaderboard"] [class*="sidebar"],
+.tab-content[data-tab="Leaderboard"] nav[class*="sidebar"],
+.tab-content[data-tab="Leaderboard"] aside[class*="sidebar"],
+[data-active-tab="Introduction"] .sidebar,
+[data-active-tab="Introduction"] [class*="sidebar"],
+[data-active-tab="Introduction"] nav[class*="sidebar"],
+[data-active-tab="Introduction"] aside[class*="sidebar"],
+[data-active-tab="Leaderboard"] .sidebar,
+[data-active-tab="Leaderboard"] [class*="sidebar"],
+[data-active-tab="Leaderboard"] nav[class*="sidebar"],
+[data-active-tab="Leaderboard"] aside[class*="sidebar"] {
+  display: none !important;
+}
+
+/* Sidebar Navigation Groups */
+.sidebar .group,
+[class*="sidebar"] .group,
+nav[class*="sidebar"] .group {
+  margin-bottom: 1rem !important;
+}
+
+.sidebar .group-title,
+[class*="sidebar"] .group-title,
+nav[class*="sidebar"] .group-title {
+  font-weight: 600 !important;
+  font-size: 0.875rem !important;
+  color: #64748b !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+  margin-bottom: 0.5rem !important;
+  padding: 0 1rem !important;
+}
+
+/* Sidebar Navigation Links */
+.sidebar a,
+[class*="sidebar"] a,
+nav[class*="sidebar"] a {
+  display: block !important;
+  padding: 0.5rem 1rem !important;
+  color: #475569 !important;
+  text-decoration: none !important;
+  border-radius: 0.375rem !important;
+  margin: 0.125rem 0.5rem !important;
+  transition: all 0.2s ease !important;
+  font-size: 0.875rem !important;
+}
+
+.sidebar a:hover,
+[class*="sidebar"] a:hover,
+nav[class*="sidebar"] a:hover {
+  background: #e2e8f0 !important;
+  color: #1e293b !important;
+}
+
+.sidebar a.active,
+[class*="sidebar"] a.active,
+nav[class*="sidebar"] a.active {
+  background: #3b82f6 !important;
+  color: white !important;
+  font-weight: 500 !important;
+}
+
+/* Nested Navigation */
+.sidebar .nested,
+[class*="sidebar"] .nested,
+nav[class*="sidebar"] .nested {
+  margin-left: 1rem !important;
+  border-left: 2px solid #e2e8f0 !important;
+  padding-left: 0.5rem !important;
+}
+
+.sidebar .nested a,
+[class*="sidebar"] .nested a,
+nav[class*="sidebar"] .nested a {
+  font-size: 0.8125rem !important;
+  padding: 0.375rem 0.75rem !important;
+  margin: 0.125rem 0 !important;
+}
+
+/* Expandable Groups */
+.sidebar .expandable,
+[class*="sidebar"] .expandable,
+nav[class*="sidebar"] .expandable {
+  cursor: pointer !important;
+  position: relative !important;
+}
+
+.sidebar .expandable::after,
+[class*="sidebar"] .expandable::after,
+nav[class*="sidebar"] .expandable::after {
+  content: "▶" !important;
+  position: absolute !important;
+  right: 1rem !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  font-size: 0.75rem !important;
+  transition: transform 0.2s ease !important;
+}
+
+.sidebar .expandable.expanded::after,
+[class*="sidebar"] .expandable.expanded::after,
+nav[class*="sidebar"] .expandable.expanded::after {
+  transform: translateY(-50%) rotate(90deg) !important;
+}
+
 /* Dark mode support */
 @media (prefers-color-scheme: dark) {
   header,
@@ -187,5 +317,47 @@ html,
   .mintlify-docs .navbar {
     background: #1f2937 !important;
     border-bottom: 1px solid #374151 !important;
+  }
+  
+  .tab-content[data-tab="Tasks"] .sidebar,
+  .tab-content[data-tab="Tasks"] [class*="sidebar"],
+  .tab-content[data-tab="Tasks"] nav[class*="sidebar"],
+  .tab-content[data-tab="Tasks"] aside[class*="sidebar"],
+  [data-active-tab="Tasks"] .sidebar,
+  [data-active-tab="Tasks"] [class*="sidebar"],
+  [data-active-tab="Tasks"] nav[class*="sidebar"],
+  [data-active-tab="Tasks"] aside[class*="sidebar"],
+  body:has([href*="/tasks"]) .sidebar,
+  body:has([href*="/tasks"]) [class*="sidebar"],
+  body:has([href*="/tasks"]) nav[class*="sidebar"],
+  body:has([href*="/tasks"]) aside[class*="sidebar"] {
+    background: #1f2937 !important;
+    border-right: 1px solid #374151 !important;
+  }
+  
+  .sidebar .group-title,
+  [class*="sidebar"] .group-title,
+  nav[class*="sidebar"] .group-title {
+    color: #94a3b8 !important;
+  }
+  
+  .sidebar a,
+  [class*="sidebar"] a,
+  nav[class*="sidebar"] a {
+    color: #cbd5e1 !important;
+  }
+  
+  .sidebar a:hover,
+  [class*="sidebar"] a:hover,
+  nav[class*="sidebar"] a:hover {
+    background: #374151 !important;
+    color: #f1f5f9 !important;
+  }
+  
+  .sidebar a.active,
+  [class*="sidebar"] a.active,
+  nav[class*="sidebar"] a.active {
+    background: #3b82f6 !important;
+    color: white !important;
   }
 }

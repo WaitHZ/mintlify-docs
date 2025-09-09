@@ -26,11 +26,33 @@
             {
                 "tab": "Tasks",
                 "icon": "list-check",
-                "groups": [
+                "pages": [
                     {
                         "group": "Research Helper",
                         "pages": [
-                            "docs/tasks/research_helper/10"
+                            "docs/tasks/research_helper/10",
+                            "docs/tasks/research_helper/find-alita-paper"
+                        ]
+                    },
+                    {
+                        "group": "System Administration",
+                        "pages": [
+                            "docs/tasks/system-administration/build-linux-kernel",
+                            "docs/tasks/system-administration/configure-git-webserver"
+                        ]
+                    },
+                    {
+                        "group": "Security",
+                        "pages": [
+                            "docs/tasks/security/crack-7z-hash",
+                            "docs/tasks/security/openssl-selfsigned-cert"
+                        ]
+                    },
+                    {
+                        "group": "Data Science",
+                        "pages": [
+                            "docs/tasks/data-science/train-fasttext",
+                            "docs/tasks/data-science/reshard-c4-data"
                         ]
                     }
                 ]
