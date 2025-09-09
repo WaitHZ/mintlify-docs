@@ -42,10 +42,10 @@ def main(args):
         with open(f, "r", encoding="utf-8") as src, open(target_md, "w", encoding="utf-8") as dst:
             dst.write(src.read())
 
+            log_dir = f_prefix + "/"
+
             if len(os.listdir(log_dir)) > 0:
                 dst.write(f"\n<AccordionGroup>\n")
-
-            log_dir = f_prefix + "/"
 
             for log_file in sorted(os.listdir(log_dir)):
                 if log_file.endswith(".json"):
