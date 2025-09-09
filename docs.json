@@ -44,6 +44,13 @@
                             "docs/tasks/course_and_study/165",
                             "docs/tasks/course_and_study/39"
                         ]
+                    },
+                    {
+                        "group": "Academic Life",
+                        "collapsible": true,
+                        "pages": [
+                            "docs/tasks/academic_life/66"
+                        ]
                     }
                 ]
             }
