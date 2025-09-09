@@ -1,0 +1,30 @@
+---
+title: "Student Interview"
+description: "A professor's workflow of scheduling interviews with students based on their research qualifications and calendar availability."
+---
+
+<Columns cols={2}>
+  <Card title="MCP Server" icon="cloud">
+    emails, google_calendar
+  </Card>
+  <Card title="Local Tool" icon="terminal">
+    claim_done
+  </Card>
+</Columns>
+
+## Instruction
+
+I am a professor, recently some students have sent me resumes, I need to finish their interviews today. Due to the number of people being too many, I will only communicate with students who have independent first-author publications. Please, in the email inbox, help me screen the resumes, and check the calendar's free time. I want to finish the interviews within the two days of today and tomorrow, it cannot conflict with other work in the schedule, at the same time each student must be reserved at least one and a half hours of time for the interview, it must be scheduled during working hours: 8 AM to 5 PM. Finally, sync the relevant schedule into Google Calendar, and tell me what time slots they have been scheduled for respectively?
+
+## Initial State
+
+Here, we show one email as example:
+
+<Accordion title="Email from Ryan Gonzalez">
+<div>
+<p>Hello Professor,</p><p>I am Ryan Gonzalez, a master's student at Sun Yat-sen University's School of Data Science and Computer Engineering, specializing in machine learning and data mining.</p><h3>Academic Background:</h3><ul><li>Master's student at Sun Yat-sen University School of Data Science and Computer Engineering</li><li>Academic ranking: 2/45</li><li>Main courses: Machine Learning, Deep Learning, Data Mining, Statistical Learning</li></ul><h3>Research Results:</h3><ul><li><strong>First Author</strong>: \"Novel Approaches to Federated Learning\", ICML 2023</li><li><strong>First Author</strong>: \"Privacy-Preserving Machine Learning\", KDD 2023</li><li><strong>Sole Author</strong>: \"Distributed Optimization for Large-Scale Learning\", AAAI 2023</li><li>Second Author: \"Differential Privacy in Deep Learning\", ICLR 2023</li></ul><h3>Research Interests:</h3><ul><li>Federated Learning and Privacy Protection</li><li>Distributed Machine Learning</li><li>Optimization Algorithm Design</li><li>Combining theoretical analysis with practical applications</li></ul><h3>Programming Skills:</h3><ul><li>Proficient in Python, C++, R</li><li>Familiar with PyTorch, TensorFlow, JAX</li><li>Experience in large-scale system development</li></ul><p>I deeply admire your research work in machine learning theory and hope to have the opportunity to join your research team to jointly advance the development of related fields.</p><p>Looking forward to good news from you!</p><p>Ryan Gonzalez<br>Email: ryang@mcp.com<br>Phone: 135-5678-9012</p>
+</div>
+</Accordion>
+
+## Model Trajectory
+
