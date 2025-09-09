@@ -66,6 +66,13 @@
                             "docs/tasks/office_work/108",
                             "docs/tasks/office_work/109"
                         ]
+                    },
+                    {
+                        "group": "Life & Entertainment",
+                        "collapsible": true,
+                        "pages": [
+                            "docs/tasks/life_and_entertainment/182"
+                        ]
                     }
                 ]
             }
