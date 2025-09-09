@@ -114,8 +114,12 @@ def main(args):
                                         pass
                                     else:
                                         dst.write(f"<div className=\"result-box\">\n")
-                                        if tool_res["type"] != "text":
-                                            raise NotImplementedError(f"Unsupported tool call type: {tool_res['type']}")
+                                        try:
+                                            if tool_res["type"] != "text":
+                                                raise NotImplementedError(f"Unsupported tool call type: {tool_res['type']}")
+                                        except:
+                                            print(tool_res)
+                                            pass
                                         dst.write(f"🔍`tool result`\n```json\n{msg['content']}\n```\n</div>\n\n")
                                 else:
                                     dst.write(f"<div className=\"result-box\">\n")
