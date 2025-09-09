@@ -99,10 +99,13 @@ def main(args):
                             elif msg["role"] == "tool":
                                 dst.write(f"<div className=\"result-box\">\n")
                                 if msg['content'] is not None:
-                                    tool_res = json.loads(msg['content'])
-                                    if tool_res["type"] != "text":
-                                        raise NotImplementedError(f"Unsupported tool call type: {tool_res['type']}")
-                                    dst.write(f"🔍`tool result`\n```json\n{tool_res["text"]}\n```\n</div>\n\n")
+                                    try:
+                                        tool_res = json.loads(msg['content'])
+                                        if tool_res["type"] != "text":
+                                            raise NotImplementedError(f"Unsupported tool call type: {tool_res['type']}")
+                                        dst.write(f"🔍`tool result`\n```json\n{msg['content']}\n```\n</div>\n\n")
+                                    except:
+                                        dst.write(f"🔍`tool result`\n```json\n{{}}\n```\n</div>\n\n")
                                 else:
                                     dst.write(f"🔍`tool result`\n```json\n{{}}\n```\n</div>\n\n")
                             else:
