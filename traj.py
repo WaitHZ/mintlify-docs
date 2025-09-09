@@ -42,7 +42,8 @@ def main(args):
         with open(f, "r", encoding="utf-8") as src, open(target_md, "w", encoding="utf-8") as dst:
             dst.write(src.read())
 
-            dst.write(f"\n<AccordionGroup>\n")
+            if len(os.listdir(log_dir)) > 0:
+                dst.write(f"\n<AccordionGroup>\n")
 
             log_dir = f_prefix + "/"
 
@@ -123,7 +124,9 @@ def main(args):
                                 raise NotImplementedError(f"Unsupported message role: {msg['role']}")
 
                         dst.write(f"</Accordion>\n\n")
-            dst.write(f"</AccordionGroup>\n")
+            
+            if len(os.listdir(log_dir)) > 0:
+                dst.write(f"</AccordionGroup>\n")
 
 
 
