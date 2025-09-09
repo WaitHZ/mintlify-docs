@@ -102,7 +102,7 @@ def main(args):
                                 tool_res = json.loads(msg['content'])
                                 if tool_res["type"] != "text":
                                     raise NotImplementedError(f"Unsupported tool call type: {tool_res['type']}")
-                                dst.write(f"🔍\n```json\n{tool_res["text"]}\n```\n</div>\n\n")
+                                dst.write(f"🔍`tool result`\n```json\n{tool_res["text"]}\n```\n</div>\n\n")
                             else:
                                 raise NotImplementedError(f"Unsupported message role: {msg['role']}")
 
