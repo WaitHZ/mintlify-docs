@@ -44,107 +44,8 @@ title: {title} arxiv_abs_url: {arxiv_abs_url} code_url: {code_url}
 </div>
 
 <div className="trajectory-container" id="trajectory-display">
-  <div className="trajectory-step">
-    <div className="step-header">
-      <div className="step-number">1</div>
-      <div className="step-title">Initial Analysis</div>
-    </div>
-    <div className="step-content">
-      <div className="thinking">
-        <strong>🤔 Thinking:</strong> I'll help you find the paper related to "Alita" and agentic reasoning on arXiv. Let me search for it first.
-      </div>
-    </div>
-  </div>
-
-  <div className="trajectory-step">
-    <div className="step-header">
-      <div className="step-number">2</div>
-      <div className="step-title">Search arXiv</div>
-    </div>
-    <div className="step-content">
-      <div className="tool-call">
-        <strong>🔧 Tool Call:</strong> arxiv_local.search_papers
-        <div className="tool-params">
-          <code>{"query": "Alita agentic reasoning", "date_to": "2025-06-30", "max_results": 10}</code>
-        </div>
-      </div>
-      <div className="tool-result">
-        <strong>📄 Result:</strong> Found 0 papers with exact match. Let me try a broader search.
-      </div>
-    </div>
-  </div>
-
-  <div className="trajectory-step">
-    <div className="step-header">
-      <div className="step-number">3</div>
-      <div className="step-title">Broader Search</div>
-    </div>
-    <div className="step-content">
-      <div className="tool-call">
-        <strong>🔧 Tool Call:</strong> arxiv_local.search_papers
-        <div className="tool-params">
-          <code>{"query": "Alita", "date_to": "2025-06-30", "max_results": 20}</code>
-        </div>
-      </div>
-      <div className="tool-result">
-        <strong>📄 Result:</strong> Found 4 papers including "Alita: Generalist Agent Enabling Scalable Agentic Reasoning with Minimal Predefinition and Maximal Self-Evolution" (arXiv:2505.20286v1)
-      </div>
-    </div>
-  </div>
-
-  <div className="trajectory-step">
-    <div className="step-header">
-      <div className="step-number">4</div>
-      <div className="step-title">Download Paper</div>
-    </div>
-    <div className="step-content">
-      <div className="tool-call">
-        <strong>🔧 Tool Call:</strong> arxiv_local.download_paper
-        <div className="tool-params">
-          <code>{"paper_id": "2505.20286v1"}</code>
-        </div>
-      </div>
-      <div className="tool-result">
-        <strong>✅ Result:</strong> Paper downloaded and converted successfully
-      </div>
-    </div>
-  </div>
-
-  <div className="trajectory-step">
-    <div className="step-header">
-      <div className="step-number">5</div>
-      <div className="step-title">Rename File</div>
-    </div>
-    <div className="step-content">
-      <div className="tool-call">
-        <strong>🔧 Tool Call:</strong> filesystem.move_file
-        <div className="tool-params">
-          <code>{"source": "arxiv_local_storage/2505.20286v1.pdf", "destination": "alita_2505.20286v1.pdf"}</code>
-        </div>
-      </div>
-      <div className="tool-result">
-        <strong>✅ Result:</strong> File renamed successfully to alita_2505.20286v1.pdf
-      </div>
-    </div>
-  </div>
-
-  <div className="trajectory-step final">
-    <div className="step-header">
-      <div className="step-number">✓</div>
-      <div className="step-title">Task Completed</div>
-    </div>
-    <div className="step-content">
-      <div className="final-output">
-        <strong>🎯 Final Output:</strong>
-        <div className="output-format">
-          <code>
-            title: Alita: Generalist Agent Enabling Scalable Agentic Reasoning with Minimal Predefinition and Maximal Self-Evolution<br/>
-            arxiv_abs_url: https://arxiv.org/abs/2505.20286<br/>
-            code_url: https://github.com/CharlesQ9/Alita
-          </code>
-        </div>
-      </div>
-    </div>
+  <div className="loading-message">
+    <p>Loading trajectory data...</p>
   </div>
 </div>
 
@@ -241,6 +142,13 @@ title: {title} arxiv_abs_url: {arxiv_abs_url} code_url: {code_url}
   .model-status.success {
     background: #10b981;
     color: white;
+  }
+
+  .loading-message {
+    text-align: center;
+    padding: 3rem;
+    color: #64748b;
+    font-style: italic;
   }
 
   .trajectory-container {
@@ -477,10 +385,10 @@ title: {title} arxiv_abs_url: {arxiv_abs_url} code_url: {code_url}
 
   // 解析工具调用并生成轨迹步骤
   function parseTrajectoryData(data) {
-    if (!data || !data.messages) return [];
+    if (!data || !data.messages) return { steps: [], finalOutput: '' };
     
     const steps = [];
-    let stepNumber = 1;
+    let finalOutput = '';
     
     for (const message of data.messages) {
       if (message.role === 'assistant' && message.tool_calls) {
@@ -494,7 +402,6 @@ title: {title} arxiv_abs_url: {arxiv_abs_url} code_url: {code_url}
           );
           
           steps.push({
-            number: stepNumber++,
             title: getStepTitle(functionName),
             toolCall: {
               name: functionName,
@@ -503,10 +410,16 @@ title: {title} arxiv_abs_url: {arxiv_abs_url} code_url: {code_url}
             result: toolResponse ? JSON.parse(toolResponse.content) : null
           });
         }
+      } else if (message.role === 'assistant' && message.content && !message.tool_calls) {
+        // 提取最终输出
+        const content = message.content;
+        if (content.includes('title:') && content.includes('arxiv_abs_url:') && content.includes('code_url:')) {
+          finalOutput = content.replace(/\n/g, '<br/>');
+        }
       }
     }
     
-    return steps;
+    return { steps, finalOutput };
   }
 
   // 根据工具名称生成步骤标题
@@ -522,17 +435,33 @@ title: {title} arxiv_abs_url: {arxiv_abs_url} code_url: {code_url}
   }
 
   // 渲染轨迹步骤
-  function renderTrajectorySteps(steps) {
+  function renderTrajectorySteps(steps, finalOutput) {
     const container = document.getElementById('trajectory-display');
     if (!container) return;
     
     let html = '';
     
-    steps.forEach(step => {
+    // 添加初始思考步骤
+    html += \`
+      <div className="trajectory-step">
+        <div className="step-header">
+          <div className="step-number">1</div>
+          <div className="step-title">Initial Analysis</div>
+        </div>
+        <div className="step-content">
+          <div className="thinking">
+            <strong>🤔 Thinking:</strong> I'll help you find the paper related to "Alita" and agentic reasoning on arXiv. Let me search for it first.
+          </div>
+        </div>
+      </div>
+    \`;
+    
+    // 渲染工具调用步骤
+    steps.forEach((step, index) => {
       html += \`
         <div className="trajectory-step">
           <div className="step-header">
-            <div className="step-number">\${step.number}</div>
+            <div className="step-number">\${index + 2}</div>
             <div className="step-title">\${step.title}</div>
           </div>
           <div className="step-content">
@@ -563,11 +492,7 @@ title: {title} arxiv_abs_url: {arxiv_abs_url} code_url: {code_url}
           <div className="final-output">
             <strong>🎯 Final Output:</strong>
             <div className="output-format">
-              <code>
-                title: Alita: Generalist Agent Enabling Scalable Agentic Reasoning with Minimal Predefinition and Maximal Self-Evolution<br/>
-                arxiv_abs_url: https://arxiv.org/abs/2505.20286<br/>
-                code_url: https://github.com/CharlesQ9/Alita
-              </code>
+              <code>\${finalOutput}</code>
             </div>
           </div>
         </div>
@@ -609,8 +534,8 @@ title: {title} arxiv_abs_url: {arxiv_abs_url} code_url: {code_url}
         // 加载并渲染轨迹数据
         const data = await loadModelTrajectory(modelName);
         if (data) {
-          const steps = parseTrajectoryData(data);
-          renderTrajectorySteps(steps);
+          const { steps, finalOutput } = parseTrajectoryData(data);
+          renderTrajectorySteps(steps, finalOutput);
         }
       });
     });
