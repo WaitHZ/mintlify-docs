@@ -8,13 +8,15 @@
         "dark": "#0F172A"
     },
     "navigation": {
-        "tabs": {
-            "tab": "Introduction",
-            "icon": "book",
-            "pages": [
-                "introduction"
-            ]
-        }
+        "tabs": [
+            {
+                "name": "Introduction",
+                "icon": "book",
+                "pages": [
+                    "introduction"
+                ]
+            }
+        ]
     },
     "navbar": {
         "primary": {
