@@ -36,11 +36,11 @@ title: {title} arxiv_abs_url: {arxiv_abs_url} code_url: {code_url}
 
 
 <div className="thinking-box">
-**🤔 Thinking:** I need to find a paper on agentic reasoning with "Alita" in the title. Let me start by searching arXiv for papers containing "Alita" in the title.
+I need to find a paper on agentic reasoning with "Alita" in the title. Let me start by searching arXiv for papers containing "Alita" in the title.
 </div>
 
 <div className="tool-call-box">
-**🔧 Tool Call:** `arxiv_local.search`
+`arxiv_local.search`
 
 ```json
 {
@@ -51,11 +51,11 @@ title: {title} arxiv_abs_url: {arxiv_abs_url} code_url: {code_url}
 </div>
 
 <div className="result-box">
-**📄 Result:** Found 1 paper: "Alita: Agentic Reasoning with Large Language Models" (arXiv:2406.12345)
+Found 1 paper: "Alita: Agentic Reasoning with Large Language Models" (arXiv:2406.12345)
 </div>
 
 <div className="tool-call-box">
-**🔧 Tool Call:** `arxiv_local.download`
+`arxiv_local.download`
 
 ```json
 {
@@ -66,15 +66,15 @@ title: {title} arxiv_abs_url: {arxiv_abs_url} code_url: {code_url}
 </div>
 
 <div className="result-box">
-**📄 Result:** Successfully downloaded paper to local filesystem
+Successfully downloaded paper to local filesystem
 </div>
 
 <div className="thinking-box">
-**🤔 Thinking:** Now I need to extract the paper details and find the code repository link from the paper content.
+Now I need to extract the paper details and find the code repository link from the paper content.
 </div>
 
 <div className="tool-call-box">
-**🔧 Tool Call:** `scholarly.search`
+`scholarly.search`
 
 ```json
 {
@@ -84,11 +84,10 @@ title: {title} arxiv_abs_url: {arxiv_abs_url} code_url: {code_url}
 </div>
 
 <div className="result-box">
-**📄 Result:** Found code repository: https://github.com/example/alita
+Found code repository: https://github.com/example/alita
 </div>
 
 <div className="task-completed-box">
-**🎯 Task Completed:**
 
 ```
 title: Alita: Agentic Reasoning with Large Language Models
