@@ -50,6 +50,7 @@ def main(args):
                     log_path = os.path.join(log_dir, log_file)
                     with open(log_path, "r", encoding="utf-8") as lf:
                         log_data = json.load(lf)
+                        msgs = log_data["messages"]
                         
                         model_name = log_path.split("/")[-1].replace(".json", "")
                         dst.write(f"<Accordion title=\"{model_name}\">\n\n")
@@ -63,9 +64,48 @@ def main(args):
                             dst.write(f"Failed\n")
                         dst.write(f"</Card>\n")
                         dst.write(f"<Card title=\"Tool Calls\" icon=\"wrench\">\n")
-                        dst.write(f"3\n")
+                        tool_msgs = [msg for msg in msgs if msg["role"] == "tool"]
+                        dst.write(f"{len(tool_msgs)}\n")
                         dst.write(f"</Card>\n")
-                        dst.write(f"</Columns>\n")
+                        dst.write(f"</Columns>\n\n")
+
+                        for msg in msgs:
+                            if msg["role"] == "user":
+                                continue
+                            elif msg["role"] == "assistant":
+                                dst.write(f"<div className=\"thinking-box\">\n")
+                                dst.write(f"{msg['content']}\n</div>\n\n")
+                                if "tool_calls" in msg:
+                                    msg_tool_call = msg["tool_calls"][0]
+                                    if msg_tool_call['type'] == "function":
+                                        dst.write(f"<div className=\"tool-call-box\">\n")
+                                        dst.write(f"`{msg_tool_call['function']['name']}`\n\n")
+                                        dst.write(f"```json\n")
+                                        dst.write("{\n")
+                                        for i, arg in enumerate(msg_tool_call['function']['arguments'].strip()[1:-1].split(",")):
+                                            if i == 0:
+                                                dst.write(f"\t{arg}")
+                                            else:
+                                                dst.write(f",\n\t{arg}")
+                                        dst.write("\n}\n")
+                                        dst.write(f"```\n")
+                                        dst.write(f"</div>\n\n")
+                                    else:
+                                        raise NotImplementedError(f"Unsupported tool call type: {msg_tool_call['type']}")
+                                else:
+                                    dst.write(f"<div className=\"task-completed-box\">\n")
+                                    dst.write(f"{msg['content']}\n</div>\n\n")
+                            elif msg["role"] == "tool":
+                                dst.write(f"<div className=\"result-box\">\n")
+                                tool_res = json.loads(msg['content'])
+                                if tool_res["type"] != "text":
+                                    raise NotImplementedError(f"Unsupported tool call type: {tool_res['type']}")
+                                dst.write(f"```json\n{tool_res["text"]}\n```\n</div>\n\n")
+                            else:
+                                raise NotImplementedError(f"Unsupported message role: {msg['role']}")
+
+                        dst.write(f"</Accordion>\n\n")
+                    dst.write(f"</AccordionGroup>\n")
 
 
 

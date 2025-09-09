@@ -13,8 +13,7 @@
   border-radius: 4px;
   margin: 6px 0;
   border-left: 3px solid #757575;
-  max-height: 240px; /* 约10行的高度 */
-  overflow-y: auto;
+  position: relative;
 }
 
 .result-box {
@@ -23,8 +22,45 @@
   border-radius: 4px;
   margin: 6px 0;
   border-left: 3px solid #4caf50;
-  max-height: 240px; /* 约10行的高度 */
-  overflow-y: auto;
+  position: relative;
+}
+
+.tool-call-box.collapsed,
+.result-box.collapsed {
+  max-height: 192px; /* 约8行的高度 */
+  overflow: hidden;
+}
+
+.tool-call-box.collapsed::after,
+.result-box.collapsed::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 40px;
+  background: linear-gradient(transparent, var(--background-color, #f5f5f5));
+  pointer-events: none;
+}
+
+.result-box.collapsed::after {
+  background: linear-gradient(transparent, var(--background-color, #e8f5e8));
+}
+
+.show-more-btn {
+  background: #2196f3;
+  color: white;
+  border: none;
+  padding: 4px 8px;
+  border-radius: 3px;
+  font-size: 12px;
+  cursor: pointer;
+  margin-top: 8px;
+  display: inline-block;
+}
+
+.show-more-btn:hover {
+  background: #1976d2;
 }
 
 .task-completed-box {
@@ -35,25 +71,3 @@
   border-left: 3px solid #ff9800;
 }
 
-/* 自定义滚动条样式 */
-.tool-call-box::-webkit-scrollbar,
-.result-box::-webkit-scrollbar {
-  width: 6px;
-}
-
-.tool-call-box::-webkit-scrollbar-track,
-.result-box::-webkit-scrollbar-track {
-  background: rgba(0, 0, 0, 0.1);
-  border-radius: 3px;
-}
-
-.tool-call-box::-webkit-scrollbar-thumb,
-.result-box::-webkit-scrollbar-thumb {
-  background: rgba(0, 0, 0, 0.3);
-  border-radius: 3px;
-}
-
-.tool-call-box::-webkit-scrollbar-thumb:hover,
-.result-box::-webkit-scrollbar-thumb:hover {
-  background: rgba(0, 0, 0, 0.5);
-}
