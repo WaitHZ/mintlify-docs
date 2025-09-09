@@ -1,0 +1,123 @@
+/* Custom CSS for MCPBench */
+
+/* Make topbar full width */
+.mintlify-docs header,
+.mintlify-docs [data-testid="topbar"],
+.mintlify-docs .topbar,
+.mintlify-docs nav[role="navigation"],
+.mintlify-docs .navbar {
+  max-width: 100% !important;
+  width: 100% !important;
+  padding: 0 2rem !important;
+  margin: 0 !important;
+}
+
+/* Ensure topbar container is full width */
+.mintlify-docs .topbar-container,
+.mintlify-docs [class*="topbar-container"],
+.mintlify-docs .navbar-container,
+.mintlify-docs [class*="navbar-container"] {
+  max-width: 100% !important;
+  width: 100% !important;
+  padding: 0 2rem !important;
+}
+
+/* Make topbar content stretch to full width */
+.mintlify-docs .topbar-content,
+.mintlify-docs [class*="topbar-content"],
+.mintlify-docs .navbar-content,
+.mintlify-docs [class*="navbar-content"] {
+  max-width: 100% !important;
+  width: 100% !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+}
+
+/* Ensure logo and navigation items are properly spaced */
+.mintlify-docs .topbar-left,
+.mintlify-docs [class*="topbar-left"],
+.mintlify-docs .navbar-left,
+.mintlify-docs [class*="navbar-left"] {
+  flex: 1 !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 2rem !important;
+}
+
+.mintlify-docs .topbar-right,
+.mintlify-docs [class*="topbar-right"],
+.mintlify-docs .navbar-right,
+.mintlify-docs [class*="navbar-right"] {
+  display: flex !important;
+  align-items: center !important;
+  gap: 1rem !important;
+}
+
+/* Make search bar and other elements responsive */
+.mintlify-docs .search-container,
+.mintlify-docs [class*="search"],
+.mintlify-docs .search-input {
+  max-width: 300px !important;
+  flex: 0 0 auto !important;
+}
+
+/* Ensure buttons and links are properly styled */
+.mintlify-docs .topbar button,
+.mintlify-docs .navbar button,
+.mintlify-docs .topbar a,
+.mintlify-docs .navbar a {
+  white-space: nowrap !important;
+  flex-shrink: 0 !important;
+}
+
+/* Remove any max-width constraints on the main container */
+.mintlify-docs .container,
+.mintlify-docs .wrapper,
+.mintlify-docs [class*="container"],
+.mintlify-docs [class*="wrapper"] {
+  max-width: 100% !important;
+  width: 100% !important;
+}
+
+/* Ensure the main layout doesn't constrain the topbar */
+.mintlify-docs .layout,
+.mintlify-docs [class*="layout"] {
+  max-width: 100% !important;
+  width: 100% !important;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .mintlify-docs header,
+  .mintlify-docs [data-testid="topbar"],
+  .mintlify-docs .topbar,
+  .mintlify-docs nav[role="navigation"],
+  .mintlify-docs .navbar {
+    padding: 0 1rem !important;
+  }
+  
+  .mintlify-docs .topbar-container,
+  .mintlify-docs [class*="topbar-container"],
+  .mintlify-docs .navbar-container,
+  .mintlify-docs [class*="navbar-container"] {
+    padding: 0 1rem !important;
+  }
+  
+  .mintlify-docs .search-container,
+  .mintlify-docs [class*="search"] {
+    max-width: 200px !important;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .mintlify-docs header,
+  .mintlify-docs [data-testid="topbar"],
+  .mintlify-docs .topbar,
+  .mintlify-docs nav[role="navigation"],
+  .mintlify-docs .navbar {
+    background: #1f2937 !important;
+    border-bottom: 1px solid #374151 !important;
+  }
+}
