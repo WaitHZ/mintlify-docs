@@ -1,28 +1,55 @@
 /* Custom CSS for MCPBench */
 
-/* Make topbar full width */
+/* Force full width on all possible topbar elements */
+header,
+[data-testid="topbar"],
+.topbar,
+nav[role="navigation"],
+.navbar,
 .mintlify-docs header,
 .mintlify-docs [data-testid="topbar"],
 .mintlify-docs .topbar,
 .mintlify-docs nav[role="navigation"],
-.mintlify-docs .navbar {
-  max-width: 100% !important;
-  width: 100% !important;
+.mintlify-docs .navbar,
+[class*="topbar"],
+[class*="navbar"],
+[class*="header"] {
+  max-width: 100vw !important;
+  width: 100vw !important;
   padding: 0 2rem !important;
   margin: 0 !important;
+  position: relative !important;
+  left: 50% !important;
+  right: 50% !important;
+  margin-left: -50vw !important;
+  margin-right: -50vw !important;
 }
 
 /* Ensure topbar container is full width */
+.topbar-container,
+[class*="topbar-container"],
+.navbar-container,
+[class*="navbar-container"],
 .mintlify-docs .topbar-container,
 .mintlify-docs [class*="topbar-container"],
 .mintlify-docs .navbar-container,
 .mintlify-docs [class*="navbar-container"] {
-  max-width: 100% !important;
-  width: 100% !important;
+  max-width: 100vw !important;
+  width: 100vw !important;
   padding: 0 2rem !important;
+  margin: 0 !important;
+  position: relative !important;
+  left: 50% !important;
+  right: 50% !important;
+  margin-left: -50vw !important;
+  margin-right: -50vw !important;
 }
 
 /* Make topbar content stretch to full width */
+.topbar-content,
+[class*="topbar-content"],
+.navbar-content,
+[class*="navbar-content"],
 .mintlify-docs .topbar-content,
 .mintlify-docs [class*="topbar-content"],
 .mintlify-docs .navbar-content,
@@ -32,6 +59,8 @@
   display: flex !important;
   justify-content: space-between !important;
   align-items: center !important;
+  padding: 0 !important;
+  margin: 0 !important;
 }
 
 /* Ensure logo and navigation items are properly spaced */
@@ -110,8 +139,47 @@
   }
 }
 
+/* Additional full-width overrides */
+* {
+  box-sizing: border-box !important;
+}
+
+/* Force all containers to be full width */
+.container,
+.wrapper,
+[class*="container"],
+[class*="wrapper"],
+.max-w-4xl,
+.max-w-6xl,
+.max-w-7xl,
+[class*="max-w-"] {
+  max-width: 100vw !important;
+  width: 100vw !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Override any parent container constraints */
+body,
+html,
+#__next,
+#root,
+[class*="layout"],
+[class*="main"] {
+  max-width: 100vw !important;
+  width: 100vw !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow-x: hidden !important;
+}
+
 /* Dark mode support */
 @media (prefers-color-scheme: dark) {
+  header,
+  [data-testid="topbar"],
+  .topbar,
+  nav[role="navigation"],
+  .navbar,
   .mintlify-docs header,
   .mintlify-docs [data-testid="topbar"],
   .mintlify-docs .topbar,
