@@ -16,7 +16,7 @@
         "primary": {
             "type": "button",
             "label": "Introduction",
-            "href": "/introduction"
+            "href": "https://waithz.mintlify.app/introduction"
         }
     }
 }
