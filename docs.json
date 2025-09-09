@@ -10,7 +10,7 @@
     "navigation": {
         "tabs": [
             {
-                "name": "Introduction",
+                "tab": "Introduction",
                 "icon": "book",
                 "pages": [
                     "introduction"
