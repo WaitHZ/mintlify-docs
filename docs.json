@@ -1,10 +1,15 @@
 {
     "$schema": "https://mintlify.com/docs.json",
-    "theme": "mint",
-    "name": "Your Docs",
+    "theme": "aspen",
+    "name": "MCP Benchmark",
     "colors": {
-      "primary": "#D0D0D0"
+        "primary": "#3B82F6",
+        "light": "#F8FAFC",
+        "dark": "#0F172A"
     },
     "navigation": {
+        "pages": [
+            "introduction"
+        ]
     }
 }
