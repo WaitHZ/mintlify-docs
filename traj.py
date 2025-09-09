@@ -102,17 +102,19 @@ def main(args):
                                     dst.write(f"<div className=\"task-completed-box\">\n")
                                     dst.write(f"📢{msg['content']}\n</div>\n\n")
                             elif msg["role"] == "tool":
-                                dst.write(f"<div className=\"result-box\">\n")
                                 if msg['content'] is not None:
                                     try:
                                         tool_res = json.loads(msg['content'])
-                                        if tool_res["type"] != "text":
-                                            raise NotImplementedError(f"Unsupported tool call type: {tool_res['type']}")
-                                        dst.write(f"🔍`tool result`\n```json\n{msg['content']}\n```\n</div>\n\n")
                                     except:
                                         "claim done"
                                         pass
+                                    else:
+                                        dst.write(f"<div className=\"result-box\">\n")
+                                        if tool_res["type"] != "text":
+                                            raise NotImplementedError(f"Unsupported tool call type: {tool_res['type']}")
+                                        dst.write(f"🔍`tool result`\n```json\n{msg['content']}\n```\n</div>\n\n")
                                 else:
+                                    dst.write(f"<div className=\"result-box\">\n")
                                     dst.write(f"🔍`tool result`\n```json\n{{}}\n```\n</div>\n\n")
                             else:
                                 raise NotImplementedError(f"Unsupported message role: {msg['role']}")
