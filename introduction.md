@@ -1,4 +1,4 @@
 ---
 title: "About frontmatter"
-mode: "wide"
+mode: "center"
 ---
