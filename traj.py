@@ -105,7 +105,7 @@ def main(args):
                                             raise NotImplementedError(f"Unsupported tool call type: {tool_res['type']}")
                                         dst.write(f"🔍`tool result`\n```json\n{msg['content']}\n```\n</div>\n\n")
                                     except:
-                                        dst.write(f"🔍`tool result`\n```json\n{{}}\n```\n</div>\n\n")
+                                        pass
                                 else:
                                     dst.write(f"🔍`tool result`\n```json\n{{}}\n```\n</div>\n\n")
                             else:
