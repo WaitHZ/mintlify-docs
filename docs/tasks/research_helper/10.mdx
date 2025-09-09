@@ -35,13 +35,12 @@ title: {title} arxiv_abs_url: {arxiv_abs_url} code_url: {code_url}
 </Columns>
 
 
-<div style="background: #e3f2fd; padding: 12px; border-radius: 6px; margin: 8px 0;">
+<Quote>
 I need to find a paper on agentic reasoning with "Alita" in the title. Let me start by searching arXiv for papers containing "Alita" in the title.
-</div>
+</Quote>
 
-<div style="background: #f5f5f5; padding: 12px; border-radius: 6px; margin: 8px 0;">
-
-`arxiv_local.search`
+<Quote>
+**Tool Call:** `arxiv_local.search`
 
 ```json
 {
@@ -49,16 +48,14 @@ I need to find a paper on agentic reasoning with "Alita" in the title. Let me st
   "title": "agentic reasoning"
 }
 ```
+</Quote>
 
-</div>
-
-<div style="background: #e8f5e8; padding: 12px; border-radius: 6px; margin: 8px 0;">
+<Quote>
 Found 1 paper: "Alita: Agentic Reasoning with Large Language Models" (arXiv:2406.12345)
-</div>
+</Quote>
 
-<div style="background: #f5f5f5; padding: 12px; border-radius: 6px; margin: 8px 0;">
-
-`arxiv_local.download`
+<Quote>
+**Tool Call:** `arxiv_local.download`
 
 ```json
 {
@@ -66,40 +63,39 @@ Found 1 paper: "Alita: Agentic Reasoning with Large Language Models" (arXiv:2406
   "filename": "alita_2406.12345.pdf"
 }
 ```
+</Quote>
 
-</div>
-
-<div style="background: #e8f5e8; padding: 12px; border-radius: 6px; margin: 8px 0;">
+<Quote>
 Successfully downloaded paper to local filesystem
-</div>
+</Quote>
 
-<div style="background: #e3f2fd; padding: 12px; border-radius: 6px; margin: 8px 0;">
+<Quote>
 Now I need to extract the paper details and find the code repository link from the paper content.
-</div>
+</Quote>
 
-<div style="background: #f5f5f5; padding: 12px; border-radius: 6px; margin: 8px 0;">
-
-`scholarly.search`
+<Quote>
+**Tool Call:** `scholarly.search`
 
 ```json
 {
   "title": "Alita: Agentic Reasoning with Large Language Models"
 }
 ```
+</Quote>
 
-</div>
-
-<div style="background: #e8f5e8; padding: 12px; border-radius: 6px; margin: 8px 0;">
+<Quote>
 Found code repository: https://github.com/example/alita
-</div>
+</Quote>
 
-<div style="background: #e8f5e8; padding: 12px; border-radius: 6px; margin: 8px 0;">
+<Quote>
+**Task Completed:**
+
 ```
 title: Alita: Agentic Reasoning with Large Language Models
 arxiv_abs_url: https://arxiv.org/abs/2406.12345
 code_url: https://github.com/example/alita
 ```
-</div>
+</Quote>
 
 </Accordion>
 </AccordionGroup>
