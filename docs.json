@@ -14,14 +14,9 @@
     },
     "navbar": {
         "primary": {
-            "Introduction": "introduction"
-        },
-        "links": [
-            {
-                "icon": "github",
-                "label": "Github",
-                "href": "https://example.com/community"
-            }
-        ]
+            "type": "button",
+            "label": "Introduction",
+            "href": "introduction"
+        }
     }
 }
