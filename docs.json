@@ -27,6 +27,8 @@
             {
                 "tab": "Tasks",
                 "icon": "list-check",
+                "collapsible": true,
+                "collapsed": true,
                 "pages": [
                     {
                         "group": "Research Helper",
