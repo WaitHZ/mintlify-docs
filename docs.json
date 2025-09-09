@@ -58,6 +58,13 @@
                         "pages": [
                             "docs/tasks/tech_and_dev/173"
                         ]
+                    },
+                    {
+                        "group": "Office Work",
+                        "collapsible": true,
+                        "pages": [
+                            "docs/tasks/office_work/108"
+                        ]
                     }
                 ]
             }
