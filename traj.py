@@ -107,7 +107,7 @@ def main(args):
                                 raise NotImplementedError(f"Unsupported message role: {msg['role']}")
 
                         dst.write(f"</Accordion>\n\n")
-                    dst.write(f"</AccordionGroup>\n")
+            dst.write(f"</AccordionGroup>\n")
 
 
 
