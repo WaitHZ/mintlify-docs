@@ -118,8 +118,7 @@ def main(args):
                                     try:
                                         tool_res = json.loads(msg['content'])
                                     except:
-                                        "claim done"
-                                        pass
+                                        tool_res = msg['content']
                                     else:
                                         if isinstance(tool_res, dict):
                                             tool_res_s = [tool_res]
