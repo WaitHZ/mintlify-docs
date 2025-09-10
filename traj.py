@@ -3,6 +3,7 @@ from ast import arguments
 import os
 from tqdm import tqdm
 import json
+import re
 
 
 def find_mdx_files_with_underscore(dir_path):
@@ -83,13 +84,10 @@ def main(args):
                                 continue
                             elif msg["role"] == "assistant":
                                 if "tool_calls" in msg:
-                                    # if len(msg["tool_calls"]) > 1:
-                                    #     print("!!!")
-                                    #     break
                                     if not (msg["content"] == "" or msg["content"] is None or msg["content"] == "null"):
                                         dst.write(f"<div className=\"thinking-box\">\n")
                                         dst.write(f"🧐`Agent`\n\n{msg['content'].strip()}\n</div>\n\n")
-                                    # msg_tool_call = msg["tool_calls"][0]
+
                                     for msg_tool_call in msg["tool_calls"]:
                                         if msg_tool_call['type'] == "function":
                                             if msg_tool_call['function']['name'] == "local-python-execute":
@@ -126,11 +124,13 @@ def main(args):
                                 if msg['content'] is not None:
                                     try:
                                         tool_res = json.loads(msg['content'])
-                                        # if "type" in tool_res and tool_res["type"] != "text":
-                                        #     raise NotImplementedError(f"Unsupported tool call type: {tool_res['type']}")
                                         tool_res = tool_res["text"]
                                     except:
                                         tool_res = msg['content']
+                                        m = re.search(r'{\"type\":\"text\",\"text\":(.*?),\"annotations\":null}', tool_res, re.DOTALL)
+                                        if m is not None:
+                                            print(m.group(1))
+                                            exit()
 
                                     dst.write(f"<div className=\"result-box\">\n")
                                     dst.write(f"🔍`tool result`\n```json\n{tool_res}\n```\n</div>\n\n")
