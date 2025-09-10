@@ -68,12 +68,12 @@ def main(args):
                         dst.write(f"<Card title=\"Tool Calls\" icon=\"wrench\">\n")
                         tool_call_num = 0
                         for msg in msgs:
-                            if msg["role"] == "assitant" and "tool_calls" in msg:
+                            if msg["role"] == "assistant" and "tool_calls" in msg:
                                 tool_call_num += len(msg["tool_calls"])
                         dst.write(f"{tool_call_num}\n")
                         dst.write(f"</Card>\n")
                         dst.write(f"<Card title=\"Turns\" icon=\"arrows-rotate\">\n")
-                        assit_msgs = [msg for msg in msgs if msg["role"] == "assitant"]
+                        assit_msgs = [msg for msg in msgs if msg["role"] == "assistant"]
                         dst.write(f"{len(assit_msgs)}\n")
                         dst.write(f"</Card>\n")
                         dst.write(f"</Columns>\n\n")
