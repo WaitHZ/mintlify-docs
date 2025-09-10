@@ -123,8 +123,8 @@ def main(args):
                             elif msg["role"] == "tool":
                                 if msg['content'] is not None:
                                     try:
-                                        tool_res.replace(r'\"', r'"')
-                                        tool_res.replace(r'\\n', r'\n')
+                                        # tool_res.replace(r'\"', r'"')
+                                        # tool_res.replace(r'\\n', r'\n')
                                         tool_res = json.loads(msg['content'])
                                         tool_res = tool_res["text"]
                                     except:
