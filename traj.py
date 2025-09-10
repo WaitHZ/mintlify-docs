@@ -126,7 +126,7 @@ def main(args):
                                             tool_res_s = [tool_res[0]]
                                         for tool_res in tool_res_s:
                                             dst.write(f"<div className=\"result-box\">\n")
-                                            if tool_res["type"] != "text":
+                                            if "type" in tool_res and tool_res["type"] != "text":
                                                 raise NotImplementedError(f"Unsupported tool call type: {tool_res['type']}")
                                             dst.write(f"🔍`tool result`\n```json\n{msg['content']}\n```\n</div>\n\n")
                                 else:
