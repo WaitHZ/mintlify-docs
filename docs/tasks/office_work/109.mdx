@@ -59,10 +59,8 @@ I'll help you convert the market data according to your company's internal class
 
 <div className="result-box">
 🔍`tool result`
-```json
 [FILE] Market_Data.xlsx
 [FILE] Market_Data_Format.xlsx
-```
 </div>
 
 <div className="thinking-box">
@@ -83,9 +81,7 @@ Now let me examine the Market_Data.xlsx file to understand its structure:
 
 <div className="result-box">
 🔍`tool result`
-```json
 {'filename': 'Market_Data.xlsx', 'sheets': ['Methodology', 'RawData'], 'size': 17522, 'modified': 1753532389.9237576}
-```
 </div>
 
 <div className="thinking-box">
@@ -107,7 +103,6 @@ Let me examine the Methodology sheet first to understand the conversion mapping:
 
 <div className="result-box">
 🔍`tool result`
-```json
 {
   "range": "A1:R14",
   "sheet_name": "Methodology",
@@ -2382,7 +2377,6 @@ Let me examine the Methodology sheet first to understand the conversion mapping:
     }
   ]
 }
-```
 </div>
 
 <div className="thinking-box">
@@ -2405,7 +2399,6 @@ Now let me examine the RawData sheet to understand the data structure:
 
 <div className="result-box">
 🔍`tool result`
-```json
 {
   "range": "A1:P25",
   "sheet_name": "RawData",
@@ -6012,7 +6005,6 @@ Now let me examine the RawData sheet to understand the data structure:
     }
   ]
 }
-```
 </div>
 
 <div className="thinking-box">
@@ -6034,9 +6026,7 @@ Now let me examine the Market_Data_Format.xlsx file to understand the expected o
 
 <div className="result-box">
 🔍`tool result`
-```json
 Error executing tool read_data_from_excel: Sheet 'Sheet1' not found
-```
 </div>
 
 <div className="tool-call-box">
@@ -6051,9 +6041,7 @@ Error executing tool read_data_from_excel: Sheet 'Sheet1' not found
 
 <div className="result-box">
 🔍`tool result`
-```json
 {'filename': 'Market_Data_Format.xlsx', 'sheets': ['Format'], 'size': 16000, 'modified': 1755591632.830717}
-```
 </div>
 
 <div className="tool-call-box">
@@ -6069,7 +6057,6 @@ Error executing tool read_data_from_excel: Sheet 'Sheet1' not found
 
 <div className="result-box">
 🔍`tool result`
-```json
 {
   "range": "A1:E1",
   "sheet_name": "Format",
@@ -6121,7 +6108,6 @@ Error executing tool read_data_from_excel: Sheet 'Sheet1' not found
     }
   ]
 }
-```
 </div>
 
 <div className="thinking-box">
@@ -6152,7 +6138,6 @@ print(methodology_df.head(15))
 
 <div className="result-box">
 🔍`tool result`
-```json
 === STDOUT ===
 Methodology sheet shape: (14, 17)
 Methodology sheet:
@@ -6177,7 +6162,6 @@ Methodology sheet:
 Return code: 0
 Execution time: 0.541 seconds
 Timeout limit: 30 seconds
-```
 </div>
 
 <div className="tool-call-box">
@@ -6194,7 +6178,6 @@ print(raw_data_df.iloc[0:5])  # First few rows to understand structure
 
 <div className="result-box">
 🔍`tool result`
-```json
 === STDERR ===
 Traceback (most recent call last):
   File "/ssddata/mcpbench/wenshuo/eval/final_new/mcpbench_dev/recorded_trajectories_v2/run1/claude-4-sonnet-0514/finalpool/SingleUserTurn-excel-market-research/workspace/./.python_tmp/analyze_data2.py", line 2, in <module>
@@ -6205,7 +6188,6 @@ NameError: name 'pd' is not defined. Did you mean: 'id'?
 Return code: 1
 Execution time: 0.070 seconds
 Timeout limit: 30 seconds
-```
 </div>
 
 <div className="tool-call-box">
@@ -6230,7 +6212,6 @@ print(raw_data_df.iloc[0:5])  # First few rows to understand structure
 
 <div className="result-box">
 🔍`tool result`
-```json
 === STDOUT ===
 Raw data sheet shape: (23, 16)
 Raw data sheet headers:
@@ -6246,7 +6227,6 @@ Raw data sheet headers:
 Return code: 0
 Execution time: 0.552 seconds
 Timeout limit: 30 seconds
-```
 </div>
 
 <div className="tool-call-box">
@@ -6271,7 +6251,6 @@ for i in range(3, 13):  # Rows 4-13 contain the mappings
 
 <div className="result-box">
 🔍`tool result`
-```json
 === STDOUT ===
 Methodology mapping analysis:
 === STDERR ===
@@ -6284,7 +6263,6 @@ NameError: name 'methodology_df' is not defined
 Return code: 1
 Execution time: 0.075 seconds
 Timeout limit: 30 seconds
-```
 </div>
 
 <div className="tool-call-box">
@@ -6325,7 +6303,6 @@ print("\nRaw data market categories (row 3):", raw_data_df.iloc[3, 1:].tolist())
 
 <div className="result-box">
 🔍`tool result`
-```json
 === STDOUT ===
 Methodology mapping analysis:
 Row 1 (market categories): ['Segment/Source', 'Agriculture', 'Oil & Gas', 'Food', 'Metals', 'Electronic', 'Electric', 'Auto Production', 'Transportation', 'Furniture', 'Construction', 'Industry', 'Steel Production', 'Air Bus', 'Boeing', 'MRO']
@@ -6348,7 +6325,6 @@ Raw data market categories (row 3): ['Agriculture', 'Oil & Gas', 'Food', 'Metals
 Return code: 0
 Execution time: 0.557 seconds
 Timeout limit: 30 seconds
-```
 </div>
 
 <div className="tool-call-box">
@@ -6395,7 +6371,6 @@ print(f"Appliance values: {appliance_values}")
 
 <div className="result-box">
 🔍`tool result`
-```json
 === STDOUT ===
 Processing Appliance category conversion...
 === STDERR ===
@@ -6408,7 +6383,6 @@ NameError: name 'raw_data_df' is not defined
 Return code: 1
 Execution time: 0.070 seconds
 Timeout limit: 30 seconds
-```
 </div>
 
 <div className="tool-call-box">
@@ -6482,7 +6456,6 @@ print(f"Appliance values: {appliance_values}")
 
 <div className="result-box">
 🔍`tool result`
-```json
 === STDOUT ===
 Processing Appliance category conversion...
 Year 2014: Electric=0, Furniture=5319.836457699379, Construction=9257156.79745658, Appliance=2778211.0065285135
@@ -6511,7 +6484,6 @@ Appliance values: [2778211.0065285135, 2898273.9987219754, 3099758.8549348167, 3
 Return code: 0
 Execution time: 0.562 seconds
 Timeout limit: 30 seconds
-```
 </div>
 
 <div className="tool-call-box">
@@ -6567,7 +6539,6 @@ print(results_df)
 
 <div className="result-box">
 🔍`tool result`
-```json
 === STDERR ===
 Traceback (most recent call last):
   File "/ssddata/mcpbench/wenshuo/eval/final_new/mcpbench_dev/recorded_trajectories_v2/run1/claude-4-sonnet-0514/finalpool/SingleUserTurn-excel-market-research/workspace/./.python_tmp/calculate_growth_rates.py", line 5, in <module>
@@ -6578,7 +6549,6 @@ NameError: name 'years' is not defined. Did you mean: 'vars'?
 Return code: 1
 Execution time: 0.087 seconds
 Timeout limit: 30 seconds
-```
 </div>
 
 <div className="tool-call-box">
@@ -6688,7 +6658,6 @@ print(results_df)
 
 <div className="result-box">
 🔍`tool result`
-```json
 === STDOUT ===
 Processing complete data conversion and growth rate calculation...
 Calculating annual growth rates for Appliance category (2015-2024):
@@ -6720,7 +6689,6 @@ Results DataFrame:
 Return code: 0
 Execution time: 0.551 seconds
 Timeout limit: 30 seconds
-```
 </div>
 
 <div className="tool-call-box">
@@ -6778,7 +6746,6 @@ print(f"- Output file: {output_file}")
 
 <div className="result-box">
 🔍`tool result`
-```json
 === STDERR ===
 Traceback (most recent call last):
   File "/ssddata/mcpbench/wenshuo/eval/final_new/mcpbench_dev/recorded_trajectories_v2/run1/claude-4-sonnet-0514/finalpool/SingleUserTurn-excel-market-research/workspace/./.python_tmp/create_output_file.py", line 5, in <module>
@@ -6789,7 +6756,6 @@ NameError: name 'Workbook' is not defined
 Return code: 1
 Execution time: 0.072 seconds
 Timeout limit: 30 seconds
-```
 </div>
 
 <div className="tool-call-box">
@@ -6937,7 +6903,6 @@ print(f"- Output file: {output_file}")
 
 <div className="result-box">
 🔍`tool result`
-```json
 === STDOUT ===
 Processing complete data conversion and growth rate calculation...
 Excel file saved as: /ssddata/mcpbench/wenshuo/eval/final_new/mcpbench_dev/recorded_trajectories_v2/run1/claude-4-sonnet-0514/finalpool/SingleUserTurn-excel-market-research/workspace/growth_rate.xlsx
@@ -6966,7 +6931,6 @@ Summary:
 Return code: 0
 Execution time: 0.548 seconds
 Timeout limit: 30 seconds
-```
 </div>
 
 <div className="thinking-box">
@@ -6987,12 +6951,10 @@ Perfect! Let me verify the file has been created correctly:
 
 <div className="result-box">
 🔍`tool result`
-```json
 [DIR] .python_tmp
 [FILE] Market_Data.xlsx
 [FILE] Market_Data_Format.xlsx
 [FILE] growth_rate.xlsx
-```
 </div>
 
 <div className="thinking-box">
@@ -7014,7 +6976,6 @@ Let me also verify the content of the created file matches the expected format:
 
 <div className="result-box">
 🔍`tool result`
-```json
 {
   "range": "A1:E11",
   "sheet_name": "Growth Rate Analysis",
@@ -7516,7 +7477,6 @@ Let me also verify the content of the created file matches the expected format:
     }
   ]
 }
-```
 </div>
 
 <div className="thinking-box">
@@ -7577,7 +7537,6 @@ print("="*60)
 
 <div className="result-box">
 🔍`tool result`
-```json
 === STDOUT ===
 ✓ Successfully loaded with load_workbook(file_path, data_only=True)
 ✓ Worksheet name: Growth Rate Analysis
@@ -7613,7 +7572,6 @@ Key findings:
 Return code: 0
 Execution time: 0.313 seconds
 Timeout limit: 30 seconds
-```
 </div>
 
 <div className="tool-call-box">
@@ -7626,9 +7584,7 @@ Timeout limit: 30 seconds
 
 <div className="result-box">
 🔍`tool result`
-```json
 you have claimed the task is done!
-```
 </div>
 
 <div className="thinking-box">
