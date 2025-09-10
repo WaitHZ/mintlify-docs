@@ -117,6 +117,7 @@ def main(args):
                                 if msg['content'] is not None:
                                     try:
                                         tool_res = json.loads(msg['content'])
+                                        print(tool_res)
                                         if "type" in tool_res and tool_res["type"] != "text":
                                             raise NotImplementedError(f"Unsupported tool call type: {tool_res['type']}")
                                         tool_res = tool_res["text"]
