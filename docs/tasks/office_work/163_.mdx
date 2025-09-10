@@ -1,0 +1,28 @@
+---
+title: "Reimbursement Form Filler"
+description: "Extract taxi receipt data (filename, month, amount) from ‘bills/’ PDFs for the last 3 months and populate ‘Bill_Format.xlsx’ → rename to ‘department_expenses.xlsx’ per ‘requirement.txt’."
+---
+
+<Columns cols={2}>
+  <Card title="MCP Server" icon="cloud">
+    filesystem, excel, pdf-tools
+  </Card>
+  <Card title="Local Tool" icon="terminal">
+    claim_done
+  </Card>
+</Columns>
+
+## Instruction
+
+I'm an accountant in the R&D department of a tech company, and I need your help to organize our department's commuting expense reimbursement forms. Only consider the reimbursement data that comes from taxi bill PDFs located in the 'bills/' folder for the last three months. Please go through all the PDFs and extract the 'File name (excluding file suffixes)', 'Month'(billing period) and 'amount' from each taxi receipt. Then, use these information to fill the Excel file named 'Bill_Format.xlsx'. After filling, change the file name to 'department_expenses.xlsx' and the data processing requirements should refer to 'requirement.txt'.
+
+## Initial State
+
+```
+workspace/
+├── bills/
+├── Bill_Format.xlsx
+└── requirement.txt
+```
+
+## Model Trajectory
