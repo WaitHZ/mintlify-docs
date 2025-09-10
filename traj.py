@@ -127,7 +127,7 @@ def main(args):
                                         tool_res = tool_res["text"]
                                     except:
                                         tool_res = msg['content']
-                                        m = re.search(r'{\"type\":\"text\",\"text\":(.*?),\"annotations\":null}', tool_res, re.DOTALL)
+                                        m = re.search(r'{"type":"text","text":(.*?),"annotations":null}', tool_res, re.DOTALL)
                                         if m is not None:
                                             print(m.group(1))
                                             exit()
