@@ -121,17 +121,15 @@ def main(args):
                                         tool_res = msg['content']
                                     finally:
                                         if isinstance(tool_res, dict):
-                                            tool_res_s = [tool_res["content"]]
-                                        else:
-                                            tool_res_s = [tool_res[0]]
-                                        for tool_res in tool_res_s:
-                                            dst.write(f"<div className=\"result-box\">\n")
-                                            if "type" in tool_res and tool_res["type"] != "text":
-                                                raise NotImplementedError(f"Unsupported tool call type: {tool_res['type']}")
-                                            dst.write(f"🔍`tool result`\n```json\n{msg['content']}\n```\n</div>\n\n")
+                                            tool_res = tool_res["content"]
+                                        dst.write(f"<div className=\"result-box\">\n")
+                                        if "type" in tool_res and tool_res["type"] != "text":
+                                            raise NotImplementedError(f"Unsupported tool call type: {tool_res['type']}")
+                                        dst.write(f"🔍`tool result`\n```json\n{msg['content']}\n```\n</div>\n\n")
                                 else:
-                                    dst.write(f"<div className=\"result-box\">\n")
-                                    dst.write("🔍`tool result`\n```json\n{}\n```\n</div>\n\n")
+                                    raise NotImplementedError("tool result doesn't have content")
+                                    # dst.write(f"<div className=\"result-box\">\n")
+                                    # dst.write("🔍`tool result`\n```json\n{}\n```\n</div>\n\n")
                             else:
                                 raise NotImplementedError(f"Unsupported message role: {msg['role']}")
 
