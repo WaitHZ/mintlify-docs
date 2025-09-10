@@ -131,7 +131,7 @@ def main(args):
                                         tool_res = msg['content']
 
                                     dst.write(f"<div className=\"result-box\">\n")
-                                    dst.write(f"🔍`tool result`\n{tool_res} \n</div>\n\n")
+                                    dst.write(f"🔍`tool result`\n{tool_res}\n</div>\n\n")
                                 else:
                                     raise NotImplementedError("tool result doesn't have content")
                                     # dst.write(f"<div className=\"result-box\">\n")
