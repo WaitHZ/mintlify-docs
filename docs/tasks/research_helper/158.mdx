@@ -58,9 +58,9 @@ I'll help you find information about the first authors of papers for your AI Con
 
 <div className="result-box">
 🔍`tool result`
-
-<p>[{"type": "text", "text": "total 12\ndrwxr-xr-x 2 mcpbench guest   40 Aug  4 23:08 .\ndrwxr-xr-x 4 mcpbench guest   88 Aug  4 23:08 ..\n-rw-r--r-- 1 mcpbench guest 9251 Aug  4 23:02 paper_initial.xlsx\n", "annotations": null}, {"type": "text", "text": "\nCommand completed with return code: 0", "annotations": null}]
-</p>
+```json
+[{"type": "text", "text": "total 12\ndrwxr-xr-x 2 mcpbench guest   40 Aug  4 23:08 .\ndrwxr-xr-x 4 mcpbench guest   88 Aug  4 23:08 ..\n-rw-r--r-- 1 mcpbench guest 9251 Aug  4 23:02 paper_initial.xlsx\n", "annotations": null}, {"type": "text", "text": "\nCommand completed with return code: 0", "annotations": null}]
+```
 </div>
 
 <div className="thinking-box">
@@ -81,9 +81,9 @@ I can see there's an Excel file called `paper_initial.xlsx` in your workspace. L
 
 <div className="result-box">
 🔍`tool result`
-
-<p>{'filename': 'paper_initial.xlsx', 'sheets': ['Sheet1'], 'size': 9251, 'modified': 1754319744.4777277}
-</p>
+```json
+{'filename': 'paper_initial.xlsx', 'sheets': ['Sheet1'], 'size': 9251, 'modified': 1754319744.4777277}
+```
 </div>
 
 <div className="tool-call-box">
@@ -99,8 +99,8 @@ I can see there's an Excel file called `paper_initial.xlsx` in your workspace. L
 
 <div className="result-box">
 🔍`tool result`
-
-<p>{
+```json
+{
   "range": "A1:D8",
   "sheet_name": "Sheet1",
   "cells": [
@@ -394,7 +394,7 @@ I can see there's an Excel file called `paper_initial.xlsx` in your workspace. L
     }
   ]
 }
-</p>
+```
 </div>
 
 <div className="thinking-box">
@@ -421,8 +421,8 @@ Let me search for each paper to find the required information. I'll start with t
 
 <div className="result-box">
 🔍`tool result`
-
-<p>Search Engine: GOOGLE
+```json
+Search Engine: GOOGLE
 Query: "Strategy Coopetition Explains the Emergence and Transience of In-Context Learning" first author
 Results: 3
 Page: 1
@@ -438,7 +438,7 @@ Strategy Coopetition Explains the Emergence and Transience of In- ...
 OpenReviewhttps://openreview.netPDFStrategy Coopetition Explains the Emergence and Transience of In- ...
 https://openreview.net/pdf?id=esBoQFmD7v
 Strategy Coopetition Explains the Emergence and Transience of In- ...
-</p>
+```
 </div>
 
 <div className="thinking-box">
@@ -459,12 +459,12 @@ Let me check the OpenReview page for this paper to get the author information:
 
 <div className="result-box">
 🔍`tool result`
-
-<p>### Ran Playwright code
-```js
+```json
+### Ran Playwright code
+js
 // Navigate to https://openreview.net/forum?id=esBoQFmD7v
 await page.goto('https://openreview.net/forum?id=esBoQFmD7v');
-```
+
 
 ### New console messages
 - Error: Minified React error #418; visit https://react.dev/errors/418?args[]= for the full message or...
@@ -473,7 +473,7 @@ await page.goto('https://openreview.net/forum?id=esBoQFmD7v');
 - Page URL: https://openreview.net/forum?id=esBoQFmD7v
 - Page Title: Strategy Coopetition Explains the Emergence and Transience of In-Context Learning | OpenReview
 - Page Snapshot (Span 1 of 2):
-```yaml
+yaml
 - generic [active] [ref=e1]:
   - generic [ref=e2]:
     - navigation [ref=e3]:
@@ -554,11 +554,11 @@ await page.goto('https://openreview.net/forum?id=esBoQFmD7v');
               - strong [ref=e66]: "Abstract:"
               - paragraph [ref=e68]: In-context learning (ICL) is a powerful ability that emerges in transformer models, enabling them to learn from context without weight updates. Recent work has established emergent ICL as a transient phenomenon that can sometimes disappear after long training times. In this work, we sought a mechanistic understanding of these transient dynamics. Firstly, we find that—after the disappearance of ICL—the asymptotic strategy is a remarkable hybrid between in-weights and in-context learning, which we term “context-constrained in-weights learning” (CIWL). CIWL is in competition with ICL, and eventually replaces it as the dominant strategy of the model (thus leading to ICL transience). However, we also find that the two competing strategies actually share sub-circuits, which gives rise to cooperative dynamics as well. For example, in our setup, ICL is unable to emerge quickly on its own, and can only be enabled through the simultaneous slow development of asymptotic CIWL. CIWL thus both cooperates and competes with ICL, a phenomenon we term “strategy coopetition”. We propose a minimal mathematical model that reproduces these key dynamics and interactions. Informed by this model, we were able to identify a setup where ICL is truly emergent and persistent.
             - generic [ref=e69]:
-```
+
 
 *Use snapshot navigation tools to view other spans. Current span size: 5000 characters*
 
-</p>
+```
 </div>
 
 <div className="thinking-box">
@@ -580,12 +580,12 @@ Great! I can see the first author is "Aaditya K Singh". Now let me click on thei
 
 <div className="result-box">
 🔍`tool result`
-
-<p>### Ran Playwright code
-```js
+```json
+### Ran Playwright code
+js
 // Click link "Aaditya K Singh"
 await page.getByRole('link', { name: 'Aaditya K Singh' }).click();
-```
+
 
 ### New console messages
 - Error: Minified React error #418; visit https://react.dev/errors/418?args[]= for the full message or...
@@ -599,7 +599,7 @@ await page.getByRole('link', { name: 'Aaditya K Singh' }).click();
 - Page URL: https://openreview.net/profile?id=~Aaditya_K_Singh1
 - Page Title: 
 - Page Snapshot (Span 1 of 7):
-```yaml
+yaml
 - generic [active] [ref=e1]:
   - generic [ref=e2]:
     - navigation [ref=e3]:
@@ -712,11 +712,11 @@ await page.getByRole('link', { name: 'Aaditya K Singh' }).click();
                     - generic [ref=e929]: –
                     - text: "2021"
                 - generic [ref=e931]:
-```
+
 
 *Use snapshot navigation tools to view other spans. Current span size: 5000 characters*
 
-</p>
+```
 </div>
 
 <div className="thinking-box">
@@ -749,9 +749,9 @@ Let me update the Excel sheet with this information and then continue with the n
 
 <div className="result-box">
 🔍`tool result`
-
-<p>Data written to Sheet1
-</p>
+```json
+Data written to Sheet1
+```
 </div>
 
 <div className="thinking-box">
@@ -773,8 +773,8 @@ Now let me search for the second paper:
 
 <div className="result-box">
 🔍`tool result`
-
-<p>Search Engine: BING (Google fallback)
+```json
+Search Engine: BING (Google fallback)
 Query: "Model Immunization from a Condition Number Perspective" first author
 Results: 5
 Page: 1
@@ -798,7 +798,7 @@ In this work, we propose a framework, based on the condition number of a Hessian
 [Bing] Model Immunization from a Condition Number Perspective | AI …
 https://www.aimodels.fyi/papers/arxiv/model-immunization-condition-number-perspective
 May 29, 2025· Model Immunization from a Condition Number Perspective Published 5/30/2025 by Amber Yijia Zheng , Cedar Site Bai , Brian Bullins , Raymond A. Yeh Get notified when new …
-</p>
+```
 </div>
 
 <div className="thinking-box">
@@ -819,18 +819,18 @@ I can see the first author is "Amber Yijia Zheng". Let me check the ArXiv page f
 
 <div className="result-box">
 🔍`tool result`
-
-<p>### Ran Playwright code
-```js
+```json
+### Ran Playwright code
+js
 // Navigate to https://arxiv.org/abs/2505.23760
 await page.goto('https://arxiv.org/abs/2505.23760');
-```
+
 
 ### Page state
 - Page URL: https://arxiv.org/abs/2505.23760
 - Page Title: [2505.23760] Model Immunization from a Condition Number Perspective
 - Page Snapshot (Span 1 of 3):
-```yaml
+yaml
 - generic [ref=e2]:
   - banner [ref=e3]:
     - link "Skip to main content" [ref=e4] [cursor=pointer]:
@@ -923,11 +923,11 @@ await page.goto('https://arxiv.org/abs/2505.23760');
                     - link "arXiv:2505.23760" [ref=e78] [cursor=pointer]:
                       - /url: https://arxiv.org/abs/2505.23760
                     - text: "[cs.LG]"
-```
+
 
 *Use snapshot navigation tools to view other spans. Current span size: 5000 characters*
 
-</p>
+```
 </div>
 
 <div className="thinking-box">
@@ -948,18 +948,18 @@ I can see the first author is "Amber Yijia Zheng". Let me check her personal web
 
 <div className="result-box">
 🔍`tool result`
-
-<p>### Ran Playwright code
-```js
+```json
+### Ran Playwright code
+js
 // Navigate to https://www.amberyzheng.com/
 await page.goto('https://www.amberyzheng.com/');
-```
+
 
 ### Page state
 - Page URL: https://www.amberyzheng.com/
 - Page Title: Homepage - amberyzheng
 - Page Snapshot (Span 1 of 5):
-```yaml
+yaml
 - generic [active] [ref=e1]:
   - navigation [ref=e2]:
     - generic [ref=e3]:
@@ -1066,11 +1066,11 @@ await page.goto('https://www.amberyzheng.com/');
               - generic [ref=e93]: Apple Camera
               - generic [ref=e95]:
                 - generic [ref=e96]: Research Intern
-```
+
 
 *Use snapshot navigation tools to view other spans. Current span size: 5000 characters*
 
-</p>
+```
 </div>
 
 <div className="thinking-box">
@@ -1097,9 +1097,9 @@ Perfect! I can see that Amber Yijia Zheng is a Ph.D. student at Purdue Universit
 
 <div className="result-box">
 🔍`tool result`
-
-<p>Data written to Sheet1
-</p>
+```json
+Data written to Sheet1
+```
 </div>
 
 <div className="thinking-box">
@@ -1121,8 +1121,8 @@ Now let me search for the third paper:
 
 <div className="result-box">
 🔍`tool result`
-
-<p>Search Engine: GOOGLE
+```json
+Search Engine: GOOGLE
 Query: "Flowing Datasets with Wasserstein over Wasserstein Gradient Flows" first author
 Results: 4
 Page: 1
@@ -1142,7 +1142,7 @@ Wasserstein Gradient Flows in Math and Machine LearningBanff International Resea
 Flowing Datasets with Wasserstein over ...
 https://bytez.com/docs/icml/45752/paper?_c=eyJ2IjoxLCJyZWxhdGVkIjpbImNvZGUiLCJyZWZlcmVuY2VzIiwiY29uZmVyZW5jZSJdfQ%3D%3D
 Flowing Datasets with Wasserstein over ...Bytezhttps://bytez.com› docs › icml › paper
-</p>
+```
 </div>
 
 <div className="thinking-box">
@@ -1163,18 +1163,18 @@ Let me check the OpenReview page:
 
 <div className="result-box">
 🔍`tool result`
-
-<p>### Ran Playwright code
-```js
+```json
+### Ran Playwright code
+js
 // Navigate to https://openreview.net/forum?id=I1OHPb4zWo
 await page.goto('https://openreview.net/forum?id=I1OHPb4zWo');
-```
+
 
 ### Page state
 - Page URL: https://openreview.net/forum?id=I1OHPb4zWo
 - Page Title: Flowing Datasets with Wasserstein over Wasserstein Gradient Flows | OpenReview
 - Page Snapshot (Span 1 of 2):
-```yaml
+yaml
 - generic [ref=e2]:
   - navigation [ref=e3]:
     - generic [ref=e4]:
@@ -1246,11 +1246,11 @@ await page.goto('https://openreview.net/forum?id=I1OHPb4zWo');
             - generic [ref=e64]: Many applications in machine learning involve data represented as probability distributions. The emergence of such data requires radically novel techniques to design tractable gradient flows on probability distributions over this type of (infinite-dimensional) objects. For instance, being able to flow labeled datasets is a core task for applications ranging from domain adaptation to transfer learning or dataset distillation. In this setting, we propose to represent each class by the associated conditional distribution of features, and to model the dataset as a mixture distribution supported on these classes (which are themselves probability distributions), meaning that labeled datasets can be seen as probability distributions over probability distributions. We endow this space with a metric structure from optimal transport, namely the Wasserstein over Wasserstein (WoW) distance, derive a differential structure on this space, and define WoW gradient flows. The latter enables to design dynamics over this space that decrease a given objective functional. We apply our framework to transfer learning and dataset distillation tasks, leveraging our gradient flow construction as well as novel tractable functionals that take the form of Maximum Mean Discrepancies with Sliced-Wasserstein based kernels between probability distributions.
           - generic [ref=e65]:
             - strong [ref=e66]: "Lay Summary:"
-```
+
 
 *Use snapshot navigation tools to view other spans. Current span size: 5000 characters*
 
-</p>
+```
 </div>
 
 <div className="thinking-box">
@@ -1272,12 +1272,12 @@ Great! I can see the first author is "Clément Bonet". Let me click on their pro
 
 <div className="result-box">
 🔍`tool result`
-
-<p>### Ran Playwright code
-```js
+```json
+### Ran Playwright code
+js
 // Click link "Clément Bonet"
 await page.getByRole('link', { name: 'Clément Bonet' }).click();
-```
+
 
 ### New console messages
 - Error: Minified React error #418; visit https://react.dev/errors/418?args[]= for the full message or...
@@ -1286,7 +1286,7 @@ await page.getByRole('link', { name: 'Clément Bonet' }).click();
 - Page URL: https://openreview.net/profile?id=~Cl%C3%A9ment_Bonet1
 - Page Title: 
 - Page Snapshot (Span 1 of 6):
-```yaml
+yaml
 - generic [active] [ref=e1]:
   - generic [ref=e2]:
     - navigation [ref=e3]:
@@ -1397,11 +1397,11 @@ await page.getByRole('link', { name: 'Clément Bonet' }).click();
               - generic [ref=e2603]:
                 - generic [ref=e2604]:
                   - strong [ref=e2606]: Postdoc Advisor
-```
+
 
 *Use snapshot navigation tools to view other spans. Current span size: 5000 characters*
 
-</p>
+```
 </div>
 
 <div className="thinking-box">
@@ -1427,9 +1427,9 @@ Perfect! I can see that Clément Bonet is a Postdoc at "Ecole Nationale de la St
 
 <div className="result-box">
 🔍`tool result`
-
-<p>Data written to Sheet1
-</p>
+```json
+Data written to Sheet1
+```
 </div>
 
 <div className="thinking-box">
@@ -1451,8 +1451,8 @@ Now let me search for the fourth paper:
 
 <div className="result-box">
 🔍`tool result`
-
-<p>Search Engine: BING (Google fallback)
+```json
+Search Engine: BING (Google fallback)
 Query: "Learning with Expected Signatures: Theory and Applications" first author
 Results: 5
 Page: 1
@@ -1476,7 +1476,7 @@ Some projects I worked on during the first year of PhD at the Mathematics of Ran
 [Bing] ICML 2025 Learning with Expected Signatures: Theory and …
 https://icml.cc/virtual/2025/oral/47169
 Right-click and choose download. It is a vector graphic and may be used at any scale.
-</p>
+```
 </div>
 
 <div className="thinking-box">
@@ -1497,18 +1497,18 @@ Let me check the ArXiv page:
 
 <div className="result-box">
 🔍`tool result`
-
-<p>### Ran Playwright code
-```js
+```json
+### Ran Playwright code
+js
 // Navigate to https://arxiv.org/abs/2505.20465
 await page.goto('https://arxiv.org/abs/2505.20465');
-```
+
 
 ### Page state
 - Page URL: https://arxiv.org/abs/2505.20465
 - Page Title: [2505.20465] Learning with Expected Signatures: Theory and Applications
 - Page Snapshot (Span 1 of 4):
-```yaml
+yaml
 - generic [ref=e2]:
   - banner [ref=e3]:
     - link "Skip to main content" [ref=e4] [cursor=pointer]:
@@ -1592,11 +1592,11 @@ await page.goto('https://arxiv.org/abs/2505.20465');
                     - link "arXiv:2505.20465" [ref=e73] [cursor=pointer]:
                       - /url: https://arxiv.org/abs/2505.20465
                     - text: "[stat.ML]"
-```
+
 
 *Use snapshot navigation tools to view other spans. Current span size: 5000 characters*
 
-</p>
+```
 </div>
 
 <div className="thinking-box">
@@ -1617,12 +1617,12 @@ I can see the first author is "Lorenzo Lucchese". Let me check his personal webs
 
 <div className="result-box">
 🔍`tool result`
-
-<p>### Ran Playwright code
-```js
+```json
+### Ran Playwright code
+js
 // Navigate to https://www.lorenzolucchese.com/research
 await page.goto('https://www.lorenzolucchese.com/research');
-```
+
 
 ### New console messages
 - [ERROR] Access to fetch at 'https://play.google.com/log?format=json&hasfast=true&authuser=0' from or...
@@ -1632,7 +1632,7 @@ await page.goto('https://www.lorenzolucchese.com/research');
 - Page URL: https://www.lorenzolucchese.com/research
 - Page Title: Lorenzo Lucchese - Research
 - Page Snapshot (Span 1 of 2):
-```yaml
+yaml
 - generic [ref=e3]:
   - generic:
     - banner
@@ -1724,11 +1724,11 @@ await page.goto('https://www.lorenzolucchese.com/research');
                 - /url: https://drive.google.com/file/d/1oGCPYzQCt6x11NK-HMwsLroF9h_yIqlV/view?usp=sharing
                 - generic [ref=e151] [cursor=pointer]: Inconsistent Multi-Modal Models, from ImageSig to MultiSig
               - generic [ref=e152]: with
-```
+
 
 *Use snapshot navigation tools to view other spans. Current span size: 5000 characters*
 
-</p>
+```
 </div>
 
 <div className="thinking-box">
@@ -1750,12 +1750,12 @@ Let me navigate to his About page to get more information about his affiliation:
 
 <div className="result-box">
 🔍`tool result`
-
-<p>### Ran Playwright code
-```js
+```json
+### Ran Playwright code
+js
 // Click link "About"
 await page.getByRole('link', { name: 'About' }).click();
-```
+
 
 ### New console messages
 - [ERROR] Access to fetch at 'https://play.google.com/log?format=json&hasfast=true&authuser=0' from or...
@@ -1779,7 +1779,7 @@ await page.getByRole('link', { name: 'About' }).click();
 - Page URL: https://www.lorenzolucchese.com/about
 - Page Title: Lorenzo Lucchese
 - Page Snapshot (Span 1 of 2):
-```yaml
+yaml
 - generic [ref=e3]:
   - generic:
     - banner
@@ -1868,11 +1868,11 @@ await page.getByRole('link', { name: 'About' }).click();
               - generic [ref=e146]: ", and, most recently, on the"
               - link "development of estimation techniques for expected signatures" [ref=e147] [cursor=pointer]:
                 - /url: https://icml.cc/virtual/2025/poster/43548
-```
+
 
 *Use snapshot navigation tools to view other spans. Current span size: 5000 characters*
 
-</p>
+```
 </div>
 
 <div className="thinking-box">
@@ -1891,10 +1891,10 @@ Let me scroll down to see if there's more information about his Google Scholar:
 
 <div className="result-box">
 🔍`tool result`
-
-<p>### Result
+```json
+### Result
 Navigated to span 2 of 2
-```yaml
+yaml
                 - generic [ref=e148] [cursor=pointer]: development of estimation techniques for expected signatures
               - generic [ref=e149]: .
             - paragraph [ref=e150]:
@@ -1930,9 +1930,9 @@ Navigated to span 2 of 2
             - contentinfo
           - button "Google Sites" [ref=e240] [cursor=pointer]
           - button "Report abuse" [ref=e242] [cursor=pointer]
-```
 
-</p>
+
+```
 </div>
 
 <div className="thinking-box">
@@ -1954,8 +1954,8 @@ I can see that Lorenzo Lucchese is from Imperial College London and University o
 
 <div className="result-box">
 🔍`tool result`
-
-<p>Search Engine: BING (Google fallback)
+```json
+Search Engine: BING (Google fallback)
 Query: Lorenzo Lucchese Google Scholar Imperial College London
 Results: 5
 Page: 1
@@ -1979,7 +1979,7 @@ PhD student at the Mathematics of Random Systems CDT (Imperial College …
 [Bing] Lorenzo Lucchese (0000-0002-1529-553X) - ORCID
 https://orcid.org/0000-0002-1529-553X
 Imperial College London: London, GB 2017 to 2021 | MSci Mathematics (Mathematics)
-</p>
+```
 </div>
 
 <div className="thinking-box">
@@ -2007,9 +2007,9 @@ Perfect! I found his Google Scholar profile. Let me update the Excel sheet:
 
 <div className="result-box">
 🔍`tool result`
-
-<p>Data written to Sheet1
-</p>
+```json
+Data written to Sheet1
+```
 </div>
 
 <div className="thinking-box">
@@ -2031,8 +2031,8 @@ Now let me search for the fifth paper:
 
 <div className="result-box">
 🔍`tool result`
-
-<p>Search Engine: BING (Google fallback)
+```json
+Search Engine: BING (Google fallback)
 Query: "AutoML-Agent: A Multi-Agent LLM Framework for Full-Pipeline AutoML" first author
 Results: 4
 Page: 1
@@ -2052,7 +2052,7 @@ Sep 26, 2024· TL;DR: This paper introduces AutoML-Agent, a novel multi-agent fr
 [Bing] AutoML-Agent: A Multi-Agent LLM Framework for Full-Pipeline …
 https://arxiv.org/pdf/2410.02958v2
 To address these challenges, we propose a novel multi-agent framework, AutoML-Agent, for full-pipeline AutoML from data and model search to evaluation, with strategies to tackle the …
-</p>
+```
 </div>
 
 <div className="thinking-box">
@@ -2073,18 +2073,18 @@ Let me check the ArXiv page:
 
 <div className="result-box">
 🔍`tool result`
-
-<p>### Ran Playwright code
-```js
+```json
+### Ran Playwright code
+js
 // Navigate to https://arxiv.org/abs/2410.02958
 await page.goto('https://arxiv.org/abs/2410.02958');
-```
+
 
 ### Page state
 - Page URL: https://arxiv.org/abs/2410.02958
 - Page Title: [2410.02958] AutoML-Agent: A Multi-Agent LLM Framework for Full-Pipeline AutoML
 - Page Snapshot (Span 1 of 4):
-```yaml
+yaml
 - generic [ref=e2]:
   - banner [ref=e3]:
     - link "Skip to main content" [ref=e4] [cursor=pointer]:
@@ -2157,11 +2157,11 @@ await page.goto('https://arxiv.org/abs/2410.02958');
             - text: ","
             - link "Sung Ju Hwang" [ref=e61] [cursor=pointer]:
               - /url: https://arxiv.org/search/cs?searchtype=author&query=Hwang,+S+J
-```
+
 
 *Use snapshot navigation tools to view other spans. Current span size: 5000 characters*
 
-</p>
+```
 </div>
 
 <div className="thinking-box">
@@ -2183,8 +2183,8 @@ I can see the first author is "Patara Trirat". Let me search for more informatio
 
 <div className="result-box">
 🔍`tool result`
-
-<p>Search Engine: BING (Google fallback)
+```json
+Search Engine: BING (Google fallback)
 Query: Patara Trirat Google Scholar KAIST
 Results: 5
 Page: 1
@@ -2208,7 +2208,7 @@ Semantic Scholar profile for Patara Trirat, with 5 highly influential citations 
 [Bing] GitHub - kaist-dmlab/MG-TAR: [IEEE T-ITS] MG-TAR: Multi-view …
 https://github.com/kaist-dmlab/MG-TAR
 AbstractExample RunNote for Driving Record DataDue to the continuing colossal socio-economic losses caused by traffic accidents, it is of prime importance to precisely forecast the traffic accident risk to reduce future accidents. In this paper, we use dangerous driving statistics from driving log data and multi-graph learning to enhance predictive performance. We first conduct geographical and...See more on github.com
-</p>
+```
 </div>
 
 <div className="thinking-box">
@@ -2229,18 +2229,18 @@ Let me check the OpenReview profile:
 
 <div className="result-box">
 🔍`tool result`
-
-<p>### Ran Playwright code
-```js
+```json
+### Ran Playwright code
+js
 // Navigate to https://openreview.net/profile?id=~Patara_Trirat3
 await page.goto('https://openreview.net/profile?id=~Patara_Trirat3');
-```
+
 
 ### Page state
 - Page URL: https://openreview.net/profile?id=~Patara_Trirat3
 - Page Title: 
 - Page Snapshot (Span 1 of 6):
-```yaml
+yaml
 - generic [active] [ref=e1]:
   - generic [ref=e2]:
     - navigation [ref=e3]:
@@ -2353,11 +2353,11 @@ await page.goto('https://openreview.net/profile?id=~Patara_Trirat3');
                     - text: Present
                 - generic [ref=e120]:
                   - generic [ref=e122]: AutoML
-```
+
 
 *Use snapshot navigation tools to view other spans. Current span size: 5000 characters*
 
-</p>
+```
 </div>
 
 <div className="thinking-box">
@@ -2384,9 +2384,9 @@ Perfect! I can see that Patara Trirat is a PhD student at "School of Computing, 
 
 <div className="result-box">
 🔍`tool result`
-
-<p>Data written to Sheet1
-</p>
+```json
+Data written to Sheet1
+```
 </div>
 
 <div className="thinking-box">
@@ -2408,8 +2408,8 @@ Now let me search for the sixth paper:
 
 <div className="result-box">
 🔍`tool result`
-
-<p>Search Engine: BING (Google fallback)
+```json
+Search Engine: BING (Google fallback)
 Query: "Learning Smooth and Expressive Interatomic Potentials for Physical Property Prediction" first author
 Results: 4
 Page: 1
@@ -2429,7 +2429,7 @@ Right-click and choose download. It is a vector graphic and may be used at any s
 [Bing] LearningSmoothandExpressiveInteratomic ...
 https://www.researchgate.net/publication/389130711_Learning_Smooth_and_Expressive_Interatomic_Potentials_for_Physical_Property_Prediction/fulltext/67b5f7c5207c0c20fa8dc94b/Learning-Smooth-and-Expressive-Interatomic-Potentials-for-Physical-Property-Prediction.pdf
 J Harry Moore, Daniel J Cole, and Gabor Csanyi. Com-puting hydration free energies of small molecules with first principles accuracy. arXiv preprint arXiv:2405.18171, 2024.
-</p>
+```
 </div>
 
 <div className="thinking-box">
@@ -2450,18 +2450,18 @@ Let me check the ArXiv page:
 
 <div className="result-box">
 🔍`tool result`
-
-<p>### Ran Playwright code
-```js
+```json
+### Ran Playwright code
+js
 // Navigate to https://arxiv.org/abs/2502.12147
 await page.goto('https://arxiv.org/abs/2502.12147');
-```
+
 
 ### Page state
 - Page URL: https://arxiv.org/abs/2502.12147
 - Page Title: [2502.12147] Learning Smooth and Expressive Interatomic Potentials for Physical Property Prediction
 - Page Snapshot (Span 1 of 4):
-```yaml
+yaml
 - generic [ref=e2]:
   - banner [ref=e3]:
     - link "Skip to main content" [ref=e4] [cursor=pointer]:
@@ -2549,11 +2549,11 @@ await page.goto('https://arxiv.org/abs/2502.12147');
           - blockquote [ref=e66]: Machine learning interatomic potentials (MLIPs) have become increasingly effective at approximating quantum mechanical calculations at a fraction of the computational cost. However, lower errors on held out test sets do not always translate to improved results on downstream physical property prediction tasks. In this paper, we propose testing MLIPs on their practical ability to conserve energy during molecular dynamic simulations. If passed, improved correlations are found between test errors and their performance on physical property prediction tasks. We identify choices which may lead to models failing this test, and use these observations to improve upon highly-expressive models. The resulting model, eSEN, provides state-of-the-art results on a range of physical property prediction tasks, including materials stability prediction, thermal conductivity prediction, and phonon calculations.
           - table "Additional metadata" [ref=e68]:
             - rowgroup [ref=e69]:
-```
+
 
 *Use snapshot navigation tools to view other spans. Current span size: 5000 characters*
 
-</p>
+```
 </div>
 
 <div className="thinking-box">
@@ -2575,8 +2575,8 @@ I can see the first author is "Xiang Fu". Let me search for more information abo
 
 <div className="result-box">
 🔍`tool result`
-
-<p>Search Engine: BING (Google fallback)
+```json
+Search Engine: BING (Google fallback)
 Query: Xiang Fu Google Scholar machine learning interatomic potentials
 Results: 5
 Page: 1
@@ -2600,7 +2600,7 @@ Oct 20, 2023· Machine learning interatomic potentials (MLIPs), in particular re
 [Bing] Efficient equivariant model for machine learning interatomic …
 https://www.nature.com/articles/s41524-025-01535-3
 Feb 26, 2025· In modern computational materials, machine learning has shown the capability to predict interatomic potentials, thereby supporting and accelerating conventional molecular …
-</p>
+```
 </div>
 
 <div className="thinking-box">
@@ -2621,12 +2621,12 @@ Great! I found his Google Scholar profile. Let me also check his personal websit
 
 <div className="result-box">
 🔍`tool result`
-
-<p>### Ran Playwright code
-```js
+```json
+### Ran Playwright code
+js
 // Navigate to https://xiangfu.co/publications
 await page.goto('https://xiangfu.co/publications');
-```
+
 
 ### New console messages
 - [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://polyfill.io/v3/polyfill.min.js...
@@ -2635,7 +2635,7 @@ await page.goto('https://xiangfu.co/publications');
 - Page URL: https://xiangfu.co/publications
 - Page Title: Xiang Fu
 - Page Snapshot (Span 1 of 3):
-```yaml
+yaml
 - generic [active] [ref=e1]:
   - navigation:
     - heading "Skip links" [level=2] [ref=e3]
@@ -2731,11 +2731,11 @@ await page.goto('https://xiangfu.co/publications');
         - link "Tess Smidt" [ref=e72] [cursor=pointer]:
           - /url: https://blondegeek.github.io/
         - text: ","
-```
+
 
 *Use snapshot navigation tools to view other spans. Current span size: 5000 characters*
 
-</p>
+```
 </div>
 
 <div className="thinking-box">
@@ -2757,8 +2757,8 @@ Let me navigate to the About page to get affiliation information:
 
 <div className="result-box">
 🔍`tool result`
-
-<p>TimeoutError: locator.click: Timeout 5000ms exceeded.
+```json
+TimeoutError: locator.click: Timeout 5000ms exceeded.
 Call log:
 [2m  - waiting for locator('aria-ref=e24')[22m
 [2m    - locator resolved to <a href="/">…</a>[22m
@@ -2826,7 +2826,7 @@ Call log:
 [2m  - retrying click action[22m
 [2m    - waiting 500ms[22m
 
-</p>
+```
 </div>
 
 <div className="thinking-box">
@@ -2847,12 +2847,12 @@ Let me navigate directly to the About page:
 
 <div className="result-box">
 🔍`tool result`
-
-<p>### Ran Playwright code
-```js
+```json
+### Ran Playwright code
+js
 // Navigate to https://xiangfu.co/
 await page.goto('https://xiangfu.co/');
-```
+
 
 ### New console messages
 - [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://polyfill.io/v3/polyfill.min.js...
@@ -2861,7 +2861,7 @@ await page.goto('https://xiangfu.co/');
 - Page URL: https://xiangfu.co/
 - Page Title: Xiang Fu
 - Page Snapshot (Span 1 of 1):
-```yaml
+yaml
 - generic [active] [ref=e1]:
   - navigation:
     - heading "Skip links" [level=2] [ref=e3]
@@ -2942,11 +2942,11 @@ await page.goto('https://xiangfu.co/');
       - link "Minimal Mistakes" [ref=e58] [cursor=pointer]:
         - /url: https://mademistakes.com/work/minimal-mistakes-jekyll-theme/
       - text: .
-```
+
 
 *Use snapshot navigation tools to view other spans. Current span size: 5000 characters*
 
-</p>
+```
 </div>
 
 <div className="thinking-box">
@@ -2972,9 +2972,9 @@ Perfect! I can see that Xiang Fu was on the FAIR Chemistry team at Meta and comp
 
 <div className="result-box">
 🔍`tool result`
-
-<p>Data written to Sheet1
-</p>
+```json
+Data written to Sheet1
+```
 </div>
 
 <div className="thinking-box">
@@ -2996,8 +2996,8 @@ Finally, let me search for the seventh and last paper:
 
 <div className="result-box">
 🔍`tool result`
-
-<p>Search Engine: BING (Google fallback)
+```json
+Search Engine: BING (Google fallback)
 Query: "Multi-agent Architecture Search via Agentic Supernet" first author
 Results: 3
 Page: 1
@@ -3013,7 +3013,7 @@ Feb 6, 2025· We introduce MaAS, an automated framework that samples query-depen
 [Bing] Multi-agent Architecture Search via Agentic Supernet
 https://huggingface.co/papers/2502.04180
 We introduce MaAS, an automated framework that samples query-dependent agentic systems from the supernet, delivering high-quality solutions and tailored resource allocation (e.g., LLM …
-</p>
+```
 </div>
 
 <div className="thinking-box">
@@ -3034,18 +3034,18 @@ Let me check the OpenReview page:
 
 <div className="result-box">
 🔍`tool result`
-
-<p>### Ran Playwright code
-```js
+```json
+### Ran Playwright code
+js
 // Navigate to https://openreview.net/forum?id=imcyVlzpXh
 await page.goto('https://openreview.net/forum?id=imcyVlzpXh');
-```
+
 
 ### Page state
 - Page URL: https://openreview.net/forum?id=imcyVlzpXh
 - Page Title: Multi-agent Architecture Search via Agentic Supernet | OpenReview
 - Page Snapshot (Span 1 of 2):
-```yaml
+yaml
 - generic [ref=e2]:
   - navigation [ref=e3]:
     - generic [ref=e4]:
@@ -3129,11 +3129,11 @@ await page.goto('https://openreview.net/forum?id=imcyVlzpXh');
             - generic [ref=e70]: https://github.com/bingreeky/MaAS
           - generic [ref=e71]:
             - strong [ref=e72]: "Primary Area:"
-```
+
 
 *Use snapshot navigation tools to view other spans. Current span size: 5000 characters*
 
-</p>
+```
 </div>
 
 <div className="thinking-box">
@@ -3155,9 +3155,9 @@ Great! I can see the first author is "Guibin Zhang". Let me click on their profi
 
 <div className="result-box">
 🔍`tool result`
-
-<p>Error: Ref e37 not found in the current page snapshot. Try capturing new snapshot.
-</p>
+```json
+Error: Ref e37 not found in the current page snapshot. Try capturing new snapshot.
+```
 </div>
 
 <div className="tool-call-box">
@@ -3170,15 +3170,15 @@ Great! I can see the first author is "Guibin Zhang". Let me click on their profi
 
 <div className="result-box">
 🔍`tool result`
-
-<p>### New console messages
+```json
+### New console messages
 - Error: Minified React error #418; visit https://react.dev/errors/418?args[]= for the full message or...
 
 ### Page state
 - Page URL: https://openreview.net/forum?id=imcyVlzpXh
 - Page Title: Multi-agent Architecture Search via Agentic Supernet | OpenReview
 - Page Snapshot (Span 1 of 24):
-```yaml
+yaml
 - generic [active] [ref=e1]:
   - generic [ref=e124]:
     - navigation [ref=e125]:
@@ -3269,11 +3269,11 @@ Great! I can see the first author is "Guibin Zhang". Let me click on their profi
                     - generic [ref=e202]: ∼
                     - generic [ref=e203]: "45"
                     - generic [ref=e204]: "%"
-```
+
 
 *Use snapshot navigation tools to view other spans. Current span size: 5000 characters*
 
-</p>
+```
 </div>
 
 <div className="tool-call-box">
@@ -3289,12 +3289,12 @@ Great! I can see the first author is "Guibin Zhang". Let me click on their profi
 
 <div className="result-box">
 🔍`tool result`
-
-<p>### Ran Playwright code
-```js
+```json
+### Ran Playwright code
+js
 // Click link "Guibin Zhang"
 await page.getByRole('link', { name: 'Guibin Zhang' }).click();
-```
+
 
 ### New console messages
 - Error: Minified React error #418; visit https://react.dev/errors/418?args[]= for the full message or...
@@ -3303,7 +3303,7 @@ await page.getByRole('link', { name: 'Guibin Zhang' }).click();
 - Page URL: https://openreview.net/profile?id=~Guibin_Zhang1
 - Page Title: 
 - Page Snapshot (Span 1 of 1):
-```yaml
+yaml
 - generic [active] [ref=e1]:
   - generic [ref=e124]:
     - navigation [ref=e125]:
@@ -3371,11 +3371,11 @@ await page.getByRole('link', { name: 'Guibin Zhang' }).click();
           - /url: /sponsors
         - text: . © 2025 OpenReview
   - alert [ref=e1843]: Error
-```
+
 
 *Use snapshot navigation tools to view other spans. Current span size: 5000 characters*
 
-</p>
+```
 </div>
 
 <div className="thinking-box">
@@ -3397,8 +3397,8 @@ The profile doesn't exist or isn't public. Let me search for Guibin Zhang direct
 
 <div className="result-box">
 🔍`tool result`
-
-<p>Search Engine: BING (Google fallback)
+```json
+Search Engine: BING (Google fallback)
 Query: Guibin Zhang Google Scholar multi-agent architecture search
 Results: 5
 Page: 1
@@ -3422,7 +3422,7 @@ A query-level meta-agent named FlowReasoner is proposed to automate the design o
 [Bing] Guibin | NUS
 https://www.guibinz.top/
 Powered by Jekyll and Minimal Light theme. The Minimal Light is a simple and elegant jekyll theme for academic personal homepage.
-</p>
+```
 </div>
 
 <div className="thinking-box">
@@ -3443,18 +3443,18 @@ Great! I found his Google Scholar profile and personal website. Let me check his
 
 <div className="result-box">
 🔍`tool result`
-
-<p>### Ran Playwright code
-```js
+```json
+### Ran Playwright code
+js
 // Navigate to https://www.guibinz.top/
 await page.goto('https://www.guibinz.top/');
-```
+
 
 ### Page state
 - Page URL: https://www.guibinz.top/
 - Page Title: Guibin | NUS
 - Page Snapshot (Span 1 of 3):
-```yaml
+yaml
 - generic [ref=e2]:
   - banner [ref=e3]:
     - img "avatar" [ref=e5]
@@ -3559,11 +3559,11 @@ await page.goto('https://www.guibinz.top/');
               - text: ", Yanwei Yue†, Zhixun Li†, Sukwon Yun, Guancheng Wan, Kun Wang, Dawei Cheng, Jeffrey Xu Yu, Tianlong Chen"
             - emphasis [ref=e98]:
               - text: International Conference on Learning Representations
-```
+
 
 *Use snapshot navigation tools to view other spans. Current span size: 5000 characters*
 
-</p>
+```
 </div>
 
 <div className="thinking-box">
@@ -3590,9 +3590,9 @@ Perfect! I can see that Guibin Zhang is a PhD student at the School of Computing
 
 <div className="result-box">
 🔍`tool result`
-
-<p>Data written to Sheet1
-</p>
+```json
+Data written to Sheet1
+```
 </div>
 
 <div className="thinking-box">
@@ -3614,8 +3614,8 @@ Now let me verify that all the information has been correctly filled in by readi
 
 <div className="result-box">
 🔍`tool result`
-
-<p>{
+```json
+{
   "range": "A1:D8",
   "sheet_name": "Sheet1",
   "cells": [
@@ -3909,7 +3909,7 @@ Now let me verify that all the information has been correctly filled in by readi
     }
   ]
 }
-</p>
+```
 </div>
 
 <div className="thinking-box">
@@ -3975,9 +3975,9 @@ All the information has been accurately researched and populated in the Excel fi
 
 <div className="result-box">
 🔍`tool result`
-
-<p>you have claimed the task is done!
-</p>
+```json
+you have claimed the task is done!
+```
 </div>
 
 </Accordion>

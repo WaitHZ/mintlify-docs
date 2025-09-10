@@ -59,10 +59,10 @@ I'll help you transform the market data from a two-dimensional format to a one-d
 
 <div className="result-box">
 🔍`tool result`
-
-<p>[FILE] Format_Example.xlsx
+```json
+[FILE] Format_Example.xlsx
 [FILE] Household_Appliances.xlsx
-</p>
+```
 </div>
 
 <div className="thinking-box">
@@ -94,8 +94,8 @@ print(df_current.dtypes)
 
 <div className="result-box">
 🔍`tool result`
-
-<p>=== STDOUT ===
+```json
+=== STDOUT ===
 Current data structure:
 Shape: (76, 18)
 
@@ -136,7 +136,7 @@ dtype: object
 Return code: 0
 Execution time: 18.234 seconds
 Timeout limit: 30 seconds
-</p>
+```
 </div>
 
 <div className="thinking-box">
@@ -165,8 +165,8 @@ print(df_example.dtypes)
 
 <div className="result-box">
 🔍`tool result`
-
-<p>=== STDERR ===
+```json
+=== STDERR ===
 Traceback (most recent call last):
   File "/ssddata/mcpbench/zhaojian/mcpbench_dev/recorded_trajectories_v2/run1/claude-4-sonnet-0514/finalpool/SingleUserTurn-excel-data-transformation/workspace/./.python_tmp/examine_format_example.py", line 2, in <module>
     df_example = pd.read_excel('/ssddata/mcpbench/zhaojian/mcpbench_dev/recorded_trajectories_v2/run1/claude-4-sonnet-0514/finalpool/SingleUserTurn-excel-data-transformation/workspace/Format_Example.xlsx')
@@ -176,7 +176,7 @@ NameError: name 'pd' is not defined. Did you mean: 'id'?
 Return code: 1
 Execution time: 0.082 seconds
 Timeout limit: 30 seconds
-</p>
+```
 </div>
 
 <div className="tool-call-box">
@@ -202,8 +202,8 @@ print(df_example.dtypes)
 
 <div className="result-box">
 🔍`tool result`
-
-<p>=== STDOUT ===
+```json
+=== STDOUT ===
 Format example structure:
 Shape: (6, 6)
 
@@ -233,7 +233,7 @@ dtype: object
 Return code: 0
 Execution time: 0.492 seconds
 Timeout limit: 30 seconds
-</p>
+```
 </div>
 
 <div className="thinking-box">
@@ -255,8 +255,8 @@ print(df_example['Appliance types'].unique())
 
 <div className="result-box">
 🔍`tool result`
-
-<p>=== STDOUT ===
+```json
+=== STDOUT ===
 Full format example:
 === STDERR ===
 Traceback (most recent call last):
@@ -268,7 +268,7 @@ NameError: name 'df_example' is not defined
 Return code: 1
 Execution time: 0.063 seconds
 Timeout limit: 30 seconds
-</p>
+```
 </div>
 
 <div className="tool-call-box">
@@ -290,8 +290,8 @@ print(df_example['Appliance types'].unique())
 
 <div className="result-box">
 🔍`tool result`
-
-<p>=== STDOUT ===
+```json
+=== STDOUT ===
 Full format example:
       Time  ... Accumulated Growth (%)
 0  2024-01  ...                    5.2
@@ -309,7 +309,7 @@ Unique appliance types:
 Return code: 0
 Execution time: 0.514 seconds
 Timeout limit: 30 seconds
-</p>
+```
 </div>
 
 <div className="thinking-box">
@@ -339,8 +339,8 @@ print(df_raw.tail())
 
 <div className="result-box">
 🔍`tool result`
-
-<p>=== STDOUT ===
+```json
+=== STDOUT ===
 Raw data structure:
 Shape: (77, 18)
 
@@ -372,7 +372,7 @@ Last 5 rows:
 Return code: 0
 Execution time: 18.384 seconds
 Timeout limit: 30 seconds
-</p>
+```
 </div>
 
 <div className="thinking-box">
@@ -396,8 +396,8 @@ for i in range(3):
 
 <div className="result-box">
 🔍`tool result`
-
-<p>=== STDOUT ===
+```json
+=== STDOUT ===
 First few rows with all columns:
 Row 0:
 === STDERR ===
@@ -410,7 +410,7 @@ NameError: name 'df_raw' is not defined
 Return code: 1
 Execution time: 0.063 seconds
 Timeout limit: 30 seconds
-</p>
+```
 </div>
 
 <div className="tool-call-box">
@@ -434,8 +434,8 @@ for i in range(3):
 
 <div className="result-box">
 🔍`tool result`
-
-<p>=== STDOUT ===
+```json
+=== STDOUT ===
 First few rows with all columns:
 Row 0:
   Col 0: Time
@@ -500,7 +500,7 @@ Row 2:
 Return code: 0
 Execution time: 18.240 seconds
 Timeout limit: 30 seconds
-</p>
+```
 </div>
 
 <div className="thinking-box">
@@ -534,8 +534,8 @@ for i in range(2, 11):
 
 <div className="result-box">
 🔍`tool result`
-
-<p>=== STDOUT ===
+```json
+=== STDOUT ===
 Data rows 2-10:
 === STDERR ===
 Traceback (most recent call last):
@@ -547,7 +547,7 @@ NameError: name 'df_raw' is not defined
 Return code: 1
 Execution time: 0.079 seconds
 Timeout limit: 30 seconds
-</p>
+```
 </div>
 
 <div className="tool-call-box">
@@ -574,8 +574,8 @@ for i in range(2, 11):
 
 <div className="result-box">
 🔍`tool result`
-
-<p>=== STDOUT ===
+```json
+=== STDOUT ===
 Data rows 2-10:
 Row 2: Time=2025-03-01 00:00:00
   Refrigerators: [nan nan nan nan]
@@ -634,7 +634,7 @@ Row 10: Time=2024-07-01 00:00:00
 Return code: 0
 Execution time: 18.107 seconds
 Timeout limit: 30 seconds
-</p>
+```
 </div>
 
 <div className="thinking-box">
@@ -726,8 +726,8 @@ print(df_processed.dtypes)
 
 <div className="result-box">
 🔍`tool result`
-
-<p>=== STDOUT ===
+```json
+=== STDOUT ===
 Processed data shape: (198, 6)
 
 First 10 rows of processed data:
@@ -760,7 +760,7 @@ dtype: object
 Return code: 0
 Execution time: 18.205 seconds
 Timeout limit: 30 seconds
-</p>
+```
 </div>
 
 <div className="thinking-box">
@@ -794,8 +794,8 @@ print(df_processed_sorted.head(15))
 
 <div className="result-box">
 🔍`tool result`
-
-<p>=== STDOUT ===
+```json
+=== STDOUT ===
 Sample of processed data:
 === STDERR ===
 Traceback (most recent call last):
@@ -807,7 +807,7 @@ NameError: name 'df_processed' is not defined
 Return code: 1
 Execution time: 0.061 seconds
 Timeout limit: 30 seconds
-</p>
+```
 </div>
 
 <div className="tool-call-box">
@@ -905,8 +905,8 @@ print(f"Final shape: {df_processed_sorted.shape}")
 
 <div className="result-box">
 🔍`tool result`
-
-<p>=== STDOUT ===
+```json
+=== STDOUT ===
 Sample of processed data:
         Time  ... Accumulated Growth (%)
 196  2019-02  ...                  0.062
@@ -944,7 +944,7 @@ Final shape: (198, 6)
 Return code: 0
 Execution time: 18.310 seconds
 Timeout limit: 30 seconds
-</p>
+```
 </div>
 
 <div className="thinking-box">
@@ -965,12 +965,12 @@ Excellent! Let me verify the output file was created correctly and compare it wi
 
 <div className="result-box">
 🔍`tool result`
-
-<p>[DIR] .python_tmp
+```json
+[DIR] .python_tmp
 [FILE] Format_Example.xlsx
 [FILE] Household_Appliances.xlsx
 [FILE] Processed.xlsx
-</p>
+```
 </div>
 
 <div className="tool-call-box">
@@ -1012,8 +1012,8 @@ print(df_processed_verify.head(3))
 
 <div className="result-box">
 🔍`tool result`
-
-<p>=== STDOUT ===
+```json
+=== STDOUT ===
 Verification of saved file:
 Shape: (198, 6)
 
@@ -1065,7 +1065,7 @@ Processed file:
 Return code: 0
 Execution time: 0.542 seconds
 Timeout limit: 30 seconds
-</p>
+```
 </div>
 
 <div className="thinking-box">
@@ -1098,8 +1098,8 @@ print("✓ File saved as 'Processed.xlsx' in the workspace")
 
 <div className="result-box">
 🔍`tool result`
-
-<p>=== STDOUT ===
+```json
+=== STDOUT ===
 Final verification - showing data for a specific month:
 === STDERR ===
 Traceback (most recent call last):
@@ -1111,7 +1111,7 @@ NameError: name 'df_processed_verify' is not defined
 Return code: 1
 Execution time: 0.066 seconds
 Timeout limit: 30 seconds
-</p>
+```
 </div>
 
 <div className="tool-call-box">
@@ -1143,8 +1143,8 @@ print("✓ File saved as 'Processed.xlsx' in the workspace")
 
 <div className="result-box">
 🔍`tool result`
-
-<p>=== STDOUT ===
+```json
+=== STDOUT ===
 Final verification - showing data for a specific month:
         Time  ... Accumulated Growth (%)
 195  2024-12  ...                  0.097
@@ -1168,7 +1168,7 @@ Confirming structure matches the format example:
 Return code: 0
 Execution time: 0.504 seconds
 Timeout limit: 30 seconds
-</p>
+```
 </div>
 
 <div className="thinking-box">
@@ -1224,9 +1224,9 @@ The transformed data is now ready for your market analysis and reporting needs!
 
 <div className="result-box">
 🔍`tool result`
-
-<p>you have claimed the task is done!
-</p>
+```json
+you have claimed the task is done!
+```
 </div>
 
 </Accordion>

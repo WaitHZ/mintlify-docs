@@ -59,10 +59,10 @@ I'll help you find the courses and create the course selection options in the sp
 
 <div className="result-box">
 🔍`tool result`
-
-<p>[FILE] 25-26学年第一学期课程表.pdf
+```json
+[FILE] 25-26学年第一学期课程表.pdf
 [FILE] reference_format.xlsx
-</p>
+```
 </div>
 
 <div className="thinking-box">
@@ -84,10 +84,10 @@ Let me examine the reference format first to understand the expected output stru
 
 <div className="result-box">
 🔍`tool result`
-
-<p>['Course name', 'Course ID', 'Instructor', 'Campus', 'Class Time', 'Enrollment', 'Credits', 'Assessment Method', 'Exam Time', 'Course Selection Restrictions']
+```json
+['Course name', 'Course ID', 'Instructor', 'Campus', 'Class Time', 'Enrollment', 'Credits', 'Assessment Method', 'Exam Time', 'Course Selection Restrictions']
 [None, None, None, 'xx校区', '周x 第x-y节', None, None, None, 'YYYY-MM-DD HH:MM-HH:MM ', '多行则以逗号分隔，若无限制则填入“无”']
-</p>
+```
 </div>
 
 <div className="thinking-box">
@@ -108,15 +108,15 @@ Now let me examine the course schedule PDF to understand its structure:
 
 <div className="result-box">
 🔍`tool result`
-
-<p>PDF file information:
+```json
+PDF file information:
 Total pages: 318
 Title: Unknown
 Author: Unknown
 Creator: Unknown
 Creation date: Unknown
 
-</p>
+```
 </div>
 
 <div className="thinking-box">
@@ -139,8 +139,8 @@ Let me read the first few pages to understand the structure:
 
 <div className="result-box">
 🔍`tool result`
-
-<p>PDF total pages: 318
+```json
+PDF total pages: 318
 Extracted page range: 1-3
 
 === Page 1 ===
@@ -222,7 +222,7 @@ Extracted page range: 1-3
 2.12025年6月2日（周一）13:00-2025年6月5日（周四）10:00
 2.22025年6月10日（周二）13:00-2025年8月29日（周五）10:002024级及之前年级的在读本科生（不含2025届毕业班
 学生）
-</p>
+```
 </div>
 
 <div className="thinking-box">
@@ -245,8 +245,8 @@ Now let me search for the specific courses I need to find. Let me start by searc
 
 <div className="result-box">
 🔍`tool result`
-
-<p>Search ID: 15fb595e
+```json
+Search ID: 15fb595e
 Pattern: 自然语言处理
 Total matches: 2
 Page: 1/1
@@ -278,7 +278,7 @@ COMP130199.01[自然语言处理]
 23 22 软件...
 
 
-</p>
+```
 </div>
 
 <div className="thinking-box">
@@ -301,8 +301,8 @@ Now let me search for "Software Architecture" and "软件体系结构":
 
 <div className="result-box">
 🔍`tool result`
-
-<p>Search ID: 5b5aceb7
+```json
+Search ID: 5b5aceb7
 Pattern: 软件体系结构
 Total matches: 1
 Page: 1/1
@@ -318,7 +318,7 @@ COMP130025.01 [软件体系结构] 2 陈彤兵 讲师 一 4-5 [1-16] 邯郸校�
 COMP130027.01数据库设计...
 
 
-</p>
+```
 </div>
 
 <div className="thinking-box">
@@ -341,8 +341,8 @@ Now let me search for "思政B" or "Ideological and Political Theory":
 
 <div className="result-box">
 🔍`tool result`
-
-<p>Search ID: fc109a2c
+```json
+Search ID: fc109a2c
 Pattern: 思政B
 Total matches: 10
 Page: 1/1
@@ -464,7 +464,7 @@ PTSS110086.02 社会主义发展史 2 徐伟轩 讲师 三 11-12 [1-15] 江湾�
 第 8 页...
 
 
-</p>
+```
 </div>
 
 <div className="thinking-box">
@@ -487,8 +487,8 @@ Now let me search for "通识教育核心课程" (General Education Core Curricu
 
 <div className="result-box">
 🔍`tool result`
-
-<p>Search ID: a4a72914
+```json
+Search ID: a4a72914
 Pattern: 通识教育核心课程
 Total matches: 23
 Page: 1/2
@@ -680,7 +680,7 @@ Match 20:
 邯郸...
 
 Use search_pdf_next_page, search_pdf_prev_page, or search_pdf_go_page with search_id 'a4a72914' to navigate.
-</p>
+```
 </div>
 
 <div className="thinking-box">
@@ -703,8 +703,8 @@ Let me get more details about the specific courses. First, let me read the pages
 
 <div className="result-box">
 🔍`tool result`
-
-<p>PDF total pages: 318
+```json
+PDF total pages: 318
 Extracted page range: 252-252
 
 === Page 252 ===
@@ -788,7 +788,7 @@ COMP130141.01 自然语言处理 2 黄萱菁 教授 一 2-3 [1-16] 邯郸校区 
 大数据与人工智能(2022)
 计算机科学技术学院
 第 230 页
-</p>
+```
 </div>
 
 <div className="tool-call-box">
@@ -805,8 +805,8 @@ COMP130141.01 自然语言处理 2 黄萱菁 教授 一 2-3 [1-16] 邯郸校区 
 
 <div className="result-box">
 🔍`tool result`
-
-<p>PDF total pages: 318
+```json
+PDF total pages: 318
 Extracted page range: 251-251
 
 === Page 251 ===
@@ -885,7 +885,7 @@ COMP130115.01法学基础与保
 密法学3 姚军 副教授 二 11-13 [1-16] 邯郸校区 30考试日期: 2025-12-23
 考试时间: 18:30-20:30开卷 保密技术
 第 229 页
-</p>
+```
 </div>
 
 <div className="thinking-box">
@@ -908,9 +908,9 @@ Now let me search for Monday classes for 思政B category:
 
 <div className="result-box">
 🔍`tool result`
-
-<p>No matches found for pattern: 一.*思政B.*开卷
-</p>
+```json
+No matches found for pattern: 一.*思政B.*开卷
+```
 </div>
 
 <div className="thinking-box">
@@ -933,8 +933,8 @@ Let me search for Monday classes in the 思政B section. First, let me read the 
 
 <div className="result-box">
 🔍`tool result`
-
-<p>PDF total pages: 318
+```json
+PDF total pages: 318
 Extracted page range: 30-31
 
 === Page 30 ===
@@ -1024,7 +1024,7 @@ STUO110003.01 中国传统与当代发展III 0.5 盛情 讲师 二 6-7 [1-16] �
 不允许短期交流学
 生选
 第 9 页
-</p>
+```
 </div>
 
 <div className="thinking-box">
@@ -1047,8 +1047,8 @@ I can see that there's one Monday 思政B course: "中国共产党历史" (Chine
 
 <div className="result-box">
 🔍`tool result`
-
-<p>PDF total pages: 318
+```json
+PDF total pages: 318
 Extracted page range: 32-35
 
 === Page 32 ===
@@ -1430,7 +1430,7 @@ BIOL119011.02 人类进化 3谭婧泽 副教授四 6-7 [1,5]
 四 6-7 [10]
 张梦翰 研究员 四 6-7 [11]
 第 13 页
-</p>
+```
 </div>
 
 <div className="thinking-box">
@@ -1453,9 +1453,9 @@ Now let me search for Monday courses with open-book exams in the general educati
 
 <div className="result-box">
 🔍`tool result`
-
-<p>No matches found for pattern: 一.*开卷
-</p>
+```json
+No matches found for pattern: 一.*开卷
+```
 </div>
 
 <div className="thinking-box">
@@ -1478,8 +1478,8 @@ Let me check more pages around the general education section to find Monday cour
 
 <div className="result-box">
 🔍`tool result`
-
-<p>PDF total pages: 318
+```json
+PDF total pages: 318
 Extracted page range: 36-40
 
 === Page 36 ===
@@ -1874,7 +1874,7 @@ FINE110098.01 后人类艺术观察 2 赵阳 讲师四 11-12 [1-16]邯郸校区 
 考试时间: 18:30其他(实践报
 告)艺术教育中心六 6-9 [5-8]
 第 18 页
-</p>
+```
 </div>
 
 <div className="thinking-box">
@@ -1904,9 +1904,9 @@ Let me search for more Monday courses with open-book exams in the general educat
 
 <div className="result-box">
 🔍`tool result`
-
-<p>No matches found for pattern: 一.*[0-9]+-[0-9]+.*开卷
-</p>
+```json
+No matches found for pattern: 一.*[0-9]+-[0-9]+.*开卷
+```
 </div>
 
 <div className="thinking-box">
@@ -1929,9 +1929,9 @@ Let me search more specifically for Monday courses:
 
 <div className="result-box">
 🔍`tool result`
-
-<p>No matches found for pattern: 一.*开卷
-</p>
+```json
+No matches found for pattern: 一.*开卷
+```
 </div>
 
 <div className="thinking-box">
@@ -1964,9 +1964,9 @@ From my analysis of the PDF, I found several Monday courses with open-book exams
 
 <div className="result-box">
 🔍`tool result`
-
-<p>Created workbook at /ssddata/junlong/projects/mcpbench_finalpool_dev/recorded_trajectories_v2/run1/claude-4-sonnet-0514/finalpoolcn/English-SingleUserTurn-university-course-selection/workspace/课程选择方案1.xlsx
-</p>
+```json
+Created workbook at /ssddata/junlong/projects/mcpbench_finalpool_dev/recorded_trajectories_v2/run1/claude-4-sonnet-0514/finalpoolcn/English-SingleUserTurn-university-course-selection/workspace/课程选择方案1.xlsx
+```
 </div>
 
 <div className="thinking-box">
@@ -2041,9 +2041,9 @@ Now let me add the course data. First, let me get the Monday general education c
 
 <div className="result-box">
 🔍`tool result`
-
-<p>Data written to Sheet1
-</p>
+```json
+Data written to Sheet1
+```
 </div>
 
 <div className="thinking-box">
@@ -2066,8 +2066,8 @@ Now let me create a second option with a different Monday general education cour
 
 <div className="result-box">
 🔍`tool result`
-
-<p>PDF total pages: 318
+```json
+PDF total pages: 318
 Extracted page range: 33-33
 
 === Page 33 ===
@@ -2171,7 +2171,7 @@ HIST119019.01欧洲文明的现代
 HIST119021.01 希腊悲剧 2 吴晓群 教授 三 9-10 [1-16] 邯郸校区 80 复旦大学精品课程考试日期: 2025-12-24
 考试时间: 16:20-18:00开卷 历史学系
 第 11 页
-</p>
+```
 </div>
 
 <div className="thinking-box">
@@ -2192,9 +2192,9 @@ Great! I found another Monday course with open-book exam: "英国经典小说与
 
 <div className="result-box">
 🔍`tool result`
-
-<p>Created workbook at /ssddata/junlong/projects/mcpbench_finalpool_dev/recorded_trajectories_v2/run1/claude-4-sonnet-0514/finalpoolcn/English-SingleUserTurn-university-course-selection/workspace/课程选择方案2.xlsx
-</p>
+```json
+Created workbook at /ssddata/junlong/projects/mcpbench_finalpool_dev/recorded_trajectories_v2/run1/claude-4-sonnet-0514/finalpoolcn/English-SingleUserTurn-university-course-selection/workspace/课程选择方案2.xlsx
+```
 </div>
 
 <div className="tool-call-box">
@@ -2263,9 +2263,9 @@ Great! I found another Monday course with open-book exam: "英国经典小说与
 
 <div className="result-box">
 🔍`tool result`
-
-<p>Data written to Sheet1
-</p>
+```json
+Data written to Sheet1
+```
 </div>
 
 <div className="thinking-box">
@@ -2288,8 +2288,8 @@ Let me look for more Monday courses with open-book exams to create a third optio
 
 <div className="result-box">
 🔍`tool result`
-
-<p>PDF total pages: 318
+```json
+PDF total pages: 318
 Extracted page range: 39-39
 
 === Page 39 ===
@@ -2368,7 +2368,7 @@ FINE110042.02 构成艺术与设计思维 2 丁玉红 讲师 四 11-12 [1-16] �
 考试时间: 18:30其他(艺术作
 品或论文)艺术教育中心
 第 17 页
-</p>
+```
 </div>
 
 <div className="thinking-box">
@@ -2389,9 +2389,9 @@ Great! I found another Monday course with open-book exam: "美学与人生" (Aes
 
 <div className="result-box">
 🔍`tool result`
-
-<p>Created workbook at /ssddata/junlong/projects/mcpbench_finalpool_dev/recorded_trajectories_v2/run1/claude-4-sonnet-0514/finalpoolcn/English-SingleUserTurn-university-course-selection/workspace/课程选择方案3.xlsx
-</p>
+```json
+Created workbook at /ssddata/junlong/projects/mcpbench_finalpool_dev/recorded_trajectories_v2/run1/claude-4-sonnet-0514/finalpoolcn/English-SingleUserTurn-university-course-selection/workspace/课程选择方案3.xlsx
+```
 </div>
 
 <div className="tool-call-box">
@@ -2460,9 +2460,9 @@ Great! I found another Monday course with open-book exam: "美学与人生" (Aes
 
 <div className="result-box">
 🔍`tool result`
-
-<p>Data written to Sheet1
-</p>
+```json
+Data written to Sheet1
+```
 </div>
 
 <div className="thinking-box">
@@ -2483,10 +2483,10 @@ Now let me delete the reference format file as requested:
 
 <div className="result-box">
 🔍`tool result`
+```json
 
-<p>
 Command completed with return code: 0
-</p>
+```
 </div>
 
 <div className="thinking-box">
@@ -2507,12 +2507,12 @@ Let me verify the final workspace contents:
 
 <div className="result-box">
 🔍`tool result`
-
-<p>[FILE] 25-26学年第一学期课程表.pdf
+```json
+[FILE] 25-26学年第一学期课程表.pdf
 [FILE] 课程选择方案1.xlsx
 [FILE] 课程选择方案2.xlsx
 [FILE] 课程选择方案3.xlsx
-</p>
+```
 </div>
 
 <div className="thinking-box">
@@ -2534,13 +2534,13 @@ Perfect! Let me verify the content of each file to ensure they are correct:
 
 <div className="result-box">
 🔍`tool result`
-
-<p>['Course name', 'Course ID', 'Instructor', 'Campus', 'Class Time', 'Enrollment', 'Credits', 'Assessment Method', 'Exam Time', 'Course Selection Restrictions']
+```json
+['Course name', 'Course ID', 'Instructor', 'Campus', 'Class Time', 'Enrollment', 'Credits', 'Assessment Method', 'Exam Time', 'Course Selection Restrictions']
 ['自然语言处理', 'COMP130141.01', '黄萱菁', '邯郸校区', '周一 第2-3节', 60, 2, '闭卷', '2025-12-22 08:55-10:40', '23 22 计算机科学与技术,大数据与人工智能(2024),大数据与人工智能(2023),大数据与人工智能(2022)']
 ['软件体系结构', 'COMP130025.01', '陈彤兵', '邯郸校区', '周一 第4-5节', 50, 2, '闭卷', '2025-12-22 10:50-12:30', '23 22 计算机科学与技术']
 ['中国共产党历史', 'PTSS110080.01', '薛小荣', '邯郸校区', '周一 第11-12节', 180, 2, '开卷', '2025-12-22 18:30-20:10', '思政B']
 ['《功利主义》研读', 'PHIL119059.01', '罗亚玲', '邯郸校区', '周一 第6-7节', 80, 2, '开卷', '2025-12-22 13:30-15:10', '无']
-</p>
+```
 </div>
 
 <div className="tool-call-box">
@@ -2556,13 +2556,13 @@ Perfect! Let me verify the content of each file to ensure they are correct:
 
 <div className="result-box">
 🔍`tool result`
-
-<p>['Course name', 'Course ID', 'Instructor', 'Campus', 'Class Time', 'Enrollment', 'Credits', 'Assessment Method', 'Exam Time', 'Course Selection Restrictions']
+```json
+['Course name', 'Course ID', 'Instructor', 'Campus', 'Class Time', 'Enrollment', 'Credits', 'Assessment Method', 'Exam Time', 'Course Selection Restrictions']
 ['自然语言处理', 'COMP130141.01', '黄萱菁', '邯郸校区', '周一 第2-3节', 60, 2, '闭卷', '2025-12-22 08:55-10:40', '23 22 计算机科学与技术,大数据与人工智能(2024),大数据与人工智能(2023),大数据与人工智能(2022)']
 ['软件体系结构', 'COMP130025.01', '陈彤兵', '邯郸校区', '周一 第4-5节', 50, 2, '闭卷', '2025-12-22 10:50-12:30', '23 22 计算机科学与技术']
 ['中国共产党历史', 'PTSS110080.01', '薛小荣', '邯郸校区', '周一 第11-12节', 180, 2, '开卷', '2025-12-22 18:30-20:10', '思政B']
 ['英国经典小说与19世纪社会', 'FORE119008.01', '苏耕欣', '邯郸校区', '周一 第8-9节', 60, 2, '开卷', '2025-12-22 15:25-17:05', '无']
-</p>
+```
 </div>
 
 <div className="tool-call-box">
@@ -2578,13 +2578,13 @@ Perfect! Let me verify the content of each file to ensure they are correct:
 
 <div className="result-box">
 🔍`tool result`
-
-<p>['Course name', 'Course ID', 'Instructor', 'Campus', 'Class Time', 'Enrollment', 'Credits', 'Assessment Method', 'Exam Time', 'Course Selection Restrictions']
+```json
+['Course name', 'Course ID', 'Instructor', 'Campus', 'Class Time', 'Enrollment', 'Credits', 'Assessment Method', 'Exam Time', 'Course Selection Restrictions']
 ['自然语言处理', 'COMP130141.01', '黄萱菁', '邯郸校区', '周一 第2-3节', 60, 2, '闭卷', '2025-12-22 08:55-10:40', '23 22 计算机科学与技术,大数据与人工智能(2024),大数据与人工智能(2023),大数据与人工智能(2022)']
 ['软件体系结构', 'COMP130025.01', '陈彤兵', '邯郸校区', '周一 第4-5节', 50, 2, '闭卷', '2025-12-22 10:50-12:30', '23 22 计算机科学与技术']
 ['中国共产党历史', 'PTSS110080.01', '薛小荣', '邯郸校区', '周一 第11-12节', 180, 2, '开卷', '2025-12-22 18:30-20:10', '思政B']
 ['美学与人生', 'FINE110037.01', '高燕', '邯郸校区', '周一 第9-10节', 60, 2, '开卷', '2025-12-22 16:20-18:00', '无']
-</p>
+```
 </div>
 
 <div className="thinking-box">
@@ -2653,9 +2653,9 @@ All course selection options meet your requirements:
 
 <div className="result-box">
 🔍`tool result`
-
-<p>you have claimed the task is done!
-</p>
+```json
+you have claimed the task is done!
+```
 </div>
 
 </Accordion>
