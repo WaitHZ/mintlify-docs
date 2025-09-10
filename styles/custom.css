@@ -60,44 +60,52 @@
 
 /* 深色模式下的框样式 - 使用不同色彩但保持相同情绪 */
 @media (prefers-color-scheme: dark) {
-  .thinking-box {
-    background: #e0e7ff;
-    color: #000000;
+  .thinking-box,
+  .thinking-box *,
+  .thinking-box p,
+  .thinking-box div,
+  .thinking-box span,
+  .thinking-box pre,
+  .thinking-box code {
+    background: #e0e7ff !important;
+    color: #000000 !important;
     border-left: 3px solid #a78bfa;
   }
   
-  .thinking-box * {
+  .tool-call-box,
+  .tool-call-box *,
+  .tool-call-box p,
+  .tool-call-box div,
+  .tool-call-box span,
+  .tool-call-box pre,
+  .tool-call-box code {
+    background: #f3f4f6 !important;
     color: #000000 !important;
-  }
-  
-  .tool-call-box {
-    background: #f3f4f6;
-    color: #000000;
     border-left: 3px solid #6b7280;
   }
   
-  .tool-call-box * {
+  .result-box,
+  .result-box *,
+  .result-box p,
+  .result-box div,
+  .result-box span,
+  .result-box pre,
+  .result-box code {
+    background: #dcfce7 !important;
     color: #000000 !important;
-  }
-  
-  .result-box {
-    background: #dcfce7;
-    color: #000000;
     border-left: 3px solid #22c55e;
   }
   
-  .result-box * {
+  .task-completed-box,
+  .task-completed-box *,
+  .task-completed-box p,
+  .task-completed-box div,
+  .task-completed-box span,
+  .task-completed-box pre,
+  .task-completed-box code {
+    background: #fed7aa !important;
     color: #000000 !important;
-  }
-  
-  .task-completed-box {
-    background: #fed7aa;
-    color: #000000;
     border-left: 3px solid #fb923c;
-  }
-  
-  .task-completed-box * {
-    color: #000000 !important;
   }
   
   /* 深色模式下的滚动条样式 */
