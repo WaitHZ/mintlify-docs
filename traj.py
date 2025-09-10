@@ -156,14 +156,7 @@ def main(args):
                                         tool_res = tool_res["text"]
                                         tool_res = tool_res.replace('```', '')
                                     except:
-                                        with open("_tmp", "r", encoding="utf-8") as f:
-                                            s = f.read()
-                                            print(s)
-                                            exit(0)
-                                            if isinstance(eval(s), list):
-                                                tool_res = f"[\n" + "\n".join(eval(s)) + "\n]"
-                                            else:
-                                                tool_res = msg['content']
+                                        tool_res = msg['content']
 
                                     dst.write(f"<div className=\"result-box\">\n")
                                     dst.write(f"🔍`tool result`\n```json\n{tool_res}\n```\n</div>\n\n")
