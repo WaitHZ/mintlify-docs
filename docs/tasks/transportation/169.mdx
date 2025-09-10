@@ -60,7 +60,7 @@ I'll help you plan your MRT route from Hilton Garden Inn Singapore to Changi Air
 <div className="result-box">
 🔍`tool result`
 ```json
-{"type":"text","text":"Geocoding failed: This API project is not authorized to use this API.","annotations":null}
+Geocoding failed: This API project is not authorized to use this API.
 ```
 </div>
 
@@ -83,7 +83,25 @@ Let me try searching for places instead:
 <div className="result-box">
 🔍`tool result`
 ```json
-{"type":"text","text":"{\n  \"places\": [\n    {\n      \"name\": \"Hilton Garden Inn Singapore Serangoon\",\n      \"formatted_address\": \"3 Belilios Rd, Singapore 219924\",\n      \"location\": {\n        \"lat\": 1.3083868,\n        \"lng\": 103.8520416\n      },\n      \"place_id\": \"ChIJIf22XccZ2jER4TsBlHj5nbk\",\n      \"rating\": 4.2,\n      \"types\": [\n        \"lodging\",\n        \"point_of_interest\",\n        \"establishment\"\n      ]\n    }\n  ]\n}","annotations":null}
+{
+  "places": [
+    {
+      "name": "Hilton Garden Inn Singapore Serangoon",
+      "formatted_address": "3 Belilios Rd, Singapore 219924",
+      "location": {
+        "lat": 1.3083868,
+        "lng": 103.8520416
+      },
+      "place_id": "ChIJIf22XccZ2jER4TsBlHj5nbk",
+      "rating": 4.2,
+      "types": [
+        "lodging",
+        "point_of_interest",
+        "establishment"
+      ]
+    }
+  ]
+}
 ```
 </div>
 
@@ -106,7 +124,40 @@ Now let me search for Changi Airport MRT station:
 <div className="result-box">
 🔍`tool result`
 ```json
-{"type":"text","text":"{\n  \"places\": [\n    {\n      \"name\": \"Changi Airport\",\n      \"formatted_address\": \"70 Airport Blvd., Singapore 819661\",\n      \"location\": {\n        \"lat\": 1.3569833,\n        \"lng\": 103.9882267\n      },\n      \"place_id\": \"ChIJF7Q9Fow82jERNvbZPNr07Xo\",\n      \"rating\": 4.6,\n      \"types\": [\n        \"subway_station\",\n        \"transit_station\",\n        \"point_of_interest\",\n        \"establishment\"\n      ]\n    },\n    {\n      \"name\": \"Changi Airport MRT Station (CG2)\",\n      \"formatted_address\": \"70 Airport Blvd., Singapore 819661\",\n      \"location\": {\n        \"lat\": 1.3557581,\n        \"lng\": 103.9878496\n      },\n      \"place_id\": \"ChIJn_xr2CI92jERXPLPKqK8Sx4\",\n      \"rating\": 4.7,\n      \"types\": [\n        \"point_of_interest\",\n        \"establishment\"\n      ]\n    }\n  ]\n}","annotations":null}
+{
+  "places": [
+    {
+      "name": "Changi Airport",
+      "formatted_address": "70 Airport Blvd., Singapore 819661",
+      "location": {
+        "lat": 1.3569833,
+        "lng": 103.9882267
+      },
+      "place_id": "ChIJF7Q9Fow82jERNvbZPNr07Xo",
+      "rating": 4.6,
+      "types": [
+        "subway_station",
+        "transit_station",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "name": "Changi Airport MRT Station (CG2)",
+      "formatted_address": "70 Airport Blvd., Singapore 819661",
+      "location": {
+        "lat": 1.3557581,
+        "lng": 103.9878496
+      },
+      "place_id": "ChIJn_xr2CI92jERXPLPKqK8Sx4",
+      "rating": 4.7,
+      "types": [
+        "point_of_interest",
+        "establishment"
+      ]
+    }
+  ]
+}
 ```
 </div>
 
@@ -132,7 +183,191 @@ Now let me find the nearest MRT stations to the Hilton Garden Inn Singapore Sera
 <div className="result-box">
 🔍`tool result`
 ```json
-{"type":"text","text":"{\n  \"places\": [\n    {\n      \"name\": \"Hilton Garden Inn Singapore Serangoon\",\n      \"formatted_address\": \"3 Belilios Rd, Singapore 219924\",\n      \"location\": {\n        \"lat\": 1.3083868,\n        \"lng\": 103.8520416\n      },\n      \"place_id\": \"ChIJIf22XccZ2jER4TsBlHj5nbk\",\n      \"rating\": 4.2,\n      \"types\": [\n        \"lodging\",\n        \"point_of_interest\",\n        \"establishment\"\n      ]\n    },\n    {\n      \"name\": \"Serangoon MRT Station (NE12)\",\n      \"formatted_address\": \"600 Upper Serangoon Rd, Singapore 534801\",\n      \"location\": {\n        \"lat\": 1.3498909,\n        \"lng\": 103.8734649\n      },\n      \"place_id\": \"ChIJIYyY1PEX2jERyFDiQEZEKRg\",\n      \"rating\": 4.3,\n      \"types\": [\n        \"point_of_interest\",\n        \"establishment\"\n      ]\n    },\n    {\n      \"name\": \"Serangoon MRT Station (CC13)\",\n      \"formatted_address\": \"21 Serangoon Central, Singapore 556082\",\n      \"location\": {\n        \"lat\": 1.3508629,\n        \"lng\": 103.8712099\n      },\n      \"place_id\": \"ChIJMSKsChcX2jERPC0Poz3FmWg\",\n      \"rating\": 4.4,\n      \"types\": [\n        \"point_of_interest\",\n        \"establishment\"\n      ]\n    },\n    {\n      \"name\": \"Boon Keng MRT Station (NE9)\",\n      \"formatted_address\": \"900 Serangoon Rd, Singapore 328260\",\n      \"location\": {\n        \"lat\": 1.3200018,\n        \"lng\": 103.8616397\n      },\n      \"place_id\": \"ChIJkdvt4_MZ2jERqjBoc1iI-Ao\",\n      \"rating\": 4.4,\n      \"types\": [\n        \"point_of_interest\",\n        \"establishment\"\n      ]\n    },\n    {\n      \"name\": \"Lorong Chuan\",\n      \"formatted_address\": \"Singapore\",\n      \"location\": {\n        \"lat\": 1.351509,\n        \"lng\": 103.8647194\n      },\n      \"place_id\": \"ChIJK2ewIQkX2jERNNpWkYHNPDk\",\n      \"rating\": 4.2,\n      \"types\": [\n        \"subway_station\",\n        \"transit_station\",\n        \"point_of_interest\",\n        \"establishment\"\n      ]\n    },\n    {\n      \"name\": \"Lorong Chuan MRT Station (CC14)\",\n      \"formatted_address\": \"150 Serangoon Ave 3, Singapore 554533\",\n      \"location\": {\n        \"lat\": 1.3516681,\n        \"lng\": 103.8639337\n      },\n      \"place_id\": \"ChIJhyQRtOQX2jER59BQpKHKhBw\",\n      \"rating\": 4.4,\n      \"types\": [\n        \"point_of_interest\",\n        \"establishment\"\n      ]\n    },\n    {\n      \"name\": \"Boon Keng\",\n      \"formatted_address\": \"900 Serangoon Rd, Singapore 328260\",\n      \"location\": {\n        \"lat\": 1.3200375,\n        \"lng\": 103.861623\n      },\n      \"place_id\": \"ChIJy7SWftEZ2jERRM4LKZ_0j8M\",\n      \"rating\": 3.8,\n      \"types\": [\n        \"subway_station\",\n        \"transit_station\",\n        \"point_of_interest\",\n        \"establishment\"\n      ]\n    },\n    {\n      \"name\": \"Kovan\",\n      \"formatted_address\": \"900 Upper Serangoon Rd, Singapore 534799\",\n      \"location\": {\n        \"lat\": 1.359746,\n        \"lng\": 103.8842776\n      },\n      \"place_id\": \"ChIJJ8F39rMX2jERDK76MHa6RwE\",\n      \"rating\": 3.9,\n      \"types\": [\n        \"subway_station\",\n        \"transit_station\",\n        \"point_of_interest\",\n        \"establishment\"\n      ]\n    },\n    {\n      \"name\": \"Hougang\",\n      \"formatted_address\": \"Singapore\",\n      \"location\": {\n        \"lat\": 1.3716089,\n        \"lng\": 103.8929679\n      },\n      \"place_id\": \"ChIJJwWqyzcW2jER6pLeAgv9qOU\",\n      \"rating\": 4.1,\n      \"types\": [\n        \"subway_station\",\n        \"transit_station\",\n        \"point_of_interest\",\n        \"establishment\"\n      ]\n    },\n    {\n      \"name\": \"Botanic Gardens\",\n      \"formatted_address\": \"Singapore\",\n      \"location\": {\n        \"lat\": 1.3223117,\n        \"lng\": 103.8149268\n      },\n      \"place_id\": \"ChIJT1y8pwYa2jER8oi7FaUgAus\",\n      \"rating\": 4.5,\n      \"types\": [\n        \"subway_station\",\n        \"transit_station\",\n        \"point_of_interest\",\n        \"establishment\"\n      ]\n    },\n    {\n      \"name\": \"Kovan MRT Station (NE13)\",\n      \"formatted_address\": \"900 Upper Serangoon Rd, Singapore 534799\",\n      \"location\": {\n        \"lat\": 1.359923,\n        \"lng\": 103.885144\n      },\n      \"place_id\": \"ChIJs3FUB8wX2jERVAGBSY1x5cs\",\n      \"rating\": 4.3,\n      \"types\": [\n        \"point_of_interest\",\n        \"establishment\"\n      ]\n    },\n    {\n      \"name\": \"Little India\",\n      \"formatted_address\": \"Singapore\",\n      \"location\": {\n        \"lat\": 1.3068,\n        \"lng\": 103.84965\n      },\n      \"place_id\": \"ChIJqQbvRr8Z2jERy2II5T8kD1o\",\n      \"rating\": 4.3,\n      \"types\": [\n        \"subway_station\",\n        \"transit_station\",\n        \"point_of_interest\",\n        \"establishment\"\n      ]\n    }\n  ]\n}","annotations":null}
+{
+  "places": [
+    {
+      "name": "Hilton Garden Inn Singapore Serangoon",
+      "formatted_address": "3 Belilios Rd, Singapore 219924",
+      "location": {
+        "lat": 1.3083868,
+        "lng": 103.8520416
+      },
+      "place_id": "ChIJIf22XccZ2jER4TsBlHj5nbk",
+      "rating": 4.2,
+      "types": [
+        "lodging",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "name": "Serangoon MRT Station (NE12)",
+      "formatted_address": "600 Upper Serangoon Rd, Singapore 534801",
+      "location": {
+        "lat": 1.3498909,
+        "lng": 103.8734649
+      },
+      "place_id": "ChIJIYyY1PEX2jERyFDiQEZEKRg",
+      "rating": 4.3,
+      "types": [
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "name": "Serangoon MRT Station (CC13)",
+      "formatted_address": "21 Serangoon Central, Singapore 556082",
+      "location": {
+        "lat": 1.3508629,
+        "lng": 103.8712099
+      },
+      "place_id": "ChIJMSKsChcX2jERPC0Poz3FmWg",
+      "rating": 4.4,
+      "types": [
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "name": "Boon Keng MRT Station (NE9)",
+      "formatted_address": "900 Serangoon Rd, Singapore 328260",
+      "location": {
+        "lat": 1.3200018,
+        "lng": 103.8616397
+      },
+      "place_id": "ChIJkdvt4_MZ2jERqjBoc1iI-Ao",
+      "rating": 4.4,
+      "types": [
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "name": "Lorong Chuan",
+      "formatted_address": "Singapore",
+      "location": {
+        "lat": 1.351509,
+        "lng": 103.8647194
+      },
+      "place_id": "ChIJK2ewIQkX2jERNNpWkYHNPDk",
+      "rating": 4.2,
+      "types": [
+        "subway_station",
+        "transit_station",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "name": "Lorong Chuan MRT Station (CC14)",
+      "formatted_address": "150 Serangoon Ave 3, Singapore 554533",
+      "location": {
+        "lat": 1.3516681,
+        "lng": 103.8639337
+      },
+      "place_id": "ChIJhyQRtOQX2jER59BQpKHKhBw",
+      "rating": 4.4,
+      "types": [
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "name": "Boon Keng",
+      "formatted_address": "900 Serangoon Rd, Singapore 328260",
+      "location": {
+        "lat": 1.3200375,
+        "lng": 103.861623
+      },
+      "place_id": "ChIJy7SWftEZ2jERRM4LKZ_0j8M",
+      "rating": 3.8,
+      "types": [
+        "subway_station",
+        "transit_station",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "name": "Kovan",
+      "formatted_address": "900 Upper Serangoon Rd, Singapore 534799",
+      "location": {
+        "lat": 1.359746,
+        "lng": 103.8842776
+      },
+      "place_id": "ChIJJ8F39rMX2jERDK76MHa6RwE",
+      "rating": 3.9,
+      "types": [
+        "subway_station",
+        "transit_station",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "name": "Hougang",
+      "formatted_address": "Singapore",
+      "location": {
+        "lat": 1.3716089,
+        "lng": 103.8929679
+      },
+      "place_id": "ChIJJwWqyzcW2jER6pLeAgv9qOU",
+      "rating": 4.1,
+      "types": [
+        "subway_station",
+        "transit_station",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "name": "Botanic Gardens",
+      "formatted_address": "Singapore",
+      "location": {
+        "lat": 1.3223117,
+        "lng": 103.8149268
+      },
+      "place_id": "ChIJT1y8pwYa2jER8oi7FaUgAus",
+      "rating": 4.5,
+      "types": [
+        "subway_station",
+        "transit_station",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "name": "Kovan MRT Station (NE13)",
+      "formatted_address": "900 Upper Serangoon Rd, Singapore 534799",
+      "location": {
+        "lat": 1.359923,
+        "lng": 103.885144
+      },
+      "place_id": "ChIJs3FUB8wX2jERVAGBSY1x5cs",
+      "rating": 4.3,
+      "types": [
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "name": "Little India",
+      "formatted_address": "Singapore",
+      "location": {
+        "lat": 1.3068,
+        "lng": 103.84965
+      },
+      "place_id": "ChIJqQbvRr8Z2jERy2II5T8kD1o",
+      "rating": 4.3,
+      "types": [
+        "subway_station",
+        "transit_station",
+        "point_of_interest",
+        "establishment"
+      ]
+    }
+  ]
+}
 ```
 </div>
 
@@ -165,7 +400,67 @@ Let me calculate the walking distances from the hotel to nearby MRT stations:
 <div className="result-box">
 🔍`tool result`
 ```json
-{"type":"text","text":"{\n  \"origin_addresses\": [\n    \"3 Belilios Rd, Singapore 219924\"\n  ],\n  \"destination_addresses\": [\n    \"600 Upper Serangoon Rd, Singapore 534801\",\n    \"21 Serangoon Central, Singapore 556082\",\n    \"900 Serangoon Rd, Singapore 328260\",\n    \"150 Serangoon Ave 3, Singapore 554533\"\n  ],\n  \"results\": [\n    {\n      \"elements\": [\n        {\n          \"status\": \"OK\",\n          \"duration\": {\n            \"text\": \"1 hour 33 mins\",\n            \"value\": 5568\n          },\n          \"distance\": {\n            \"text\": \"6.5 km\",\n            \"value\": 6499\n          }\n        },\n        {\n          \"status\": \"OK\",\n          \"duration\": {\n            \"text\": \"1 hour 33 mins\",\n            \"value\": 5564\n          },\n          \"distance\": {\n            \"text\": \"6.5 km\",\n            \"value\": 6540\n          }\n        },\n        {\n          \"status\": \"OK\",\n          \"duration\": {\n            \"text\": \"25 mins\",\n            \"value\": 1488\n          },\n          \"distance\": {\n            \"text\": \"1.8 km\",\n            \"value\": 1797\n          }\n        },\n        {\n          \"status\": \"OK\",\n          \"duration\": {\n            \"text\": \"1 hour 40 mins\",\n            \"value\": 5974\n          },\n          \"distance\": {\n            \"text\": \"7.1 km\",\n            \"value\": 7106\n          }\n        }\n      ]\n    }\n  ]\n}","annotations":null}
+{
+  "origin_addresses": [
+    "3 Belilios Rd, Singapore 219924"
+  ],
+  "destination_addresses": [
+    "600 Upper Serangoon Rd, Singapore 534801",
+    "21 Serangoon Central, Singapore 556082",
+    "900 Serangoon Rd, Singapore 328260",
+    "150 Serangoon Ave 3, Singapore 554533"
+  ],
+  "results": [
+    {
+      "elements": [
+        {
+          "status": "OK",
+          "duration": {
+            "text": "1 hour 33 mins",
+            "value": 5568
+          },
+          "distance": {
+            "text": "6.5 km",
+            "value": 6499
+          }
+        },
+        {
+          "status": "OK",
+          "duration": {
+            "text": "1 hour 33 mins",
+            "value": 5564
+          },
+          "distance": {
+            "text": "6.5 km",
+            "value": 6540
+          }
+        },
+        {
+          "status": "OK",
+          "duration": {
+            "text": "25 mins",
+            "value": 1488
+          },
+          "distance": {
+            "text": "1.8 km",
+            "value": 1797
+          }
+        },
+        {
+          "status": "OK",
+          "duration": {
+            "text": "1 hour 40 mins",
+            "value": 5974
+          },
+          "distance": {
+            "text": "7.1 km",
+            "value": 7106
+          }
+        }
+      ]
+    }
+  ]
+}
 ```
 </div>
 
@@ -199,7 +494,71 @@ Let me get directions to confirm the route:
 <div className="result-box">
 🔍`tool result`
 ```json
-{"type":"text","text":"{\n  \"routes\": [\n    {\n      \"summary\": \"\",\n      \"distance\": {\n        \"text\": \"22.0 km\",\n        \"value\": 21971\n      },\n      \"duration\": {\n        \"text\": \"53 mins\",\n        \"value\": 3194\n      },\n      \"steps\": [\n        {\n          \"instructions\": \"Walk to Bendemeer\",\n          \"distance\": {\n            \"text\": \"0.7 km\",\n            \"value\": 748\n          },\n          \"duration\": {\n            \"text\": \"11 mins\",\n            \"value\": 638\n          },\n          \"travel_mode\": \"WALKING\"\n        },\n        {\n          \"instructions\": \"Subway towards Expo\",\n          \"distance\": {\n            \"text\": \"16.5 km\",\n            \"value\": 16505\n          },\n          \"duration\": {\n            \"text\": \"26 mins\",\n            \"value\": 1560\n          },\n          \"travel_mode\": \"TRANSIT\"\n        },\n        {\n          \"instructions\": \"Subway towards Changi Airport\",\n          \"distance\": {\n            \"text\": \"4.6 km\",\n            \"value\": 4555\n          },\n          \"duration\": {\n            \"text\": \"8 mins\",\n            \"value\": 480\n          },\n          \"travel_mode\": \"TRANSIT\"\n        },\n        {\n          \"instructions\": \"Walk to 70 Airport Blvd., Changi Airport, Singapore 819661\",\n          \"distance\": {\n            \"text\": \"0.2 km\",\n            \"value\": 163\n          },\n          \"duration\": {\n            \"text\": \"3 mins\",\n            \"value\": 155\n          },\n          \"travel_mode\": \"WALKING\"\n        }\n      ]\n    }\n  ]\n}","annotations":null}
+{
+  "routes": [
+    {
+      "summary": "",
+      "distance": {
+        "text": "22.0 km",
+        "value": 21971
+      },
+      "duration": {
+        "text": "53 mins",
+        "value": 3194
+      },
+      "steps": [
+        {
+          "instructions": "Walk to Bendemeer",
+          "distance": {
+            "text": "0.7 km",
+            "value": 748
+          },
+          "duration": {
+            "text": "11 mins",
+            "value": 638
+          },
+          "travel_mode": "WALKING"
+        },
+        {
+          "instructions": "Subway towards Expo",
+          "distance": {
+            "text": "16.5 km",
+            "value": 16505
+          },
+          "duration": {
+            "text": "26 mins",
+            "value": 1560
+          },
+          "travel_mode": "TRANSIT"
+        },
+        {
+          "instructions": "Subway towards Changi Airport",
+          "distance": {
+            "text": "4.6 km",
+            "value": 4555
+          },
+          "duration": {
+            "text": "8 mins",
+            "value": 480
+          },
+          "travel_mode": "TRANSIT"
+        },
+        {
+          "instructions": "Walk to 70 Airport Blvd., Changi Airport, Singapore 819661",
+          "distance": {
+            "text": "0.2 km",
+            "value": 163
+          },
+          "duration": {
+            "text": "3 mins",
+            "value": 155
+          },
+          "travel_mode": "WALKING"
+        }
+      ]
+    }
+  ]
+}
 ```
 </div>
 
@@ -239,7 +598,19 @@ Let me verify this route and get the complete list of stations:
 <div className="result-box">
 🔍`tool result`
 ```json
-{"type":"text","text":"[\n  {\n    \"entityType\": \"travel_plan\",\n    \"name\": \"Singapore MRT Route Planning\",\n    \"observations\": [\n      \"Hotel: Hilton Garden Inn Singapore Serangoon at 3 Belilios Rd, Singapore 219924\",\n      \"Destination: Changi Airport MRT Station (CG2)\",\n      \"Nearest MRT station to hotel: Boon Keng MRT Station (NE9) - 1.8km walk (25 minutes)\",\n      \"Optimal route: Boon Keng → Little India → Expo → Changi Airport\",\n      \"Route uses North East Line, Downtown Line, and East West Line\"\n    ]\n  }\n]","annotations":null}
+[
+  {
+    "entityType": "travel_plan",
+    "name": "Singapore MRT Route Planning",
+    "observations": [
+      "Hotel: Hilton Garden Inn Singapore Serangoon at 3 Belilios Rd, Singapore 219924",
+      "Destination: Changi Airport MRT Station (CG2)",
+      "Nearest MRT station to hotel: Boon Keng MRT Station (NE9) - 1.8km walk (25 minutes)",
+      "Optimal route: Boon Keng → Little India → Expo → Changi Airport",
+      "Route uses North East Line, Downtown Line, and East West Line"
+    ]
+  }
+]
 ```
 </div>
 
@@ -303,7 +674,7 @@ Now let me save this route to the file:
 <div className="result-box">
 🔍`tool result`
 ```json
-{"type":"text","text":"Successfully wrote to /ssddata/mcpbench/zhaojian/mcpbench_dev/recorded_trajectories_v2/run1/claude-4-sonnet-0514/finalpool/SingleUserTurn-subway-planning/workspace/routine.txt","annotations":null}
+Successfully wrote to /ssddata/mcpbench/zhaojian/mcpbench_dev/recorded_trajectories_v2/run1/claude-4-sonnet-0514/finalpool/SingleUserTurn-subway-planning/workspace/routine.txt
 ```
 </div>
 
