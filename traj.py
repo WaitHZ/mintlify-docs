@@ -161,9 +161,7 @@ def main(args):
                                             tool_res = tool_res.replace('[{', '[\n{')
                                             tool_res = tool_res.replace('}]', '}\n]')
                                             tool_res = tool_res.replace('}, {', '},\n{')
-                                            print(tool_res)
-                                            exit(0)
-                                            tool_res = tool_res.replace(r'\\n', ' ')
+                                            tool_res = tool_res.replace(r'\n', ' ')
 
                                     dst.write(f"<div className=\"result-box\">\n")
                                     dst.write(f"🔍`tool result`\n```json\n{tool_res}\n```\n</div>\n\n")
