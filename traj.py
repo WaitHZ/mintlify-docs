@@ -156,9 +156,44 @@ def main(args):
                                         tool_res = tool_res["text"]
                                     except:
                                         tool_res = msg['content']
+                                    # INSERT_YOUR_CODE
+                                    # markdown或html本身并不直接支持用反斜杠等方式转义括号（如 \( 或 \[），
+                                    # 但在markdown中反斜杠可用于部分符号的转义，html中可用实体编码。
+                                    # 但对于括号 () [] {}，markdown只对部分符号（如\* \_ \#）有特殊转义效果，
+                                    # 对括号的反斜杠转义通常不会影响渲染，html也不会特殊处理。
+                                    # 所以即使加了反斜杠，渲染时括号依然会显示为括号。
+                                    # 如果只是为了在源码中标记未闭合括号，可以加反斜杠，但这不会影响markdown/html的显示。
+                                    # 下面代码保留反斜杠转义逻辑，但请注意渲染效果不会有区别。
+
+                                    def escape_unclosed_brackets_with_backslash(s):
+                                        pairs = {'(': ')', '[': ']', '{': '}'}
+                                        lefts = set(pairs.keys())
+                                        rights = set(pairs.values())
+                                        stack = []
+                                        result = []
+                                        for i, c in enumerate(s):
+                                            if c in lefts:
+                                                stack.append((c, len(result)))
+                                                result.append(c)
+                                            elif c in rights:
+                                                if stack and pairs[stack[-1][0]] == c:
+                                                    stack.pop()
+                                                    result.append(c)
+                                                else:
+                                                    result.append(c)
+                                            else:
+                                                result.append(c)
+                                        for left, idx in stack:
+                                            result[idx] = '\\' + left
+                                        return ''.join(result)
+
+                                    if isinstance(tool_res, str):
+                                        tool_res = escape_unclosed_brackets_with_backslash(tool_res)
+
+
 
                                     dst.write(f"<div className=\"result-box\">\n")
-                                    dst.write(f"🔍`tool result`\n```json\n{tool_res}\n```\n</div>\n\n")
+                                    dst.write(f"🔍`tool result`\n\n{tool_res}\n\n</div>\n\n")
                                 else:
                                     raise NotImplementedError("tool result doesn't have content")
                                     # dst.write(f"<div className=\"result-box\">\n")
