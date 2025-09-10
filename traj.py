@@ -110,8 +110,8 @@ def main(args):
                                     else:
                                         raise NotImplementedError(f"Unsupported tool call type: {msg_tool_call['type']}")
                                 else:
-                                    dst.write(f"<div className=\"task-completed-box\">\n")
-                                    dst.write(f"📢`Summary`\n\n{msg['content'].strip()}\n</div>\n\n")
+                                    dst.write(f"<div className=\"thinking-box\">\n")
+                                    dst.write(f"🧐`Agent`\n\n{msg['content'].strip()}\n</div>\n\n")
                             elif msg["role"] == "tool":
                                 if msg['content'] is not None:
                                     try:
