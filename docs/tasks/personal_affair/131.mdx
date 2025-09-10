@@ -67,9 +67,9 @@ I'll help you perform privacy data desensitization on your documents. Let me sta
 <div className="result-box">
 🔍`tool result`
 
-Allowed directories:
+<p>Allowed directories:
 /ssddata/mcpbench/wenshuo/eval/final_new/mcpbench_dev/recorded_trajectories_v2/run1/claude-4-sonnet-0514/finalpool/SingleUserTurn-privacy-desensitization/workspace
-
+</p>
 </div>
 
 <div className="tool-call-box">
@@ -85,7 +85,7 @@ Allowed directories:
 <div className="result-box">
 🔍`tool result`
 
-[FILE] appointment_schedule.md
+<p>[FILE] appointment_schedule.md
 [FILE] bank_transactions.csv
 [FILE] conference_attendees.md
 [FILE] contact_info.txt
@@ -113,7 +113,7 @@ Allowed directories:
 [FILE] tax_records.txt
 [FILE] travel_bookings.csv
 [FILE] vendor_contracts.txt
-
+</p>
 </div>
 
 <div className="thinking-box">
@@ -271,7 +271,7 @@ if __name__ == "__main__":
 <div className="result-box">
 🔍`tool result`
 
-=== STDOUT ===
+<p>=== STDOUT ===
 Original:
 
     Contact John Doe at john.doe@email.com or call (555) 123-4567.
@@ -281,14 +281,14 @@ Original:
 
 Desensitized:
 
-    Contact John Doe at *** or call \(***.
+    Contact John Doe at *** or call (***.
     His SSN is *** and credit card is ***.
     Server IP: ***
 === EXECUTION INFO ===
 Return code: 0
 Execution time: 0.072 seconds
 Timeout limit: 30 seconds
-
+</p>
 </div>
 
 <div className="thinking-box">
@@ -406,7 +406,7 @@ print(f"Errors: {error_count} files")
 <div className="result-box">
 🔍`tool result`
 
-=== STDOUT ===
+<p>=== STDOUT ===
 Privacy Desensitization Results:
 ==================================================
 ✓ Successfully processed appointment_schedule.md -> appointment_schedule_desensitized.md
@@ -444,7 +444,7 @@ Errors: 0 files
 Return code: 0
 Execution time: 0.080 seconds
 Timeout limit: 30 seconds
-
+</p>
 </div>
 
 <div className="thinking-box">
@@ -466,7 +466,7 @@ Excellent! All files have been successfully processed. Let me verify that the de
 <div className="result-box">
 🔍`tool result`
 
-[FILE] appointment_schedule_desensitized.md
+<p>[FILE] appointment_schedule_desensitized.md
 [FILE] bank_transactions_desensitized.csv
 [FILE] conference_attendees_desensitized.md
 [FILE] contact_info_desensitized.txt
@@ -493,7 +493,7 @@ Excellent! All files have been successfully processed. Let me verify that the de
 [FILE] tax_records_desensitized.txt
 [FILE] travel_bookings_desensitized.csv
 [FILE] vendor_contracts_desensitized.txt
-
+</p>
 </div>
 
 <div className="thinking-box">
@@ -516,7 +516,7 @@ Perfect! All 27 desensitized files have been created. Now let me check a few exa
 <div className="result-box">
 🔍`tool result`
 
-Customer Contact Information Summary
+<p>Customer Contact Information Summary
 
 ======================
 
@@ -526,7 +526,7 @@ SSN: 123-45-6789
 Email: john.smith@example.com
 Credit Card: 4012-8888-8888-1881
 
-
+</p>
 </div>
 
 <div className="tool-call-box">
@@ -543,17 +543,17 @@ Credit Card: 4012-8888-8888-1881
 <div className="result-box">
 🔍`tool result`
 
-Customer Contact Information Summary
+<p>Customer Contact Information Summary
 
 ======================
 
 Customer A: John Smith
-Phone: \(***
+Phone: (***
 SSN: ***
 Email: ***
 Credit Card: ***
 
-
+</p>
 </div>
 
 <div className="thinking-box">
@@ -576,7 +576,7 @@ Let me check another example to ensure all sensitive data types are being handle
 <div className="result-box">
 🔍`tool result`
 
-2024-12-01 09:00:15 [SECURITY] Badge scan: Employee ID E001, Name: John Smith, Card: 1234567890123456
+<p>2024-12-01 09:00:15 [SECURITY] Badge scan: Employee ID E001, Name: John Smith, Card: 1234567890123456
 2024-12-01 09:05:22 [ACCESS] Door opened by user john.smith@company.com, IP: 192.168.1.150
 2024-12-01 09:10:33 [ALARM] Unauthorized access attempt at Building A, Phone alert sent to (555) 123-4567
 2024-12-01 09:15:44 [LOGIN] VPN connection from user sarah.davis@company.com, source IP: 203.208.60.80
@@ -588,7 +588,7 @@ Let me check another example to ensure all sensitive data types are being handle
 2024-12-01 09:45:50 [ALERT] Failed password attempt for user: (555) 246-8101
 2024-12-01 09:50:01 [SYSTEM] Backup server 10.0.100.200 connection established
 2024-12-01 09:55:12 [VISITOR] Visitor Jennifer Thompson departed, SSN verified: 456-78-9012 
-
+</p>
 </div>
 
 <div className="tool-call-box">
@@ -605,18 +605,18 @@ Let me check another example to ensure all sensitive data types are being handle
 <div className="result-box">
 🔍`tool result`
 
-2024-12-01 09:00:15 [SECURITY] Badge scan: Employee ID E001, Name: John Smith, Card: ***
+<p>2024-12-01 09:00:15 [SECURITY] Badge scan: Employee ID E001, Name: John Smith, Card: ***
 2024-12-01 09:05:22 [ACCESS] Door opened by user ***, IP: ***
-2024-12-01 09:10:33 [ALARM] Unauthorized access attempt at Building A, Phone alert sent to \(***
+2024-12-01 09:10:33 [ALARM] Unauthorized access attempt at Building A, Phone alert sent to (***
 2024-12-01 09:15:44 [LOGIN] VPN connection from user ***, source IP: ***
 2024-12-01 09:20:55 [VISITOR] Guest registration: Michael Brown, SSN: ***, Host: Manager Johnson (***)
 2024-12-01 09:25:06 [CAMERA] Motion detected at Camera-05, IP: 192.168.***-12-01 09:30:17 [ACCESS] Keycard used: Card ***, User: Lisa Martinez, Time: 09:30
 2024-12-01 09:35:28 [FIREWALL] Blocked suspicious traffic from ***
 2024-12-01 09:40:39 [BADGE] Employee Robert Wilson (***) entered Server Room
-2024-12-01 09:45:50 [ALERT] Failed password attempt for user: \(***
+2024-12-01 09:45:50 [ALERT] Failed password attempt for user: (***
 2024-12-01 09:50:01 [SYSTEM] Backup server *** connection established
 2024-12-01 09:55:12 [VISITOR] Visitor Jennifer Thompson departed, SSN verified: *** 
-
+</p>
 </div>
 
 <div className="thinking-box">
@@ -729,7 +729,7 @@ print(f"Errors: {error_count} files")
 <div className="result-box">
 🔍`tool result`
 
-=== STDOUT ===
+<p>=== STDOUT ===
 Reprocessing 27 files with improved patterns...
 
 Improved Privacy Desensitization Results:
@@ -769,7 +769,7 @@ Errors: 0 files
 Return code: 0
 Execution time: 0.148 seconds
 Timeout limit: 30 seconds
-
+</p>
 </div>
 
 <div className="thinking-box">
@@ -792,18 +792,18 @@ Now let me verify that the improved version is working better by checking the sa
 <div className="result-box">
 🔍`tool result`
 
-2024-12-01 09:00:15 [SECURITY] Badge scan: Employee ID E001, Name: John Smith, Card: ***
+<p>2024-12-01 09:00:15 [SECURITY] Badge scan: Employee ID E001, Name: John Smith, Card: ***
 2024-12-01 09:05:22 [ACCESS] Door opened by user ***, IP: ***
-2024-12-01 09:10:33 [ALARM] Unauthorized access attempt at Building A, Phone alert sent to \(***
+2024-12-01 09:10:33 [ALARM] Unauthorized access attempt at Building A, Phone alert sent to (***
 2024-12-01 09:15:44 [LOGIN] VPN connection from user ***, source IP: ***
 2024-12-01 09:20:55 [VISITOR] Guest registration: Michael Brown, SSN: ***, Host: Manager Johnson (***)
 2024-12-01 09:25:06 [CAMERA] Motion detected at Camera-05, IP: 192.168.***-12-01 09:30:17 [ACCESS] Keycard used: Card ***, User: Lisa Martinez, Time: 09:30
 2024-12-01 09:35:28 [FIREWALL] Blocked suspicious traffic from ***
 2024-12-01 09:40:39 [BADGE] Employee Robert Wilson (***) entered Server Room
-2024-12-01 09:45:50 [ALERT] Failed password attempt for user: \(***
+2024-12-01 09:45:50 [ALERT] Failed password attempt for user: (***
 2024-12-01 09:50:01 [SYSTEM] Backup server *** connection established
 2024-12-01 09:55:12 [VISITOR] Visitor Jennifer Thompson departed, SSN verified: *** 
-
+</p>
 </div>
 
 <div className="thinking-box">
@@ -826,7 +826,7 @@ I can see there's still an issue with the IP address pattern. Let me check what 
 <div className="result-box">
 🔍`tool result`
 
-2024-12-01 09:00:15 [SECURITY] Badge scan: Employee ID E001, Name: John Smith, Card: 1234567890123456
+<p>2024-12-01 09:00:15 [SECURITY] Badge scan: Employee ID E001, Name: John Smith, Card: 1234567890123456
 2024-12-01 09:05:22 [ACCESS] Door opened by user john.smith@company.com, IP: 192.168.1.150
 2024-12-01 09:10:33 [ALARM] Unauthorized access attempt at Building A, Phone alert sent to (555) 123-4567
 2024-12-01 09:15:44 [LOGIN] VPN connection from user sarah.davis@company.com, source IP: 203.208.60.80
@@ -834,7 +834,7 @@ I can see there's still an issue with the IP address pattern. Let me check what 
 2024-12-01 09:25:06 [CAMERA] Motion detected at Camera-05, IP: 192.168.200.105
 2024-12-01 09:30:17 [ACCESS] Keycard used: Card 4111-1111-1111-1111, User: Lisa Martinez, Time: 09:30
 2024-12-01 09:35:28 [FIREWALL] Blocked suspicious traffic from 203.208.60.125
-
+</p>
 </div>
 
 <div className="thinking-box">
@@ -951,7 +951,7 @@ print(f"Final processing complete: {success_count}/{len(files_to_process)} files
 <div className="result-box">
 🔍`tool result`
 
-=== STDOUT ===
+<p>=== STDOUT ===
 Testing with problematic text:
 Original:
 2024-12-01 09:05:22 [ACCESS] Door opened by user john.smith@company.com, IP: 192.168.1.150
@@ -968,7 +968,7 @@ Final processing complete: 27/27 files successfully processed
 Return code: 0
 Execution time: 0.079 seconds
 Timeout limit: 30 seconds
-
+</p>
 </div>
 
 <div className="thinking-box">
@@ -991,17 +991,17 @@ Perfect! Now let me verify the final results by checking a few examples:
 <div className="result-box">
 🔍`tool result`
 
-2024-12-01 09:00:15 [SECURITY] Badge scan: Employee ID E001, Name: John Smith, Card: ***
+<p>2024-12-01 09:00:15 [SECURITY] Badge scan: Employee ID E001, Name: John Smith, Card: ***
 2024-12-01 09:05:22 [ACCESS] Door opened by user ***, IP: ***
-2024-12-01 09:10:33 [ALARM] Unauthorized access attempt at Building A, Phone alert sent to \(***
+2024-12-01 09:10:33 [ALARM] Unauthorized access attempt at Building A, Phone alert sent to (***
 2024-12-01 09:15:44 [LOGIN] VPN connection from user ***, source IP: ***
 2024-12-01 09:20:55 [VISITOR] Guest registration: Michael Brown, SSN: ***, Host: Manager Johnson (***)
 2024-12-01 09:25:06 [CAMERA] Motion detected at Camera-05, IP: 192.168.***-12-01 09:30:17 [ACCESS] Keycard used: Card ***, User: Lisa Martinez, Time: 09:30
 2024-12-01 09:35:28 [FIREWALL] Blocked suspicious traffic from ***
 2024-12-01 09:40:39 [BADGE] Employee Robert Wilson (***) entered Server Room
-2024-12-01 09:45:50 [ALERT] Failed password attempt for user: \(***
+2024-12-01 09:45:50 [ALERT] Failed password attempt for user: (***
 2024-12-01 09:50:01 [SYSTEM] Backup server *** connection established
-
+</p>
 </div>
 
 <div className="thinking-box">
@@ -1026,14 +1026,14 @@ print(repr(content[:1000]))
 <div className="result-box">
 🔍`tool result`
 
-=== STDOUT ===
+<p>=== STDOUT ===
 First 1000 characters of security_logs.log:
 '2024-12-01 09:00:15 [SECURITY] Badge scan: Employee ID E001, Name: John Smith, Card: 1234567890123456\n2024-12-01 09:05:22 [ACCESS] Door opened by user john.smith@company.com, IP: 192.168.1.150\n2024-12-01 09:10:33 [ALARM] Unauthorized access attempt at Building A, Phone alert sent to (555) 123-4567\n2024-12-01 09:15:44 [LOGIN] VPN connection from user sarah.davis@company.com, source IP: 203.208.60.80\n2024-12-01 09:20:55 [VISITOR] Guest registration: Michael Brown, SSN: 987-65-4321, Host: Manager Johnson (555-987-6543)\n2024-12-01 09:25:06 [CAMERA] Motion detected at Camera-05, IP: 192.168.200.105\n2024-12-01 09:30:17 [ACCESS] Keycard used: Card 4111-1111-1111-1111, User: Lisa Martinez, Time: 09:30\n2024-12-01 09:35:28 [FIREWALL] Blocked suspicious traffic from 203.208.60.125\n2024-12-01 09:40:39 [BADGE] Employee Robert Wilson (robert.wilson@company.com) entered Server Room\n2024-12-01 09:45:50 [ALERT] Failed password attempt for user: (555) 246-8101\n2024-12-01 09:50:01 [SYSTEM] Backup server '
 === EXECUTION INFO ===
 Return code: 0
 Execution time: 0.059 seconds
 Timeout limit: 30 seconds
-
+</p>
 </div>
 
 <div className="thinking-box">
@@ -1163,10 +1163,10 @@ print(f"Ultra-precise processing complete: {success_count}/{len(files_to_process
 <div className="result-box">
 🔍`tool result`
 
-=== STDOUT ===
+<p>=== STDOUT ===
 Testing ultra-precise desensitizer:
 'Email: john.doe@example.com' -> 'Email: ***'
-'Phone: (555) 123-4567' -> 'Phone: \(***'
+'Phone: (555) 123-4567' -> 'Phone: (***'
 'SSN: 123-45-6789' -> 'SSN: ***'
 'Credit Card: 4111-1111-1111-1111' -> 'Credit Card: ***'
 'Long CC: 1234567890123456' -> 'Long CC: ***'
@@ -1182,7 +1182,7 @@ Ultra-precise processing complete: 27/27 files successfully processed
 Return code: 0
 Execution time: 0.076 seconds
 Timeout limit: 30 seconds
-
+</p>
 </div>
 
 <div className="thinking-box">
@@ -1205,17 +1205,17 @@ Excellent! Now let me verify the final results by checking a few key files:
 <div className="result-box">
 🔍`tool result`
 
-Customer Contact Information Summary
+<p>Customer Contact Information Summary
 
 ======================
 
 Customer A: John Smith
-Phone: \(***
+Phone: (***
 SSN: ***
 Email: ***
 Credit Card: ***
 
-
+</p>
 </div>
 
 <div className="tool-call-box">
@@ -1232,17 +1232,17 @@ Credit Card: ***
 <div className="result-box">
 🔍`tool result`
 
-2024-12-01 09:00:15 [SECURITY] Badge scan: Employee ID E001, Name: John Smith, Card: ***
+<p>2024-12-01 09:00:15 [SECURITY] Badge scan: Employee ID E001, Name: John Smith, Card: ***
 2024-12-01 09:05:22 [ACCESS] Door opened by user ***, IP: ***
-2024-12-01 09:10:33 [ALARM] Unauthorized access attempt at Building A, Phone alert sent to \(***
+2024-12-01 09:10:33 [ALARM] Unauthorized access attempt at Building A, Phone alert sent to (***
 2024-12-01 09:15:44 [LOGIN] VPN connection from user ***, source IP: ***
 2024-12-01 09:20:55 [VISITOR] Guest registration: Michael Brown, SSN: ***, Host: Manager Johnson (***)
 2024-12-01 09:25:06 [CAMERA] Motion detected at Camera-05, IP: 192.168.***-12-01 09:30:17 [ACCESS] Keycard used: Card ***, User: Lisa Martinez, Time: 09:30
 2024-12-01 09:35:28 [FIREWALL] Blocked suspicious traffic from ***
 2024-12-01 09:40:39 [BADGE] Employee Robert Wilson (***) entered Server Room
-2024-12-01 09:45:50 [ALERT] Failed password attempt for user: \(***
+2024-12-01 09:45:50 [ALERT] Failed password attempt for user: (***
 2024-12-01 09:50:01 [SYSTEM] Backup server *** connection established
-
+</p>
 </div>
 
 <div className="thinking-box">
@@ -1265,13 +1265,13 @@ I notice there are still some formatting issues. Let me check one more file type
 <div className="result-box">
 🔍`tool result`
 
-Employee_ID,Name,Department,Hire_Date,Contact,Notes
+<p>Employee_ID,Name,Department,Hire_Date,Contact,Notes
 E001,Sarah Johnson,Engineering,2023-03-15,***,Frontend developer
-E002,Mike Chen,Marketing,2023-05-20,\(***,Marketing specialist
+E002,Mike Chen,Marketing,2023-05-20,(***,Marketing specialist
 E003,David Wilson,Finance,2022-11-08,***,Financial analyst
 E004,Lisa Brown,HR,2024-01-12,***,Talent acquisition
 E005,Tom Rodriguez,Engineering,2023-08-25,***,Backend developer 
-
+</p>
 </div>
 
 <div className="thinking-box">
@@ -1294,22 +1294,22 @@ Let me also check a JSON file to ensure structured data is handled correctly:
 <div className="result-box">
 🔍`tool result`
 
-\{
-  "customers": \[
-    \{
+<p>{
+  "customers": [
+    {
       "id": "C001",
       "name": "Robert Johnson",
       "ssn": "***",
-      "phone": "\(***",
+      "phone": "(***",
       "email": "***",
       "credit_card": "***",
       "address": "123 Broadway St, New York, NY 10001",
       "registration_ip": "***"
     },
-    \{
+    {
       "id": "C002",
       "name": "Maria Garcia",
-
+</p>
 </div>
 
 <div className="thinking-box">
@@ -1439,7 +1439,7 @@ print(f"\nDetailed report saved to: {output_dir}/DESENSITIZATION_REPORT.txt")
 <div className="result-box">
 🔍`tool result`
 
-=== STDOUT ===
+<p>=== STDOUT ===
 
 PRIVACY DATA DESENSITIZATION SUMMARY REPORT
 ============================================
@@ -1516,7 +1516,7 @@ Detailed report saved to: /ssddata/mcpbench/wenshuo/eval/final_new/mcpbench_dev/
 Return code: 0
 Execution time: 0.103 seconds
 Timeout limit: 30 seconds
-
+</p>
 </div>
 
 <div className="thinking-box">
@@ -1538,7 +1538,7 @@ Perfect! Let me do a final verification to ensure everything is in place:
 <div className="result-box">
 🔍`tool result`
 
-[FILE] appointment_schedule_desensitized.md    1.04 KB
+<p>[FILE] appointment_schedule_desensitized.md    1.04 KB
 [FILE] bank_transactions_desensitized.csv      466 B
 [FILE] conference_attendees_desensitized.md     1018 B
 [FILE] contact_info_desensitized.txt       574 B
@@ -1569,7 +1569,7 @@ Perfect! Let me do a final verification to ensure everything is in place:
 
 Total: 28 files, 0 directories
 Combined size: 23.58 KB
-
+</p>
 </div>
 
 <div className="thinking-box">
@@ -1625,8 +1625,8 @@ The desensitization process has been completed with precision, ensuring that all
 <div className="result-box">
 🔍`tool result`
 
-you have claimed the task is done!
-
+<p>you have claimed the task is done!
+</p>
 </div>
 
 </Accordion>

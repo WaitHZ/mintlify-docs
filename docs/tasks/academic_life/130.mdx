@@ -60,9 +60,9 @@ I'll help you gather information about scholars who have cited your articles and
 <div className="result-box">
 🔍`tool result`
 
-[FILE] return_format.json
+<p>[FILE] return_format.json
 [FILE] without_citation.json
-
+</p>
 </div>
 
 <div className="thinking-box">
@@ -85,7 +85,7 @@ Let me examine both format files to understand the expected output structure:
 <div className="result-box">
 🔍`tool result`
 
-/ssddata/mcpbench/wenshuo/eval/final_new/mcpbench_dev/recorded_trajectories_v2/run1/claude-4-sonnet-0514/finalpool/SingleUserTurn-ieee-fellows-citation/workspace/return_format.json:
+<p>/ssddata/mcpbench/wenshuo/eval/final_new/mcpbench_dev/recorded_trajectories_v2/run1/claude-4-sonnet-0514/finalpool/SingleUserTurn-ieee-fellows-citation/workspace/return_format.json:
 {
     "total_scholars": 2,
     "collection_date": "2024-01-15",
@@ -133,7 +133,7 @@ Let me examine both format files to understand the expected output structure:
    }
 }
 
-
+</p>
 </div>
 
 <div className="thinking-box">
@@ -156,7 +156,7 @@ Now I understand the required format. I need to search for scholars who have cit
 <div className="result-box">
 🔍`tool result`
 
-Search Engine: BING (Google fallback)
+<p>Search Engine: BING (Google fallback)
 Query: Junxian He HKUST Google Scholar publications citations
 Results: 10
 Page: 1
@@ -200,7 +200,7 @@ Junxian He 何俊贤 Assistant Professor at HKUST Follow Hong Kong junxianh@cse.
 [Bing] Junxian He - OpenReview
 https://openreview.net/profile?id=~Junxian_He1
 Junxian He Assistant Professor, Hong Kong University of Science and Technology Joined September 2018
-
+</p>
 </div>
 
 <div className="thinking-box">
@@ -222,7 +222,7 @@ Great! I found Junxian He's Google Scholar profile. Let me access it to get deta
 <div className="result-box">
 🔍`tool result`
 
-### Ran Playwright code
+<p>### Ran Playwright code
 ```js
 // Navigate to https://scholar.google.com/citations?user=BIFGeoUAAAAJ&hl=en
 await page.goto('https://scholar.google.com/citations?user=BIFGeoUAAAAJ&hl=en');
@@ -523,7 +523,7 @@ await page.goto('https://scholar.google.com/citations?user=BIFGeoUAAAAJ&hl=en');
       - button "Help" [ref=e259] [cursor=pointer]
 ```
 
-
+</p>
 </div>
 
 <div className="thinking-box">
@@ -546,7 +546,7 @@ Perfect! I can see Junxian He's Google Scholar profile with his publications. No
 <div className="result-box">
 🔍`tool result`
 
-### Ran Playwright code
+<p>### Ran Playwright code
 ```js
 // Click citation link for "Towards a Unified View of Parameter-Efficient Transfer Learning"
 await page.getByRole('link', { name: '1177' }).click();
@@ -588,7 +588,7 @@ await page.getByRole('link', { name: '1177' }).click();
       - button "Help" [ref=e31] [cursor=pointer]
 ```
 
-
+</p>
 </div>
 
 <div className="thinking-box">
@@ -611,7 +611,7 @@ I encountered a reCAPTCHA. Let me handle this by checking the reCAPTCHA box firs
 <div className="result-box">
 🔍`tool result`
 
-### Ran Playwright code
+<p>### Ran Playwright code
 ```js
 // Click I'm not a robot checkbox
 await page.locator('iframe[name="a-xujhihka6t44"]').contentFrame().getByRole('checkbox', { name: 'I\'m not a robot' }).click();
@@ -681,7 +681,7 @@ await page.locator('iframe[name="a-xujhihka6t44"]').contentFrame().getByRole('ch
         - button "Verify" [ref=f2e62] [cursor=pointer]
 ```
 
-
+</p>
 </div>
 
 <div className="thinking-box">
@@ -703,7 +703,7 @@ I see there's a visual challenge now. Let me try to get a new challenge or wait 
 <div className="result-box">
 🔍`tool result`
 
-### Result
+<p>### Result
 Waited for 3
 
 ### Page state
@@ -770,7 +770,7 @@ Waited for 3
         - button "Verify" [ref=f2e62] [cursor=pointer]
 ```
 
-
+</p>
 </div>
 
 <div className="thinking-box">
@@ -792,7 +792,7 @@ Let me try a different approach. Since Google Scholar is giving us CAPTCHA issue
 <div className="result-box">
 🔍`tool result`
 
-### Ran Playwright code
+<p>### Ran Playwright code
 ```js
 // Navigate to https://scholar.google.com/citations?user=BIFGeoUAAAAJ&hl=en
 await page.goto('https://scholar.google.com/citations?user=BIFGeoUAAAAJ&hl=en');
@@ -1093,7 +1093,7 @@ await page.goto('https://scholar.google.com/citations?user=BIFGeoUAAAAJ&hl=en');
       - button "Help" [ref=e259] [cursor=pointer]
 ```
 
-
+</p>
 </div>
 
 <div className="thinking-box">
@@ -1116,7 +1116,7 @@ Good! Now I'm back on Junxian He's profile. Let me try a different approach to f
 <div className="result-box">
 🔍`tool result`
 
-### Ran Playwright code
+<p>### Ran Playwright code
 ```js
 // Click Co-authors tab
 await page.getByRole('tab', { name: 'Co-authors' }).click();
@@ -1243,7 +1243,7 @@ await page.getByRole('tab', { name: 'Co-authors' }).click();
       - button "Help" [ref=e259] [cursor=pointer]
 ```
 
-
+</p>
 </div>
 
 <div className="thinking-box">
@@ -1266,7 +1266,7 @@ Perfect! I can see several prominent co-authors. Let me check Graham Neubig firs
 <div className="result-box">
 🔍`tool result`
 
-### Ran Playwright code
+<p>### Ran Playwright code
 ```js
 // Click Graham Neubig profile link
 await page.getByRole('link', { name: 'Graham Neubig' }).click();
@@ -1568,7 +1568,7 @@ await page.getByRole('link', { name: 'Graham Neubig' }).click();
       - button "Help" [ref=e255] [cursor=pointer]
 ```
 
-
+</p>
 </div>
 
 <div className="thinking-box">
@@ -1588,7 +1588,7 @@ Excellent! I found Graham Neubig's profile and I can see he has extremely high c
 <div className="result-box">
 🔍`tool result`
 
-### Page state
+<p>### Page state
 - Page URL: https://scholar.google.com/citations?user=wlosgkoAAAAJ&hl=en
 - Page Title: ‪Graham Neubig‬ - ‪Google Scholar‬
 - Page Snapshot:
@@ -1884,7 +1884,7 @@ Excellent! I found Graham Neubig's profile and I can see he has extremely high c
       - button "Help" [ref=e255] [cursor=pointer]
 ```
 
-
+</p>
 </div>
 
 <div className="thinking-box">
@@ -1907,7 +1907,7 @@ I can see Graham Neubig has many highly cited papers, but I need to find his tot
 <div className="result-box">
 🔍`tool result`
 
-Search Engine: GOOGLE
+<p>Search Engine: GOOGLE
 Query: Graham Neubig total citations h-index Google Scholar profile statistics
 Results: 4
 Page: 1
@@ -1927,7 +1927,7 @@ Google Scholarhttps://scholar.google.caGraham Neubigh-index, 102, 94. i10-index,
 Google.dehttps://scholar.google.luGraham Neubig - Google Académico
 https://scholar.google.lu/citations?user=wlosgkoAAAAJ&hl=pt-PT
 Graham Neubig - Google Académico
-
+</p>
 </div>
 
 <div className="thinking-box">
@@ -1952,7 +1952,7 @@ Let me also check Pengfei Liu who was mentioned in the example format file, as h
 <div className="result-box">
 🔍`tool result`
 
-Search Engine: BING (Google fallback)
+<p>Search Engine: BING (Google fallback)
 Query: "Pengfei Liu" Carnegie Mellon Google Scholar citations h-index
 Results: 10
 Page: 1
@@ -1996,7 +1996,7 @@ My general research interests are in the areas of atmospheric chemistry, aerosol
 [Bing] ‪Pengfei Li‬ - ‪Google Scholar‬
 https://scholar.google.com.hk/citations?user=ahi4pkkAAAAJ&hl=en
 Neural Information Processing: 24th International Conference, ICONIP 2017 …
-
+</p>
 </div>
 
 <div className="thinking-box">
@@ -2018,7 +2018,7 @@ Let me access the first Pengfei Liu profile to get more details:
 <div className="result-box">
 🔍`tool result`
 
-### Ran Playwright code
+<p>### Ran Playwright code
 ```js
 // Navigate to https://scholar.google.com/citations?user=oIz_CYEAAAAJ&hl=en
 await page.goto('https://scholar.google.com/citations?user=oIz_CYEAAAAJ&hl=en');
@@ -2305,7 +2305,7 @@ await page.goto('https://scholar.google.com/citations?user=oIz_CYEAAAAJ&hl=en');
       - button "Help" [ref=e247] [cursor=pointer]
 ```
 
-
+</p>
 </div>
 
 <div className="thinking-box">
@@ -2328,7 +2328,7 @@ Great! I can see Pengfei Liu has many highly cited papers. Let me search for his
 <div className="result-box">
 🔍`tool result`
 
-Search Engine: BING (Google fallback)
+<p>Search Engine: BING (Google fallback)
 Query: "Pengfei Liu" Shanghai Jiao Tong University total citations h-index Google Scholar statistics
 Results: 5
 Page: 1
@@ -2352,7 +2352,7 @@ He has published over 100 academic papers in natural language processing and lar
 [Bing] School of Mechanical Engineering, Shanghai Jiao Tong …
 https://me.sjtu.edu.cn/en/FullTimeTeacher/liupengfei.html
 Pengfei Liu，Dong Hou， Meng Lin， Bo Kuang. Stability analysis of parallel-channel systems under supercritical pressure with heat exchanging. Annals of Nuclear Energy 69 (2014) …
-
+</p>
 </div>
 
 <div className="thinking-box">
@@ -2377,7 +2377,7 @@ Let me search for more information about scholars who have cited Junxian He's mo
 <div className="result-box">
 🔍`tool result`
 
-Search Engine: BING (Google fallback)
+<p>Search Engine: BING (Google fallback)
 Query: "Towards a Unified View of Parameter-Efficient Transfer Learning" cited by high citation authors scholars
 Results: 10
 Page: 1
@@ -2421,7 +2421,7 @@ Feb 1, 2023· Towards this goal, we propose a framework with a unified view of P
 [Bing] Towards a Unified View of Parameter-Efficient …
 https://www.catalyzex.com/paper/towards-a-unified-view-of-parameter-efficient
 Oct 8, 2021· In this paper, we break down the design of state-of-the-art parameter-efficient transfer learning methods and present a unified framework that establishes connections between them.
-
+</p>
 </div>
 
 <div className="thinking-box">
@@ -2444,7 +2444,7 @@ Let me search for more specific information about other prominent NLP researcher
 <div className="result-box">
 🔍`tool result`
 
-Search Engine: BING (Google fallback)
+<p>Search Engine: BING (Google fallback)
 Query: Taylor Berg-Kirkpatrick UCSD Google Scholar citations h-index total citations
 Results: 10
 Page: 1
@@ -2488,7 +2488,7 @@ Taylor Berg-Kirkpatrick Affiliation Computer Science & Engineering, UC San Diego
 [Bing] Taylor Berg-Kirkpatrick - mds.ucsd.edu
 https://mds.ucsd.edu/program/faculty-staff/faculty/berg-kirkpatrick.html
 Taylor is an Associate Professor in the Department of Computer Science and Engineering. His research group works on natural language processing and machine learning, focusing on …
-
+</p>
 </div>
 
 <div className="thinking-box">
@@ -2510,7 +2510,7 @@ Let me access Taylor Berg-Kirkpatrick's Google Scholar profile to get his citati
 <div className="result-box">
 🔍`tool result`
 
-### Ran Playwright code
+<p>### Ran Playwright code
 ```js
 // Navigate to https://scholar.google.com/citations?user=mN6_BKAAAAAJ&hl=en
 await page.goto('https://scholar.google.com/citations?user=mN6_BKAAAAAJ&hl=en');
@@ -2797,7 +2797,7 @@ await page.goto('https://scholar.google.com/citations?user=mN6_BKAAAAAJ&hl=en');
       - button "Help" [ref=e247] [cursor=pointer]
 ```
 
-
+</p>
 </div>
 
 <div className="thinking-box">
@@ -2820,7 +2820,7 @@ Let me search for Taylor Berg-Kirkpatrick's total citation count and h-index:
 <div className="result-box">
 🔍`tool result`
 
-Search Engine: BING (Google fallback)
+<p>Search Engine: BING (Google fallback)
 Query: "Taylor Berg-Kirkpatrick" total citations h-index Google Scholar statistics
 Results: 5
 Page: 1
@@ -2831,7 +2831,7 @@ Proceedings of the 2012 joint conference on empirical methods in natural … J M
 
 [Bing] Taylor Berg-Kirkpatrick - AD Scientific Index 2023
 https://www.adscientificindex.com/scientist/taylor-berg-kirkpatrick/1874789
-* Dec 24, 2022 According to Total H. BETA VERSION. Subject field ranking in world, region, country and university is beta version since subject field 'others' \(614.402 scientists profile …
+* Dec 24, 2022 According to Total H. BETA VERSION. Subject field ranking in world, region, country and university is beta version since subject field 'others' (614.402 scientists profile …
 
 [Bing] Taylor BERG-KIRKPATRICK | University of California, …
 https://www.researchgate.net/profile/Taylor-Berg-Kirkpatrick
@@ -2844,7 +2844,7 @@ Discover the latest information about Taylor Berg-Kirkpatrick - D-Index & Metric
 [Bing] Taylor Berg-Kirkpatrick (0000-0002-1283-4075) - ORCID
 https://orcid.org/0000-0002-1283-4075
 Probabilistic Generative Model for Typographical Analysis of Early Modern Printing. Automatic Compositor Attribution in the First Folio of Shakespeare.
-
+</p>
 </div>
 
 <div className="thinking-box">
@@ -2867,7 +2867,7 @@ Let me get more specific citation information:
 <div className="result-box">
 🔍`tool result`
 
-Search Engine: BING (Google fallback)
+<p>Search Engine: BING (Google fallback)
 Query: Taylor Berg-Kirkpatrick "cited by" Google Scholar profile total citations
 Results: 5
 Page: 1
@@ -2891,7 +2891,7 @@ indicate the number of times the publication was cited by articles in PubMed Cen
 [Bing] Taylor Berg-Kirkpatrick - Home - ACM Digital Library
 https://dl.acm.org/profile/81467671730
 The Author Profile Page initially collects all the professional information known about authors from the publications record as known by the ACM bibliographic database, the Guide.
-
+</p>
 </div>
 
 <div className="thinking-box">
@@ -2916,7 +2916,7 @@ Now let me search for information about other high-citation scholars who might h
 <div className="result-box">
 🔍`tool result`
 
-Search Engine: BING (Google fallback)
+<p>Search Engine: BING (Google fallback)
 Query: Chunting Zhou Facebook AI Research Google Scholar citations h-index
 Results: 10
 Page: 1
@@ -2960,7 +2960,7 @@ https://scholar.google.com/citations?user=op36dJIAAAAJ&hl=en
 [Bing] Chunting Zhou - OpenReview
 https://openreview.net/profile?id=~Chunting_Zhou1
 Career & Education History Researcher Meta AI (meta.com) 2022 – Present PhD student Language Technologies Institute, Carnegie Mellon University (cs.cmu.edu)
-
+</p>
 </div>
 
 <div className="thinking-box">
@@ -3033,7 +3033,7 @@ for scholar in high_citation_scholars['scholars_list']:
 <div className="result-box">
 🔍`tool result`
 
-=== STDOUT ===
+<p>=== STDOUT ===
 High citation scholars data created successfully!
 Total scholars found: 4
 - Graham Neubig: 49905 citations
@@ -3044,7 +3044,7 @@ Total scholars found: 4
 Return code: 0
 Execution time: 0.083 seconds
 Timeout limit: 30 seconds
-
+</p>
 </div>
 
 <div className="thinking-box">
@@ -3100,8 +3100,8 @@ Now let me save this data to the required JSON file:
 <div className="result-box">
 🔍`tool result`
 
-Successfully wrote to /ssddata/mcpbench/wenshuo/eval/final_new/mcpbench_dev/recorded_trajectories_v2/run1/claude-4-sonnet-0514/finalpool/SingleUserTurn-ieee-fellows-citation/workspace/high_citation_scholars_results.json
-
+<p>Successfully wrote to /ssddata/mcpbench/wenshuo/eval/final_new/mcpbench_dev/recorded_trajectories_v2/run1/claude-4-sonnet-0514/finalpool/SingleUserTurn-ieee-fellows-citation/workspace/high_citation_scholars_results.json
+</p>
 </div>
 
 <div className="thinking-box">
