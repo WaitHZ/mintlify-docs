@@ -94,29 +94,19 @@ def main(args):
                                         if msg_tool_call['type'] == "function":
                                             dst.write(f"<div className=\"tool-call-box\">\n")
                                             dst.write(f"🛠`{msg_tool_call['function']['name']}`\n\n")
-                                            # if msg_tool_call['function']['name'] == "local-python-execute":
-                                            #     arg_s = msg_tool_call['function']['arguments']
-                                            #     arg_s = json.loads(arg_s)
-                                            #     dst.write(f"```python {arg_s['filename'] if 'filename' in arg_s else 'null'}\n")
-                                            #     dst.write(f"{arg_s['code']}\n")
-                                            #     dst.write(f"```\n")
-                                            if False:
-                                                pass
+                                            dst.write(f"```json\n")
+                                            argu_s = msg_tool_call['function']['arguments'].strip()[1:-1].split(",")
+                                            if len(argu_s) == 1 and argu_s[0] == "":
+                                                dst.write("{}\n")
                                             else:
-                                                dst.write(f"```json\n")
-                                                argu_s = msg_tool_call['function']['arguments'].strip()[1:-1].split(",")
-                                                if len(argu_s) == 1 and argu_s[0] == "":
-                                                    dst.write("{}\n")
-                                                else:
-                                                    dst.write("{\n")
-                                                    for i, arg in enumerate(argu_s):
-                                                        if i == 0:
-                                                            dst.write(f"\t{arg}")
-                                                        else:
-                                                            dst.write(f",\n\t{arg}")
-                                                    dst.write("\n}\n")
-                                                dst.write(f"```\n")
-                                            
+                                                dst.write("{\n")
+                                                for i, arg in enumerate(argu_s):
+                                                    if i == 0:
+                                                        dst.write(f"\t{arg}")
+                                                    else:
+                                                        dst.write(f",\n\t{arg}")
+                                                dst.write("\n}\n")
+                                            dst.write(f"```\n")
                                             dst.write(f"</div>\n\n")
                                         else:
                                             raise NotImplementedError(f"Unsupported tool call type: {msg_tool_call['type']}")
