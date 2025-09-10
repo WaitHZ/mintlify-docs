@@ -123,6 +123,14 @@ def main(args):
                                                 dst.write(f"{arg_s['code']}\n")
                                                 dst.write(f"```\n")
                                                 dst.write(f"</div>\n\n")
+                                            elif msg_tool_call['function']['name'] == "filesystem-write_file":
+                                                arg_s = json.loads(msg_tool_call['function']['arguments'])
+                                                dst.write(f"<div className=\"tool-call-box\">\n")
+                                                dst.write(f"🛠`{msg_tool_call['function']['name']}`\n\n")
+                                                dst.write(f"``` workspace/{arg_s['path'].split('/')[-1]}\n")
+                                                dst.write(f"{arg_s['content']}\n")
+                                                dst.write(f"```\n")
+                                                dst.write(f"</div>\n\n")
                                             else:
                                                 dst.write(f"<div className=\"tool-call-box\">\n")
                                                 dst.write(f"🛠`{msg_tool_call['function']['name']}`\n\n")
