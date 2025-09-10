@@ -57,3 +57,81 @@
   margin: 6px 0;
   border-left: 3px solid #ff9800;
 }
+
+/* CSV表格样式 - 浅色模式 */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 16px 0;
+  font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', monospace;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+table th,
+table td {
+  border: 1px solid #e1e5e9;
+  padding: 8px 12px;
+  text-align: left;
+  vertical-align: top;
+}
+
+table th {
+  background-color: #f8f9fa;
+  font-weight: 600;
+  color: #374151;
+  border-bottom: 2px solid #d1d5db;
+}
+
+table tr:nth-child(even) {
+  background-color: #f9fafb;
+}
+
+table tr:hover {
+  background-color: #f3f4f6;
+}
+
+/* CSV表格样式 - 深色模式 */
+@media (prefers-color-scheme: dark) {
+  table {
+    color: #e5e7eb;
+  }
+  
+  table th,
+  table td {
+    border: 1px solid #374151;
+    color: #e5e7eb;
+  }
+  
+  table th {
+    background-color: #1f2937;
+    color: #f9fafb;
+    border-bottom: 2px solid #4b5563;
+  }
+  
+  table tr:nth-child(even) {
+    background-color: #111827;
+  }
+  
+  table tr:hover {
+    background-color: #1f2937;
+  }
+}
+
+/* 深色模式下的滚动条样式 */
+@media (prefers-color-scheme: dark) {
+  .tool-call-box::-webkit-scrollbar-track,
+  .result-box::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+  }
+  
+  .tool-call-box::-webkit-scrollbar-thumb,
+  .result-box::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+  }
+  
+  .tool-call-box::-webkit-scrollbar-thumb:hover,
+  .result-box::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.5);
+  }
+}
