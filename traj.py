@@ -121,7 +121,7 @@ def main(args):
                                         tool_res = msg['content']
                                     finally:
                                         if isinstance(tool_res, dict):
-                                            tool_res = tool_res["content"]
+                                            tool_res = tool_res["text"]
                                         dst.write(f"<div className=\"result-box\">\n")
                                         if "type" in tool_res and tool_res["type"] != "text":
                                             raise NotImplementedError(f"Unsupported tool call type: {tool_res['type']}")
