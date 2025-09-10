@@ -58,7 +58,40 @@
   border-left: 3px solid #ff9800;
 }
 
-/* 深色模式下的框样式 - 使用深色背景但保持相同情绪 */
+/* Mintlify深色模式下的框样式 - 使用深色背景但保持相同情绪 */
+[data-theme="dark"] .thinking-box,
+.dark .thinking-box,
+html[data-theme="dark"] .thinking-box {
+  background: #1e3a8a !important;
+  color: #ffffff !important;
+  border-left: 3px solid #60a5fa !important;
+}
+
+[data-theme="dark"] .tool-call-box,
+.dark .tool-call-box,
+html[data-theme="dark"] .tool-call-box {
+  background: #374151 !important;
+  color: #ffffff !important;
+  border-left: 3px solid #9ca3af !important;
+}
+
+[data-theme="dark"] .result-box,
+.dark .result-box,
+html[data-theme="dark"] .result-box {
+  background: #064e3b !important;
+  color: #ffffff !important;
+  border-left: 3px solid #34d399 !important;
+}
+
+[data-theme="dark"] .task-completed-box,
+.dark .task-completed-box,
+html[data-theme="dark"] .task-completed-box {
+  background: #92400e !important;
+  color: #ffffff !important;
+  border-left: 3px solid #f59e0b !important;
+}
+
+/* 系统深色模式作为备用 */
 @media (prefers-color-scheme: dark) {
   .thinking-box {
     background: #1e3a8a !important;
@@ -83,31 +116,6 @@
     color: #ffffff !important;
     border-left: 3px solid #f59e0b !important;
   }
-}
-
-/* 强制深色模式样式 - 用于测试 */
-.dark-mode .thinking-box {
-  background: #1e3a8a !important;
-  color: #ffffff !important;
-  border-left: 3px solid #60a5fa !important;
-}
-
-.dark-mode .tool-call-box {
-  background: #374151 !important;
-  color: #ffffff !important;
-  border-left: 3px solid #9ca3af !important;
-}
-
-.dark-mode .result-box {
-  background: #064e3b !important;
-  color: #ffffff !important;
-  border-left: 3px solid #34d399 !important;
-}
-
-.dark-mode .task-completed-box {
-  background: #92400e !important;
-  color: #ffffff !important;
-  border-left: 3px solid #f59e0b !important;
 }
   
   /* 深色模式下的滚动条样式 */
