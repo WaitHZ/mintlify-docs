@@ -83,32 +83,33 @@ def main(args):
                                 continue
                             elif msg["role"] == "assistant":
                                 if "tool_calls" in msg:
-                                    if len(msg["tool_calls"]) > 1:
-                                        print("!!!")
-                                        break
+                                    # if len(msg["tool_calls"]) > 1:
+                                    #     print("!!!")
+                                    #     break
                                     if not (msg["content"] == "" or msg["content"] is None or msg["content"] == "null"):
                                         dst.write(f"<div className=\"thinking-box\">\n")
                                         dst.write(f"🧐`Agent`\n\n{msg['content'].strip()}\n</div>\n\n")
-                                    msg_tool_call = msg["tool_calls"][0]
-                                    if msg_tool_call['type'] == "function":
-                                        dst.write(f"<div className=\"tool-call-box\">\n")
-                                        dst.write(f"🛠`{msg_tool_call['function']['name']}`\n\n")
-                                        dst.write(f"```json\n")
-                                        argu_s = msg_tool_call['function']['arguments'].strip()[1:-1].split(",")
-                                        if len(argu_s) == 1 and argu_s[0] == "":
-                                            dst.write("{}\n")
+                                    # msg_tool_call = msg["tool_calls"][0]
+                                    for msg_tool_call in msg["tool_calls"]:
+                                        if msg_tool_call['type'] == "function":
+                                            dst.write(f"<div className=\"tool-call-box\">\n")
+                                            dst.write(f"🛠`{msg_tool_call['function']['name']}`\n\n")
+                                            dst.write(f"```json\n")
+                                            argu_s = msg_tool_call['function']['arguments'].strip()[1:-1].split(",")
+                                            if len(argu_s) == 1 and argu_s[0] == "":
+                                                dst.write("{}\n")
+                                            else:
+                                                dst.write("{\n")
+                                                for i, arg in enumerate(argu_s):
+                                                    if i == 0:
+                                                        dst.write(f"\t{arg}")
+                                                    else:
+                                                        dst.write(f",\n\t{arg}")
+                                                dst.write("\n}\n")
+                                            dst.write(f"```\n")
+                                            dst.write(f"</div>\n\n")
                                         else:
-                                            dst.write("{\n")
-                                            for i, arg in enumerate(argu_s):
-                                                if i == 0:
-                                                    dst.write(f"\t{arg}")
-                                                else:
-                                                    dst.write(f",\n\t{arg}")
-                                            dst.write("\n}\n")
-                                        dst.write(f"```\n")
-                                        dst.write(f"</div>\n\n")
-                                    else:
-                                        raise NotImplementedError(f"Unsupported tool call type: {msg_tool_call['type']}")
+                                            raise NotImplementedError(f"Unsupported tool call type: {msg_tool_call['type']}")
                                 else:
                                     dst.write(f"<div className=\"thinking-box\">\n")
                                     dst.write(f"🧐`Agent`\n\n{msg['content'].strip()}\n</div>\n\n")
