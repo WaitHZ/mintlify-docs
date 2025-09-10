@@ -150,13 +150,18 @@ def main(args):
                                     try:
                                         # tool_res.replace(r'\"', r'"')
                                         # tool_res.replace(r'\\n', r'\n')
-                                        with open("_tmp.json", "w", encoding="utf-8") as f:
+                                        with open("_tmp", "w", encoding="utf-8") as f:
                                             print(msg['content'], file=f)
-                                        tool_res = json.load(open("_tmp.json", "r", encoding="utf-8"))
+                                        tool_res = json.load(open("_tmp", "r", encoding="utf-8"))
                                         tool_res = tool_res["text"]
                                         tool_res = tool_res.replace('```', '')
                                     except:
-                                        tool_res = msg['content']
+                                        with open("_tmp", "r", encoding="utf-8") as f:
+                                            s = f.read()
+                                            if isinstance(eval(s), list):
+                                                tool_res = f"[\n" + "\n".join(eval(s)) + "\n]"
+                                            else:
+                                                tool_res = msg['content']
 
                                     dst.write(f"<div className=\"result-box\">\n")
                                     dst.write(f"🔍`tool result`\n```json\n{tool_res}\n```\n</div>\n\n")
