@@ -121,7 +121,7 @@ def main(args):
                                         tool_res = msg['content']
                                     finally:
                                         if isinstance(tool_res, dict):
-                                            tool_res_s = [tool_res]
+                                            tool_res_s = [tool_res["content"]]
                                         else:
                                             tool_res_s = [tool_res[0]]
                                         for tool_res in tool_res_s:
