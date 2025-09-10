@@ -61,28 +61,54 @@
 /* 深色模式下的框样式 - 使用深色背景但保持相同情绪 */
 @media (prefers-color-scheme: dark) {
   .thinking-box {
-    background: #1e3a8a;
-    color: #ffffff;
-    border-left: 3px solid #60a5fa;
+    background: #1e3a8a !important;
+    color: #ffffff !important;
+    border-left: 3px solid #60a5fa !important;
   }
   
   .tool-call-box {
-    background: #374151;
-    color: #ffffff;
-    border-left: 3px solid #9ca3af;
+    background: #374151 !important;
+    color: #ffffff !important;
+    border-left: 3px solid #9ca3af !important;
   }
   
   .result-box {
-    background: #064e3b;
-    color: #ffffff;
-    border-left: 3px solid #34d399;
+    background: #064e3b !important;
+    color: #ffffff !important;
+    border-left: 3px solid #34d399 !important;
   }
   
   .task-completed-box {
-    background: #92400e;
-    color: #ffffff;
-    border-left: 3px solid #f59e0b;
+    background: #92400e !important;
+    color: #ffffff !important;
+    border-left: 3px solid #f59e0b !important;
   }
+}
+
+/* 强制深色模式样式 - 用于测试 */
+.dark-mode .thinking-box {
+  background: #1e3a8a !important;
+  color: #ffffff !important;
+  border-left: 3px solid #60a5fa !important;
+}
+
+.dark-mode .tool-call-box {
+  background: #374151 !important;
+  color: #ffffff !important;
+  border-left: 3px solid #9ca3af !important;
+}
+
+.dark-mode .result-box {
+  background: #064e3b !important;
+  color: #ffffff !important;
+  border-left: 3px solid #34d399 !important;
+}
+
+.dark-mode .task-completed-box {
+  background: #92400e !important;
+  color: #ffffff !important;
+  border-left: 3px solid #f59e0b !important;
+}
   
   /* 深色模式下的滚动条样式 */
   .tool-call-box::-webkit-scrollbar-track,
