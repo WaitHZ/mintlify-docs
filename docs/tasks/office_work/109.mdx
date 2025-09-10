@@ -6133,7 +6133,7 @@ Now I understand the structure. Let me create a Python script to process the dat
 <div className="tool-call-box">
 🛠`local-python-execute`
 
-```python analyze_data.py lines icon="python"
+```python analyze_data.py
 import pandas as pd
 import numpy as np
 from openpyxl import Workbook, load_workbook
@@ -6183,7 +6183,7 @@ Timeout limit: 30 seconds
 <div className="tool-call-box">
 🛠`local-python-execute`
 
-```python analyze_data2.py lines icon="python"
+```python analyze_data2.py
 # Load the raw data sheet
 raw_data_df = pd.read_excel(file_path, sheet_name='RawData', header=None)
 print("Raw data sheet shape:", raw_data_df.shape)
@@ -6211,7 +6211,7 @@ Timeout limit: 30 seconds
 <div className="tool-call-box">
 🛠`local-python-execute`
 
-```python analyze_data2.py lines icon="python"
+```python analyze_data2.py
 import pandas as pd
 import numpy as np
 from openpyxl import Workbook, load_workbook
@@ -6252,7 +6252,7 @@ Timeout limit: 30 seconds
 <div className="tool-call-box">
 🛠`local-python-execute`
 
-```python analyze_methodology.py lines icon="python"
+```python analyze_methodology.py
 # Now let's analyze the methodology mapping
 print("Methodology mapping analysis:")
 print("Row 1 (market categories):", methodology_df.iloc[1, 1:].tolist())
@@ -6290,7 +6290,7 @@ Timeout limit: 30 seconds
 <div className="tool-call-box">
 🛠`local-python-execute`
 
-```python complete_analysis.py lines icon="python"
+```python complete_analysis.py
 import pandas as pd
 import numpy as np
 from openpyxl import Workbook, load_workbook
@@ -6354,7 +6354,7 @@ Timeout limit: 30 seconds
 <div className="tool-call-box">
 🛠`local-python-execute`
 
-```python calculate_appliance.py lines icon="python"
+```python calculate_appliance.py
 # Now let's extract the data and calculate the Appliance category values
 print("Processing Appliance category conversion...")
 
@@ -6414,7 +6414,7 @@ Timeout limit: 30 seconds
 <div className="tool-call-box">
 🛠`local-python-execute`
 
-```python calculate_appliance_full.py lines icon="python"
+```python calculate_appliance_full.py
 import pandas as pd
 import numpy as np
 from openpyxl import Workbook, load_workbook
@@ -6517,7 +6517,7 @@ Timeout limit: 30 seconds
 <div className="tool-call-box">
 🛠`local-python-execute`
 
-```python calculate_growth_rates.py lines icon="python"
+```python calculate_growth_rates.py
 # Calculate the annual growth rates for the Appliance category from 2015 to 2024
 growth_rates = []
 
@@ -6584,7 +6584,7 @@ Timeout limit: 30 seconds
 <div className="tool-call-box">
 🛠`local-python-execute`
 
-```python complete_processing.py lines icon="python"
+```python complete_processing.py
 import pandas as pd
 import numpy as np
 from openpyxl import Workbook, load_workbook
@@ -6726,7 +6726,7 @@ Timeout limit: 30 seconds
 <div className="tool-call-box">
 🛠`local-python-execute`
 
-```python create_output_file.py lines icon="python"
+```python create_output_file.py
 # Create the Excel file with the results
 output_file = '/ssddata/mcpbench/wenshuo/eval/final_new/mcpbench_dev/recorded_trajectories_v2/run1/claude-4-sonnet-0514/finalpool/SingleUserTurn-excel-market-research/workspace/growth_rate.xlsx'
 
@@ -6795,7 +6795,7 @@ Timeout limit: 30 seconds
 <div className="tool-call-box">
 🛠`local-python-execute`
 
-```python final_complete_processing.py lines icon="python"
+```python final_complete_processing.py
 import pandas as pd
 import numpy as np
 from openpyxl import Workbook, load_workbook
@@ -7528,7 +7528,7 @@ Perfect! Let me test that the file can indeed be loaded with `load_workbook(file
 <div className="tool-call-box">
 🛠`local-python-execute`
 
-```python final_verification.py lines icon="python"
+```python final_verification.py
 from openpyxl import load_workbook
 
 # Test loading the file with data_only=True as requested

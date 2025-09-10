@@ -96,7 +96,7 @@ def main(args):
                                                 dst.write(f"<div className=\"tool-call-box\">\n")
                                                 dst.write(f"🛠`{msg_tool_call['function']['name']}`\n\n")
                                                 arg_s = json.loads(msg_tool_call['function']['arguments'])
-                                                dst.write(f"```python {arg_s['filename'] if 'filename' in arg_s else 'null'} lines icon=\"python\"\n")
+                                                dst.write(f"```python {arg_s['filename'] if 'filename' in arg_s else ''}\n")
                                                 dst.write(f"{arg_s['code']}\n")
                                                 dst.write(f"```\n")
                                                 dst.write(f"</div>\n\n")

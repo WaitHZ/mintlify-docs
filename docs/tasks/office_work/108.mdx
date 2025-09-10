@@ -74,7 +74,7 @@ Great! I can see both files are present. Let me first examine the current data s
 <div className="tool-call-box">
 🛠`local-python-execute`
 
-```python examine_current_data.py lines icon="python"
+```python examine_current_data.py
 import pandas as pd
 import numpy as np
 
@@ -148,7 +148,7 @@ The data structure looks complex. Let me examine the format example to understan
 <div className="tool-call-box">
 🛠`local-python-execute`
 
-```python examine_format_example.py lines icon="python"
+```python examine_format_example.py
 # Read the format example
 df_example = pd.read_excel('/ssddata/mcpbench/zhaojian/mcpbench_dev/recorded_trajectories_v2/run1/claude-4-sonnet-0514/finalpool/SingleUserTurn-excel-data-transformation/workspace/Format_Example.xlsx')
 
@@ -182,7 +182,7 @@ Timeout limit: 30 seconds
 <div className="tool-call-box">
 🛠`local-python-execute`
 
-```python examine_format_example_fixed.py lines icon="python"
+```python examine_format_example_fixed.py
 import pandas as pd
 import numpy as np
 
@@ -245,7 +245,7 @@ Now let me examine the full format example data to understand the structure bett
 <div className="tool-call-box">
 🛠`local-python-execute`
 
-```python full_format_example.py lines icon="python"
+```python full_format_example.py
 print("Full format example:")
 print(df_example)
 print("\nUnique appliance types:")
@@ -274,7 +274,7 @@ Timeout limit: 30 seconds
 <div className="tool-call-box">
 🛠`local-python-execute`
 
-```python full_format_example_complete.py lines icon="python"
+```python full_format_example_complete.py
 import pandas as pd
 import numpy as np
 
@@ -321,7 +321,7 @@ Perfect! Now I understand the target format. Let me examine the current data mor
 <div className="tool-call-box">
 🛠`local-python-execute`
 
-```python examine_raw_data.py lines icon="python"
+```python examine_raw_data.py
 import pandas as pd
 import numpy as np
 
@@ -384,7 +384,7 @@ Let me examine the header structure more carefully:
 <div className="tool-call-box">
 🛠`local-python-execute`
 
-```python examine_headers.py lines icon="python"
+```python examine_headers.py
 print("First few rows with all columns:")
 for i in range(3):
     print(f"Row {i}:")
@@ -416,7 +416,7 @@ Timeout limit: 30 seconds
 <div className="tool-call-box">
 🛠`local-python-execute`
 
-```python examine_headers_fixed.py lines icon="python"
+```python examine_headers_fixed.py
 import pandas as pd
 import numpy as np
 
@@ -519,7 +519,7 @@ Let me examine a few more rows to understand the data pattern:
 <div className="tool-call-box">
 🛠`local-python-execute`
 
-```python examine_data_pattern.py lines icon="python"
+```python examine_data_pattern.py
 # Let's look at rows 2-10 to understand the data pattern
 print("Data rows 2-10:")
 for i in range(2, 11):
@@ -553,7 +553,7 @@ Timeout limit: 30 seconds
 <div className="tool-call-box">
 🛠`local-python-execute`
 
-```python examine_data_pattern_fixed.py lines icon="python"
+```python examine_data_pattern_fixed.py
 import pandas as pd
 import numpy as np
 
@@ -646,7 +646,7 @@ Perfect! Now I understand the data structure. The data has some missing values i
 <div className="tool-call-box">
 🛠`local-python-execute`
 
-```python transform_data.py lines icon="python"
+```python transform_data.py
 import pandas as pd
 import numpy as np
 from datetime import datetime
@@ -772,7 +772,7 @@ Great! The transformation looks good. Let me check a few more details and then s
 <div className="tool-call-box">
 🛠`local-python-execute`
 
-```python examine_processed_data.py lines icon="python"
+```python examine_processed_data.py
 # Let's examine the data more closely and sort it properly
 print("Sample of processed data:")
 print(df_processed.head(15))
@@ -813,7 +813,7 @@ Timeout limit: 30 seconds
 <div className="tool-call-box">
 🛠`local-python-execute`
 
-```python final_transformation.py lines icon="python"
+```python final_transformation.py
 import pandas as pd
 import numpy as np
 from datetime import datetime
@@ -976,7 +976,7 @@ Excellent! Let me verify the output file was created correctly and compare it wi
 <div className="tool-call-box">
 🛠`local-python-execute`
 
-```python verify_output.py lines icon="python"
+```python verify_output.py
 import pandas as pd
 
 # Read the processed file to verify it was saved correctly
@@ -1077,7 +1077,7 @@ Perfect! Let me show a more detailed view of the final output to confirm the tra
 <div className="tool-call-box">
 🛠`local-python-execute`
 
-```python final_verification.py lines icon="python"
+```python final_verification.py
 print("Final verification - showing data for a specific month:")
 sample_month = df_processed_verify[df_processed_verify['Time'] == '2024-12']
 print(sample_month)
@@ -1117,7 +1117,7 @@ Timeout limit: 30 seconds
 <div className="tool-call-box">
 🛠`local-python-execute`
 
-```python final_verification_complete.py lines icon="python"
+```python final_verification_complete.py
 import pandas as pd
 
 # Read the processed file to verify it was saved correctly
