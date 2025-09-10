@@ -1,5 +1,5 @@
 import argparse
-from ast import arguments
+from ast import arguments, literal_eval
 import os
 from tqdm import tqdm
 import json
@@ -123,17 +123,15 @@ def main(args):
                             elif msg["role"] == "tool":
                                 if msg['content'] is not None:
                                     try:
+                                        tool_res.replace(r'\"', r'"')
+                                        tool_res.replace(r'\\n', r'\n')
                                         tool_res = json.loads(msg['content'])
                                         tool_res = tool_res["text"]
                                     except:
                                         tool_res = msg['content']
-                                        m = re.search(r'{"type":"text","text":(.*?),"annotations":null}', tool_res, re.DOTALL)
-                                        if m is not None:
-                                            print(m.group(1))
-                                            exit()
 
                                     dst.write(f"<div className=\"result-box\">\n")
-                                    dst.write(f"🔍`tool result`\n```json\n{tool_res}\n```\n</div>\n\n")
+                                    dst.write(f"🔍`tool result`\n{tool_res}\n</div>\n\n")
                                 else:
                                     raise NotImplementedError("tool result doesn't have content")
                                     # dst.write(f"<div className=\"result-box\">\n")
