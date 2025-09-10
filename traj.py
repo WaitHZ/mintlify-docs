@@ -159,6 +159,7 @@ def main(args):
                                         with open("_tmp", "r", encoding="utf-8") as f:
                                             s = f.read()
                                             print(s)
+                                            exit(0)
                                             if isinstance(eval(s), list):
                                                 tool_res = f"[\n" + "\n".join(eval(s)) + "\n]"
                                             else:
