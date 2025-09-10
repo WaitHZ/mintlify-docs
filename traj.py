@@ -97,9 +97,7 @@ def main(args):
                                             if msg_tool_call['function']['name'] == "local-python-execute":
                                                 arg_s = msg_tool_call['function']['arguments']
                                                 arg_s = json.loads(arg_s)
-                                                print(arg_s)
-                                                exit()
-                                                dst.write(f"```python {arg_s['filename']} lines icon=\"python\"\n")
+                                                dst.write(f"```python {arg_s['filename'] if 'filename' in arg_s else ''} lines icon=\"python\"\n")
                                                 dst.write(f"{arg_s['code']}\n")
                                                 dst.write(f"```\n")
                                             else:
