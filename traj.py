@@ -27,6 +27,31 @@ def clear(task_dir):
                     print(f"Failed to delete {file_path}: {e}")
 
 
+def raw_json_str_to_python(obj: str) -> dict:
+    """
+    把控制台里打印出来的“伪 JSON 字符串”还原成 Python 对象。
+    1. 去掉首尾的引号（如果有）
+    2. 把真正的 JSON 需要的转义补回去
+    3. json.loads 解析
+    """
+    # 1. 去掉首尾可能被人手工包上的双引号
+    obj = obj.strip()
+    if (obj.startswith('"') and obj.endswith('"')) or \
+       (obj.startswith("'") and obj.endswith("'")):
+        obj = obj[1:-1]
+
+    # 2. 把“用户眼里”的反斜杠变成“JSON 眼里”的反斜杠
+    #    即：\n  -> \\n
+    #        \" -> \\\"
+    #        \\ -> \\\\
+    obj = obj.encode('utf-8').decode('unicode_escape')   # 先解开 \n \t \"
+    obj = obj.replace('\\', r'\\')                       # 再整体把反斜杠翻倍
+    obj = obj.replace(r'\"', r'\"')                      # 把已经翻倍的 \" 还原
+
+    # 3. 现在它是合法 JSON 字符串了
+    return json.loads(obj)
+
+
 def main(args):
 
     task_dir = args.task_dir
@@ -125,7 +150,7 @@ def main(args):
                                     try:
                                         # tool_res.replace(r'\"', r'"')
                                         # tool_res.replace(r'\\n', r'\n')
-                                        tool_res = json.loads(msg['content'])
+                                        tool_res = raw_json_str_to_python(msg['content'])
                                         tool_res = tool_res["text"]
                                     except:
                                         tool_res = msg['content']
