@@ -58,68 +58,33 @@
   border-left: 3px solid #ff9800;
 }
 
-/* CSV表格样式 - 浅色模式 */
-table {
-  border-collapse: collapse;
-  width: 100%;
-  margin: 16px 0;
-  font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', monospace;
-  font-size: 14px;
-  line-height: 1.4;
-}
-
-table th,
-table td {
-  border: 1px solid #e1e5e9;
-  padding: 8px 12px;
-  text-align: left;
-  vertical-align: top;
-}
-
-table th {
-  background-color: #f8f9fa;
-  font-weight: 600;
-  color: #374151;
-  border-bottom: 2px solid #d1d5db;
-}
-
-table tr:nth-child(even) {
-  background-color: #f9fafb;
-}
-
-table tr:hover {
-  background-color: #f3f4f6;
-}
-
-/* CSV表格样式 - 深色模式 */
+/* 深色模式下的框样式 */
 @media (prefers-color-scheme: dark) {
-  table {
-    color: #e5e7eb;
+  .thinking-box {
+    background: #1e3a8a;
+    color: #e0f2fe;
+    border-left: 3px solid #60a5fa;
   }
   
-  table th,
-  table td {
-    border: 1px solid #374151;
-    color: #e5e7eb;
+  .tool-call-box {
+    background: #374151;
+    color: #f3f4f6;
+    border-left: 3px solid #9ca3af;
   }
   
-  table th {
-    background-color: #1f2937;
-    color: #f9fafb;
-    border-bottom: 2px solid #4b5563;
+  .result-box {
+    background: #064e3b;
+    color: #d1fae5;
+    border-left: 3px solid #34d399;
   }
   
-  table tr:nth-child(even) {
-    background-color: #111827;
+  .task-completed-box {
+    background: #92400e;
+    color: #fef3c7;
+    border-left: 3px solid #f59e0b;
   }
   
-  table tr:hover {
-    background-color: #1f2937;
-  }
-}
-
-/* 深色模式下的滚动条样式 */
-@media (prefers-color-scheme: dark) {
+  /* 深色模式下的滚动条样式 */
   .tool-call-box::-webkit-scrollbar-track,
   .result-box::-webkit-scrollbar-track {
     background: rgba(255, 255, 255, 0.1);
