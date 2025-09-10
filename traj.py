@@ -57,7 +57,7 @@ def main(args):
                         model_name = log_path.split("/")[-1].replace(".json", "")
                         dst.write(f"<Accordion title=\"{model_name}\">\n\n")
 
-                        dst.write("<Columns cols={2}>\n")
+                        dst.write("<Columns cols={3}>\n")
                         if log_data["pass"]:
                             dst.write(f"<Card title=\"Task Completion\" icon=\"check\">\n")
                             dst.write(f"Completed\n")
@@ -66,8 +66,15 @@ def main(args):
                             dst.write(f"Failed\n")
                         dst.write(f"</Card>\n")
                         dst.write(f"<Card title=\"Tool Calls\" icon=\"wrench\">\n")
-                        tool_msgs = [msg for msg in msgs if msg["role"] == "tool"]
-                        dst.write(f"{len(tool_msgs)}\n")
+                        tool_call_num = 0
+                        for msg in msgs:
+                            if msg["role"] == "assitant" and "tool_calls" in msg:
+                                tool_call_num += len(msg["tool_calls"])
+                        dst.write(f"{tool_call_num}\n")
+                        dst.write(f"</Card>\n")
+                        dst.write(f"<Card title=\"Turns\" icon=\"arrows-rotate\">\n")
+                        assit_msgs = [msg for msg in msgs if msg["role"] == "assitant"]
+                        dst.write(f"{len(assit_msgs)}\n")
                         dst.write(f"</Card>\n")
                         dst.write(f"</Columns>\n\n")
 
