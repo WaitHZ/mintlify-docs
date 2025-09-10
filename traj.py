@@ -161,6 +161,8 @@ def main(args):
                                             tool_res = tool_res.replace('[{', '[\n{')
                                             tool_res = tool_res.replace('}]', '}\n]')
                                             tool_res = tool_res.replace('}, {', '},\n{')
+                                            print(tool_res)
+                                            exit(0)
                                             tool_res = tool_res.replace(r'\\n', ' ')
 
                                     dst.write(f"<div className=\"result-box\">\n")
