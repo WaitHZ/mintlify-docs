@@ -61,7 +61,9 @@ I'll help you prepare this graduate application report. Let me start by finding 
 
 <div className="result-box">
 🔍`tool result`
+```json
 Geocoding failed: This API project is not authorized to use this API.
+```
 </div>
 
 <div className="thinking-box">
@@ -83,6 +85,7 @@ Let me try searching for information about CS AI rankings for 2024 first, then w
 
 <div className="result-box">
 🔍`tool result`
+```json
 [
   {
     "title": "CSRankings: Computer Science Rankings",
@@ -135,6 +138,7 @@ Let me try searching for information about CS AI rankings for 2024 first, then w
     "snippet": "TechGuide recently ranked UHD's MSAI program #30 among the Best Master's in Artificial Intelligence Programs for 2024. No. 30 in the Best Master's in Artificial ..."
   }
 ]
+```
 </div>
 
 <div className="thinking-box">
@@ -155,6 +159,7 @@ Let me access the CSRankings website to get the specific AI rankings for 2024.
 
 <div className="result-box">
 🔍`tool result`
+```json
 - Ran Playwright code:
 ```js
 // Navigate to https://csrankings.org/
@@ -739,6 +744,7 @@ await page.goto('https://csrankings.org/');
         - /url: https://emeryberger.com/
     - paragraph
 ```
+```
 </div>
 
 <div className="thinking-box">
@@ -760,6 +766,7 @@ I can see the CSRankings website. Now I need to select the AI categories (exclud
 
 <div className="result-box">
 🔍`tool result`
+```json
 - Ran Playwright code:
 ```js
 // Click AI checkbox
@@ -1758,6 +1765,7 @@ await page.getByRole('checkbox', { name: 'Artificial intelligence' }).click();
       - /url: https://emeryberger.com/
   - paragraph
 ```
+```
 </div>
 
 <div className="thinking-box">
@@ -1779,6 +1787,7 @@ Great! I can see the rankings are now showing. I can see the top 30 universities
 
 <div className="result-box">
 🔍`tool result`
+```json
 - Ran Playwright code:
 ```js
 // Click The Web & information retrieval checkbox
@@ -2764,6 +2773,7 @@ await page.getByRole('checkbox', { name: 'The Web & information' }).click();
       - /url: https://emeryberger.com/
   - paragraph
 ```
+```
 </div>
 
 <div className="thinking-box">
@@ -2792,6 +2802,7 @@ Let me first change the date range to 2024. I'll set both "from" and "to" to 202
 
 <div className="result-box">
 🔍`tool result`
+```json
 - Ran Playwright code:
 ```js
 // Select options [2024] in by publications from dropdown
@@ -3829,6 +3840,7 @@ await page.getByLabel('by publications from').selectOption(['2024']);
       - /url: https://emeryberger.com/
   - paragraph
 ```
+```
 </div>
 
 <div className="thinking-box">
@@ -3851,6 +3863,7 @@ Now I need to set the end year to 2024 as well to get only 2024 data.
 
 <div className="result-box">
 🔍`tool result`
+```json
 - Ran Playwright code:
 ```js
 // Select options [2024] in to dropdown
@@ -4862,6 +4875,7 @@ await page.getByLabel('to').selectOption(['2024']);
       - /url: https://emeryberger.com/
   - paragraph
 ```
+```
 </div>
 
 <div className="thinking-box">
@@ -4889,6 +4903,7 @@ Let me first turn off all other categories to focus only on AI. I'll click "AI [
 
 <div className="result-box">
 🔍`tool result`
+```json
 - Ran Playwright code:
 ```js
 // Click AI on button
@@ -5887,6 +5902,7 @@ await page.locator('#ai_areas_on').click();
       - /url: https://emeryberger.com/
   - paragraph
 ```
+```
 </div>
 
 <div className="thinking-box">
@@ -5908,6 +5924,7 @@ I notice that this turned on all AI categories including Information Retrieval. 
 
 <div className="result-box">
 🔍`tool result`
+```json
 - Ran Playwright code:
 ```js
 // Click The Web & information retrieval checkbox
@@ -6906,6 +6923,7 @@ await page.getByRole('checkbox', { name: 'The Web & information' }).click();
       - /url: https://emeryberger.com/
   - paragraph
 ```
+```
 </div>
 
 <div className="thinking-box">
@@ -6926,6 +6944,7 @@ I notice that the URL shows many categories are still selected. Let me try to fo
 
 <div className="result-box">
 🔍`tool result`
+```json
 - Ran Playwright code:
 ```js
 // Navigate to https://csrankings.org/#/fromyear/2024/toyear/2024/index?ai&vision&mlmining&nlp&us
@@ -7924,6 +7943,7 @@ await page.goto('https://csrankings.org/#/fromyear/2024/toyear/2024/index?ai&vis
       - /url: https://emeryberger.com/
   - paragraph
 ```
+```
 </div>
 
 <div className="thinking-box">
@@ -7980,6 +8000,7 @@ Now I need to find the distance from each of these to the Natural History Museum
 
 <div className="result-box">
 🔍`tool result`
+```json
 [
   {
     "title": "Natural History Museum of Los Angeles County - Wikipedia",
@@ -8007,6 +8028,7 @@ Now I need to find the distance from each of these to the Natural History Museum
     "snippet": "There is continued within the county a filming permit coordination office hereinafter referred to as the \"office,\" which shall be managed and operated in ..."
   }
 ]
+```
 </div>
 
 <div className="thinking-box">
@@ -8028,6 +8050,7 @@ Let me search more specifically for the address:
 
 <div className="result-box">
 🔍`tool result`
+```json
 [
   {
     "title": "Filming location matching \"natural history museum of los angeles ...",
@@ -8055,6 +8078,7 @@ Let me search more specifically for the address:
     "snippet": "Address. Herbarium Botanical Studies Research and Collections Natural History Museum of Los Angeles County 900 Exposition Boulevard Los Angeles, California ..."
   }
 ]
+```
 </div>
 
 <div className="thinking-box">
@@ -8089,6 +8113,7 @@ Since I can't use the geocoding API directly, I'll need to use the distance matr
 
 <div className="result-box">
 🔍`tool result`
+```json
 {
   "origin_addresses": [
     "900 Exposition Blvd, Los Angeles, CA 90007, USA"
@@ -8138,6 +8163,7 @@ Since I can't use the geocoding API directly, I'll need to use the distance matr
     }
   ]
 }
+```
 </div>
 
 <div className="thinking-box">
@@ -8181,6 +8207,7 @@ Let me continue with more universities. I'll convert km to miles (1 km = 0.62137
 
 <div className="result-box">
 🔍`tool result`
+```json
 {
   "origin_addresses": [
     "900 Exposition Blvd, Los Angeles, CA 90007, USA"
@@ -8254,6 +8281,7 @@ Let me continue with more universities. I'll convert km to miles (1 km = 0.62137
     }
   ]
 }
+```
 </div>
 
 <div className="thinking-box">
@@ -8299,6 +8327,7 @@ Let me continue with more universities:
 
 <div className="result-box">
 🔍`tool result`
+```json
 {
   "origin_addresses": [
     "900 Exposition Blvd, Los Angeles, CA 90007, USA"
@@ -8372,6 +8401,7 @@ Let me continue with more universities:
     }
   ]
 }
+```
 </div>
 
 <div className="thinking-box">
@@ -8417,6 +8447,7 @@ Let me continue with the remaining universities to check which ones are within 5
 
 <div className="result-box">
 🔍`tool result`
+```json
 {
   "origin_addresses": [
     "900 Exposition Blvd, Los Angeles, CA 90007, USA"
@@ -8490,6 +8521,7 @@ Let me continue with the remaining universities to check which ones are within 5
     }
   ]
 }
+```
 </div>
 
 <div className="thinking-box">
@@ -8535,6 +8567,7 @@ Let me continue with the remaining universities:
 
 <div className="result-box">
 🔍`tool result`
+```json
 {
   "origin_addresses": [
     "900 Exposition Blvd, Los Angeles, CA 90007, USA"
@@ -8608,6 +8641,7 @@ Let me continue with the remaining universities:
     }
   ]
 }
+```
 </div>
 
 <div className="thinking-box">
@@ -8653,6 +8687,7 @@ Let me continue with the remaining universities:
 
 <div className="result-box">
 🔍`tool result`
+```json
 {
   "origin_addresses": [
     "900 Exposition Blvd, Los Angeles, CA 90007, USA"
@@ -8726,6 +8761,7 @@ Let me continue with the remaining universities:
     }
   ]
 }
+```
 </div>
 
 <div className="thinking-box">
@@ -8765,6 +8801,7 @@ Let me check the remaining universities:
 
 <div className="result-box">
 🔍`tool result`
+```json
 {
   "origin_addresses": [
     "900 Exposition Blvd, Los Angeles, CA 90007, USA"
@@ -8814,6 +8851,7 @@ Let me check the remaining universities:
     }
   ]
 }
+```
 </div>
 
 <div className="thinking-box">
@@ -8882,7 +8920,9 @@ Now let me create the JSON file with the required format, sorted by distance fro
 
 <div className="result-box">
 🔍`tool result`
+```json
 Successfully wrote to /ssddata/junlong/projects/mcpbench_finalpool_dev/recorded_trajectories_v2/run1/claude-4-sonnet-0514/finalpoolcn/English-SingleUserTurn-search-ca-school/workspace/AI_univ_LA_500miles_Top30_2024.json
+```
 </div>
 
 <div className="tool-call-box">
@@ -8895,7 +8935,9 @@ Successfully wrote to /ssddata/junlong/projects/mcpbench_finalpool_dev/recorded_
 
 <div className="result-box">
 🔍`tool result`
+```json
 you have claimed the task is done!
+```
 </div>
 
 <div className="thinking-box">
