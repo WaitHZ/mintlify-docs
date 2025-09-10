@@ -117,15 +117,14 @@ def main(args):
                                 if msg['content'] is not None:
                                     try:
                                         tool_res = json.loads(msg['content'])
-                                    except:
-                                        tool_res = msg['content']
-                                    finally:
-                                        if isinstance(tool_res, dict):
-                                            tool_res = tool_res["text"]
-                                        dst.write(f"<div className=\"result-box\">\n")
                                         if "type" in tool_res and tool_res["type"] != "text":
                                             raise NotImplementedError(f"Unsupported tool call type: {tool_res['type']}")
-                                        dst.write(f"🔍`tool result`\n```json\n{msg['content']}\n```\n</div>\n\n")
+                                        too_res = tool_res["text"]
+                                    except:
+                                        tool_res = msg['content']
+
+                                    dst.write(f"<div className=\"result-box\">\n")
+                                    dst.write(f"🔍`tool result`\n```json\n{msg['content']}\n```\n</div>\n\n")
                                 else:
                                     raise NotImplementedError("tool result doesn't have content")
                                     # dst.write(f"<div className=\"result-box\">\n")
