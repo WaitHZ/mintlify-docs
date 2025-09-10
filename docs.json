@@ -90,6 +90,12 @@
                         "pages": [
                             "docs/tasks/health/181"
                         ]
+                    },
+                    {
+                        "group": "Personal Affair",
+                        "pages": [
+                            "docs/tasks/personal_affair/131"
+                        ]
                     }
                 ]
             }
