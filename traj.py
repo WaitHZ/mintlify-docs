@@ -119,7 +119,7 @@ def main(args):
                                         tool_res = json.loads(msg['content'])
                                     except:
                                         tool_res = msg['content']
-                                    else:
+                                    finally:
                                         if isinstance(tool_res, dict):
                                             tool_res_s = [tool_res]
                                         else:
