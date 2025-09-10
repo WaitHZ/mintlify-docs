@@ -119,7 +119,7 @@ def main(args):
                                         tool_res = json.loads(msg['content'])
                                         if "type" in tool_res and tool_res["type"] != "text":
                                             raise NotImplementedError(f"Unsupported tool call type: {tool_res['type']}")
-                                        too_res = tool_res["text"]
+                                        tool_res = tool_res["text"]
                                     except:
                                         tool_res = msg['content']
 
