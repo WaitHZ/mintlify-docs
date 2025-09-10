@@ -160,7 +160,7 @@ def main(args):
                                         if tool_res.startswith('[') and tool_res.endswith(']'):
                                             tool_res = tool_res.replace('[{', '[\n{')
                                             tool_res = tool_res.replace('}]', '}\n]')
-                                            tool_res = tool_res.replace('}, {', '},\n {')
+                                            tool_res = tool_res.replace('}, {', '},\n{')
 
                                     dst.write(f"<div className=\"result-box\">\n")
                                     dst.write(f"🔍`tool result`\n```json\n{tool_res}\n```\n</div>\n\n")
