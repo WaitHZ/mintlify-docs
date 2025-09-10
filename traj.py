@@ -150,7 +150,9 @@ def main(args):
                                     try:
                                         # tool_res.replace(r'\"', r'"')
                                         # tool_res.replace(r'\\n', r'\n')
-                                        tool_res = raw_json_str_to_python(msg['content'])
+                                        with open("_tmp.json", "w", encoding="utf-8") as f:
+                                            print(msg['content'], file=f)
+                                        tool_res = json.load(open("_tmp.json", "r", encoding="utf-8"))
                                         tool_res = tool_res["text"]
                                     except:
                                         tool_res = msg['content']
