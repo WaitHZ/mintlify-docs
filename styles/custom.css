@@ -61,26 +61,26 @@
 /* 深色模式下的框样式 - 使用不同色彩但保持相同情绪 */
 @media (prefers-color-scheme: dark) {
   .thinking-box {
-    background: #2d1b69;
-    color: #e0e7ff;
+    background: #e0e7ff;
+    color: #000000;
     border-left: 3px solid #a78bfa;
   }
   
   .tool-call-box {
-    background: #1f2937;
-    color: #f9fafb;
+    background: #f3f4f6;
+    color: #000000;
     border-left: 3px solid #6b7280;
   }
   
   .result-box {
-    background: #14532d;
-    color: #dcfce7;
+    background: #dcfce7;
+    color: #000000;
     border-left: 3px solid #22c55e;
   }
   
   .task-completed-box {
-    background: #7c2d12;
-    color: #fed7aa;
+    background: #fed7aa;
+    color: #000000;
     border-left: 3px solid #fb923c;
   }
   
