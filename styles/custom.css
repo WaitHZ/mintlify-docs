@@ -247,6 +247,19 @@ html[data-theme="dark"] .server-table thead {
   border-bottom: 2px solid #4b5563 !important;
 }
 
+[data-theme="dark"] .server-table thead tr,
+.dark .server-table thead tr,
+html[data-theme="dark"] .server-table thead tr {
+  background: #374151 !important;
+}
+
+[data-theme="dark"] .server-table thead th,
+.dark .server-table thead th,
+html[data-theme="dark"] .server-table thead th {
+  background: #374151 !important;
+  color: #f9fafb !important;
+}
+
 [data-theme="dark"] .server-table td,
 .dark .server-table td,
 html[data-theme="dark"] .server-table td {
@@ -291,6 +304,15 @@ html[data-theme="dark"] .tool-count {
     background: #374151 !important;
     color: #f9fafb !important;
     border-bottom: 2px solid #4b5563 !important;
+  }
+  
+  .server-table thead tr {
+    background: #374151 !important;
+  }
+  
+  .server-table thead th {
+    background: #374151 !important;
+    color: #f9fafb !important;
   }
   
   .server-table td {
