@@ -138,8 +138,8 @@ html[data-theme="dark"] .task-completed-box {
 /* 服务器表格样式 */
 .server-table {
   width: 100%;
-  max-width: 1000px;
-  margin: 20px auto;
+  max-width: none;
+  margin: 20px 0;
   border-collapse: collapse;
   background: #ffffff;
   border-radius: 12px;
