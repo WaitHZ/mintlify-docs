@@ -25,7 +25,7 @@
                 ]
             },
             {
-                "tab": "Tools",
+                "tab": "Mcp Servers",
                 "icon": "wrench",
                 "pages": [
                     "docs/tools"
