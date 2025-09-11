@@ -41,6 +41,12 @@
                             "docs/selected",
                             "docs/self-impl"
                         ]
+                    },
+                    {
+                        "group": "Dataset",
+                        "pages": [
+                            "docs/dataset"
+                        ]
                     }
                 ]
             },
