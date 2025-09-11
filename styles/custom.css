@@ -218,6 +218,17 @@ html[data-theme="dark"] .task-completed-box {
   max-width: 380px;
 }
 
+.server-link {
+  color: #4a5568;
+  width: 380px;
+  min-width: 380px;
+  max-width: 380px;
+  word-wrap: break-word;
+  word-break: break-all;
+  overflow-wrap: break-word;
+  white-space: normal;
+}
+
 .tool-count {
   text-align: center;
   font-weight: 600;
@@ -256,6 +267,12 @@ html[data-theme="dark"] .task-completed-box {
   }
   
   .server-description {
+    max-width: 230px;
+  }
+  
+  .server-link {
+    width: 230px;
+    min-width: 230px;
     max-width: 230px;
   }
 }
@@ -329,6 +346,12 @@ html[data-theme="dark"] .server-description {
   color: #d1d5db !important;
 }
 
+[data-theme="dark"] .server-link,
+.dark .server-link,
+html[data-theme="dark"] .server-link {
+  color: #d1d5db !important;
+}
+
 [data-theme="dark"] .tool-count,
 .dark .tool-count,
 html[data-theme="dark"] .tool-count {
@@ -396,6 +419,10 @@ html[data-theme="dark"] .server-table a:hover {
   }
   
   .server-description {
+    color: #d1d5db !important;
+  }
+  
+  .server-link {
     color: #d1d5db !important;
   }
   
