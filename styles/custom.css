@@ -493,38 +493,6 @@ html[data-theme="dark"] .server-table a:hover {
   }
 }
 
-/* 图标动画效果 */
-@keyframes iconAppear {
-  0% {
-    opacity: 0;
-    transform: scale(0.3) rotate(-10deg);
-  }
-  50% {
-    opacity: 0.8;
-    transform: scale(1.1) rotate(5deg);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1) rotate(0deg);
-  }
-}
-
-/* 针对包含图标的div容器 */
-.icon-container > * {
-  opacity: 0;
-  animation: iconAppear 0.4s ease-out forwards;
-}
-
-.icon-container > *:nth-child(1) { animation-delay: 0.1s; }
-.icon-container > *:nth-child(2) { animation-delay: 0.2s; }
-.icon-container > *:nth-child(3) { animation-delay: 0.3s; }
-.icon-container > *:nth-child(4) { animation-delay: 0.4s; }
-.icon-container > *:nth-child(5) { animation-delay: 0.5s; }
-.icon-container > *:nth-child(6) { animation-delay: 0.6s; }
-.icon-container > *:nth-child(7) { animation-delay: 0.7s; }
-.icon-container > *:nth-child(8) { animation-delay: 0.8s; }
-.icon-container > *:nth-child(9) { animation-delay: 0.9s; }
-.icon-container > *:nth-child(10) { animation-delay: 1.0s; }
   
   .server-table a {
     color: #60a5fa !important;
