@@ -27,8 +27,13 @@
             {
                 "tab": "Docs",
                 "icon": "book",
-                "pages": [
-                    "docs/tools"
+                "anchors": [
+                    {
+                        "anchor": "Self Implemented Servers",
+                        "pages": [
+                            "docs/self-impl"
+                        ]
+                    }
                 ]
             },
             {
