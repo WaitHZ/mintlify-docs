@@ -244,7 +244,7 @@ html[data-theme="dark"] .task-completed-box {
 [data-theme="dark"] .server-table,
 .dark .server-table,
 html[data-theme="dark"] .server-table {
-  background: #1f2937 !important;
+  background: #000000 !important;
   color: #ffffff !important;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3) !important;
 }
@@ -252,24 +252,24 @@ html[data-theme="dark"] .server-table {
 [data-theme="dark"] .server-table thead,
 .dark .server-table thead,
 html[data-theme="dark"] .server-table thead {
-  background: #374151 !important;
-  color: #f9fafb !important;
-  border-bottom: 2px solid #4b5563 !important;
+  background: #000000 !important;
+  color: #ffffff !important;
+  border-bottom: 2px solid #333333 !important;
   border-radius: 12px 12px 0 0 !important;
 }
 
 [data-theme="dark"] .server-table thead tr,
 .dark .server-table thead tr,
 html[data-theme="dark"] .server-table thead tr {
-  background: #374151 !important;
+  background: #000000 !important;
   border-radius: 12px 12px 0 0 !important;
 }
 
 [data-theme="dark"] .server-table thead th,
 .dark .server-table thead th,
 html[data-theme="dark"] .server-table thead th {
-  background: #374151 !important;
-  color: #f9fafb !important;
+  background: #000000 !important;
+  color: #ffffff !important;
 }
 
 [data-theme="dark"] .server-table thead th:first-child,
@@ -319,26 +319,26 @@ html[data-theme="dark"] .tool-count {
 /* 系统深色模式作为备用 */
 @media (prefers-color-scheme: dark) {
   .server-table {
-    background: #1f2937 !important;
+    background: #000000 !important;
     color: #ffffff !important;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3) !important;
   }
   
   .server-table thead {
-    background: #374151 !important;
-    color: #f9fafb !important;
-    border-bottom: 2px solid #4b5563 !important;
+    background: #000000 !important;
+    color: #ffffff !important;
+    border-bottom: 2px solid #333333 !important;
     border-radius: 12px 12px 0 0 !important;
   }
   
   .server-table thead tr {
-    background: #374151 !important;
+    background: #000000 !important;
     border-radius: 12px 12px 0 0 !important;
   }
   
   .server-table thead th {
-    background: #374151 !important;
-    color: #f9fafb !important;
+    background: #000000 !important;
+    color: #ffffff !important;
   }
   
   .server-table thead th:first-child {
