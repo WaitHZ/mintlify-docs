@@ -185,7 +185,13 @@ def main(args):
             if len(os.listdir(log_dir)) > 0:
                 dst.write(f"</AccordionGroup>\n")
 
-
+    _tmp_path = os.path.join(os.path.dirname(__file__), "_tmp")
+    try:
+        os.remove(_tmp_path)
+    except FileNotFoundError:
+        print(f"File {_tmp_path} not found, don't need to remove")
+    else:
+        print(f"Removed file {_tmp_path}")
 
 
 if __name__ == "__main__":

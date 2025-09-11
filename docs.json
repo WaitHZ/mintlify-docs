@@ -25,6 +25,13 @@
                 ]
             },
             {
+                "tab": "Tools",
+                "icon": "wrench",
+                "pages": [
+                    "docs/tools"
+                ]
+            },
+            {
                 "tab": "Tasks",
                 "icon": "list-check",
                 "pages": [
