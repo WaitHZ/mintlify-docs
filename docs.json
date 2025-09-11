@@ -29,9 +29,13 @@
                 "icon": "book",
                 "groups": [
                     {
+                        "page": "docs/quick"
+                    },
+                    {
                         "group": "MCP Servers",
                         "pages": [
-                            "docs/self-impl"
+                            "docs/self-impl",
+                            "docs/selected"
                         ]
                     }
                 ]
