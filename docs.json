@@ -38,8 +38,8 @@
                     {
                         "group": "MCP Servers",
                         "pages": [
-                            "docs/self-impl",
-                            "docs/selected"
+                            "docs/selected",
+                            "docs/self-impl"
                         ]
                     }
                 ]
