@@ -187,6 +187,10 @@ html[data-theme="dark"] .task-completed-box {
   border-bottom: 1px solid #f0f0f0;
   font-size: 14px;
   line-height: 1.5;
+  word-wrap: break-word;
+  word-break: break-all;
+  white-space: normal;
+  overflow-wrap: break-word;
 }
 
 .server-table tbody tr {
@@ -223,6 +227,22 @@ html[data-theme="dark"] .task-completed-box {
   border-radius: 20px;
   display: inline-block;
   min-width: 30px;
+}
+
+/* 表格内链接样式 */
+.server-table a {
+  color: #3b82f6;
+  text-decoration: none;
+  word-wrap: break-word;
+  word-break: break-all;
+  overflow-wrap: break-word;
+  display: inline-block;
+  max-width: 100%;
+}
+
+.server-table a:hover {
+  color: #1d4ed8;
+  text-decoration: underline;
 }
 
 @media (max-width: 768px) {
@@ -316,6 +336,19 @@ html[data-theme="dark"] .tool-count {
   background: #312e81 !important;
 }
 
+/* 深色模式下的链接样式 */
+[data-theme="dark"] .server-table a,
+.dark .server-table a,
+html[data-theme="dark"] .server-table a {
+  color: #60a5fa !important;
+}
+
+[data-theme="dark"] .server-table a:hover,
+.dark .server-table a:hover,
+html[data-theme="dark"] .server-table a:hover {
+  color: #93c5fd !important;
+}
+
 /* 系统深色模式作为备用 */
 @media (prefers-color-scheme: dark) {
   .server-table {
@@ -369,5 +402,13 @@ html[data-theme="dark"] .tool-count {
   .tool-count {
     color: #a5b4fc !important;
     background: #312e81 !important;
+  }
+  
+  .server-table a {
+    color: #60a5fa !important;
+  }
+  
+  .server-table a:hover {
+    color: #93c5fd !important;
   }
 }
