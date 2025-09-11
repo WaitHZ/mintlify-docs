@@ -31,7 +31,8 @@
                     {
                         "group": "Quick Start",
                         "pages": [
-                            "docs/quick"
+                            "docs/env",
+                            "docs/test"
                         ]
                     },
                     {
