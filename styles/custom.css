@@ -215,7 +215,7 @@ html[data-theme="dark"] .task-completed-box {
 
 .server-description {
   color: #4a5568;
-  max-width: 400px;
+  max-width: 380px;
 }
 
 .tool-count {
@@ -256,7 +256,7 @@ html[data-theme="dark"] .task-completed-box {
   }
   
   .server-description {
-    max-width: 250px;
+    max-width: 230px;
   }
 }
 
