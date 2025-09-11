@@ -505,7 +505,7 @@ html[data-theme="dark"] .server-table a:hover {
 
 /* 图标颜色设置 - 浅色模式使用蓝色，深色模式使用主题文本颜色 */
 .icon-container svg {
-  color: #649cf8;
+  color: #4a7cff;
 }
 
 /* 深色模式下的图标颜色 */
