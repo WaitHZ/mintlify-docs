@@ -188,10 +188,9 @@ html[data-theme="dark"] .task-completed-box {
   font-size: 14px;
   line-height: 1.5;
   word-wrap: break-word;
-  word-break: break-word;
+  word-break: break-all;
   white-space: normal;
   overflow-wrap: break-word;
-  max-width: 300px;
 }
 
 .server-table tbody tr {
@@ -238,8 +237,7 @@ html[data-theme="dark"] .task-completed-box {
   word-break: break-all;
   overflow-wrap: break-word;
   display: inline-block;
-  max-width: 200px;
-  line-height: 1.4;
+  max-width: 100%;
 }
 
 .server-table a:hover {
