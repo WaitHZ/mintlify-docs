@@ -152,15 +152,25 @@ html[data-theme="dark"] .task-completed-box {
   background: #f8fafc !important;
   color: #374151 !important;
   border-bottom: 2px solid #e5e7eb !important;
+  border-radius: 12px 12px 0 0 !important;
 }
 
 .server-table thead tr {
   background: #f8fafc !important;
+  border-radius: 12px 12px 0 0 !important;
 }
 
 .server-table thead th {
   background: #f8fafc !important;
   color: #374151 !important;
+}
+
+.server-table thead th:first-child {
+  border-top-left-radius: 12px !important;
+}
+
+.server-table thead th:last-child {
+  border-top-right-radius: 12px !important;
 }
 
 .server-table th {
@@ -245,12 +255,14 @@ html[data-theme="dark"] .server-table thead {
   background: #374151 !important;
   color: #f9fafb !important;
   border-bottom: 2px solid #4b5563 !important;
+  border-radius: 12px 12px 0 0 !important;
 }
 
 [data-theme="dark"] .server-table thead tr,
 .dark .server-table thead tr,
 html[data-theme="dark"] .server-table thead tr {
   background: #374151 !important;
+  border-radius: 12px 12px 0 0 !important;
 }
 
 [data-theme="dark"] .server-table thead th,
@@ -258,6 +270,18 @@ html[data-theme="dark"] .server-table thead tr {
 html[data-theme="dark"] .server-table thead th {
   background: #374151 !important;
   color: #f9fafb !important;
+}
+
+[data-theme="dark"] .server-table thead th:first-child,
+.dark .server-table thead th:first-child,
+html[data-theme="dark"] .server-table thead th:first-child {
+  border-top-left-radius: 12px !important;
+}
+
+[data-theme="dark"] .server-table thead th:last-child,
+.dark .server-table thead th:last-child,
+html[data-theme="dark"] .server-table thead th:last-child {
+  border-top-right-radius: 12px !important;
 }
 
 [data-theme="dark"] .server-table td,
@@ -304,15 +328,25 @@ html[data-theme="dark"] .tool-count {
     background: #374151 !important;
     color: #f9fafb !important;
     border-bottom: 2px solid #4b5563 !important;
+    border-radius: 12px 12px 0 0 !important;
   }
   
   .server-table thead tr {
     background: #374151 !important;
+    border-radius: 12px 12px 0 0 !important;
   }
   
   .server-table thead th {
     background: #374151 !important;
     color: #f9fafb !important;
+  }
+  
+  .server-table thead th:first-child {
+    border-top-left-radius: 12px !important;
+  }
+  
+  .server-table thead th:last-child {
+    border-top-right-radius: 12px !important;
   }
   
   .server-table td {
