@@ -255,7 +255,7 @@ html[data-theme="dark"] .task-completed-box {
 
 .server-impl-description {
   color: #4a5568;
-  max-width: 500px;
+  max-width: 480px;
   word-wrap: break-word;
   word-break: break-word;
   overflow-wrap: break-word;
@@ -314,7 +314,7 @@ html[data-theme="dark"] .task-completed-box {
   }
   
   .server-impl-description {
-    max-width: 300px;
+    max-width: 280px;
   }
 }
 
