@@ -503,22 +503,21 @@ html[data-theme="dark"] .server-table a:hover {
   }
 }
 
-/* 图标主题颜色 */
-.icon-theme {
-  color: var(--mintlify-color-text, #374151);
-  transition: color 0.3s ease;
+/* 图标颜色设置 - 浅色模式使用蓝色，深色模式使用主题文本颜色 */
+.icon-container svg {
+  color: #649cf8;
 }
 
 /* 深色模式下的图标颜色 */
-[data-theme="dark"] .icon-theme,
-.dark .icon-theme,
-html[data-theme="dark"] .icon-theme {
+[data-theme="dark"] .icon-container svg,
+.dark .icon-container svg,
+html[data-theme="dark"] .icon-container svg {
   color: var(--mintlify-color-text, #e5e7eb) !important;
 }
 
 /* 系统深色模式下的图标颜色 */
 @media (prefers-color-scheme: dark) {
-  .icon-theme {
+  .icon-container svg {
     color: var(--mintlify-color-text, #e5e7eb) !important;
   }
 }
