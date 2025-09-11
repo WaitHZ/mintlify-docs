@@ -29,7 +29,10 @@
                 "icon": "book",
                 "groups": [
                     {
-                        "page": "docs/quick"
+                        "group": "Quick Start",
+                        "pages": [
+                            "docs/quick"
+                        ]
                     },
                     {
                         "group": "MCP Servers",
