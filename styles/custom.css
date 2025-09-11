@@ -253,6 +253,16 @@ html[data-theme="dark"] .task-completed-box {
   text-align: center;
 }
 
+.server-impl-description {
+  color: #4a5568;
+  max-width: 500px;
+  word-wrap: break-word;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  line-height: 1.5;
+}
+
 /* 表格内链接样式 */
 .server-table a {
   color: #3b82f6;
@@ -301,6 +311,10 @@ html[data-theme="dark"] .task-completed-box {
     width: 60px;
     min-width: 60px;
     max-width: 60px;
+  }
+  
+  .server-impl-description {
+    max-width: 300px;
   }
 }
 
@@ -385,6 +399,12 @@ html[data-theme="dark"] .server-tools {
   color: #d1d5db !important;
 }
 
+[data-theme="dark"] .server-impl-description,
+.dark .server-impl-description,
+html[data-theme="dark"] .server-impl-description {
+  color: #d1d5db !important;
+}
+
 [data-theme="dark"] .tool-count,
 .dark .tool-count,
 html[data-theme="dark"] .tool-count {
@@ -460,6 +480,10 @@ html[data-theme="dark"] .server-table a:hover {
   }
   
   .server-tools {
+    color: #d1d5db !important;
+  }
+  
+  .server-impl-description {
     color: #d1d5db !important;
   }
   
