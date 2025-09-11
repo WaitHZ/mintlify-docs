@@ -27,9 +27,9 @@
             {
                 "tab": "Docs",
                 "icon": "book",
-                "anchors": [
+                "groups": [
                     {
-                        "anchor": "Self Implemented Servers",
+                        "group": "MCP Servers",
                         "pages": [
                             "docs/self-impl"
                         ]
