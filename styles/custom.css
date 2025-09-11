@@ -244,32 +244,32 @@ html[data-theme="dark"] .task-completed-box {
 [data-theme="dark"] .server-table,
 .dark .server-table,
 html[data-theme="dark"] .server-table {
-  background: #000000 !important;
-  color: #ffffff !important;
+  background: var(--mintlify-color-background, #0f172a) !important;
+  color: var(--mintlify-color-text, #ffffff) !important;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3) !important;
 }
 
 [data-theme="dark"] .server-table thead,
 .dark .server-table thead,
 html[data-theme="dark"] .server-table thead {
-  background: #000000 !important;
-  color: #ffffff !important;
-  border-bottom: 2px solid #333333 !important;
+  background: var(--mintlify-color-background, #0f172a) !important;
+  color: var(--mintlify-color-text, #ffffff) !important;
+  border-bottom: 2px solid var(--mintlify-color-border, #333333) !important;
   border-radius: 12px 12px 0 0 !important;
 }
 
 [data-theme="dark"] .server-table thead tr,
 .dark .server-table thead tr,
 html[data-theme="dark"] .server-table thead tr {
-  background: #000000 !important;
+  background: var(--mintlify-color-background, #0f172a) !important;
   border-radius: 12px 12px 0 0 !important;
 }
 
 [data-theme="dark"] .server-table thead th,
 .dark .server-table thead th,
 html[data-theme="dark"] .server-table thead th {
-  background: #000000 !important;
-  color: #ffffff !important;
+  background: var(--mintlify-color-background, #0f172a) !important;
+  color: var(--mintlify-color-text, #ffffff) !important;
 }
 
 [data-theme="dark"] .server-table thead th:first-child,
@@ -319,26 +319,26 @@ html[data-theme="dark"] .tool-count {
 /* 系统深色模式作为备用 */
 @media (prefers-color-scheme: dark) {
   .server-table {
-    background: #000000 !important;
-    color: #ffffff !important;
+    background: var(--mintlify-color-background, #0f172a) !important;
+    color: var(--mintlify-color-text, #ffffff) !important;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3) !important;
   }
   
   .server-table thead {
-    background: #000000 !important;
-    color: #ffffff !important;
-    border-bottom: 2px solid #333333 !important;
+    background: var(--mintlify-color-background, #0f172a) !important;
+    color: var(--mintlify-color-text, #ffffff) !important;
+    border-bottom: 2px solid var(--mintlify-color-border, #333333) !important;
     border-radius: 12px 12px 0 0 !important;
   }
   
   .server-table thead tr {
-    background: #000000 !important;
+    background: var(--mintlify-color-background, #0f172a) !important;
     border-radius: 12px 12px 0 0 !important;
   }
   
   .server-table thead th {
-    background: #000000 !important;
-    color: #ffffff !important;
+    background: var(--mintlify-color-background, #0f172a) !important;
+    color: var(--mintlify-color-text, #ffffff) !important;
   }
   
   .server-table thead th:first-child {
