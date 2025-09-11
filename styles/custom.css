@@ -502,3 +502,23 @@ html[data-theme="dark"] .server-table a:hover {
     color: #93c5fd !important;
   }
 }
+
+/* 图标主题颜色 */
+.icon-theme {
+  color: var(--mintlify-color-text, #374151);
+  transition: color 0.3s ease;
+}
+
+/* 深色模式下的图标颜色 */
+[data-theme="dark"] .icon-theme,
+.dark .icon-theme,
+html[data-theme="dark"] .icon-theme {
+  color: var(--mintlify-color-text, #e5e7eb) !important;
+}
+
+/* 系统深色模式下的图标颜色 */
+@media (prefers-color-scheme: dark) {
+  .icon-theme {
+    color: var(--mintlify-color-text, #e5e7eb) !important;
+  }
+}
