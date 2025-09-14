@@ -575,7 +575,7 @@ html[data-theme="dark"] .icon-container svg {
 
 .leaderboard-table thead th {
   padding: 20px 16px;
-  text-align: left;
+  text-align: center;
   font-weight: 600;
   font-size: 14px;
   text-transform: uppercase;
@@ -601,7 +601,7 @@ html[data-theme="dark"] .icon-container svg {
 .leaderboard-table td {
   padding: 20px 16px;
   vertical-align: middle;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.6;
 }
 
@@ -622,11 +622,11 @@ html[data-theme="dark"] .icon-container svg {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
+  width: 45px;
+  height: 45px;
   border-radius: 50%;
   font-weight: 700;
-  font-size: 16px;
+  font-size: 18px;
   color: white;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
@@ -640,14 +640,14 @@ html[data-theme="dark"] .icon-container svg {
 .model-name-cell {
   font-weight: 600;
   color: #1f2937;
-  font-size: 16px;
+  font-size: 18px;
   min-width: 200px;
 }
 
 /* Organization列 */
 .organization-cell {
   color: #6b7280;
-  font-size: 14px;
+  font-size: 16px;
   text-align: center;
   min-width: 120px;
 }
@@ -655,7 +655,7 @@ html[data-theme="dark"] .icon-container svg {
 /* 发布日期列 */
 .release-date-cell {
   color: #6b7280;
-  font-size: 13px;
+  font-size: 16px;
   text-align: center;
   min-width: 120px;
 }
@@ -664,13 +664,13 @@ html[data-theme="dark"] .icon-container svg {
 .accuracy-cell {
   text-align: center;
   font-weight: 600;
-  font-size: 16px;
+  font-size: 18px;
   min-width: 120px;
 }
 
 .accuracy-score {
   font-weight: 600;
-  font-size: 14px;
+  font-size: 18px;
 }
 
 /* 统计信息卡片 */
@@ -725,7 +725,7 @@ html[data-theme="dark"] .icon-container svg {
   }
   
   .leaderboard-table {
-    font-size: 12px;
+    font-size: 14px;
   }
   
   .leaderboard-table th,
@@ -735,17 +735,17 @@ html[data-theme="dark"] .icon-container svg {
   
   .model-name-cell {
     min-width: 150px;
-    font-size: 14px;
+    font-size: 16px;
   }
   
   .rank-badge {
-    width: 32px;
-    height: 32px;
-    font-size: 14px;
+    width: 36px;
+    height: 36px;
+    font-size: 16px;
   }
   
   .accuracy-score {
-    font-size: 12px;
+    font-size: 16px;
   }
   
   .stats-container {
