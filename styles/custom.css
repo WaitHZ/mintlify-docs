@@ -36,6 +36,8 @@
 .result-box code {
   max-height: 288px; /* 约12行的高度 */
   overflow-y: auto;
+  font-size: 12px;
+  line-height: 1.3;
 }
 
 /* 自定义滚动条样式 - 只应用于代码块 */
