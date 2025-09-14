@@ -644,11 +644,12 @@ html[data-theme="dark"] .icon-container svg {
   min-width: 200px;
 }
 
-.model-organization {
-  font-size: 12px;
+/* Organization列 */
+.organization-cell {
   color: #6b7280;
-  margin-top: 4px;
-  font-weight: 400;
+  font-size: 14px;
+  text-align: center;
+  min-width: 120px;
 }
 
 /* 发布日期列 */
@@ -662,38 +663,14 @@ html[data-theme="dark"] .icon-container svg {
 /* 准确率列 */
 .accuracy-cell {
   text-align: center;
-  font-weight: 700;
+  font-weight: 600;
   font-size: 16px;
   min-width: 120px;
 }
 
 .accuracy-score {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 8px 16px;
-  border-radius: 20px;
   font-weight: 600;
   font-size: 14px;
-  min-width: 80px;
-}
-
-.accuracy-high { 
-  background: linear-gradient(135deg, #10b981, #34d399);
-  color: white;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-}
-
-.accuracy-medium { 
-  background: linear-gradient(135deg, #f59e0b, #fbbf24);
-  color: white;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-}
-
-.accuracy-low { 
-  background: linear-gradient(135deg, #ef4444, #f87171);
-  color: white;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 /* 统计信息卡片 */
@@ -768,9 +745,7 @@ html[data-theme="dark"] .icon-container svg {
   }
   
   .accuracy-score {
-    padding: 6px 12px;
     font-size: 12px;
-    min-width: 60px;
   }
   
   .stats-container {
@@ -886,11 +861,6 @@ html[data-theme="dark"] .model-name-cell {
   color: #f8fafc !important;
 }
 
-[data-theme="dark"] .model-organization,
-.dark .model-organization,
-html[data-theme="dark"] .model-organization {
-  color: #94a3b8 !important;
-}
 
 [data-theme="dark"] .release-date-cell,
 .dark .release-date-cell,
@@ -961,9 +931,6 @@ html[data-theme="dark"] .stat-label {
     color: #f8fafc !important;
   }
   
-  .model-organization {
-    color: #94a3b8 !important;
-  }
   
   .release-date-cell {
     color: #94a3b8 !important;
