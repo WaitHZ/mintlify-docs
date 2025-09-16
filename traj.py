@@ -144,9 +144,17 @@ def main(args):
                                                 dst.write(f"</div>\n\n")
                                             else:
                                                 dst.write(f"<div className=\"tool-call-box\">\n")
-                                                server_name = msg_tool_call['function']['name'].split('-')[0] if "-" in msg_tool_call['function']['name'] else msg_tool_call['function']['name']
+                                                server_function_name = msg_tool_call['function']['name']
+                                                if server_name.startswith("local"):
+                                                    server_name = ''.join(server_function_name.split("-")[1:])
+                                                    function_name = ""
+                                                elif server_function_name.startswith("pdf-tools"):
+                                                    server_name = "pdf-tools"
+                                                    function_name = "".join(server_function_name.split("-")[2:])
+                                                else:
+                                                    server_name, function_name = server_function_name.split("-")
                                                 dst.write(icon_map[server_name] if server_name in icon_map else "🛠")
-                                                dst.write(f"`{msg_tool_call['function']['name'].replace('-', ' ')}`\n\n")
+                                                dst.write(f"`{server_name} {function_name}`\n\n")
                                                 dst.write(f"```json\n")
                                                 argu_s = msg_tool_call['function']['arguments'].strip()[1:-1].split(",")
                                                 if len(argu_s) == 1 and argu_s[0] == "":
