@@ -8,7 +8,7 @@ description: "Locate and act on submission instructions from Kaiming’s email t
     filesystem, memory, emails, terminal, pdf-tools
   </Card>
   <Card title="Local Tool" icon="terminal">
-    claim_done
+    claim_done, handle_overlong_tool_outputs
   </Card>
 </Columns>
 
@@ -20,46 +20,24 @@ Please check my inbox for an email from 'kaiming', and then help me submit the r
 
 ### Local Workspace
 
-<AccordionGroup>
-<Accordion title="File Directory">
-```
-workspace/
+<div className="file-tree">
+<a href="https://github.com/hkust-nlp/mcpbench_dev/tree/finalpool_dev/tasks/finalpool/excel-data-transformation/initial_workspace">workspace</a>/
 ├── memory/
-    └── memory.json
+&nbsp;&nbsp;&nbsp;&nbsp;└── memory.json
 └── Application_Materials_flat/
-    ├── Academic_Excellence_Award_2023.pdf
-    ├── CV.pdf
-    ├── Enrollment_Certificate.pdf
-    ├── ID_Card.pdf
-    ├── Outstanding_Student_Award_2021.pdf
-    ├── Photo.jpg
-    ├── Portfolio.pdf
-    ├── Project_Report.pdf
-    ├── Recommendation_Letter_1.pdf
-    ├── Recommendation_Letter_2.pdf
-    ├── Research_Competition_First_Place_2022.pdf
-    └── Transcript.pdf
-```
-</Accordion>
-
-<Accordion title="memory/memory.json">
-```json
-{
-    "type":"entity",
-    "entityType":"Person",
-    "name":"Mary Castillo",
-    "observations":[
-        "Student ID: 2201210606", "Email: maryc@mcp.com", "Address: Building 1, Unit 2, Haidian Road Community", "Phone: 13812345678", "Major: Computer Science and Technology", "Hobbies: Programming, Reading, Basketball","Graduation year: 2024", "GPA: 3.8", "University: Peking University", "Degree: Bachelor's", "Education period: 2020-09 to 2024-06", "Currently pursuing: Master's degree", "Health condition: Gout, cannot eat seafood", "Daily routine: Regular schedule", "Mental health: Healthy", "Personality: Lively", "Swimming ability: Cannot swim", "Birthday: 2000-01-01"
-    ]
-}
-```
-</Accordion>
-
-<Accordion title="Application_Materials_flat/">
-You can view these files [here](https://github.com/hkust-nlp/mcpbench_dev/tree/finalpool_dev/tasks/finalpool/apply-phd-email/initial_workspace).
-</Accordion>
-
-</AccordionGroup>
+&nbsp;&nbsp;&nbsp;&nbsp;├── Academic_Excellence_Award_2023.pdf
+&nbsp;&nbsp;&nbsp;&nbsp;├── CV.pdf
+&nbsp;&nbsp;&nbsp;&nbsp;├── Enrollment_Certificate.pdf
+&nbsp;&nbsp;&nbsp;&nbsp;├── ID_Card.pdf
+&nbsp;&nbsp;&nbsp;&nbsp;├── Outstanding_Student_Award_2021.pdf
+&nbsp;&nbsp;&nbsp;&nbsp;├── Photo.jpg
+&nbsp;&nbsp;&nbsp;&nbsp;├── Portfolio.pdf
+&nbsp;&nbsp;&nbsp;&nbsp;├── Project_Report.pdf
+&nbsp;&nbsp;&nbsp;&nbsp;├── Recommendation_Letter_1.pdf
+&nbsp;&nbsp;&nbsp;&nbsp;├── Recommendation_Letter_2.pdf
+&nbsp;&nbsp;&nbsp;&nbsp;├── Research_Competition_First_Place_2022.pdf
+&nbsp;&nbsp;&nbsp;&nbsp;└── Transcript.pdf
+</div>
 
 ### Mail
 
