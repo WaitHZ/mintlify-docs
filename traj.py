@@ -6,6 +6,11 @@ import json
 import re
 
 
+icon_map = {
+    "arxiv_local": '<svg width="64" height="64" viewBox="0 0 17.732 24.269" style={{margin: 0, padding: 0, display: \'block\'}}><path fill="#bdb9b4" d="m6.565 9.368 2.266 2.738 6.674-7.84c.353-.47.52-.717.353-1.117a1.218 1.218 0 0 0-1.061-.748.953.953 0 0 0-.712.262Z"/><path fill="#b31b1b" d="M12.541 10.677 1.935.503a1.413 1.413 0 0 0-.834-.5 1.09 1.09 0 0 0-1.027.66c-.167.4-.047.681.319 1.206l8.44 10.242-6.282 7.716a1.336 1.336 0 0 0-.323 1.3 1.114 1.114 0 0 0 1.04.69.992.992 0 0 0 .748-.365l8.519-7.92a1.924 1.924 0 0 0 .006-2.855Z"/><path fill="#bdb9b4" d="M17.336 22.364 8.811 12.089 6.546 9.352l-1.389 1.254a2.063 2.063 0 0 0 0 2.965L15.969 23.99a.925.925 0 0 0 .742.282 1.039 1.039 0 0 0 .953-.667 1.261 1.261 0 0 0-.328-1.241Z"/></svg>'
+}
+
+
 def find_mdx_files_with_underscore(dir_path):
     mdx_files = []
     for root, dirs, files in os.walk(dir_path):
@@ -126,7 +131,9 @@ def main(args):
                                             elif msg_tool_call['function']['name'] == "filesystem-write_file":
                                                 arg_s = json.loads(msg_tool_call['function']['arguments'])
                                                 dst.write(f"<div className=\"tool-call-box\">\n")
-                                                dst.write(f"🛠`{msg_tool_call['function']['name']}`\n\n")
+                                                server_name = msg_tool_call['function']['name'].split('-')[0] if "-" in msg_tool_call['function']['name'] else msg_tool_call['function']['name']
+                                                dst.write(icon_map[server_name] if server_name in icon_map else "🛠")
+                                                dst.write(f"`{msg_tool_call['function']['name']}`\n\n")
                                                 dst.write(f"```text workspace/{arg_s['path'].split('/')[-1]}\n")
                                                 dst.write(f"{arg_s['content']}\n")
                                                 dst.write(f"```\n")
