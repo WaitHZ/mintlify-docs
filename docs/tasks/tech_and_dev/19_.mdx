@@ -8,7 +8,7 @@ description: "Upload the highest-accuracy checkpoint from workspace to Hugging F
     filesystem, terminal, huggingface
   </Card>
   <Card title="Local Tool" icon="terminal">
-    claim_done, manage_context, history, python_execute
+    claim_done, manage_context, history, python_execute, handle_overlong_tool_outputs
   </Card>
 </Columns>
 
@@ -22,21 +22,12 @@ Finalize the repo's `README.md` with the detailed evaluation results for all 15 
 
 ### Local Workspace
 
-<AccordionGroup>
-<Accordion title="File Directory">
-
-You can find these files [here](https://github.com/hkust-nlp/mcpbench_dev/tree/finalpool_dev/tasks/finalpool/huggingface-upload).
-
-```
-scripts/
+<div className="file-tree">
+<a href="https://github.com/hkust-nlp/mcpbench_dev/tree/finalpool_dev/tasks/finalpool/excel-data-transformation/initial_workspace">workspace</a>/
 ├── checkpoints/
 ├── evaluation/
 ├── figures/
 └── README.md
-```
-</Accordion>
-
-
-</AccordionGroup>
+</div>
 
 ## Model Trajectory
