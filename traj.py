@@ -145,7 +145,7 @@ def main(args):
                                             else:
                                                 dst.write(f"<div className=\"tool-call-box\">\n")
                                                 server_function_name = msg_tool_call['function']['name']
-                                                if server_name.startswith("local"):
+                                                if server_function_name.startswith("local"):
                                                     server_name = ''.join(server_function_name.split("-")[1:])
                                                     function_name = ""
                                                 elif server_function_name.startswith("pdf-tools"):
