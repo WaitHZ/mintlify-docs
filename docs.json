@@ -130,6 +130,12 @@
                         "pages": [
                             "docs/tasks/personal_affair/131"
                         ]
+                    },
+                    {
+                        "group": "Finance",
+                        "pages": [
+                            "docs/tasks/finance/126"
+                        ]
                     }
                 ]
             }
