@@ -131,16 +131,16 @@ def main(args):
                                             elif msg_tool_call['function']['name'] == "filesystem-write_file":
                                                 arg_s = json.loads(msg_tool_call['function']['arguments'])
                                                 dst.write(f"<div className=\"tool-call-box\">\n")
-                                                server_name = msg_tool_call['function']['name'].split('-')[0] if "-" in msg_tool_call['function']['name'] else msg_tool_call['function']['name']
-                                                dst.write(icon_map[server_name] if server_name in icon_map else "🛠")
-                                                dst.write(f"`{msg_tool_call['function']['name']}`\n\n")
+                                                dst.write(f"🛠`{msg_tool_call['function']['name']}`\n\n")
                                                 dst.write(f"```text workspace/{arg_s['path'].split('/')[-1]}\n")
                                                 dst.write(f"{arg_s['content']}\n")
                                                 dst.write(f"```\n")
                                                 dst.write(f"</div>\n\n")
                                             else:
                                                 dst.write(f"<div className=\"tool-call-box\">\n")
-                                                dst.write(f"🛠`{msg_tool_call['function']['name'].replace('-', ' ')}`\n\n")
+                                                server_name = msg_tool_call['function']['name'].split('-')[0] if "-" in msg_tool_call['function']['name'] else msg_tool_call['function']['name']
+                                                dst.write(icon_map[server_name] if server_name in icon_map else "🛠")
+                                                dst.write(f"`{msg_tool_call['function']['name'].replace('-', ' ')}`\n\n")
                                                 dst.write(f"```json\n")
                                                 argu_s = msg_tool_call['function']['arguments'].strip()[1:-1].split(",")
                                                 if len(argu_s) == 1 and argu_s[0] == "":
