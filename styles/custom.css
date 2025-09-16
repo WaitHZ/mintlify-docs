@@ -6,6 +6,7 @@
   padding: 16px;
   font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
   font-size: 15px;
+  font-weight: 500;
   line-height: 1.6;
   white-space: pre;
   overflow-x: auto;
@@ -15,6 +16,7 @@
 .file-tree a {
   color: #0366d6;
   text-decoration: none;
+  font-weight: 500;
 }
 
 .file-tree a:hover {
