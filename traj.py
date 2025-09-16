@@ -142,7 +142,7 @@ def main(args):
                                         if msg_tool_call['type'] == "function":
                                             if msg_tool_call['function']['name'] == "local-python-execute":
                                                 dst.write(f"<div className=\"tool-call-box\">\n")
-                                                dst.write(f"{icon_map["python-execute"]}`{msg_tool_call['function']['name']}`\n\n")
+                                                dst.write(f"{icon_map["python-execute"]}`python-execute`\n\n")
                                                 arg_s = json.loads(msg_tool_call['function']['arguments'])
                                                 dst.write(f"```python {arg_s['filename'] if 'filename' in arg_s else ''}\n")
                                                 dst.write(f"{arg_s['code']}\n")
