@@ -133,7 +133,7 @@ def main(args):
                                                 dst.write(f"</div>\n\n")
                                             else:
                                                 dst.write(f"<div className=\"tool-call-box\">\n")
-                                                dst.write(f"🛠`{msg_tool_call['function']['name']}`\n\n")
+                                                dst.write(f"🛠`{msg_tool_call['function']['name'].replace('-', ' ')}`\n\n")
                                                 dst.write(f"```json\n")
                                                 argu_s = msg_tool_call['function']['arguments'].strip()[1:-1].split(",")
                                                 if len(argu_s) == 1 and argu_s[0] == "":
