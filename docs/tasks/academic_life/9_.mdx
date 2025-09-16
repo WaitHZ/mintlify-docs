@@ -8,7 +8,7 @@ description: "Update personal profile with the metadata and details from the two
     filesystem, playwright_with_chunk
   </Card>
   <Card title="Local Tool" icon="terminal">
-    claim_done
+    claim_done, handle_overlong_tool_outputs
   </Card>
 </Columns>
 
@@ -20,17 +20,14 @@ I've recently uploaded a number of articles on ArXiv, could you please update my
 
 ### Local Workspace
 
-We place the GitHub repository for building the homepage into the workspace and have the model make changes to the content locally.
-
-<Accordion title="File Directory">
-```
-workspace/
+<div className="file-tree">
+<a href="https://github.com/hkust-nlp/mcpbench_dev/tree/finalpool_dev/tasks/finalpool/profile-update-online/initial_workspace">workspace</a>/
 └── HYZ17.github.io/
     ├── _data/
     ├── _drafts/
     ├── ...
     └── talkmap.py
-```
-</Accordion>
+</div>
+
 
 ## Model Trajectory
