@@ -8,7 +8,7 @@ description: "Summarize official TOEFL/IELTS, fees, and deadlines for QS CS Top 
     filesystem, playwright_with_chunk, excel
   </Card>
   <Card title="Local Tool" icon="terminal">
-    claim_done, web_search
+    claim_done, web_search, handle_overlong_tool_outputs
   </Card>
 </Columns>
 
@@ -20,18 +20,9 @@ You are preparing a graduate application report for a student who wants to apply
 
 ### Local Workspace
 
-<AccordionGroup>
-<Accordion title="File Directory">
-```
-workspace/
+<div className="file-tree">
+<a href="https://github.com/hkust-nlp/mcpbench_dev/tree/finalpool_dev/tasks/finalpool/excel-data-transformation/initial_workspace">workspace</a>/
 └── format.xlsx
-```
-</Accordion>
-
-<Accordion title="format.xlsx">
-| University | City | Ranking | TOEFL Required | TOEFL Min Score | IELTS Accepted | IELTS Min Score | Application Fee | Application Deadline |
-|------------|------|---------|----------------|-----------------|----------------|-----------------|-----------------|----------------------|
-</Accordion>
-</AccordionGroup>
+</div>
 
 ## Model Trajectory
