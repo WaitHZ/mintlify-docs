@@ -154,6 +154,12 @@
                             "docs/tasks/finance/275",
                             "docs/tasks/finance/345"
                         ]
+                    },
+                    {
+                        "group": "Content Creation & Media",
+                        "pages": [
+                            "docs/tasks/content_creation_and_media/201"
+                        ]
                     }
                 ]
             }
